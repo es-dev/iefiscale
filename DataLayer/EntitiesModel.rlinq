@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="EntitiesModel" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="DataLayer" default="true">
+      <orm:class name="StudioCommerciale" uniqueId="fd17f27b-7f24-4051-92d7-72aa3850e167">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="96e9cfe2-cc59-4d50-9edb-683b5a73a4cd" type="System.Int32" />
+        <orm:field name="_denominazione" property="Denominazione" uniqueId="0908170c-a109-4e0c-8d7d-689efa832dbc" type="System.String" />
+        <orm:field name="_tipoSoftwareContabilita" property="TipoSoftwareContabilita" uniqueId="653fd2f8-d9c3-4b1b-b43b-158d1280b90c" type="System.String" />
+        <orm:field name="_clientes" property="Clientes" behavior="readwrite" uniqueId="b320c959-801a-4bb6-b7ac-97c7ec547ea1" type="DataLayer.Cliente">
+          <orm:collection element-class="DataLayer.Cliente" inverse-field="_studioCommerciale" order-by="" uniqueId="2887f442-b710-496a-bf3c-54c66c549689" />
+        </orm:field>
+        <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="338333c6-de01-4a1f-8cb2-ad9be01abdfa" type="DataLayer.Account">
+          <orm:collection element-class="DataLayer.Account" inverse-field="_studioCommerciale" order-by="" uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Cliente" uniqueId="c83083d9-821a-4819-b444-4f90e9ef5b53">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="796313a4-47f3-4545-9515-64e158e8bb4a" type="System.Int32" />
+        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="48415545-6b2a-4d4c-8d0e-82243b708584" type="System.Int32" />
+        <orm:field name="_tipoContabilita" property="TipoContabilita" uniqueId="87d26102-6b0a-4446-b23f-1985a5e9bda8" type="System.String" />
+        <orm:field name="_tipoSoftwareFatturazione" property="TipoSoftwareFatturazione" uniqueId="4ab35b68-82c5-4c6f-917f-bc4017b88c83" type="System.String" />
+        <orm:field name="_codiceCliente" property="CodiceCliente" uniqueId="b4533ff7-6f95-479d-a32c-d3bc354f0356" type="System.String" />
+        <orm:field name="_iDContro" property="IDContro" uniqueId="6aae03ff-9a2e-4279-b8ef-bb9a860ea588" type="System.String" />
+        <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="ef0eaa56-9120-4fb0-aded-a7ec2ef32ed4" type="DataLayer.StudioCommerciale">
+          <orm:reference uniqueId="2887f442-b710-496a-bf3c-54c66c549689" association-name="ClienteHasStudioCommerciale">
+            <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_contabilitas" property="Contabilitas" behavior="readwrite" uniqueId="d4364cda-a32d-4ff1-acb9-cc74cacf5baf" type="DataLayer.Contabilita">
+          <orm:collection element-class="DataLayer.Contabilita" inverse-field="_cliente" order-by="" uniqueId="7f6e4bda-1c17-4a51-8ef0-b7cc9aebea38" />
+        </orm:field>
+        <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="1643c11d-8f87-4530-9328-0d442ee89a93" type="DataLayer.Account">
+          <orm:collection element-class="DataLayer.Account" inverse-field="_cliente" order-by="" uniqueId="f33f80de-d232-43ae-a788-49b6bd3c1cb5" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Contabilita" uniqueId="e6a0e457-21b5-42ac-a6d5-5fc26104598f">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="5f2f6852-37ff-4445-8be2-ed0931e41a54" type="System.Int32" />
+        <orm:field name="_anno" property="Anno" uniqueId="247d4660-f36f-426c-a0f6-b30a36ae2557" type="System.String" />
+        <orm:field name="_scadenzaIVA" property="ScadenzaIVA" uniqueId="ecca0d4f-fa51-4a62-a10f-56f88547e7e2" type="System.String" />
+        <orm:field name="_clienteId" property="ClienteId" uniqueId="c8bc016e-efd4-46ee-8377-16b112fd6fca" type="System.Int32" />
+        <orm:field name="_comunicaziones" property="Comunicaziones" behavior="readwrite" uniqueId="36b20bbd-49ad-4bd8-9a25-bf7af02602fd" type="DataLayer.Comunicazione">
+          <orm:collection element-class="DataLayer.Comunicazione" inverse-field="_contabilita" order-by="" uniqueId="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" />
+        </orm:field>
+        <orm:field name="_cliente" property="Cliente" behavior="readwrite" uniqueId="28a19dbb-c23b-4a35-8c6d-73f954519799" type="DataLayer.Cliente">
+          <orm:reference uniqueId="7f6e4bda-1c17-4a51-8ef0-b7cc9aebea38" association-name="ContabilitaHasCliente">
+            <orm:sharedfield name="_clienteId" target-class="DataLayer.Cliente" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Comunicazione" uniqueId="ec3699a2-1f9a-4de8-8baa-a9aed811a1ff">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="3073f024-2e42-414a-9be5-786c578efe12" type="System.Int32" />
+        <orm:field name="_contabilitaId" property="ContabilitaId" uniqueId="bdbba5f9-da14-451d-968d-2de23de70a5a" type="System.Int32" />
+        <orm:field name="_xmlExportFile" property="XmlExportFile" uniqueId="c396c1e9-9f14-4aa7-ac59-33f3010f2e61" type="System.String" />
+        <orm:field name="_xmlImportFile" property="XmlImportFile" uniqueId="835ff3d3-96b1-4229-ad71-0cab67566754" type="System.String" />
+        <orm:field name="_contabilita" property="Contabilita" behavior="readwrite" uniqueId="cd847d32-ae69-4fee-9c6b-575bcdd476fb" type="DataLayer.Contabilita">
+          <orm:reference uniqueId="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" association-name="ComunicazioneHasContabilita">
+            <orm:sharedfield name="_contabilitaId" target-class="DataLayer.Contabilita" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_fatturas" property="Fatturas" behavior="readwrite" uniqueId="554f82a4-697a-4f2a-87fb-024a2f57c24d" type="DataLayer.Fattura">
+          <orm:collection element-class="DataLayer.Fattura" inverse-field="_comunicazione" order-by="" uniqueId="30b60064-d15c-4509-bceb-80a11f976453" />
+        </orm:field>
+        <orm:field name="_imports" property="Imports" behavior="readwrite" uniqueId="6b2605ea-ddb0-4954-a31e-8f0d5c62db13" type="DataLayer.Import">
+          <orm:collection element-class="DataLayer.Import" inverse-field="_comunicazione" order-by="" uniqueId="9fd23c94-8298-4926-86bb-757328573352" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Fattura" uniqueId="90ac9863-a1e7-4c65-bb20-42ca4118d29d">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="7ec2837e-83dd-4592-8dfe-736a264ce181" type="System.Int32" />
+        <orm:field name="_comunicazioneId" property="ComunicazioneId" uniqueId="6f856256-ba6d-4600-90cd-291744fdbc7a" type="System.Int32" />
+        <orm:field name="_codiceFornitore" property="CodiceFornitore" uniqueId="3f455f98-547c-4b96-b0d3-ac1dea29f2b7" type="System.String" />
+        <orm:field name="_comunicazione" property="Comunicazione" behavior="readwrite" uniqueId="ff549a4a-8bca-4116-8b56-bf33604274a3" type="DataLayer.Comunicazione">
+          <orm:reference uniqueId="30b60064-d15c-4509-bceb-80a11f976453" association-name="FatturaHasComunicazione">
+            <orm:sharedfield name="_comunicazioneId" target-class="DataLayer.Comunicazione" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_imports" property="Imports" behavior="readwrite" uniqueId="e6994ad3-09cb-4dde-8119-66af3b7e1372" type="DataLayer.Import">
+          <orm:collection element-class="DataLayer.Import" inverse-field="_fattura" order-by="" uniqueId="202ca4b7-8517-46b1-b1b3-d3214a144165" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Account" uniqueId="c186a1da-f13d-4505-9f5c-9d32f867a9f2">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="16c74a7b-3884-4a68-a670-d62b25a5cc39" type="System.Int32" />
+        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="44954c50-8bdc-4418-aa65-afad06e1af18" type="System.Int32" />
+        <orm:field name="_clienteId" property="ClienteId" uniqueId="8a490d19-0b11-4647-9669-53f48f18d45f" type="System.Int32" />
+        <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="2b50c650-c544-4fbd-8f84-9473d31f672b" type="DataLayer.StudioCommerciale">
+          <orm:reference uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" association-name="AccountHasStudioCommerciale">
+            <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_cliente" property="Cliente" behavior="readwrite" uniqueId="8a065e2d-d10b-41f8-b9b5-1d65304dac8b" type="DataLayer.Cliente">
+          <orm:reference uniqueId="f33f80de-d232-43ae-a788-49b6bd3c1cb5" association-name="AccountHasCliente">
+            <orm:sharedfield name="_clienteId" target-class="DataLayer.Cliente" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Import" uniqueId="97cb91c4-e6c8-4acd-9fcb-e3fcf1088dc3">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="32b7367b-8138-46e8-9eb5-4a050f7a75cb" type="System.Int32" />
+        <orm:field name="_comunicazioneId" property="ComunicazioneId" uniqueId="f4cc19c8-fea6-4477-a683-9916d8524545" type="System.Int32" />
+        <orm:field name="_fatturaId" property="FatturaId" uniqueId="31740814-f27f-4331-a848-37a64e010011" type="System.Int32" />
+        <orm:field name="_tipoRiga" property="TipoRiga" uniqueId="d44cef8b-8150-4144-aa45-063d028db3be" type="System.String" />
+        <orm:field name="_iDIVA" property="IDIVA" uniqueId="a8174edb-88bd-4c28-9a1b-de2c2a87e52b" type="System.String" />
+        <orm:field name="_comunicazione" property="Comunicazione" behavior="readwrite" uniqueId="1d646ee8-f468-4b22-b539-0ed62ddd106f" type="DataLayer.Comunicazione">
+          <orm:reference uniqueId="9fd23c94-8298-4926-86bb-757328573352" association-name="ImportHasComunicazione">
+            <orm:sharedfield name="_comunicazioneId" target-class="DataLayer.Comunicazione" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_fattura" property="Fattura" behavior="readwrite" uniqueId="ada1f61a-4fb4-426b-955f-02553f30ef75" type="DataLayer.Fattura">
+          <orm:reference uniqueId="202ca4b7-8517-46b1-b1b3-d3214a144165" association-name="ImportHasFattura">
+            <orm:sharedfield name="_fatturaId" target-class="DataLayer.Fattura" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="" />
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <SaveConnectionStringInAppConfig>false</SaveConnectionStringInAppConfig>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="fd17f27b-7f24-4051-92d7-72aa3850e167" name="StudioCommerciale" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="96e9cfe2-cc59-4d50-9edb-683b5a73a4cd" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="0908170c-a109-4e0c-8d7d-689efa832dbc" name="Denominazione" label="Denominazione : String" fieldName="_denominazione" />
+      <Property Id="653fd2f8-d9c3-4b1b-b43b-158d1280b90c" name="TipoSoftwareContabilita" label="TipoSoftwareContabilita : String" fieldName="_tipoSoftwareContabilita" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="cfd23c08-bae1-46b5-8521-744a7ce4dac3">
+          <NavigationalProperty Id="b320c959-801a-4bb6-b7ac-97c7ec547ea1" name="Clientes" type="IList&lt;Cliente&gt;" label="Clientes : IList&lt;Cliente&gt;" nullable="true" kind="Persistent" fieldName="_clientes" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="7c985641-c9a1-4e59-aa57-2ca8a3e2c900">
+          <NavigationalProperty Id="338333c6-de01-4a1f-8cb2-ad9be01abdfa" name="Accounts" type="IList&lt;Account&gt;" label="Accounts : IList&lt;Account&gt;" nullable="true" kind="Persistent" fieldName="_accounts" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="c83083d9-821a-4819-b444-4f90e9ef5b53" name="Cliente" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="796313a4-47f3-4545-9515-64e158e8bb4a" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="48415545-6b2a-4d4c-8d0e-82243b708584" name="StudioCommercialeId" type="Int32" label="StudioCommercialeId : Int32" fieldName="_studioCommercialeId" />
+      <Property Id="87d26102-6b0a-4446-b23f-1985a5e9bda8" name="TipoContabilita" label="TipoContabilita : String" fieldName="_tipoContabilita" />
+      <Property Id="4ab35b68-82c5-4c6f-917f-bc4017b88c83" name="TipoSoftwareFatturazione" label="TipoSoftwareFatturazione : String" fieldName="_tipoSoftwareFatturazione" />
+      <Property Id="b4533ff7-6f95-479d-a32c-d3bc354f0356" name="CodiceCliente" label="CodiceCliente : String" fieldName="_codiceCliente" />
+      <Property Id="6aae03ff-9a2e-4279-b8ef-bb9a860ea588" name="IDContro" label="IDContro : String" fieldName="_iDContro" />
+      <AssociationTargets>
+        <Association Id="2887f442-b710-496a-bf3c-54c66c549689" SourceMultiplicity="ZeroOne" name="ClienteHasStudioCommerciale">
+          <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="d24809f1-7261-459e-be07-493d3f88ee60">
+              <NavigationalPropertyMoniker name="/EntitiesModel/StudioCommerciale/Clientes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="c1ac20d4-8940-4e46-86f1-5ce2a957f0a4">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Cliente/StudioCommerciale" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="3edf3ddb-b673-4ee1-b784-6619c1b73214">
+          <NavigationalProperty Id="ef0eaa56-9120-4fb0-aded-a7ec2ef32ed4" name="StudioCommerciale" type="StudioCommerciale" label="StudioCommerciale : StudioCommerciale" nullable="true" kind="Persistent" fieldName="_studioCommerciale" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="a53b4334-83e4-4d25-a6c1-72c58043c87a">
+          <NavigationalProperty Id="d4364cda-a32d-4ff1-acb9-cc74cacf5baf" name="Contabilitas" type="IList&lt;Contabilita&gt;" label="Contabilitas : IList&lt;Contabilita&gt;" nullable="true" kind="Persistent" fieldName="_contabilitas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="71ae6d25-5e7e-44bb-986f-78722dd1a8df">
+          <NavigationalProperty Id="1643c11d-8f87-4530-9328-0d442ee89a93" name="Accounts" type="IList&lt;Account&gt;" label="Accounts : IList&lt;Account&gt;" nullable="true" kind="Persistent" fieldName="_accounts" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="e6a0e457-21b5-42ac-a6d5-5fc26104598f" name="Contabilita" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="5f2f6852-37ff-4445-8be2-ed0931e41a54" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="247d4660-f36f-426c-a0f6-b30a36ae2557" name="Anno" label="Anno : String" fieldName="_anno" />
+      <Property Id="ecca0d4f-fa51-4a62-a10f-56f88547e7e2" name="ScadenzaIVA" label="ScadenzaIVA : String" fieldName="_scadenzaIVA" />
+      <Property Id="c8bc016e-efd4-46ee-8377-16b112fd6fca" name="ClienteId" type="Int32" label="ClienteId : Int32" fieldName="_clienteId" />
+      <AssociationTargets>
+        <Association Id="7f6e4bda-1c17-4a51-8ef0-b7cc9aebea38" SourceMultiplicity="ZeroOne" name="ContabilitaHasCliente">
+          <DomainClassMoniker name="/EntitiesModel/Cliente" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="c05927b7-14db-4324-8fe7-a444b926f78f">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Cliente/Contabilitas" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="28598527-a9a9-4499-80a4-cd188fe06afa">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Contabilita/Cliente" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="393b6963-c10f-4e69-bb7c-06a5ad4ec988">
+          <NavigationalProperty Id="36b20bbd-49ad-4bd8-9a25-bf7af02602fd" name="Comunicaziones" type="IList&lt;Comunicazione&gt;" label="Comunicaziones : IList&lt;Comunicazione&gt;" nullable="true" kind="Persistent" fieldName="_comunicaziones" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="d1911981-214f-42a8-b9e4-dc66794d688a">
+          <NavigationalProperty Id="28a19dbb-c23b-4a35-8c6d-73f954519799" name="Cliente" type="Cliente" label="Cliente : Cliente" nullable="true" kind="Persistent" fieldName="_cliente" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ec3699a2-1f9a-4de8-8baa-a9aed811a1ff" name="Comunicazione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="3073f024-2e42-414a-9be5-786c578efe12" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="bdbba5f9-da14-451d-968d-2de23de70a5a" name="ContabilitaId" type="Int32" label="ContabilitaId : Int32" fieldName="_contabilitaId" />
+      <Property Id="c396c1e9-9f14-4aa7-ac59-33f3010f2e61" name="XmlExportFile" label="XmlExportFile : String" fieldName="_xmlExportFile" />
+      <Property Id="835ff3d3-96b1-4229-ad71-0cab67566754" name="XmlImportFile" label="XmlImportFile : String" fieldName="_xmlImportFile" />
+      <AssociationTargets>
+        <Association Id="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" SourceMultiplicity="ZeroOne" name="ComunicazioneHasContabilita">
+          <DomainClassMoniker name="/EntitiesModel/Contabilita" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="4875d99d-b88b-41de-8ce1-449567763c7e">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Contabilita/Comunicaziones" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="cd9cbb28-5841-40c2-9ec6-484c08ac19ef">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Comunicazione/Contabilita" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="8469baec-03ad-49fe-97f6-61758d545296">
+          <NavigationalProperty Id="cd847d32-ae69-4fee-9c6b-575bcdd476fb" name="Contabilita" type="Contabilita" label="Contabilita : Contabilita" nullable="true" kind="Persistent" fieldName="_contabilita" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="830f503e-269b-4012-b7b5-0bb1270481ff">
+          <NavigationalProperty Id="554f82a4-697a-4f2a-87fb-024a2f57c24d" name="Fatturas" type="IList&lt;Fattura&gt;" label="Fatturas : IList&lt;Fattura&gt;" nullable="true" kind="Persistent" fieldName="_fatturas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="5818ab8e-9cdc-4a95-845c-b56a7f36352d">
+          <NavigationalProperty Id="6b2605ea-ddb0-4954-a31e-8f0d5c62db13" name="Imports" type="IList&lt;Import&gt;" label="Imports : IList&lt;Import&gt;" nullable="true" kind="Persistent" fieldName="_imports" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="90ac9863-a1e7-4c65-bb20-42ca4118d29d" name="Fattura" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="7ec2837e-83dd-4592-8dfe-736a264ce181" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="6f856256-ba6d-4600-90cd-291744fdbc7a" name="ComunicazioneId" type="Int32" label="ComunicazioneId : Int32" fieldName="_comunicazioneId" />
+      <Property Id="3f455f98-547c-4b96-b0d3-ac1dea29f2b7" name="CodiceFornitore" label="CodiceFornitore : String" fieldName="_codiceFornitore" />
+      <AssociationTargets>
+        <Association Id="30b60064-d15c-4509-bceb-80a11f976453" SourceMultiplicity="ZeroOne" name="FatturaHasComunicazione">
+          <DomainClassMoniker name="/EntitiesModel/Comunicazione" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="e0eb319d-ec28-421c-8e1b-7e61662b2cc8">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Comunicazione/Fatturas" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="b14b34ba-7a35-4646-b25e-9a61f4109356">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Fattura/Comunicazione" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="dab9868d-6fd8-40cf-91ee-655b1c891501">
+          <NavigationalProperty Id="ff549a4a-8bca-4116-8b56-bf33604274a3" name="Comunicazione" type="Comunicazione" label="Comunicazione : Comunicazione" nullable="true" kind="Persistent" fieldName="_comunicazione" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="46f02da4-fd01-4785-84e9-f2839a8c4be5">
+          <NavigationalProperty Id="e6994ad3-09cb-4dde-8119-66af3b7e1372" name="Imports" type="IList&lt;Import&gt;" label="Imports : IList&lt;Import&gt;" nullable="true" kind="Persistent" fieldName="_imports" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="c186a1da-f13d-4505-9f5c-9d32f867a9f2" name="Account" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="16c74a7b-3884-4a68-a670-d62b25a5cc39" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="44954c50-8bdc-4418-aa65-afad06e1af18" name="StudioCommercialeId" type="Int32" label="StudioCommercialeId : Int32" fieldName="_studioCommercialeId" />
+      <Property Id="8a490d19-0b11-4647-9669-53f48f18d45f" name="ClienteId" type="Int32" label="ClienteId : Int32" fieldName="_clienteId" />
+      <AssociationTargets>
+        <Association Id="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" SourceMultiplicity="ZeroOne" name="AccountHasStudioCommerciale">
+          <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="ca784ac3-541a-42df-a460-0e21e3faf616">
+              <NavigationalPropertyMoniker name="/EntitiesModel/StudioCommerciale/Accounts" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="58bc4747-7e9b-4eae-bb00-0179ac102c36">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Account/StudioCommerciale" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="f33f80de-d232-43ae-a788-49b6bd3c1cb5" SourceMultiplicity="ZeroOne" name="AccountHasCliente">
+          <DomainClassMoniker name="/EntitiesModel/Cliente" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="a17d0eae-2a09-4cab-b122-ec92220f7c49">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Cliente/Accounts" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0f716b7b-f8bd-432b-83e3-a806c78a9fe5">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Account/Cliente" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="ef99a09e-2933-4019-ac08-b3c873536de4">
+          <NavigationalProperty Id="2b50c650-c544-4fbd-8f84-9473d31f672b" name="StudioCommerciale" type="StudioCommerciale" label="StudioCommerciale : StudioCommerciale" nullable="true" kind="Persistent" fieldName="_studioCommerciale" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="b2ed1067-9cba-4ca9-b944-c6060cdcad07">
+          <NavigationalProperty Id="8a065e2d-d10b-41f8-b9b5-1d65304dac8b" name="Cliente" type="Cliente" label="Cliente : Cliente" nullable="true" kind="Persistent" fieldName="_cliente" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="97cb91c4-e6c8-4acd-9fcb-e3fcf1088dc3" name="Import" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="32b7367b-8138-46e8-9eb5-4a050f7a75cb" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="f4cc19c8-fea6-4477-a683-9916d8524545" name="ComunicazioneId" type="Int32" label="ComunicazioneId : Int32" fieldName="_comunicazioneId" />
+      <Property Id="31740814-f27f-4331-a848-37a64e010011" name="FatturaId" type="Int32" label="FatturaId : Int32" fieldName="_fatturaId" />
+      <Property Id="d44cef8b-8150-4144-aa45-063d028db3be" name="TipoRiga" label="TipoRiga : String" fieldName="_tipoRiga" />
+      <Property Id="a8174edb-88bd-4c28-9a1b-de2c2a87e52b" name="IDIVA" label="IDIVA : String" fieldName="_iDIVA" />
+      <AssociationTargets>
+        <Association Id="9fd23c94-8298-4926-86bb-757328573352" SourceMultiplicity="ZeroOne" name="ImportHasComunicazione">
+          <DomainClassMoniker name="/EntitiesModel/Comunicazione" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="e4520a65-6530-4749-a679-6a323529ca87">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Comunicazione/Imports" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="c97478b0-2ecc-41ed-be97-c1df8d9f2a94">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Import/Comunicazione" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="202ca4b7-8517-46b1-b1b3-d3214a144165" SourceMultiplicity="ZeroOne" name="ImportHasFattura">
+          <DomainClassMoniker name="/EntitiesModel/Fattura" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="e51483c1-6363-4f7a-ab15-9e21367e2423">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Fattura/Imports" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="cdbd34cb-77a3-4230-aa78-ffc852c50d76">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Import/Fattura" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="ff82be42-be7c-4687-86c4-13469506a148">
+          <NavigationalProperty Id="1d646ee8-f468-4b22-b539-0ed62ddd106f" name="Comunicazione" type="Comunicazione" label="Comunicazione : Comunicazione" nullable="true" kind="Persistent" fieldName="_comunicazione" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="69899245-3d9b-4837-b5d3-52ff031526af">
+          <NavigationalProperty Id="ada1f61a-4fb4-426b-955f-02553f30ef75" name="Fattura" type="Fattura" label="Fattura : Fattura" nullable="true" kind="Persistent" fieldName="_fattura" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="40db2081-a79e-4fbd-8fcd-a32d4d0cecf1">
+      <domainContainer name="EntitiesModel" namespace="DataLayer" showPropertiesCompartment="true">
+        <entitySetProperty name="StudioCommerciales" namespace="DataLayer" type="StudioCommerciale" label="StudioCommerciales : IQueryable&lt;DataLayer.StudioCommerciale&gt;" />
+        <entitySetProperty name="Clientes" namespace="DataLayer" type="Cliente" label="Clientes : IQueryable&lt;DataLayer.Cliente&gt;" />
+        <entitySetProperty name="Contabilitas" namespace="DataLayer" type="Contabilita" label="Contabilitas : IQueryable&lt;DataLayer.Contabilita&gt;" />
+        <entitySetProperty name="Comunicaziones" namespace="DataLayer" type="Comunicazione" label="Comunicaziones : IQueryable&lt;DataLayer.Comunicazione&gt;" />
+        <entitySetProperty name="Fatturas" namespace="DataLayer" type="Fattura" label="Fatturas : IQueryable&lt;DataLayer.Fattura&gt;" />
+        <entitySetProperty name="Accounts" namespace="DataLayer" type="Account" label="Accounts : IQueryable&lt;DataLayer.Account&gt;" />
+        <entitySetProperty name="Imports" namespace="DataLayer" type="Import" label="Imports : IQueryable&lt;DataLayer.Import&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
