@@ -63,6 +63,32 @@ namespace DataLayer
 			}
 		}
 		
+		private string _username;
+		public virtual string Username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				this._username = value;
+			}
+		}
+		
+		private string _password;
+		public virtual string Password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				this._password = value;
+			}
+		}
+		
 		private StudioCommerciale _studioCommerciale;
 		public virtual StudioCommerciale StudioCommerciale
 		{

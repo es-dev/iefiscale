@@ -135,6 +135,7 @@ namespace DataLayer
 			BackendConfiguration backend = new BackendConfiguration();
 			backend.Backend = "MsSql";
 			backend.ProviderName = "System.Data.SqlClient";
+			backend.Logging.MetricStoreSnapshotInterval = 0;
 		
 			CustomizeBackendConfiguration(ref backend);
 		
