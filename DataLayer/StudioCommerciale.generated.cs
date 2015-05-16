@@ -63,21 +63,30 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Cliente> _clientes = new List<Cliente>();
-		public virtual IList<Cliente> Clientes
-		{
-			get
-			{
-				return this._clientes;
-			}
-		}
-		
 		private IList<Account> _accounts = new List<Account>();
 		public virtual IList<Account> Accounts
 		{
 			get
 			{
 				return this._accounts;
+			}
+		}
+		
+		private IList<Azienda> _aziendas = new List<Azienda>();
+		public virtual IList<Azienda> Aziendas
+		{
+			get
+			{
+				return this._aziendas;
+			}
+		}
+		
+		private IList<Nominativo> _nominativos = new List<Nominativo>();
+		public virtual IList<Nominativo> Nominativos
+		{
+			get
+			{
+				return this._nominativos;
 			}
 		}
 		

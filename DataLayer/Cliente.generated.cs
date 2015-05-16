@@ -37,99 +37,55 @@ namespace DataLayer
 			}
 		}
 		
-		private int _studioCommercialeId;
-		public virtual int StudioCommercialeId
+		private int _aziendaId;
+		public virtual int AziendaId
 		{
 			get
 			{
-				return this._studioCommercialeId;
+				return this._aziendaId;
 			}
 			set
 			{
-				this._studioCommercialeId = value;
+				this._aziendaId = value;
 			}
 		}
 		
-		private string _tipoContabilita;
-		public virtual string TipoContabilita
+		private string _iDConto;
+		public virtual string IDConto
 		{
 			get
 			{
-				return this._tipoContabilita;
+				return this._iDConto;
 			}
 			set
 			{
-				this._tipoContabilita = value;
+				this._iDConto = value;
 			}
 		}
 		
-		private string _tipoSoftwareFatturazione;
-		public virtual string TipoSoftwareFatturazione
+		private string _iDNominativo;
+		public virtual string IDNominativo
 		{
 			get
 			{
-				return this._tipoSoftwareFatturazione;
+				return this._iDNominativo;
 			}
 			set
 			{
-				this._tipoSoftwareFatturazione = value;
+				this._iDNominativo = value;
 			}
 		}
 		
-		private string _codiceCliente;
-		public virtual string CodiceCliente
+		private Azienda _azienda;
+		public virtual Azienda Azienda
 		{
 			get
 			{
-				return this._codiceCliente;
+				return this._azienda;
 			}
 			set
 			{
-				this._codiceCliente = value;
-			}
-		}
-		
-		private string _iDContro;
-		public virtual string IDContro
-		{
-			get
-			{
-				return this._iDContro;
-			}
-			set
-			{
-				this._iDContro = value;
-			}
-		}
-		
-		private StudioCommerciale _studioCommerciale;
-		public virtual StudioCommerciale StudioCommerciale
-		{
-			get
-			{
-				return this._studioCommerciale;
-			}
-			set
-			{
-				this._studioCommerciale = value;
-			}
-		}
-		
-		private IList<Contabilita> _contabilitas = new List<Contabilita>();
-		public virtual IList<Contabilita> Contabilitas
-		{
-			get
-			{
-				return this._contabilitas;
-			}
-		}
-		
-		private IList<Account> _accounts = new List<Account>();
-		public virtual IList<Account> Accounts
-		{
-			get
-			{
-				return this._accounts;
+				this._azienda = value;
 			}
 		}
 		

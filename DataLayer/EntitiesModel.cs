@@ -58,11 +58,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Cliente> Clientes 
+		public IQueryable<Azienda> Aziendas 
 		{
 			get
 			{
-				return this.GetAll<Cliente>();
+				return this.GetAll<Azienda>();
 			}
 		}
 		
@@ -82,11 +82,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Fattura> Fatturas 
+		public IQueryable<Documento> Documentos 
 		{
 			get
 			{
-				return this.GetAll<Fattura>();
+				return this.GetAll<Documento>();
 			}
 		}
 		
@@ -103,6 +103,30 @@ namespace DataLayer
 			get
 			{
 				return this.GetAll<Import>();
+			}
+		}
+		
+		public IQueryable<Export> Exports 
+		{
+			get
+			{
+				return this.GetAll<Export>();
+			}
+		}
+		
+		public IQueryable<Nominativo> Nominativos 
+		{
+			get
+			{
+				return this.GetAll<Nominativo>();
+			}
+		}
+		
+		public IQueryable<Cliente> Clientes 
+		{
+			get
+			{
+				return this.GetAll<Cliente>();
 			}
 		}
 		
@@ -131,7 +155,7 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<Cliente> Clientes
+		IQueryable<Azienda> Aziendas
 		{
 			get;
 		}
@@ -143,7 +167,7 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<Fattura> Fatturas
+		IQueryable<Documento> Documentos
 		{
 			get;
 		}
@@ -152,6 +176,18 @@ namespace DataLayer
 			get;
 		}
 		IQueryable<Import> Imports
+		{
+			get;
+		}
+		IQueryable<Export> Exports
+		{
+			get;
+		}
+		IQueryable<Nominativo> Nominativos
+		{
+			get;
+		}
+		IQueryable<Cliente> Clientes
 		{
 			get;
 		}
