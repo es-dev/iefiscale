@@ -46,13 +46,13 @@
         <orm:field name="_anno" property="Anno" uniqueId="247d4660-f36f-426c-a0f6-b30a36ae2557" type="System.String" />
         <orm:field name="_scadenzaIVA" property="ScadenzaIVA" uniqueId="ecca0d4f-fa51-4a62-a10f-56f88547e7e2" type="System.String" />
         <orm:field name="_clienteId" property="ClienteId" uniqueId="c8bc016e-efd4-46ee-8377-16b112fd6fca" type="System.Int32" />
-        <orm:field name="_comunicaziones" property="Comunicaziones" behavior="readwrite" uniqueId="36b20bbd-49ad-4bd8-9a25-bf7af02602fd" type="DataLayer.Comunicazione">
-          <orm:collection element-class="DataLayer.Comunicazione" inverse-field="_contabilita" order-by="" uniqueId="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" />
-        </orm:field>
         <orm:field name="_cliente" property="Cliente" behavior="readwrite" uniqueId="28a19dbb-c23b-4a35-8c6d-73f954519799" type="DataLayer.Cliente">
           <orm:reference uniqueId="7f6e4bda-1c17-4a51-8ef0-b7cc9aebea38" association-name="ContabilitaHasCliente">
             <orm:sharedfield name="_clienteId" target-class="DataLayer.Cliente" target-field="_id" />
           </orm:reference>
+        </orm:field>
+        <orm:field name="_comunicaziones" property="Comunicaziones" behavior="readwrite" uniqueId="36b20bbd-49ad-4bd8-9a25-bf7af02602fd" type="DataLayer.Comunicazione">
+          <orm:collection element-class="DataLayer.Comunicazione" inverse-field="_contabilita" order-by="" uniqueId="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" />
         </orm:field>
       </orm:class>
       <orm:class name="Comunicazione" uniqueId="ec3699a2-1f9a-4de8-8baa-a9aed811a1ff">
