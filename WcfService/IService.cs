@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,36 +13,37 @@ namespace WcfService
     [ServiceContract]
     public interface IService
     {
+        #region Account
+        #region CRUD
+        [OperationContract]
+        Dto.AccountDto CreateAccount(Dto.AccountDto account);
 
         [OperationContract]
-        string GetData(int value);
+        IEnumerable<Dto.AccountDto> ReadAccounts();
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        bool UpdateAccount(Dto.AccountDto account);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        bool DeleteAccount(Dto.AccountDto account);
+
+        [OperationContract]
+        int CountAccounts();
+        #endregion
+        #region Custom
+        [OperationContract]
+        IEnumerable<Dto.AccountDto> LoadAccounts(int skip, int take, string search = null, object advancedSearch = null, OrderBy orderBy = null);
+
+        [OperationContract]
+        int CountAccounts(string search = null, object advancedSearch = null);
+
+        [OperationContract]
+        Dto.AccountDto ReadAccount(object id);
+        #endregion
+        #endregion
+
     }
 
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
+   
 }

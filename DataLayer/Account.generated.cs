@@ -89,6 +89,19 @@ namespace DataLayer
 			}
 		}
 		
+		private string _nickname;
+		public virtual string Nickname
+		{
+			get
+			{
+				return this._nickname;
+			}
+			set
+			{
+				this._nickname = value;
+			}
+		}
+		
 		private StudioCommerciale _studioCommerciale;
 		public virtual StudioCommerciale StudioCommerciale
 		{
