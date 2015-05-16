@@ -37,32 +37,6 @@ namespace DataLayer
 			}
 		}
 		
-		private int _comunicazioneId;
-		public virtual int ComunicazioneId
-		{
-			get
-			{
-				return this._comunicazioneId;
-			}
-			set
-			{
-				this._comunicazioneId = value;
-			}
-		}
-		
-		private int _fatturaId;
-		public virtual int FatturaId
-		{
-			get
-			{
-				return this._fatturaId;
-			}
-			set
-			{
-				this._fatturaId = value;
-			}
-		}
-		
 		private string _tipoRiga;
 		public virtual string TipoRiga
 		{
@@ -89,29 +63,55 @@ namespace DataLayer
 			}
 		}
 		
-		private Comunicazione _comunicazione;
-		public virtual Comunicazione Comunicazione
+		private DateTime _data;
+		public virtual DateTime Data
 		{
 			get
 			{
-				return this._comunicazione;
+				return this._data;
 			}
 			set
 			{
-				this._comunicazione = value;
+				this._data = value;
 			}
 		}
 		
-		private Fattura _fattura;
-		public virtual Fattura Fattura
+		private string _tXTMovimenti;
+		public virtual string TXTMovimenti
 		{
 			get
 			{
-				return this._fattura;
+				return this._tXTMovimenti;
 			}
 			set
 			{
-				this._fattura = value;
+				this._tXTMovimenti = value;
+			}
+		}
+		
+		private string _tXTClienti;
+		public virtual string TXTClienti
+		{
+			get
+			{
+				return this._tXTClienti;
+			}
+			set
+			{
+				this._tXTClienti = value;
+			}
+		}
+		
+		private Export _export;
+		public virtual Export Export
+		{
+			get
+			{
+				return this._export;
+			}
+			set
+			{
+				this._export = value;
 			}
 		}
 		

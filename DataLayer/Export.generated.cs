@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Fattura
+	public partial class Export
 	{
 		private int _id;
 		public virtual int Id
@@ -50,16 +50,42 @@ namespace DataLayer
 			}
 		}
 		
-		private string _codiceFornitore;
-		public virtual string CodiceFornitore
+		private DateTime _data;
+		public virtual DateTime Data
 		{
 			get
 			{
-				return this._codiceFornitore;
+				return this._data;
 			}
 			set
 			{
-				this._codiceFornitore = value;
+				this._data = value;
+			}
+		}
+		
+		private string _progressivo;
+		public virtual string Progressivo
+		{
+			get
+			{
+				return this._progressivo;
+			}
+			set
+			{
+				this._progressivo = value;
+			}
+		}
+		
+		private string _xmlFile;
+		public virtual string XmlFile
+		{
+			get
+			{
+				return this._xmlFile;
+			}
+			set
+			{
+				this._xmlFile = value;
 			}
 		}
 		
@@ -76,12 +102,25 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Import> _imports = new List<Import>();
-		public virtual IList<Import> Imports
+		private IList<Documento> _documentos = new List<Documento>();
+		public virtual IList<Documento> Documentos
 		{
 			get
 			{
-				return this._imports;
+				return this._documentos;
+			}
+		}
+		
+		private Import _import;
+		public virtual Import Import
+		{
+			get
+			{
+				return this._import;
+			}
+			set
+			{
+				this._import = value;
 			}
 		}
 		

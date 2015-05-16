@@ -50,16 +50,16 @@ namespace DataLayer
 			}
 		}
 		
-		private int _clienteId;
-		public virtual int ClienteId
+		private int _aziendaId;
+		public virtual int AziendaId
 		{
 			get
 			{
-				return this._clienteId;
+				return this._aziendaId;
 			}
 			set
 			{
-				this._clienteId = value;
+				this._aziendaId = value;
 			}
 		}
 		
@@ -76,16 +76,16 @@ namespace DataLayer
 			}
 		}
 		
-		private Cliente _cliente;
-		public virtual Cliente Cliente
+		private Azienda _azienda;
+		public virtual Azienda Azienda
 		{
 			get
 			{
-				return this._cliente;
+				return this._azienda;
 			}
 			set
 			{
-				this._cliente = value;
+				this._azienda = value;
 			}
 		}
 		

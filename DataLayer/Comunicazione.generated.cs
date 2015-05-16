@@ -50,29 +50,29 @@ namespace DataLayer
 			}
 		}
 		
-		private string _xmlExportFile;
-		public virtual string XmlExportFile
+		private string _numero;
+		public virtual string Numero
 		{
 			get
 			{
-				return this._xmlExportFile;
+				return this._numero;
 			}
 			set
 			{
-				this._xmlExportFile = value;
+				this._numero = value;
 			}
 		}
 		
-		private string _xmlImportFile;
-		public virtual string XmlImportFile
+		private DateTime _scadenzaIVA;
+		public virtual DateTime ScadenzaIVA
 		{
 			get
 			{
-				return this._xmlImportFile;
+				return this._scadenzaIVA;
 			}
 			set
 			{
-				this._xmlImportFile = value;
+				this._scadenzaIVA = value;
 			}
 		}
 		
@@ -89,21 +89,12 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Fattura> _fatturas = new List<Fattura>();
-		public virtual IList<Fattura> Fatturas
+		private IList<Export> _exports = new List<Export>();
+		public virtual IList<Export> Exports
 		{
 			get
 			{
-				return this._fatturas;
-			}
-		}
-		
-		private IList<Import> _imports = new List<Import>();
-		public virtual IList<Import> Imports
-		{
-			get
-			{
-				return this._imports;
+				return this._exports;
 			}
 		}
 		
