@@ -555,6 +555,7 @@ namespace WcfService.Assemblers
 			entity.AziendaId = dto.AziendaId;
 			entity.Username = dto.Username;
 			entity.Password = dto.Password;
+			entity.Nickname = dto.Nickname;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -570,6 +571,7 @@ namespace WcfService.Assemblers
 			dto.AziendaId = entity.AziendaId;
 			dto.Username = entity.Username;
 			dto.Password = entity.Password;
+			dto.Nickname = entity.Nickname;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
