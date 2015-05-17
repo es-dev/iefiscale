@@ -114,12 +114,28 @@
         </orm:field>
       </orm:class>
       <orm:class name="Account" uniqueId="c186a1da-f13d-4505-9f5c-9d32f867a9f2">
+        <orm:table name="Account" />
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="16c74a7b-3884-4a68-a670-d62b25a5cc39" type="System.Int32" />
-        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="44954c50-8bdc-4418-aa65-afad06e1af18" type="System.Int32" />
-        <orm:field name="_aziendaId" property="AziendaId" uniqueId="8a490d19-0b11-4647-9669-53f48f18d45f" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="16c74a7b-3884-4a68-a670-d62b25a5cc39" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="44954c50-8bdc-4418-aa65-afad06e1af18" type="System.Int32">
+          <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_aziendaId" property="AziendaId" uniqueId="8a490d19-0b11-4647-9669-53f48f18d45f" type="System.Int32">
+          <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_username" property="Username" uniqueId="300877d1-ca89-4ff5-b794-04f9e1b0f40c" type="System.String">
+          <orm:column name="Username" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_password" property="Password" uniqueId="2728b58d-712b-4b12-96fa-c3d110102a8d" type="System.String">
+          <orm:column name="Password" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_nickname" property="Nickname" uniqueId="732e9d3e-610c-4a21-b04d-3898fd9310a8" type="System.String">
+          <orm:column name="Nickname" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="2b50c650-c544-4fbd-8f84-9473d31f672b" type="DataLayer.StudioCommerciale">
           <orm:reference uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" association-name="AccountHasStudioCommerciale">
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
@@ -130,6 +146,16 @@
             <orm:sharedfield name="_aziendaId" target-class="DataLayer.Azienda" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:index name="idx_Account_AziendaId">
+          <orm:columnMapping>
+            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="idx_Accunt_StudioCommercialeId">
+          <orm:columnMapping>
+            <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
       <orm:class name="Import" uniqueId="97cb91c4-e6c8-4acd-9fcb-e3fcf1088dc3">
         <orm:identity>
@@ -205,8 +231,28 @@
         </orm:field>
       </orm:class>
     </orm:namespace>
-    <orm:schema schema="" />
+    <orm:schema schema="">
+      <orm:table name="Account">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Username" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Password" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Nickname" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:index name="idx_Account_AziendaId">
+          <orm:columnMapping>
+            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="idx_Accunt_StudioCommercialeId">
+          <orm:columnMapping>
+            <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+    </orm:schema>
     <orm:relational-naming-settings>
+      <orm:remove-leading-underscore>False</orm:remove-leading-underscore>
       <orm:source-strategy>Property</orm:source-strategy>
       <orm:remove-camel-case>False</orm:remove-camel-case>
     </orm:relational-naming-settings>
@@ -230,11 +276,16 @@
     <CodeGenerationSettings>
       <MappingDefinitionType>Xml</MappingDefinitionType>
     </CodeGenerationSettings>
-    <SchemaUpdateSettings />
+    <SchemaUpdateSettings>
+      <DeploymentProject>DataLayer</DeploymentProject>
+    </SchemaUpdateSettings>
     <BackendConfigurationSettings>
       <BackendConfiguration>
         <Backend>MsSql</Backend>
         <ProviderName>System.Data.SqlClient</ProviderName>
+        <Logging>
+          <MetricStoreSnapshotInterval>0</MetricStoreSnapshotInterval>
+        </Logging>
       </BackendConfiguration>
     </BackendConfigurationSettings>
   </ModelSettings>
@@ -401,6 +452,9 @@
       <Property Id="16c74a7b-3884-4a68-a670-d62b25a5cc39" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="44954c50-8bdc-4418-aa65-afad06e1af18" name="StudioCommercialeId" type="Int32" label="StudioCommercialeId : Int32" fieldName="_studioCommercialeId" />
       <Property Id="8a490d19-0b11-4647-9669-53f48f18d45f" name="AziendaId" type="Int32" label="AziendaId : Int32" fieldName="_aziendaId" />
+      <Property Id="300877d1-ca89-4ff5-b794-04f9e1b0f40c" name="Username" label="Username : String" fieldName="_username" />
+      <Property Id="2728b58d-712b-4b12-96fa-c3d110102a8d" name="Password" label="Password : String" fieldName="_password" />
+      <Property Id="732e9d3e-610c-4a21-b04d-3898fd9310a8" name="Nickname" label="Nickname : String" fieldName="_nickname" />
       <AssociationTargets>
         <Association Id="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" SourceMultiplicity="ZeroOne" name="AccountHasStudioCommerciale">
           <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />
