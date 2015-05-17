@@ -42,6 +42,64 @@ namespace WcfService
         #endregion
         #endregion
 
+        #region StudioCommerciale
+        #region CRUD
+        [OperationContract]
+        Dto.StudioCommercialeDto CreateStudioCommerciale(Dto.StudioCommercialeDto studioCommerciale);
+
+        [OperationContract]
+        IEnumerable<Dto.StudioCommercialeDto> ReadStudiCommerciali();
+
+        [OperationContract]
+        bool UpdateStudioCommerciale(Dto.StudioCommercialeDto studioCommerciale);
+
+        [OperationContract]
+        bool DeleteStudioCommerciale(Dto.StudioCommercialeDto studioCommerciale);
+
+        [OperationContract]
+        int CountStudiCommerciali();
+        #endregion
+        #region Custom
+        [OperationContract]
+        IEnumerable<Dto.StudioCommercialeDto> LoadStudiCommerciali(int skip, int take, string search = null, object advancedSearch = null, OrderBy orderBy = null);
+
+        [OperationContract]
+        int CountStudiCommerciali(string search = null, object advancedSearch = null);
+
+        [OperationContract]
+        Dto.StudioCommercialeDto ReadStudioCommerciale(object id);
+         #endregion
+        #endregion
+
+        #region AnagraficaAzienda
+        #region CRUD
+        [OperationContract]
+        Dto.AnagraficaAziendaDto CreateAnagraficaAzienda(Dto.AnagraficaAziendaDto anagraficaAzienda);
+
+        [OperationContract]
+        IEnumerable<Dto.AnagraficaAziendaDto> ReadAnagraficheAziende();
+
+        [OperationContract]
+        bool UpdateAnagraficaAzienda(Dto.AnagraficaAziendaDto anagraficaAzienda);
+
+        [OperationContract]
+        bool DeleteAnagraficaAzienda(Dto.AnagraficaAziendaDto anagraficaAzienda);
+
+        [OperationContract]
+        int CountAnagraficheAziende();
+        #endregion
+        #region Custom
+        [OperationContract]
+        IEnumerable<Dto.AnagraficaAziendaDto> LoadAnagraficheAziende(int skip, int take, string search = null, object advancedSearch = null, OrderBy orderBy = null);
+
+        [OperationContract]
+        int CountAnagraficheAziende(string search = null, object advancedSearch = null);
+
+        [OperationContract]
+        Dto.AnagraficaAziendaDto ReadAnagraficaAzienda(object id);
+        #endregion
+        #endregion
+
     }
 
 
