@@ -50,8 +50,8 @@ namespace DataLayer
 			}
 		}
 		
-		private DateTime _data;
-		public virtual DateTime Data
+		private DateTime? _data;
+		public virtual DateTime? Data
 		{
 			get
 			{
@@ -89,6 +89,19 @@ namespace DataLayer
 			}
 		}
 		
+		private string _stato;
+		public virtual string Stato
+		{
+			get
+			{
+				return this._stato;
+			}
+			set
+			{
+				this._stato = value;
+			}
+		}
+		
 		private Comunicazione _comunicazione;
 		public virtual Comunicazione Comunicazione
 		{
@@ -108,6 +121,15 @@ namespace DataLayer
 			get
 			{
 				return this._documentos;
+			}
+		}
+		
+		private IList<Customer> _customers = new List<Customer>();
+		public virtual IList<Customer> Customers
+		{
+			get
+			{
+				return this._customers;
 			}
 		}
 		

@@ -171,14 +171,14 @@ namespace WcfService.Repositories
 	    }
 	}
 	
-	public partial interface INominativoRepository : IRepository<Nominativo>
+	public partial interface IAnagraficaAziendaRepository : IRepository<AnagraficaAzienda>
 	{ 
 	
 	}
 	
-	public partial class NominativoRepository : Repository<Nominativo>, INominativoRepository
+	public partial class AnagraficaAziendaRepository : Repository<AnagraficaAzienda>, IAnagraficaAziendaRepository
 	{
-	    public NominativoRepository(IEntitiesModelUnitOfWork unitOfWork)
+	    public AnagraficaAziendaRepository(IEntitiesModelUnitOfWork unitOfWork)
 	        : base(unitOfWork)
 	    {
 	    }
@@ -192,6 +192,19 @@ namespace WcfService.Repositories
 	public partial class ClienteRepository : Repository<Cliente>, IClienteRepository
 	{
 	    public ClienteRepository(IEntitiesModelUnitOfWork unitOfWork)
+	        : base(unitOfWork)
+	    {
+	    }
+	}
+	
+	public partial interface ICustomerRepository : IRepository<Customer>
+	{ 
+	
+	}
+	
+	public partial class CustomerRepository : Repository<Customer>, ICustomerRepository
+	{
+	    public CustomerRepository(IEntitiesModelUnitOfWork unitOfWork)
 	        : base(unitOfWork)
 	    {
 	    }

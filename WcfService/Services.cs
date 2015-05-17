@@ -286,14 +286,14 @@ namespace WcfService.Services
 	    }
 	}
 	
-	public partial interface INominativoService : IService<NominativoDto, Nominativo>
+	public partial interface IAnagraficaAziendaService : IService<AnagraficaAziendaDto, AnagraficaAzienda>
 	{
 	
 	}
 	
-	public partial class NominativoService : Service<NominativoDto, Nominativo>, INominativoService
+	public partial class AnagraficaAziendaService : Service<AnagraficaAziendaDto, AnagraficaAzienda>, IAnagraficaAziendaService
 	{
-	    public NominativoService(INominativoAssembler assembler, INominativoRepository repository)
+	    public AnagraficaAziendaService(IAnagraficaAziendaAssembler assembler, IAnagraficaAziendaRepository repository)
 	        : base(assembler, repository)
 	    {
 	
@@ -308,6 +308,20 @@ namespace WcfService.Services
 	public partial class ClienteService : Service<ClienteDto, Cliente>, IClienteService
 	{
 	    public ClienteService(IClienteAssembler assembler, IClienteRepository repository)
+	        : base(assembler, repository)
+	    {
+	
+	    }
+	}
+	
+	public partial interface ICustomerService : IService<CustomerDto, Customer>
+	{
+	
+	}
+	
+	public partial class CustomerService : Service<CustomerDto, Customer>, ICustomerService
+	{
+	    public CustomerService(ICustomerAssembler assembler, ICustomerRepository repository)
 	        : base(assembler, repository)
 	    {
 	

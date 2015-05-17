@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class Nominativo
+	public partial class AnagraficaAzienda
 	{
 		private int _id;
 		public virtual int Id
@@ -60,19 +60,6 @@ namespace DataLayer
 			set
 			{
 				this._ragioneSociale = value;
-			}
-		}
-		
-		private string _iDNominativo;
-		public virtual string IDNominativo
-		{
-			get
-			{
-				return this._iDNominativo;
-			}
-			set
-			{
-				this._iDNominativo = value;
 			}
 		}
 		
@@ -180,6 +167,19 @@ namespace DataLayer
 			}
 		}
 		
+		private string _cap;
+		public virtual string Cap
+		{
+			get
+			{
+				return this._cap;
+			}
+			set
+			{
+				this._cap = value;
+			}
+		}
+		
 		private StudioCommerciale _studioCommerciale;
 		public virtual StudioCommerciale StudioCommerciale
 		{
@@ -190,6 +190,24 @@ namespace DataLayer
 			set
 			{
 				this._studioCommerciale = value;
+			}
+		}
+		
+		private IList<Azienda> _aziendas = new List<Azienda>();
+		public virtual IList<Azienda> Aziendas
+		{
+			get
+			{
+				return this._aziendas;
+			}
+		}
+		
+		private IList<Cliente> _clientes = new List<Cliente>();
+		public virtual IList<Cliente> Clientes
+		{
+			get
+			{
+				return this._clientes;
 			}
 		}
 		

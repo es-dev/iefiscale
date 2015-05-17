@@ -76,149 +76,6 @@ namespace DataLayer
 			}
 		}
 		
-		private string _iDConto;
-		public virtual string IDConto
-		{
-			get
-			{
-				return this._iDConto;
-			}
-			set
-			{
-				this._iDConto = value;
-			}
-		}
-		
-		private string _coficeFiscale;
-		public virtual string CoficeFiscale
-		{
-			get
-			{
-				return this._coficeFiscale;
-			}
-			set
-			{
-				this._coficeFiscale = value;
-			}
-		}
-		
-		private string _partitaIVA;
-		public virtual string PartitaIVA
-		{
-			get
-			{
-				return this._partitaIVA;
-			}
-			set
-			{
-				this._partitaIVA = value;
-			}
-		}
-		
-		private string _ragioneSociale;
-		public virtual string RagioneSociale
-		{
-			get
-			{
-				return this._ragioneSociale;
-			}
-			set
-			{
-				this._ragioneSociale = value;
-			}
-		}
-		
-		private string _indirizzo;
-		public virtual string Indirizzo
-		{
-			get
-			{
-				return this._indirizzo;
-			}
-			set
-			{
-				this._indirizzo = value;
-			}
-		}
-		
-		private string _cap;
-		public virtual string Cap
-		{
-			get
-			{
-				return this._cap;
-			}
-			set
-			{
-				this._cap = value;
-			}
-		}
-		
-		private string _comune;
-		public virtual string Comune
-		{
-			get
-			{
-				return this._comune;
-			}
-			set
-			{
-				this._comune = value;
-			}
-		}
-		
-		private string _provincia;
-		public virtual string Provincia
-		{
-			get
-			{
-				return this._provincia;
-			}
-			set
-			{
-				this._provincia = value;
-			}
-		}
-		
-		private string _email;
-		public virtual string Email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				this._email = value;
-			}
-		}
-		
-		private string _telefono;
-		public virtual string Telefono
-		{
-			get
-			{
-				return this._telefono;
-			}
-			set
-			{
-				this._telefono = value;
-			}
-		}
-		
-		private string _fax;
-		public virtual string Fax
-		{
-			get
-			{
-				return this._fax;
-			}
-			set
-			{
-				this._fax = value;
-			}
-		}
-		
 		private int _studioCommercialeId;
 		public virtual int StudioCommercialeId
 		{
@@ -232,6 +89,45 @@ namespace DataLayer
 			}
 		}
 		
+		private int _anagraficaAziendaId;
+		public virtual int AnagraficaAziendaId
+		{
+			get
+			{
+				return this._anagraficaAziendaId;
+			}
+			set
+			{
+				this._anagraficaAziendaId = value;
+			}
+		}
+		
+		private string _mdbFile;
+		public virtual string MdbFile
+		{
+			get
+			{
+				return this._mdbFile;
+			}
+			set
+			{
+				this._mdbFile = value;
+			}
+		}
+		
+		private DateTime? _ultimoAggiornamento;
+		public virtual DateTime? UltimoAggiornamento
+		{
+			get
+			{
+				return this._ultimoAggiornamento;
+			}
+			set
+			{
+				this._ultimoAggiornamento = value;
+			}
+		}
+		
 		private StudioCommerciale _studioCommerciale;
 		public virtual StudioCommerciale StudioCommerciale
 		{
@@ -242,6 +138,19 @@ namespace DataLayer
 			set
 			{
 				this._studioCommerciale = value;
+			}
+		}
+		
+		private AnagraficaAzienda _anagraficaAzienda;
+		public virtual AnagraficaAzienda AnagraficaAzienda
+		{
+			get
+			{
+				return this._anagraficaAzienda;
+			}
+			set
+			{
+				this._anagraficaAzienda = value;
 			}
 		}
 		

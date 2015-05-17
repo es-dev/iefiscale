@@ -71,6 +71,9 @@
     <Compile Include="Account.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
+    <Compile Include="AnagraficaAzienda.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
     <Compile Include="Azienda.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
@@ -81,6 +84,9 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
     <Compile Include="Contabilita.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
     <Compile Include="Documento.generated.cs">
@@ -95,9 +101,6 @@
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
     <Compile Include="Import.generated.cs">
-      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
-    </Compile>
-    <Compile Include="Nominativo.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -63,8 +63,8 @@ namespace DataLayer
 			}
 		}
 		
-		private DateTime _scadenzaIVA;
-		public virtual DateTime ScadenzaIVA
+		private DateTime? _scadenzaIVA;
+		public virtual DateTime? ScadenzaIVA
 		{
 			get
 			{
