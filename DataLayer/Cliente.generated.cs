@@ -50,6 +50,32 @@ namespace DataLayer
 			}
 		}
 		
+		private string _iDCliente;
+		public virtual string IDCliente
+		{
+			get
+			{
+				return this._iDCliente;
+			}
+			set
+			{
+				this._iDCliente = value;
+			}
+		}
+		
+		private int _anagraficaAziendaId;
+		public virtual int AnagraficaAziendaId
+		{
+			get
+			{
+				return this._anagraficaAziendaId;
+			}
+			set
+			{
+				this._anagraficaAziendaId = value;
+			}
+		}
+		
 		private string _iDConto;
 		public virtual string IDConto
 		{
@@ -63,19 +89,6 @@ namespace DataLayer
 			}
 		}
 		
-		private string _iDNominativo;
-		public virtual string IDNominativo
-		{
-			get
-			{
-				return this._iDNominativo;
-			}
-			set
-			{
-				this._iDNominativo = value;
-			}
-		}
-		
 		private Azienda _azienda;
 		public virtual Azienda Azienda
 		{
@@ -86,6 +99,19 @@ namespace DataLayer
 			set
 			{
 				this._azienda = value;
+			}
+		}
+		
+		private AnagraficaAzienda _anagraficaAzienda;
+		public virtual AnagraficaAzienda AnagraficaAzienda
+		{
+			get
+			{
+				return this._anagraficaAzienda;
+			}
+			set
+			{
+				this._anagraficaAzienda = value;
 			}
 		}
 		

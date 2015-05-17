@@ -126,6 +126,996 @@ namespace WcfService
 	    
 	    #endregion
 	    
+	    #region AnagraficaAziendas CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all anagraficaaziendas.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AnagraficaAziendaDto> ReadAnagraficaAziendas();
+	
+	    /// <summary>
+	    /// Returns a specified amount of anagraficaaziendas from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AnagraficaAziendaDto> ReadAnagraficaAziendasPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all anagraficaaziendas filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AnagraficaAziendaDto> ReadAnagraficaAziendasFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of anagraficaaziendas from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AnagraficaAziendaDto> ReadAnagraficaAziendasPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a anagraficaazienda with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    AnagraficaAziendaDto ReadAnagraficaAzienda(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all anagraficaaziendas count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int AnagraficaAziendasCount();
+	
+	    /// <summary>
+	    /// Returns all anagraficaaziendas count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int AnagraficaAziendasCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new anagraficaazienda from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="anagraficaazienda">The dto object.</param>
+	    /// <returns>The dto key of the newly created anagraficaazienda.</returns>
+	    [OperationContract]
+	    string CreateAnagraficaAzienda(AnagraficaAziendaDto anagraficaazienda);
+	
+	    /// <summary>
+	    /// Updates anagraficaazienda in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="anagraficaazienda">The dto object.</param>
+	    [OperationContract]
+	    void UpdateAnagraficaAzienda(AnagraficaAziendaDto anagraficaazienda);
+	
+	    /// <summary>
+	    /// Update an existing anagraficaaziendas in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="anagraficaaziendas">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateAnagraficaAziendas(IEnumerable<AnagraficaAziendaDto> anagraficaaziendas);
+	
+	    /// <summary>
+	    /// Deletes anagraficaazienda from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="anagraficaazienda">The dto object.</param>
+	    [OperationContract]
+	    void DeleteAnagraficaAzienda(AnagraficaAziendaDto anagraficaazienda);
+	
+	    /// <summary>
+	    /// Delete anagraficaaziendas from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="anagraficaaziendas">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteAnagraficaAziendas(IEnumerable<AnagraficaAziendaDto> anagraficaaziendas);
+	    
+	    #endregion
+	    
+	    #region Aziendas CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all aziendas.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AziendaDto> ReadAziendas();
+	
+	    /// <summary>
+	    /// Returns a specified amount of aziendas from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AziendaDto> ReadAziendasPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all aziendas filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AziendaDto> ReadAziendasFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of aziendas from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<AziendaDto> ReadAziendasPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a azienda with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    AziendaDto ReadAzienda(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all aziendas count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int AziendasCount();
+	
+	    /// <summary>
+	    /// Returns all aziendas count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int AziendasCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new azienda from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="azienda">The dto object.</param>
+	    /// <returns>The dto key of the newly created azienda.</returns>
+	    [OperationContract]
+	    string CreateAzienda(AziendaDto azienda);
+	
+	    /// <summary>
+	    /// Updates azienda in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="azienda">The dto object.</param>
+	    [OperationContract]
+	    void UpdateAzienda(AziendaDto azienda);
+	
+	    /// <summary>
+	    /// Update an existing aziendas in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="aziendas">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateAziendas(IEnumerable<AziendaDto> aziendas);
+	
+	    /// <summary>
+	    /// Deletes azienda from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="azienda">The dto object.</param>
+	    [OperationContract]
+	    void DeleteAzienda(AziendaDto azienda);
+	
+	    /// <summary>
+	    /// Delete aziendas from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="aziendas">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteAziendas(IEnumerable<AziendaDto> aziendas);
+	    
+	    #endregion
+	    
+	    #region Clientes CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all clientes.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ClienteDto> ReadClientes();
+	
+	    /// <summary>
+	    /// Returns a specified amount of clientes from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ClienteDto> ReadClientesPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all clientes filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ClienteDto> ReadClientesFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of clientes from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ClienteDto> ReadClientesPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a cliente with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    ClienteDto ReadCliente(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all clientes count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ClientesCount();
+	
+	    /// <summary>
+	    /// Returns all clientes count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ClientesCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new cliente from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="cliente">The dto object.</param>
+	    /// <returns>The dto key of the newly created cliente.</returns>
+	    [OperationContract]
+	    string CreateCliente(ClienteDto cliente);
+	
+	    /// <summary>
+	    /// Updates cliente in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="cliente">The dto object.</param>
+	    [OperationContract]
+	    void UpdateCliente(ClienteDto cliente);
+	
+	    /// <summary>
+	    /// Update an existing clientes in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="clientes">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateClientes(IEnumerable<ClienteDto> clientes);
+	
+	    /// <summary>
+	    /// Deletes cliente from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="cliente">The dto object.</param>
+	    [OperationContract]
+	    void DeleteCliente(ClienteDto cliente);
+	
+	    /// <summary>
+	    /// Delete clientes from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="clientes">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteClientes(IEnumerable<ClienteDto> clientes);
+	    
+	    #endregion
+	    
+	    #region Comunicaziones CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all comunicaziones.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ComunicazioneDto> ReadComunicaziones();
+	
+	    /// <summary>
+	    /// Returns a specified amount of comunicaziones from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ComunicazioneDto> ReadComunicazionesPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all comunicaziones filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ComunicazioneDto> ReadComunicazionesFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of comunicaziones from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ComunicazioneDto> ReadComunicazionesPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a comunicazione with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    ComunicazioneDto ReadComunicazione(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all comunicaziones count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ComunicazionesCount();
+	
+	    /// <summary>
+	    /// Returns all comunicaziones count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ComunicazionesCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new comunicazione from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="comunicazione">The dto object.</param>
+	    /// <returns>The dto key of the newly created comunicazione.</returns>
+	    [OperationContract]
+	    string CreateComunicazione(ComunicazioneDto comunicazione);
+	
+	    /// <summary>
+	    /// Updates comunicazione in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="comunicazione">The dto object.</param>
+	    [OperationContract]
+	    void UpdateComunicazione(ComunicazioneDto comunicazione);
+	
+	    /// <summary>
+	    /// Update an existing comunicaziones in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="comunicaziones">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateComunicaziones(IEnumerable<ComunicazioneDto> comunicaziones);
+	
+	    /// <summary>
+	    /// Deletes comunicazione from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="comunicazione">The dto object.</param>
+	    [OperationContract]
+	    void DeleteComunicazione(ComunicazioneDto comunicazione);
+	
+	    /// <summary>
+	    /// Delete comunicaziones from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="comunicaziones">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteComunicaziones(IEnumerable<ComunicazioneDto> comunicaziones);
+	    
+	    #endregion
+	    
+	    #region Contabilitas CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all contabilitas.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ContabilitaDto> ReadContabilitas();
+	
+	    /// <summary>
+	    /// Returns a specified amount of contabilitas from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ContabilitaDto> ReadContabilitasPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all contabilitas filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ContabilitaDto> ReadContabilitasFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of contabilitas from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ContabilitaDto> ReadContabilitasPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a contabilita with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    ContabilitaDto ReadContabilita(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all contabilitas count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ContabilitasCount();
+	
+	    /// <summary>
+	    /// Returns all contabilitas count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ContabilitasCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new contabilita from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="contabilita">The dto object.</param>
+	    /// <returns>The dto key of the newly created contabilita.</returns>
+	    [OperationContract]
+	    string CreateContabilita(ContabilitaDto contabilita);
+	
+	    /// <summary>
+	    /// Updates contabilita in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="contabilita">The dto object.</param>
+	    [OperationContract]
+	    void UpdateContabilita(ContabilitaDto contabilita);
+	
+	    /// <summary>
+	    /// Update an existing contabilitas in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="contabilitas">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateContabilitas(IEnumerable<ContabilitaDto> contabilitas);
+	
+	    /// <summary>
+	    /// Deletes contabilita from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="contabilita">The dto object.</param>
+	    [OperationContract]
+	    void DeleteContabilita(ContabilitaDto contabilita);
+	
+	    /// <summary>
+	    /// Delete contabilitas from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="contabilitas">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteContabilitas(IEnumerable<ContabilitaDto> contabilitas);
+	    
+	    #endregion
+	    
+	    #region Customers CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all customers.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<CustomerDto> ReadCustomers();
+	
+	    /// <summary>
+	    /// Returns a specified amount of customers from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<CustomerDto> ReadCustomersPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all customers filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<CustomerDto> ReadCustomersFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of customers from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<CustomerDto> ReadCustomersPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a customer with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    CustomerDto ReadCustomer(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all customers count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int CustomersCount();
+	
+	    /// <summary>
+	    /// Returns all customers count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int CustomersCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new customer from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="customer">The dto object.</param>
+	    /// <returns>The dto key of the newly created customer.</returns>
+	    [OperationContract]
+	    string CreateCustomer(CustomerDto customer);
+	
+	    /// <summary>
+	    /// Updates customer in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="customer">The dto object.</param>
+	    [OperationContract]
+	    void UpdateCustomer(CustomerDto customer);
+	
+	    /// <summary>
+	    /// Update an existing customers in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="customers">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateCustomers(IEnumerable<CustomerDto> customers);
+	
+	    /// <summary>
+	    /// Deletes customer from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="customer">The dto object.</param>
+	    [OperationContract]
+	    void DeleteCustomer(CustomerDto customer);
+	
+	    /// <summary>
+	    /// Delete customers from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="customers">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteCustomers(IEnumerable<CustomerDto> customers);
+	    
+	    #endregion
+	    
+	    #region Documentos CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all documentos.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<DocumentoDto> ReadDocumentos();
+	
+	    /// <summary>
+	    /// Returns a specified amount of documentos from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<DocumentoDto> ReadDocumentosPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all documentos filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<DocumentoDto> ReadDocumentosFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of documentos from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<DocumentoDto> ReadDocumentosPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a documento with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    DocumentoDto ReadDocumento(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all documentos count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int DocumentosCount();
+	
+	    /// <summary>
+	    /// Returns all documentos count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int DocumentosCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new documento from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="documento">The dto object.</param>
+	    /// <returns>The dto key of the newly created documento.</returns>
+	    [OperationContract]
+	    string CreateDocumento(DocumentoDto documento);
+	
+	    /// <summary>
+	    /// Updates documento in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="documento">The dto object.</param>
+	    [OperationContract]
+	    void UpdateDocumento(DocumentoDto documento);
+	
+	    /// <summary>
+	    /// Update an existing documentos in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="documentos">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateDocumentos(IEnumerable<DocumentoDto> documentos);
+	
+	    /// <summary>
+	    /// Deletes documento from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="documento">The dto object.</param>
+	    [OperationContract]
+	    void DeleteDocumento(DocumentoDto documento);
+	
+	    /// <summary>
+	    /// Delete documentos from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="documentos">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteDocumentos(IEnumerable<DocumentoDto> documentos);
+	    
+	    #endregion
+	    
+	    #region Exports CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all exports.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ExportDto> ReadExports();
+	
+	    /// <summary>
+	    /// Returns a specified amount of exports from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ExportDto> ReadExportsPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all exports filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ExportDto> ReadExportsFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of exports from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ExportDto> ReadExportsPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a export with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    ExportDto ReadExport(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all exports count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ExportsCount();
+	
+	    /// <summary>
+	    /// Returns all exports count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ExportsCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new export from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="export">The dto object.</param>
+	    /// <returns>The dto key of the newly created export.</returns>
+	    [OperationContract]
+	    string CreateExport(ExportDto export);
+	
+	    /// <summary>
+	    /// Updates export in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="export">The dto object.</param>
+	    [OperationContract]
+	    void UpdateExport(ExportDto export);
+	
+	    /// <summary>
+	    /// Update an existing exports in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="exports">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateExports(IEnumerable<ExportDto> exports);
+	
+	    /// <summary>
+	    /// Deletes export from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="export">The dto object.</param>
+	    [OperationContract]
+	    void DeleteExport(ExportDto export);
+	
+	    /// <summary>
+	    /// Delete exports from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="exports">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteExports(IEnumerable<ExportDto> exports);
+	    
+	    #endregion
+	    
+	    #region Imports CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all imports.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ImportDto> ReadImports();
+	
+	    /// <summary>
+	    /// Returns a specified amount of imports from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ImportDto> ReadImportsPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all imports filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ImportDto> ReadImportsFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of imports from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<ImportDto> ReadImportsPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a import with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    ImportDto ReadImport(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all imports count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ImportsCount();
+	
+	    /// <summary>
+	    /// Returns all imports count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int ImportsCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new import from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="import">The dto object.</param>
+	    /// <returns>The dto key of the newly created import.</returns>
+	    [OperationContract]
+	    string CreateImport(ImportDto import);
+	
+	    /// <summary>
+	    /// Updates import in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="import">The dto object.</param>
+	    [OperationContract]
+	    void UpdateImport(ImportDto import);
+	
+	    /// <summary>
+	    /// Update an existing imports in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="imports">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateImports(IEnumerable<ImportDto> imports);
+	
+	    /// <summary>
+	    /// Deletes import from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="import">The dto object.</param>
+	    [OperationContract]
+	    void DeleteImport(ImportDto import);
+	
+	    /// <summary>
+	    /// Delete imports from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="imports">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteImports(IEnumerable<ImportDto> imports);
+	    
+	    #endregion
+	    
+	    #region StudioCommerciales CRUD Operations
+	
+	    /// <summary>
+	    /// Returns all studiocommerciales.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<StudioCommercialeDto> ReadStudioCommerciales();
+	
+	    /// <summary>
+	    /// Returns a specified amount of studiocommerciales from the given start index.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<StudioCommercialeDto> ReadStudioCommercialesPaged(int startIndex, int pageSize);
+	
+	    /// <summary>
+	    /// Returns all studiocommerciales filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<StudioCommercialeDto> ReadStudioCommercialesFiltered(string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a specified amount of studiocommerciales from the given start index filtered by the specified filter expression and sorted by the specified sort expression.
+	    /// </summary>
+	    /// <param name="startIndex">The start index.</param>
+	    /// <param name="pageSize">The returned entities count.</param>
+	    /// <param name="sortExpression">The sort expression.</param>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    IEnumerable<StudioCommercialeDto> ReadStudioCommercialesPagedAndFiltered(int startIndex, int pageSize, string sortExpression, string filterExpression);
+	
+	    /// <summary>
+	    /// Returns a studiocommerciale with the specified dto key.
+	    /// </summary>
+	    /// <param name="dtoKey">The specified dto key value.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    StudioCommercialeDto ReadStudioCommerciale(string dtoKey);
+	
+	    /// <summary>
+	    /// Returns all studiocommerciales count.
+	    /// </summary>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int StudioCommercialesCount();
+	
+	    /// <summary>
+	    /// Returns all studiocommerciales count filtered by the specified filter expression.
+	    /// </summary>
+	    /// <param name="filterExpression">The filter expression.</param>
+	    /// <returns></returns>
+	    [OperationContract]
+	    int StudioCommercialesCountFiltered(string filterExpression);
+	
+	    /// <summary>
+	    /// Adds a new studiocommerciale from the given dto object into the database.
+	    /// </summary>
+	    /// <param name="studiocommerciale">The dto object.</param>
+	    /// <returns>The dto key of the newly created studiocommerciale.</returns>
+	    [OperationContract]
+	    string CreateStudioCommerciale(StudioCommercialeDto studiocommerciale);
+	
+	    /// <summary>
+	    /// Updates studiocommerciale in the database from the given dto object.
+	    /// </summary>
+	    /// <param name="studiocommerciale">The dto object.</param>
+	    [OperationContract]
+	    void UpdateStudioCommerciale(StudioCommercialeDto studiocommerciale);
+	
+	    /// <summary>
+	    /// Update an existing studiocommerciales in the database from the given dto object list.
+	    /// </summary>
+	    /// <param name="studiocommerciales">The dto object list.</param>
+	    [OperationContract]
+	    void UpdateStudioCommerciales(IEnumerable<StudioCommercialeDto> studiocommerciales);
+	
+	    /// <summary>
+	    /// Deletes studiocommerciale from the database by the given dto object.
+	    /// </summary>
+	    /// <param name="studiocommerciale">The dto object.</param>
+	    [OperationContract]
+	    void DeleteStudioCommerciale(StudioCommercialeDto studiocommerciale);
+	
+	    /// <summary>
+	    /// Delete studiocommerciales from the database by the given dto object list.
+	    /// </summary>
+	    /// <param name="studiocommerciales">The dto object list.</param>
+	    [OperationContract]
+	    void DeleteStudioCommerciales(IEnumerable<StudioCommercialeDto> studiocommerciales);
+	    
+	    #endregion
+	    
 	}
 }
 #pragma warning restore 1591

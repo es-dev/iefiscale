@@ -63,19 +63,6 @@ namespace DataLayer
 			}
 		}
 		
-		private string _partitaIVA;
-		public virtual string PartitaIVA
-		{
-			get
-			{
-				return this._partitaIVA;
-			}
-			set
-			{
-				this._partitaIVA = value;
-			}
-		}
-		
 		private string _tipo;
 		public virtual string Tipo
 		{
@@ -89,8 +76,8 @@ namespace DataLayer
 			}
 		}
 		
-		private DateTime _data;
-		public virtual DateTime Data
+		private DateTime? _data;
+		public virtual DateTime? Data
 		{
 			get
 			{
@@ -167,55 +154,68 @@ namespace DataLayer
 			}
 		}
 		
-		private decimal _importo;
-		public virtual decimal Importo
+		private decimal? _totale;
+		public virtual decimal? Totale
 		{
 			get
 			{
-				return this._importo;
+				return this._totale;
 			}
 			set
 			{
-				this._importo = value;
+				this._totale = value;
 			}
 		}
 		
-		private decimal _imponibileIVA;
-		public virtual decimal ImponibileIVA
+		private decimal? _imponibile;
+		public virtual decimal? Imponibile
 		{
 			get
 			{
-				return this._imponibileIVA;
+				return this._imponibile;
 			}
 			set
 			{
-				this._imponibileIVA = value;
+				this._imponibile = value;
 			}
 		}
 		
-		private decimal _importoIVA;
-		public virtual decimal ImportoIVA
+		private decimal? _iVA;
+		public virtual decimal? IVA
 		{
 			get
 			{
-				return this._importoIVA;
+				return this._iVA;
 			}
 			set
 			{
-				this._importoIVA = value;
+				this._iVA = value;
 			}
 		}
 		
-		private string _tipoRiga;
-		public virtual string TipoRiga
+		private string _numero;
+		public virtual string Numero
 		{
 			get
 			{
-				return this._tipoRiga;
+				return this._numero;
 			}
 			set
 			{
-				this._tipoRiga = value;
+				this._numero = value;
+			}
+		}
+		
+		private DateTime? _dataRegistrazione;
+		public virtual DateTime? DataRegistrazione
+		{
+			get
+			{
+				return this._dataRegistrazione;
+			}
+			set
+			{
+				this._dataRegistrazione = value;
 			}
 		}
 		

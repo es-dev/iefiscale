@@ -3,45 +3,96 @@
   <orm:orm name="EntitiesModel" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
     <orm:namespace name="DataLayer" default="true">
       <orm:class name="StudioCommerciale" uniqueId="fd17f27b-7f24-4051-92d7-72aa3850e167">
+        <orm:table name="StudioCommerciale" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="96e9cfe2-cc59-4d50-9edb-683b5a73a4cd" type="System.Int32" />
-        <orm:field name="_denominazione" property="Denominazione" uniqueId="0908170c-a109-4e0c-8d7d-689efa832dbc" type="System.String" />
-        <orm:field name="_tipoSoftwareContabilita" property="TipoSoftwareContabilita" uniqueId="653fd2f8-d9c3-4b1b-b43b-158d1280b90c" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="96e9cfe2-cc59-4d50-9edb-683b5a73a4cd" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_denominazione" property="Denominazione" uniqueId="0908170c-a109-4e0c-8d7d-689efa832dbc" type="System.String">
+          <orm:column name="Denominazione" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_tipoSoftwareContabilita" property="TipoSoftwareContabilita" uniqueId="653fd2f8-d9c3-4b1b-b43b-158d1280b90c" type="System.String">
+          <orm:column name="TipoSoftwareContabilita" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="39debbb8-d0c6-4eaa-82df-4ffa9a7561c9" type="System.String">
+          <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="9da43a69-45b1-4718-aa28-bf3d14376180" type="System.String">
+          <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_comune" property="Comune" uniqueId="733b917f-dbce-4b54-90a6-901d4e312155" type="System.String">
+          <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_provincia" property="Provincia" uniqueId="a839c35e-0d0e-47c0-8c19-0f8320bd7e1d" type="System.String">
+          <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_cap" property="Cap" uniqueId="b2bf24e1-fb3c-41a8-87f8-3a7b0ea0194f" type="System.String">
+          <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_email" property="Email" uniqueId="245bde7e-8b6d-4937-ad63-920d68585a68" type="System.String">
+          <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_telefono" property="Telefono" uniqueId="4b6fc0bc-9163-4e3f-bee3-fcfab2bd8f29" type="System.String">
+          <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_fax" property="Fax" uniqueId="a9c8c514-1579-4e43-b0d8-603a3162ba81" type="System.String">
+          <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="338333c6-de01-4a1f-8cb2-ad9be01abdfa" type="DataLayer.Account">
           <orm:collection element-class="DataLayer.Account" inverse-field="_studioCommerciale" order-by="" uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" />
         </orm:field>
         <orm:field name="_aziendas" property="Aziendas" behavior="readwrite" uniqueId="932fbca5-ff4c-4e5f-887b-006726ebd4e2" type="DataLayer.Azienda">
           <orm:collection element-class="DataLayer.Azienda" inverse-field="_studioCommerciale" order-by="" uniqueId="fee785b5-e05d-4ac6-bb79-47782142a154" />
         </orm:field>
-        <orm:field name="_nominativos" property="Nominativos" behavior="readwrite" uniqueId="e5c6036c-701c-40a3-a054-7b24f023fdcb" type="DataLayer.Nominativo">
-          <orm:collection element-class="DataLayer.Nominativo" inverse-field="_studioCommerciale" order-by="" uniqueId="532c3e31-5a0b-4570-950b-2429ffe7618c" />
+        <orm:field name="_anagraficaAziendas" property="AnagraficaAziendas" behavior="readwrite" uniqueId="7d228e49-e357-4d62-afa2-cdb931d7ffd8" type="DataLayer.AnagraficaAzienda">
+          <orm:collection element-class="DataLayer.AnagraficaAzienda" inverse-field="_studioCommerciale" order-by="" uniqueId="749cf01c-1ad3-4635-aff0-a4c895f224c0" />
         </orm:field>
       </orm:class>
       <orm:class name="Azienda" uniqueId="c83083d9-821a-4819-b444-4f90e9ef5b53">
+        <orm:table name="Azienda" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="796313a4-47f3-4545-9515-64e158e8bb4a" type="System.Int32" />
-        <orm:field name="_tipoContabilita" property="TipoContabilita" uniqueId="87d26102-6b0a-4446-b23f-1985a5e9bda8" type="System.String" />
-        <orm:field name="_tipoSoftwareFatturazione" property="TipoSoftwareFatturazione" uniqueId="4ab35b68-82c5-4c6f-917f-bc4017b88c83" type="System.String" />
-        <orm:field name="_iDAzienda" property="IDAzienda" uniqueId="b4533ff7-6f95-479d-a32c-d3bc354f0356" type="System.String" />
-        <orm:field name="_iDConto" property="IDConto" uniqueId="6aae03ff-9a2e-4279-b8ef-bb9a860ea588" type="System.String" />
-        <orm:field name="_coficeFiscale" property="CoficeFiscale" uniqueId="29600248-659b-4ea0-8f24-5c6a54556370" type="System.String" />
-        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="4ad36ff9-6203-4709-a292-f3dadb0f5166" type="System.String" />
-        <orm:field name="_ragioneSociale" property="RagioneSociale" uniqueId="80d07201-4be8-4dc6-81a5-afb371a362db" type="System.String" />
-        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="49f206d1-3a9a-42e3-8421-a07819df51e6" type="System.String" />
-        <orm:field name="_cap" property="Cap" uniqueId="8eb0ccad-ec72-4404-814f-f4610b77694e" type="System.String" />
-        <orm:field name="_comune" property="Comune" uniqueId="e3ad6b88-638d-446b-96ec-780206146dfd" type="System.String" />
-        <orm:field name="_provincia" property="Provincia" uniqueId="c599075d-82fa-45fc-8194-c7a9261b03d0" type="System.String" />
-        <orm:field name="_email" property="Email" uniqueId="cee150c9-4c97-42f8-9a76-e04586cb554d" type="System.String" />
-        <orm:field name="_telefono" property="Telefono" uniqueId="b0ede9c6-ff38-43bf-9854-8b3076ea4202" type="System.String" />
-        <orm:field name="_fax" property="Fax" uniqueId="16f8a896-d7da-4de6-8410-347d78c57c16" type="System.String" />
-        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="ea0bd281-143b-4b48-a893-5e79cf53c465" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="796313a4-47f3-4545-9515-64e158e8bb4a" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_tipoContabilita" property="TipoContabilita" uniqueId="87d26102-6b0a-4446-b23f-1985a5e9bda8" type="System.String">
+          <orm:column name="TipoContabilita" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_tipoSoftwareFatturazione" property="TipoSoftwareFatturazione" uniqueId="4ab35b68-82c5-4c6f-917f-bc4017b88c83" type="System.String">
+          <orm:column name="TipoSoftwareFatturazione" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_iDAzienda" property="IDAzienda" uniqueId="b4533ff7-6f95-479d-a32c-d3bc354f0356" type="System.String">
+          <orm:column name="IDAzienda" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="ea0bd281-143b-4b48-a893-5e79cf53c465" type="System.Int32">
+          <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_anagraficaAziendaId" property="AnagraficaAziendaId" uniqueId="671cfdef-2d3a-413c-8af2-6be7621585db" type="System.Int32">
+          <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_mdbFile" property="MdbFile" uniqueId="15905faf-8fb1-4fbc-8c10-61c75c828dd3" type="System.String">
+          <orm:column name="MdbFile" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_ultimoAggiornamento" property="UltimoAggiornamento" uniqueId="b92f217b-e746-4123-a067-a466678a05cc" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="UltimoAggiornamento" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
         <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="008134a5-0338-43ee-b6d7-8b3ecef21879" type="DataLayer.StudioCommerciale">
           <orm:reference uniqueId="fee785b5-e05d-4ac6-bb79-47782142a154" association-name="AziendaHasStudioCommerciale">
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_anagraficaAzienda" property="AnagraficaAzienda" behavior="readwrite" uniqueId="d2b77fbb-5578-4d41-804a-3cabea7ed46c" type="DataLayer.AnagraficaAzienda">
+          <orm:reference uniqueId="b9fa4b5c-0f8b-4437-8524-1c509209fe6e" association-name="AziendaHasAnagraficaAzienda">
+            <orm:sharedfield name="_anagraficaAziendaId" target-class="DataLayer.AnagraficaAzienda" target-field="_id" />
           </orm:reference>
         </orm:field>
         <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="71c7e97c-d9d4-41d8-9f42-3376976a077e" type="DataLayer.Account">
@@ -53,15 +104,37 @@
         <orm:field name="_clientes" property="Clientes" behavior="readwrite" uniqueId="8675ddef-37cf-4529-b467-dc218f99a18b" type="DataLayer.Cliente">
           <orm:collection element-class="DataLayer.Cliente" inverse-field="_azienda" order-by="" uniqueId="7a5f31a0-44cc-4ee0-81df-22e811c49b6f" />
         </orm:field>
+        <orm:index name="idx_Azenda_AnagraficaAziendaId">
+          <orm:columnMapping>
+            <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="idx_Azenda_StudioCommercialeId">
+          <orm:columnMapping>
+            <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
       <orm:class name="Contabilita" uniqueId="e6a0e457-21b5-42ac-a6d5-5fc26104598f">
+        <orm:table name="Contabilita" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="5f2f6852-37ff-4445-8be2-ed0931e41a54" type="System.Int32" />
-        <orm:field name="_anno" property="Anno" uniqueId="247d4660-f36f-426c-a0f6-b30a36ae2557" type="System.String" />
-        <orm:field name="_tipo" property="Tipo" uniqueId="ecca0d4f-fa51-4a62-a10f-56f88547e7e2" type="System.String" />
-        <orm:field name="_aziendaId" property="AziendaId" uniqueId="c8bc016e-efd4-46ee-8377-16b112fd6fca" type="System.Int32" />
+        <orm:field name="_id" property="Id" uniqueId="5f2f6852-37ff-4445-8be2-ed0931e41a54" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_anno" property="Anno" uniqueId="247d4660-f36f-426c-a0f6-b30a36ae2557" type="System.String">
+          <orm:column name="Anno" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_tipo" property="Tipo" uniqueId="ecca0d4f-fa51-4a62-a10f-56f88547e7e2" type="System.String">
+          <orm:column name="Tipo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_aziendaId" property="AziendaId" uniqueId="c8bc016e-efd4-46ee-8377-16b112fd6fca" type="System.Int32">
+          <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
         <orm:field name="_azienda" property="Azienda" behavior="readwrite" uniqueId="58960c30-708b-4e78-9fc8-1aa8b6b1ed48" type="DataLayer.Azienda">
           <orm:reference uniqueId="48d6c4bc-c96c-413c-8136-0a8fc065d932" association-name="ContabilitaHasAzienda">
             <orm:sharedfield name="_aziendaId" target-class="DataLayer.Azienda" target-field="_id" />
@@ -70,15 +143,32 @@
         <orm:field name="_comunicaziones" property="Comunicaziones" behavior="readwrite" uniqueId="36b20bbd-49ad-4bd8-9a25-bf7af02602fd" type="DataLayer.Comunicazione">
           <orm:collection element-class="DataLayer.Comunicazione" inverse-field="_contabilita" order-by="" uniqueId="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" />
         </orm:field>
+        <orm:index name="idx_Contabilita_AziendaId">
+          <orm:columnMapping>
+            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
       <orm:class name="Comunicazione" uniqueId="ec3699a2-1f9a-4de8-8baa-a9aed811a1ff">
+        <orm:table name="Comunicazione" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="3073f024-2e42-414a-9be5-786c578efe12" type="System.Int32" />
-        <orm:field name="_contabilitaId" property="ContabilitaId" uniqueId="bdbba5f9-da14-451d-968d-2de23de70a5a" type="System.Int32" />
-        <orm:field name="_numero" property="Numero" uniqueId="4240e1ba-dcdc-41ed-a7fd-3f0a57dcff17" type="System.String" />
-        <orm:field name="_scadenzaIVA" property="ScadenzaIVA" uniqueId="02893b17-6c45-4233-8836-e6bece3d68e8" type="System.DateTime" />
+        <orm:field name="_id" property="Id" uniqueId="3073f024-2e42-414a-9be5-786c578efe12" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_contabilitaId" property="ContabilitaId" uniqueId="bdbba5f9-da14-451d-968d-2de23de70a5a" type="System.Int32">
+          <orm:column name="ContabilitaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="4240e1ba-dcdc-41ed-a7fd-3f0a57dcff17" type="System.String">
+          <orm:column name="Numero" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_scadenzaIVA" property="ScadenzaIVA" uniqueId="02893b17-6c45-4233-8836-e6bece3d68e8" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ScadenzaIVA" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
         <orm:field name="_contabilita" property="Contabilita" behavior="readwrite" uniqueId="cd847d32-ae69-4fee-9c6b-575bcdd476fb" type="DataLayer.Contabilita">
           <orm:reference uniqueId="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" association-name="ComunicazioneHasContabilita">
             <orm:sharedfield name="_contabilitaId" target-class="DataLayer.Contabilita" target-field="_id" />
@@ -87,39 +177,86 @@
         <orm:field name="_exports" property="Exports" behavior="readwrite" uniqueId="51ded4de-224e-4d05-b57f-b36fcd866ff3" type="DataLayer.Export">
           <orm:collection element-class="DataLayer.Export" inverse-field="_comunicazione" order-by="" uniqueId="3b3252dd-c022-4e31-8d50-c70b7d7f6d46" />
         </orm:field>
+        <orm:index name="idx_Cmunicazione_ContabilitaId">
+          <orm:columnMapping>
+            <orm:column name="ContabilitaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
       <orm:class name="Documento" uniqueId="90ac9863-a1e7-4c65-bb20-42ca4118d29d">
+        <orm:table name="Documento" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="7ec2837e-83dd-4592-8dfe-736a264ce181" type="System.Int32" />
-        <orm:field name="_iDCliente" property="IDCliente" uniqueId="3f455f98-547c-4b96-b0d3-ac1dea29f2b7" type="System.String" />
-        <orm:field name="_exportId" property="ExportId" uniqueId="90e7574a-7ae8-4845-b03d-01592d36bbf8" type="System.Int32" />
-        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="00c60b37-f87b-4524-bcb2-ebe3b09eb4b6" type="System.String" />
-        <orm:field name="_tipo" property="Tipo" uniqueId="7ce2dd18-ee4d-4c95-b7ad-7a4aa93271d2" type="System.String" />
-        <orm:field name="_data" property="Data" uniqueId="a5fe477f-d201-4608-baba-38342dc79cc5" type="System.DateTime" />
-        <orm:field name="_iDMovimento" property="IDMovimento" uniqueId="82a6e1f1-f119-4172-9c72-50943ed62a69" type="System.String" />
-        <orm:field name="_iDCausale" property="IDCausale" uniqueId="c9091b6d-159c-4c44-93be-96a82a05ec37" type="System.String" />
-        <orm:field name="_iDConto" property="IDConto" uniqueId="2eab730b-1865-4c83-8a10-31461551d0ee" type="System.String" />
-        <orm:field name="_iDRegistroIVA" property="IDRegistroIVA" uniqueId="ddce317e-7d9a-4cd2-8cb7-17f444166596" type="System.String" />
-        <orm:field name="_iDIVA" property="IDIVA" uniqueId="f30eb312-9a0c-4aa5-8bde-efedd94bbecd" type="System.String" />
-        <orm:field name="_importo" property="Importo" uniqueId="56fe9ff0-7b61-4e86-875a-aec57f5b4268" type="System.Decimal" />
-        <orm:field name="_imponibileIVA" property="ImponibileIVA" uniqueId="dcd43acd-90e1-4f97-a9e7-a9e8065c7097" type="System.Decimal" />
-        <orm:field name="_importoIVA" property="ImportoIVA" uniqueId="b2a8fff2-8105-49ac-895f-d9db5b2a68a2" type="System.Decimal" />
-        <orm:field name="_tipoRiga" property="TipoRiga" uniqueId="13e98d33-4cd7-40fe-9f5b-b51e3bebd459" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="7ec2837e-83dd-4592-8dfe-736a264ce181" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_iDCliente" property="IDCliente" uniqueId="3f455f98-547c-4b96-b0d3-ac1dea29f2b7" type="System.String">
+          <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_exportId" property="ExportId" uniqueId="90e7574a-7ae8-4845-b03d-01592d36bbf8" type="System.Int32">
+          <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_tipo" property="Tipo" uniqueId="7ce2dd18-ee4d-4c95-b7ad-7a4aa93271d2" type="System.String">
+          <orm:column name="Tipo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_data" property="Data" uniqueId="a5fe477f-d201-4608-baba-38342dc79cc5" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Data" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_iDMovimento" property="IDMovimento" uniqueId="82a6e1f1-f119-4172-9c72-50943ed62a69" type="System.String">
+          <orm:column name="IDMovimento" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_iDCausale" property="IDCausale" uniqueId="c9091b6d-159c-4c44-93be-96a82a05ec37" type="System.String">
+          <orm:column name="IDCausale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_iDConto" property="IDConto" uniqueId="2eab730b-1865-4c83-8a10-31461551d0ee" type="System.String">
+          <orm:column name="IDConto" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_iDRegistroIVA" property="IDRegistroIVA" uniqueId="ddce317e-7d9a-4cd2-8cb7-17f444166596" type="System.String">
+          <orm:column name="IDRegistroIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_iDIVA" property="IDIVA" uniqueId="f30eb312-9a0c-4aa5-8bde-efedd94bbecd" type="System.String">
+          <orm:column name="IDIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_totale" property="Totale" uniqueId="56fe9ff0-7b61-4e86-875a-aec57f5b4268" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Totale" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
+        </orm:field>
+        <orm:field name="_imponibile" property="Imponibile" uniqueId="dcd43acd-90e1-4f97-a9e7-a9e8065c7097" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Imponibile" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
+        </orm:field>
+        <orm:field name="_iVA" property="IVA" uniqueId="b2a8fff2-8105-49ac-895f-d9db5b2a68a2" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="IVA" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
+        </orm:field>
+        <orm:field name="_numero" property="Numero" uniqueId="021e139b-8238-4bfe-b8db-2a235267dfc0" type="System.String">
+          <orm:column name="Numero" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_dataRegistrazione" property="DataRegistrazione" uniqueId="217f49d0-0c03-4a0e-bc08-fa684a64c559" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="DataRegistrazione" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
         <orm:field name="_export" property="Export" behavior="readwrite" uniqueId="06e665a8-815b-419a-aa79-a66a447890de" type="DataLayer.Export">
           <orm:reference uniqueId="2449a04e-dd1c-4d21-9191-3873fcb89cd1" association-name="DocumentoHasExport">
             <orm:sharedfield name="_exportId" target-class="DataLayer.Export" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:index name="idx_Documento_ExportId">
+          <orm:columnMapping>
+            <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
       <orm:class name="Account" uniqueId="c186a1da-f13d-4505-9f5c-9d32f867a9f2">
         <orm:table name="Account" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
         <orm:field name="_id" property="Id" uniqueId="16c74a7b-3884-4a68-a670-d62b25a5cc39" type="System.Int32">
-          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="44954c50-8bdc-4418-aa65-afad06e1af18" type="System.Int32">
           <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -158,15 +295,25 @@
         </orm:index>
       </orm:class>
       <orm:class name="Import" uniqueId="97cb91c4-e6c8-4acd-9fcb-e3fcf1088dc3">
+        <orm:table name="Import" />
         <orm:identity>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="32b7367b-8138-46e8-9eb5-4a050f7a75cb" type="System.Int32" />
-        <orm:field name="_tipoRiga" property="TipoRiga" uniqueId="d44cef8b-8150-4144-aa45-063d028db3be" type="System.String" />
-        <orm:field name="_iDIVA" property="IDIVA" uniqueId="a8174edb-88bd-4c28-9a1b-de2c2a87e52b" type="System.String" />
-        <orm:field name="_data" property="Data" uniqueId="ba016852-29ed-406b-9d5d-0dc474ab8be1" type="System.DateTime" />
-        <orm:field name="_tXTMovimenti" property="TXTMovimenti" uniqueId="63df522d-ffd4-485b-bfc5-cbbcec15134c" type="System.String" />
-        <orm:field name="_tXTClienti" property="TXTClienti" uniqueId="8b068794-bb7b-4bbc-9ba2-5780aede7900" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="32b7367b-8138-46e8-9eb5-4a050f7a75cb" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_data" property="Data" uniqueId="ba016852-29ed-406b-9d5d-0dc474ab8be1" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Data" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_tXTMovimenti" property="TXTMovimenti" uniqueId="63df522d-ffd4-485b-bfc5-cbbcec15134c" type="System.String">
+          <orm:column name="TXTMovimenti" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_tXTClienti" property="TXTClienti" uniqueId="8b068794-bb7b-4bbc-9ba2-5780aede7900" type="System.String">
+          <orm:column name="TXTClienti" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_stato" property="Stato" uniqueId="c4957dee-2f1a-40ff-bd36-6169ee55b18b" type="System.String">
+          <orm:column name="Stato" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_export" property="Export" behavior="readwrite" uniqueId="ab2d952c-b827-4715-8e5d-101c31eb82ba" type="DataLayer.Export">
           <orm:reference uniqueId="49cb064b-ef19-4d10-99e0-c919d7563a89" association-name="ImportHasExport">
             <orm:sharedfield name="_id" target-class="DataLayer.Export" target-field="_id" />
@@ -174,14 +321,31 @@
         </orm:field>
       </orm:class>
       <orm:class name="Export" uniqueId="a16e9941-f547-44b3-8c88-1419be60e416">
+        <orm:table name="Export" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="86d28517-5cce-45b6-b440-988a4b9f0d99" type="System.Int32" />
-        <orm:field name="_comunicazioneId" property="ComunicazioneId" uniqueId="3dabd80c-cb2c-44e4-913c-43795b166668" type="System.Int32" />
-        <orm:field name="_data" property="Data" uniqueId="570a7743-1367-4b32-86bd-364f93ca4d2f" type="System.DateTime" />
-        <orm:field name="_progressivo" property="Progressivo" uniqueId="e4bc62f9-b644-41e7-9c89-eba7a4b8552e" type="System.String" />
-        <orm:field name="_xmlFile" property="XmlFile" uniqueId="169de6e8-c527-4970-acdd-9d80534e338a" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="86d28517-5cce-45b6-b440-988a4b9f0d99" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_comunicazioneId" property="ComunicazioneId" uniqueId="3dabd80c-cb2c-44e4-913c-43795b166668" type="System.Int32">
+          <orm:column name="ComunicazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_data" property="Data" uniqueId="570a7743-1367-4b32-86bd-364f93ca4d2f" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Data" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_progressivo" property="Progressivo" uniqueId="e4bc62f9-b644-41e7-9c89-eba7a4b8552e" type="System.String">
+          <orm:column name="Progressivo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_xmlFile" property="XmlFile" uniqueId="169de6e8-c527-4970-acdd-9d80534e338a" type="System.String">
+          <orm:column name="XmlFile" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_stato" property="Stato" uniqueId="bf83b2b2-b199-4efd-bff1-baf13e896aa4" type="System.String">
+          <orm:column name="Stato" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_comunicazione" property="Comunicazione" behavior="readwrite" uniqueId="dae7f873-cc46-48cd-bfa5-2098d049abfe" type="DataLayer.Comunicazione">
           <orm:reference uniqueId="3b3252dd-c022-4e31-8d50-c70b7d7f6d46" association-name="ExportHasComunicazione">
             <orm:sharedfield name="_comunicazioneId" target-class="DataLayer.Comunicazione" target-field="_id" />
@@ -190,50 +354,185 @@
         <orm:field name="_documentos" property="Documentos" behavior="readwrite" uniqueId="12bdff23-458d-4baf-868b-3ebc5cabe8cb" type="DataLayer.Documento">
           <orm:collection element-class="DataLayer.Documento" inverse-field="_export" order-by="" uniqueId="2449a04e-dd1c-4d21-9191-3873fcb89cd1" />
         </orm:field>
+        <orm:field name="_customers" property="Customers" behavior="readwrite" uniqueId="fe79bd68-6f69-45d8-b8b9-a6d16abaf2fb" type="DataLayer.Customer">
+          <orm:collection element-class="DataLayer.Customer" inverse-field="_export" order-by="" uniqueId="c7a481d0-a079-452d-a32c-cbbd3743ef6a" />
+        </orm:field>
         <orm:field name="_import" property="Import" behavior="readwrite" uniqueId="e845db9e-751f-4ee8-889b-6fa62b70c10c" type="DataLayer.Import">
           <orm:inversereference inverse-field="_export" uniqueId="49cb064b-ef19-4d10-99e0-c919d7563a89" />
         </orm:field>
+        <orm:index name="idx_Export_ComunicazioneId">
+          <orm:columnMapping>
+            <orm:column name="ComunicazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
-      <orm:class name="Nominativo" uniqueId="f9afaf95-5c32-4ce0-8538-e45d81fefaa3">
+      <orm:class name="AnagraficaAzienda" uniqueId="f9afaf95-5c32-4ce0-8538-e45d81fefaa3">
+        <orm:table name="AnagraficaAzienda" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="ba9bde96-1f60-436f-9811-bfb66c0691fd" type="System.Int32" />
-        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="a00de310-6227-4991-83a2-7c866d7543f4" type="System.Int32" />
-        <orm:field name="_ragioneSociale" property="RagioneSociale" uniqueId="0963dfab-f4d6-46bc-9333-2b12cc8ec032" type="System.String" />
-        <orm:field name="_iDNominativo" property="IDNominativo" uniqueId="0ad647e0-1d58-4204-8c2b-7e1deb801f58" type="System.String" />
-        <orm:field name="_codiceFiscale" property="CodiceFiscale" uniqueId="aca6c2f6-a771-4007-bed8-ecc8e57cbf5d" type="System.String" />
-        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="5d4ca7c0-a3b9-4df2-877f-e1a178600db7" type="System.String" />
-        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="0fcf7282-439b-4b3b-885a-0790eb2836ee" type="System.String" />
-        <orm:field name="_comune" property="Comune" uniqueId="b8cf95b1-2da1-4dcc-ad0b-d642de4e1f0d" type="System.String" />
-        <orm:field name="_provincia" property="Provincia" uniqueId="ea53b32e-6f27-4684-b51c-291c56012943" type="System.String" />
-        <orm:field name="_email" property="Email" uniqueId="9c82ce81-2980-4d0f-9c2b-c2ed2943cd3c" type="System.String" />
-        <orm:field name="_telefono" property="Telefono" uniqueId="c37c84d3-b6ef-4877-9f45-6de0f222009d" type="System.String" />
-        <orm:field name="_fax" property="Fax" uniqueId="6821fb51-0c50-46d7-97a5-8b6dd538908a" type="System.String" />
-        <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="d95daa3c-6455-4206-a71c-31faaa622b9f" type="DataLayer.StudioCommerciale">
-          <orm:reference uniqueId="532c3e31-5a0b-4570-950b-2429ffe7618c" association-name="NominativoHasStudioCommerciale">
+        <orm:field name="_id" property="Id" uniqueId="ba9bde96-1f60-436f-9811-bfb66c0691fd" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_studioCommercialeId" property="StudioCommercialeId" uniqueId="a00de310-6227-4991-83a2-7c866d7543f4" type="System.Int32">
+          <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_ragioneSociale" property="RagioneSociale" uniqueId="0963dfab-f4d6-46bc-9333-2b12cc8ec032" type="System.String">
+          <orm:column name="RagioneSociale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_codiceFiscale" property="CodiceFiscale" uniqueId="aca6c2f6-a771-4007-bed8-ecc8e57cbf5d" type="System.String">
+          <orm:column name="CodiceFiscale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="5d4ca7c0-a3b9-4df2-877f-e1a178600db7" type="System.String">
+          <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="0fcf7282-439b-4b3b-885a-0790eb2836ee" type="System.String">
+          <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_comune" property="Comune" uniqueId="b8cf95b1-2da1-4dcc-ad0b-d642de4e1f0d" type="System.String">
+          <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_provincia" property="Provincia" uniqueId="ea53b32e-6f27-4684-b51c-291c56012943" type="System.String">
+          <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_email" property="Email" uniqueId="9c82ce81-2980-4d0f-9c2b-c2ed2943cd3c" type="System.String">
+          <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_telefono" property="Telefono" uniqueId="c37c84d3-b6ef-4877-9f45-6de0f222009d" type="System.String">
+          <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_fax" property="Fax" uniqueId="6821fb51-0c50-46d7-97a5-8b6dd538908a" type="System.String">
+          <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_cap" property="Cap" uniqueId="f3094443-6a84-4d2e-9c54-c2aad9b0fd04" type="System.String">
+          <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="bc85eb54-a9de-4a3e-a918-ffb2dd399bda" type="DataLayer.StudioCommerciale">
+          <orm:reference uniqueId="749cf01c-1ad3-4635-aff0-a4c895f224c0" association-name="AnagraficaAziendaHasStudioCommerciale">
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:field name="_aziendas" property="Aziendas" behavior="readwrite" uniqueId="b14d08b6-1b92-4401-9ee6-018b4e567438" type="DataLayer.Azienda">
+          <orm:collection element-class="DataLayer.Azienda" inverse-field="_anagraficaAzienda" order-by="" uniqueId="b9fa4b5c-0f8b-4437-8524-1c509209fe6e" />
+        </orm:field>
+        <orm:field name="_clientes" property="Clientes" behavior="readwrite" uniqueId="6c6157a6-e6a9-446d-9b23-dbdebd363339" type="DataLayer.Cliente">
+          <orm:collection element-class="DataLayer.Cliente" inverse-field="_anagraficaAzienda" order-by="" uniqueId="4cc06e9e-ed85-4190-8d4b-477866acef6e" />
+        </orm:field>
+        <orm:index name="idx_AngrfcAznd_StdCmmercialeId">
+          <orm:columnMapping>
+            <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
       <orm:class name="Cliente" uniqueId="a0935bba-1acd-4bf9-9b5a-1918edf3cc3b">
+        <orm:table name="Cliente" />
         <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
           <orm:single-field field-name="_id" />
         </orm:identity>
-        <orm:field name="_id" property="Id" uniqueId="7be8d1a5-46d5-4716-bad6-19859c41d743" type="System.Int32" />
-        <orm:field name="_aziendaId" property="AziendaId" uniqueId="f1b19cbe-1696-4b38-a4ed-b612d9e5e6ed" type="System.Int32" />
-        <orm:field name="_iDConto" property="IDConto" uniqueId="83e63a69-a89d-4ff8-b1e1-ceda67b5cc65" type="System.String" />
-        <orm:field name="_iDNominativo" property="IDNominativo" uniqueId="2bf5c914-df00-4c06-9aff-6c523347f7f9" type="System.String" />
+        <orm:field name="_id" property="Id" uniqueId="7be8d1a5-46d5-4716-bad6-19859c41d743" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_aziendaId" property="AziendaId" uniqueId="f1b19cbe-1696-4b38-a4ed-b612d9e5e6ed" type="System.Int32">
+          <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_iDCliente" property="IDCliente" uniqueId="2bf5c914-df00-4c06-9aff-6c523347f7f9" type="System.String">
+          <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_anagraficaAziendaId" property="AnagraficaAziendaId" uniqueId="a014e95d-ca4a-494b-8e93-d7c93b32465e" type="System.Int32">
+          <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_iDConto" property="IDConto" uniqueId="efa1efe4-6b7c-4189-ba4c-efac8ae02b3c" type="System.String">
+          <orm:column name="IDConto" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
         <orm:field name="_azienda" property="Azienda" behavior="readwrite" uniqueId="f53bc066-2389-4cf9-81a7-d0559a2455ce" type="DataLayer.Azienda">
           <orm:reference uniqueId="7a5f31a0-44cc-4ee0-81df-22e811c49b6f" association-name="ClienteHasAzienda">
             <orm:sharedfield name="_aziendaId" target-class="DataLayer.Azienda" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:field name="_anagraficaAzienda" property="AnagraficaAzienda" behavior="readwrite" uniqueId="e89667fd-64c9-4fe5-a6a6-f84c65c470cf" type="DataLayer.AnagraficaAzienda">
+          <orm:reference uniqueId="4cc06e9e-ed85-4190-8d4b-477866acef6e" association-name="ClienteHasAnagraficaAzienda">
+            <orm:sharedfield name="_anagraficaAziendaId" target-class="DataLayer.AnagraficaAzienda" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="idx_Clente_AnagraficaAziendaId">
+          <orm:columnMapping>
+            <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="idx_Cliente_AziendaId">
+          <orm:columnMapping>
+            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Customer" uniqueId="801088af-9d14-42b2-83bc-3baeead44752">
+        <orm:table name="Customer" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="Id" />
+          </orm:key-generator>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="59ea2359-6dd4-447b-aa78-81b2cf2388cb" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_exportId" property="ExportId" uniqueId="ca73b7fe-a904-486c-9d5a-545b05961267" type="System.Int32">
+          <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_iDCliente" property="IDCliente" uniqueId="bfca08fd-50b8-4957-84f5-a19b9ab8ebb8" type="System.String">
+          <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="a8af07f7-d362-4151-9087-3223eed25e3d" type="System.String">
+          <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_ragioneSociale" property="RagioneSociale" uniqueId="6eaac115-54cf-4628-a8bb-dc7c67421ef9" type="System.String">
+          <orm:column name="RagioneSociale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_codiceFiscale" property="CodiceFiscale" uniqueId="f6a8ba27-a764-4c20-950c-2cb6c02d1e7d" type="System.String">
+          <orm:column name="CodiceFiscale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="7c559f0a-4c7c-4134-af98-a24137964382" type="System.String">
+          <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_comune" property="Comune" uniqueId="12641eef-57b3-4f5a-af7a-f375f167d1e8" type="System.String">
+          <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_provincia" property="Provincia" uniqueId="cbbf4c35-7b13-4b19-924f-2c4aee524e9d" type="System.String">
+          <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_email" property="Email" uniqueId="962f8fac-a195-4e83-a74f-2e26113a186c" type="System.String">
+          <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_telefono" property="Telefono" uniqueId="5476eb96-a115-43d0-92fe-4c5dc45e67e8" type="System.String">
+          <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_fax" property="Fax" uniqueId="9c7ebe12-23c1-4dac-9107-aa46187af58f" type="System.String">
+          <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_cap" property="Cap" uniqueId="02263129-0795-4967-a361-742e8b069ab7" type="System.String">
+          <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_export" property="Export" behavior="readwrite" uniqueId="a2d4958c-04b2-4bbf-83ca-045db64602f3" type="DataLayer.Export">
+          <orm:reference uniqueId="c7a481d0-a079-452d-a32c-cbbd3743ef6a" association-name="CustomerHasExport">
+            <orm:sharedfield name="_exportId" target-class="DataLayer.Export" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="idx_Customer_ExportId">
+          <orm:columnMapping>
+            <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
       </orm:class>
     </orm:namespace>
     <orm:schema schema="">
       <orm:table name="Account">
-        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         <orm:column name="Username" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Password" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Nickname" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
@@ -250,6 +549,159 @@
           </orm:columnMapping>
         </orm:index>
       </orm:table>
+      <orm:table name="StudioCommerciale">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Denominazione" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="TipoSoftwareContabilita" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="AnagraficaAzienda">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="RagioneSociale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CodiceFiscale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:index name="idx_AngrfcAznd_StdCmmercialeId">
+          <orm:columnMapping>
+            <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Azienda">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="TipoContabilita" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="TipoSoftwareFatturazione" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="IDAzienda" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="MdbFile" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="UltimoAggiornamento" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        <orm:index name="idx_Azenda_AnagraficaAziendaId">
+          <orm:columnMapping>
+            <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="idx_Azenda_StudioCommercialeId">
+          <orm:columnMapping>
+            <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Cliente">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="IDConto" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:index name="idx_Clente_AnagraficaAziendaId">
+          <orm:columnMapping>
+            <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="idx_Cliente_AziendaId">
+          <orm:columnMapping>
+            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Contabilita">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Anno" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Tipo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:index name="idx_Contabilita_AziendaId">
+          <orm:columnMapping>
+            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Comunicazione">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Numero" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="ScadenzaIVA" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        <orm:column name="ContabilitaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:index name="idx_Cmunicazione_ContabilitaId">
+          <orm:columnMapping>
+            <orm:column name="ContabilitaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Customer">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="RagioneSociale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CodiceFiscale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:index name="idx_Customer_ExportId">
+          <orm:columnMapping>
+            <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Export">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Data" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        <orm:column name="Progressivo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="XmlFile" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="ComunicazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Stato" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:index name="idx_Export_ComunicazioneId">
+          <orm:columnMapping>
+            <orm:column name="ComunicazioneId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Documento">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Tipo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Data" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        <orm:column name="IDMovimento" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="IDCausale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="IDConto" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="IDRegistroIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="IDIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Totale" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
+        <orm:column name="Imponibile" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
+        <orm:column name="IVA" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
+        <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Numero" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="DataRegistrazione" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        <orm:index name="idx_Documento_ExportId">
+          <orm:columnMapping>
+            <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="Import">
+        <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Data" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
+        <orm:column name="TXTMovimenti" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="TXTClienti" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Stato" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
     </orm:schema>
     <orm:relational-naming-settings>
       <orm:remove-leading-underscore>False</orm:remove-leading-underscore>
@@ -258,7 +710,8 @@
     </orm:relational-naming-settings>
   </orm:orm>
   <ModelSettings xmlns="">
-    <SaveConnectionStringInAppConfig>false</SaveConnectionStringInAppConfig>
+    <AppConfigConnectionPropertyName>IEFiscaleConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=localhost;Initial Catalog=IEFiscale;Integrated Security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -277,6 +730,7 @@
       <MappingDefinitionType>Xml</MappingDefinitionType>
     </CodeGenerationSettings>
     <SchemaUpdateSettings>
+      <ExecuteScript>true</ExecuteScript>
       <DeploymentProject>DataLayer</DeploymentProject>
     </SchemaUpdateSettings>
     <BackendConfigurationSettings>
@@ -290,10 +744,18 @@
     </BackendConfigurationSettings>
   </ModelSettings>
   <Types>
-    <DomainClass Id="fd17f27b-7f24-4051-92d7-72aa3850e167" name="StudioCommerciale" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="fd17f27b-7f24-4051-92d7-72aa3850e167" name="StudioCommerciale" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="96e9cfe2-cc59-4d50-9edb-683b5a73a4cd" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="0908170c-a109-4e0c-8d7d-689efa832dbc" name="Denominazione" label="Denominazione : String" fieldName="_denominazione" />
       <Property Id="653fd2f8-d9c3-4b1b-b43b-158d1280b90c" name="TipoSoftwareContabilita" label="TipoSoftwareContabilita : String" fieldName="_tipoSoftwareContabilita" />
+      <Property Id="39debbb8-d0c6-4eaa-82df-4ffa9a7561c9" name="PartitaIVA" label="PartitaIVA : String" fieldName="_partitaIVA" />
+      <Property Id="9da43a69-45b1-4718-aa28-bf3d14376180" name="Indirizzo" label="Indirizzo : String" fieldName="_indirizzo" />
+      <Property Id="733b917f-dbce-4b54-90a6-901d4e312155" name="Comune" label="Comune : String" fieldName="_comune" />
+      <Property Id="a839c35e-0d0e-47c0-8c19-0f8320bd7e1d" name="Provincia" label="Provincia : String" fieldName="_provincia" />
+      <Property Id="b2bf24e1-fb3c-41a8-87f8-3a7b0ea0194f" name="Cap" label="Cap : String" fieldName="_cap" />
+      <Property Id="245bde7e-8b6d-4937-ad63-920d68585a68" name="Email" label="Email : String" fieldName="_email" />
+      <Property Id="4b6fc0bc-9163-4e3f-bee3-fcfab2bd8f29" name="Telefono" label="Telefono : String" fieldName="_telefono" />
+      <Property Id="a9c8c514-1579-4e43-b0d8-603a3162ba81" name="Fax" label="Fax : String" fieldName="_fax" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="7c985641-c9a1-4e59-aa57-2ca8a3e2c900">
           <NavigationalProperty Id="338333c6-de01-4a1f-8cb2-ad9be01abdfa" name="Accounts" type="IList&lt;Account&gt;" label="Accounts : IList&lt;Account&gt;" nullable="true" kind="Persistent" fieldName="_accounts" isDependent="false" isManaged="false" />
@@ -301,28 +763,20 @@
         <classHasNavigationalProperties Id="404f9376-81bf-4fdb-be6e-aeed034848f8">
           <NavigationalProperty Id="932fbca5-ff4c-4e5f-887b-006726ebd4e2" name="Aziendas" type="IList&lt;Azienda&gt;" label="Aziendas : IList&lt;Azienda&gt;" nullable="true" kind="Persistent" fieldName="_aziendas" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="86ef9cac-0420-4cde-82ba-ba4ade530f6d">
-          <NavigationalProperty Id="e5c6036c-701c-40a3-a054-7b24f023fdcb" name="Nominativos" type="IList&lt;Nominativo&gt;" label="Nominativos : IList&lt;Nominativo&gt;" nullable="true" kind="Persistent" fieldName="_nominativos" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="010fc886-8862-48e8-88b9-21021094e593">
+          <NavigationalProperty Id="7d228e49-e357-4d62-afa2-cdb931d7ffd8" name="AnagraficaAziendas" type="IList&lt;AnagraficaAzienda&gt;" label="AnagraficaAziendas : IList&lt;AnagraficaAzienda&gt;" nullable="true" kind="Persistent" fieldName="_anagraficaAziendas" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="c83083d9-821a-4819-b444-4f90e9ef5b53" name="Azienda" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="c83083d9-821a-4819-b444-4f90e9ef5b53" name="Azienda" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="796313a4-47f3-4545-9515-64e158e8bb4a" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="87d26102-6b0a-4446-b23f-1985a5e9bda8" name="TipoContabilita" label="TipoContabilita : String" fieldName="_tipoContabilita" />
       <Property Id="4ab35b68-82c5-4c6f-917f-bc4017b88c83" name="TipoSoftwareFatturazione" label="TipoSoftwareFatturazione : String" fieldName="_tipoSoftwareFatturazione" />
-      <Property Id="80d07201-4be8-4dc6-81a5-afb371a362db" name="RagioneSociale" label="RagioneSociale : String" fieldName="_ragioneSociale" />
       <Property Id="b4533ff7-6f95-479d-a32c-d3bc354f0356" name="IDAzienda" label="IDAzienda : String" fieldName="_iDAzienda" />
-      <Property Id="6aae03ff-9a2e-4279-b8ef-bb9a860ea588" name="IDConto" label="IDConto : String" fieldName="_iDConto" />
-      <Property Id="29600248-659b-4ea0-8f24-5c6a54556370" name="CoficeFiscale" label="CoficeFiscale : String" fieldName="_coficeFiscale" />
-      <Property Id="4ad36ff9-6203-4709-a292-f3dadb0f5166" name="PartitaIVA" label="PartitaIVA : String" fieldName="_partitaIVA" />
-      <Property Id="49f206d1-3a9a-42e3-8421-a07819df51e6" name="Indirizzo" label="Indirizzo : String" fieldName="_indirizzo" />
-      <Property Id="8eb0ccad-ec72-4404-814f-f4610b77694e" name="Cap" label="Cap : String" fieldName="_cap" />
-      <Property Id="e3ad6b88-638d-446b-96ec-780206146dfd" name="Comune" label="Comune : String" fieldName="_comune" />
-      <Property Id="c599075d-82fa-45fc-8194-c7a9261b03d0" name="Provincia" label="Provincia : String" fieldName="_provincia" />
-      <Property Id="cee150c9-4c97-42f8-9a76-e04586cb554d" name="Email" label="Email : String" fieldName="_email" />
-      <Property Id="b0ede9c6-ff38-43bf-9854-8b3076ea4202" name="Telefono" label="Telefono : String" fieldName="_telefono" />
-      <Property Id="16f8a896-d7da-4de6-8410-347d78c57c16" name="Fax" label="Fax : String" fieldName="_fax" />
       <Property Id="ea0bd281-143b-4b48-a893-5e79cf53c465" name="StudioCommercialeId" type="Int32" label="StudioCommercialeId : Int32" fieldName="_studioCommercialeId" />
+      <Property Id="671cfdef-2d3a-413c-8af2-6be7621585db" name="AnagraficaAziendaId" type="Int32" label="AnagraficaAziendaId : Int32" fieldName="_anagraficaAziendaId" />
+      <Property Id="15905faf-8fb1-4fbc-8c10-61c75c828dd3" name="MdbFile" label="MdbFile : String" fieldName="_mdbFile" />
+      <Property Id="b92f217b-e746-4123-a067-a466678a05cc" name="UltimoAggiornamento" type="DateTime" label="UltimoAggiornamento : DateTime" nullable="true" fieldName="_ultimoAggiornamento" />
       <AssociationTargets>
         <Association Id="fee785b5-e05d-4ac6-bb79-47782142a154" SourceMultiplicity="ZeroOne" name="AziendaHasStudioCommerciale">
           <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />
@@ -334,6 +788,19 @@
           <sourceNavigationalProperty>
             <associationDefinesSourceProperty Id="9a7bdd0e-00e8-46a6-9a69-0cbc43e893a7">
               <NavigationalPropertyMoniker name="/EntitiesModel/Azienda/StudioCommerciale" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="b9fa4b5c-0f8b-4437-8524-1c509209fe6e" SourceMultiplicity="ZeroOne" name="AziendaHasAnagraficaAzienda">
+          <DomainClassMoniker name="/EntitiesModel/AnagraficaAzienda" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="af55a1a1-0618-4675-9259-ce63685ab075">
+              <NavigationalPropertyMoniker name="/EntitiesModel/AnagraficaAzienda/Aziendas" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="2525a8dd-70d8-418b-9342-581b21bdc39f">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Azienda/AnagraficaAzienda" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
@@ -351,9 +818,12 @@
         <classHasNavigationalProperties Id="83bef460-2e70-4665-ad29-38a16b8b4b90">
           <NavigationalProperty Id="8675ddef-37cf-4529-b467-dc218f99a18b" name="Clientes" type="IList&lt;Cliente&gt;" label="Clientes : IList&lt;Cliente&gt;" nullable="true" kind="Persistent" fieldName="_clientes" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="202b4ef6-6f02-42ce-83da-f891ec7bb9c4">
+          <NavigationalProperty Id="d2b77fbb-5578-4d41-804a-3cabea7ed46c" name="AnagraficaAzienda" type="AnagraficaAzienda" label="AnagraficaAzienda : AnagraficaAzienda" nullable="true" kind="Persistent" fieldName="_anagraficaAzienda" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="e6a0e457-21b5-42ac-a6d5-5fc26104598f" name="Contabilita" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="e6a0e457-21b5-42ac-a6d5-5fc26104598f" name="Contabilita" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="5f2f6852-37ff-4445-8be2-ed0931e41a54" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="247d4660-f36f-426c-a0f6-b30a36ae2557" name="Anno" label="Anno : String" fieldName="_anno" />
       <Property Id="ecca0d4f-fa51-4a62-a10f-56f88547e7e2" name="Tipo" label="Tipo : String" fieldName="_tipo" />
@@ -382,11 +852,11 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="ec3699a2-1f9a-4de8-8baa-a9aed811a1ff" name="Comunicazione" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="ec3699a2-1f9a-4de8-8baa-a9aed811a1ff" name="Comunicazione" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="3073f024-2e42-414a-9be5-786c578efe12" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="bdbba5f9-da14-451d-968d-2de23de70a5a" name="ContabilitaId" type="Int32" label="ContabilitaId : Int32" fieldName="_contabilitaId" />
       <Property Id="4240e1ba-dcdc-41ed-a7fd-3f0a57dcff17" name="Numero" label="Numero : String" fieldName="_numero" />
-      <Property Id="02893b17-6c45-4233-8836-e6bece3d68e8" name="ScadenzaIVA" type="DateTime" label="ScadenzaIVA : DateTime" fieldName="_scadenzaIVA" />
+      <Property Id="02893b17-6c45-4233-8836-e6bece3d68e8" name="ScadenzaIVA" type="DateTime" label="ScadenzaIVA : DateTime" nullable="true" fieldName="_scadenzaIVA" />
       <AssociationTargets>
         <Association Id="0a1662e5-dc2c-44b8-b7a0-185d3378b92b" SourceMultiplicity="ZeroOne" name="ComunicazioneHasContabilita">
           <DomainClassMoniker name="/EntitiesModel/Contabilita" />
@@ -411,22 +881,22 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="90ac9863-a1e7-4c65-bb20-42ca4118d29d" name="Documento" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="90ac9863-a1e7-4c65-bb20-42ca4118d29d" name="Documento" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="7ec2837e-83dd-4592-8dfe-736a264ce181" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="90e7574a-7ae8-4845-b03d-01592d36bbf8" name="ExportId" type="Int32" label="ExportId : Int32" fieldName="_exportId" />
       <Property Id="3f455f98-547c-4b96-b0d3-ac1dea29f2b7" name="IDCliente" label="IDCliente : String" fieldName="_iDCliente" />
-      <Property Id="00c60b37-f87b-4524-bcb2-ebe3b09eb4b6" name="PartitaIVA" label="PartitaIVA : String" fieldName="_partitaIVA" />
       <Property Id="82a6e1f1-f119-4172-9c72-50943ed62a69" name="IDMovimento" label="IDMovimento : String" fieldName="_iDMovimento" />
       <Property Id="7ce2dd18-ee4d-4c95-b7ad-7a4aa93271d2" name="Tipo" label="Tipo : String" fieldName="_tipo" />
-      <Property Id="a5fe477f-d201-4608-baba-38342dc79cc5" name="Data" type="DateTime" label="Data : DateTime" fieldName="_data" />
+      <Property Id="021e139b-8238-4bfe-b8db-2a235267dfc0" name="Numero" label="Numero : String" fieldName="_numero" />
+      <Property Id="a5fe477f-d201-4608-baba-38342dc79cc5" name="Data" type="DateTime" label="Data : DateTime" nullable="true" fieldName="_data" />
       <Property Id="c9091b6d-159c-4c44-93be-96a82a05ec37" name="IDCausale" label="IDCausale : String" fieldName="_iDCausale" />
       <Property Id="2eab730b-1865-4c83-8a10-31461551d0ee" name="IDConto" label="IDConto : String" fieldName="_iDConto" />
       <Property Id="ddce317e-7d9a-4cd2-8cb7-17f444166596" name="IDRegistroIVA" label="IDRegistroIVA : String" fieldName="_iDRegistroIVA" />
       <Property Id="f30eb312-9a0c-4aa5-8bde-efedd94bbecd" name="IDIVA" label="IDIVA : String" fieldName="_iDIVA" />
-      <Property Id="56fe9ff0-7b61-4e86-875a-aec57f5b4268" name="Importo" type="Decimal" label="Importo : Decimal" fieldName="_importo" />
-      <Property Id="dcd43acd-90e1-4f97-a9e7-a9e8065c7097" name="ImponibileIVA" type="Decimal" label="ImponibileIVA : Decimal" fieldName="_imponibileIVA" />
-      <Property Id="b2a8fff2-8105-49ac-895f-d9db5b2a68a2" name="ImportoIVA" type="Decimal" label="ImportoIVA : Decimal" fieldName="_importoIVA" />
-      <Property Id="13e98d33-4cd7-40fe-9f5b-b51e3bebd459" name="TipoRiga" label="TipoRiga : String" fieldName="_tipoRiga" />
+      <Property Id="56fe9ff0-7b61-4e86-875a-aec57f5b4268" name="Totale" type="Decimal" label="Totale : Decimal" nullable="true" fieldName="_totale" />
+      <Property Id="dcd43acd-90e1-4f97-a9e7-a9e8065c7097" name="Imponibile" type="Decimal" label="Imponibile : Decimal" nullable="true" fieldName="_imponibile" />
+      <Property Id="b2a8fff2-8105-49ac-895f-d9db5b2a68a2" name="IVA" type="Decimal" label="IVA : Decimal" nullable="true" fieldName="_iVA" />
+      <Property Id="217f49d0-0c03-4a0e-bc08-fa684a64c559" name="DataRegistrazione" type="DateTime" label="DataRegistrazione : DateTime" nullable="true" fieldName="_dataRegistrazione" />
       <AssociationTargets>
         <Association Id="2449a04e-dd1c-4d21-9191-3873fcb89cd1" SourceMultiplicity="ZeroOne" name="DocumentoHasExport">
           <DomainClassMoniker name="/EntitiesModel/Export" />
@@ -448,7 +918,7 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="c186a1da-f13d-4505-9f5c-9d32f867a9f2" name="Account" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="c186a1da-f13d-4505-9f5c-9d32f867a9f2" name="Account" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="16c74a7b-3884-4a68-a670-d62b25a5cc39" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="44954c50-8bdc-4418-aa65-afad06e1af18" name="StudioCommercialeId" type="Int32" label="StudioCommercialeId : Int32" fieldName="_studioCommercialeId" />
       <Property Id="8a490d19-0b11-4647-9669-53f48f18d45f" name="AziendaId" type="Int32" label="AziendaId : Int32" fieldName="_aziendaId" />
@@ -492,13 +962,12 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="97cb91c4-e6c8-4acd-9fcb-e3fcf1088dc3" name="Import" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="97cb91c4-e6c8-4acd-9fcb-e3fcf1088dc3" name="Import" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="32b7367b-8138-46e8-9eb5-4a050f7a75cb" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
-      <Property Id="d44cef8b-8150-4144-aa45-063d028db3be" name="TipoRiga" label="TipoRiga : String" fieldName="_tipoRiga" />
-      <Property Id="a8174edb-88bd-4c28-9a1b-de2c2a87e52b" name="IDIVA" label="IDIVA : String" fieldName="_iDIVA" />
-      <Property Id="ba016852-29ed-406b-9d5d-0dc474ab8be1" name="Data" type="DateTime" label="Data : DateTime" fieldName="_data" />
+      <Property Id="ba016852-29ed-406b-9d5d-0dc474ab8be1" name="Data" type="DateTime" label="Data : DateTime" nullable="true" fieldName="_data" />
       <Property Id="63df522d-ffd4-485b-bfc5-cbbcec15134c" name="TXTMovimenti" label="TXTMovimenti : String" fieldName="_tXTMovimenti" />
       <Property Id="8b068794-bb7b-4bbc-9ba2-5780aede7900" name="TXTClienti" label="TXTClienti : String" fieldName="_tXTClienti" />
+      <Property Id="c4957dee-2f1a-40ff-bd36-6169ee55b18b" name="Stato" label="Stato : String" fieldName="_stato" />
       <AssociationTargets>
         <Association Id="49cb064b-ef19-4d10-99e0-c919d7563a89" SourceMultiplicity="One" TargetMultiplicity="ZeroOne" name="ImportHasExport">
           <DomainClassMoniker name="/EntitiesModel/Export" />
@@ -520,12 +989,13 @@
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="a16e9941-f547-44b3-8c88-1419be60e416" name="Export" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="a16e9941-f547-44b3-8c88-1419be60e416" name="Export" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="86d28517-5cce-45b6-b440-988a4b9f0d99" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="3dabd80c-cb2c-44e4-913c-43795b166668" name="ComunicazioneId" type="Int32" label="ComunicazioneId : Int32" fieldName="_comunicazioneId" />
-      <Property Id="570a7743-1367-4b32-86bd-364f93ca4d2f" name="Data" type="DateTime" label="Data : DateTime" fieldName="_data" />
+      <Property Id="570a7743-1367-4b32-86bd-364f93ca4d2f" name="Data" type="DateTime" label="Data : DateTime" nullable="true" fieldName="_data" />
       <Property Id="e4bc62f9-b644-41e7-9c89-eba7a4b8552e" name="Progressivo" label="Progressivo : String" fieldName="_progressivo" />
       <Property Id="169de6e8-c527-4970-acdd-9d80534e338a" name="XmlFile" label="XmlFile : String" fieldName="_xmlFile" />
+      <Property Id="bf83b2b2-b199-4efd-bff1-baf13e896aa4" name="Stato" label="Stato : String" fieldName="_stato" />
       <AssociationTargets>
         <Association Id="3b3252dd-c022-4e31-8d50-c70b7d7f6d46" SourceMultiplicity="ZeroOne" name="ExportHasComunicazione">
           <DomainClassMoniker name="/EntitiesModel/Comunicazione" />
@@ -551,47 +1021,57 @@
         <classHasNavigationalProperties Id="afda2390-227c-4437-ac60-ad6f0c33ce2e">
           <NavigationalProperty Id="12bdff23-458d-4baf-868b-3ebc5cabe8cb" name="Documentos" type="IList&lt;Documento&gt;" label="Documentos : IList&lt;Documento&gt;" nullable="true" kind="Persistent" fieldName="_documentos" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="4da42743-b84d-4322-904e-d9b60db7f68b">
+          <NavigationalProperty Id="fe79bd68-6f69-45d8-b8b9-a6d16abaf2fb" name="Customers" type="IList&lt;Customer&gt;" label="Customers : IList&lt;Customer&gt;" nullable="true" kind="Persistent" fieldName="_customers" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="f9afaf95-5c32-4ce0-8538-e45d81fefaa3" name="Nominativo" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="f9afaf95-5c32-4ce0-8538-e45d81fefaa3" name="AnagraficaAzienda" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="ba9bde96-1f60-436f-9811-bfb66c0691fd" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="a00de310-6227-4991-83a2-7c866d7543f4" name="StudioCommercialeId" type="Int32" label="StudioCommercialeId : Int32" fieldName="_studioCommercialeId" />
       <Property Id="0963dfab-f4d6-46bc-9333-2b12cc8ec032" name="RagioneSociale" label="RagioneSociale : String" fieldName="_ragioneSociale" />
-      <Property Id="0ad647e0-1d58-4204-8c2b-7e1deb801f58" name="IDNominativo" label="IDNominativo : String" fieldName="_iDNominativo" />
       <Property Id="aca6c2f6-a771-4007-bed8-ecc8e57cbf5d" name="CodiceFiscale" label="CodiceFiscale : String" fieldName="_codiceFiscale" />
       <Property Id="5d4ca7c0-a3b9-4df2-877f-e1a178600db7" name="PartitaIVA" label="PartitaIVA : String" fieldName="_partitaIVA" />
       <Property Id="0fcf7282-439b-4b3b-885a-0790eb2836ee" name="Indirizzo" label="Indirizzo : String" fieldName="_indirizzo" />
       <Property Id="b8cf95b1-2da1-4dcc-ad0b-d642de4e1f0d" name="Comune" label="Comune : String" fieldName="_comune" />
       <Property Id="ea53b32e-6f27-4684-b51c-291c56012943" name="Provincia" label="Provincia : String" fieldName="_provincia" />
+      <Property Id="f3094443-6a84-4d2e-9c54-c2aad9b0fd04" name="Cap" label="Cap : String" fieldName="_cap" />
       <Property Id="9c82ce81-2980-4d0f-9c2b-c2ed2943cd3c" name="Email" label="Email : String" fieldName="_email" />
       <Property Id="c37c84d3-b6ef-4877-9f45-6de0f222009d" name="Telefono" label="Telefono : String" fieldName="_telefono" />
       <Property Id="6821fb51-0c50-46d7-97a5-8b6dd538908a" name="Fax" label="Fax : String" fieldName="_fax" />
       <AssociationTargets>
-        <Association Id="532c3e31-5a0b-4570-950b-2429ffe7618c" SourceMultiplicity="ZeroOne" name="NominativoHasStudioCommerciale">
+        <Association Id="749cf01c-1ad3-4635-aff0-a4c895f224c0" SourceMultiplicity="ZeroOne" name="AnagraficaAziendaHasStudioCommerciale">
           <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />
           <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="b0fcb613-1987-453b-a066-05c1f1f454f5">
-              <NavigationalPropertyMoniker name="/EntitiesModel/StudioCommerciale/Nominativos" />
+            <associationDefinesTargetProperty Id="895a7922-85c8-4ebf-9794-876b95432220">
+              <NavigationalPropertyMoniker name="/EntitiesModel/StudioCommerciale/AnagraficaAziendas" />
             </associationDefinesTargetProperty>
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="c276a554-99ac-4151-8856-520a5c80a9a4">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Nominativo/StudioCommerciale" />
+            <associationDefinesSourceProperty Id="89d0d0a0-ba6c-4a40-ad2f-00264238ba6d">
+              <NavigationalPropertyMoniker name="/EntitiesModel/AnagraficaAzienda/StudioCommerciale" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="6b77e5fc-5247-4384-8db9-a311d516c407">
-          <NavigationalProperty Id="d95daa3c-6455-4206-a71c-31faaa622b9f" name="StudioCommerciale" type="StudioCommerciale" label="StudioCommerciale : StudioCommerciale" nullable="true" kind="Persistent" fieldName="_studioCommerciale" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="e5c84513-acae-4c61-a5e7-9ca5ad3faec0">
+          <NavigationalProperty Id="bc85eb54-a9de-4a3e-a918-ffb2dd399bda" name="StudioCommerciale" type="StudioCommerciale" label="StudioCommerciale : StudioCommerciale" nullable="true" kind="Persistent" fieldName="_studioCommerciale" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="48a34013-bc7a-4735-b6c4-48ecd8285433">
+          <NavigationalProperty Id="b14d08b6-1b92-4401-9ee6-018b4e567438" name="Aziendas" type="IList&lt;Azienda&gt;" label="Aziendas : IList&lt;Azienda&gt;" nullable="true" kind="Persistent" fieldName="_aziendas" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9ed68b12-cec9-4b37-bd75-8a9c9aa6cd98">
+          <NavigationalProperty Id="6c6157a6-e6a9-446d-9b23-dbdebd363339" name="Clientes" type="IList&lt;Cliente&gt;" label="Clientes : IList&lt;Cliente&gt;" nullable="true" kind="Persistent" fieldName="_clientes" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
-    <DomainClass Id="a0935bba-1acd-4bf9-9b5a-1918edf3cc3b" name="Cliente" namespace="DataLayer" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+    <DomainClass Id="a0935bba-1acd-4bf9-9b5a-1918edf3cc3b" name="Cliente" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="7be8d1a5-46d5-4716-bad6-19859c41d743" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="f1b19cbe-1696-4b38-a4ed-b612d9e5e6ed" name="AziendaId" type="Int32" label="AziendaId : Int32" fieldName="_aziendaId" />
-      <Property Id="83e63a69-a89d-4ff8-b1e1-ceda67b5cc65" name="IDConto" label="IDConto : String" fieldName="_iDConto" />
-      <Property Id="2bf5c914-df00-4c06-9aff-6c523347f7f9" name="IDNominativo" label="IDNominativo : String" fieldName="_iDNominativo" />
+      <Property Id="2bf5c914-df00-4c06-9aff-6c523347f7f9" name="IDCliente" label="IDCliente : String" fieldName="_iDCliente" />
+      <Property Id="a014e95d-ca4a-494b-8e93-d7c93b32465e" name="AnagraficaAziendaId" type="Int32" label="AnagraficaAziendaId : Int32" fieldName="_anagraficaAziendaId" />
+      <Property Id="efa1efe4-6b7c-4189-ba4c-efac8ae02b3c" name="IDConto" label="IDConto : String" fieldName="_iDConto" />
       <AssociationTargets>
         <Association Id="7a5f31a0-44cc-4ee0-81df-22e811c49b6f" SourceMultiplicity="ZeroOne" name="ClienteHasAzienda">
           <DomainClassMoniker name="/EntitiesModel/Azienda" />
@@ -606,10 +1086,61 @@
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
+        <Association Id="4cc06e9e-ed85-4190-8d4b-477866acef6e" SourceMultiplicity="ZeroOne" name="ClienteHasAnagraficaAzienda">
+          <DomainClassMoniker name="/EntitiesModel/AnagraficaAzienda" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="aaec1c35-ec18-4391-8c98-84fdb93e7ed2">
+              <NavigationalPropertyMoniker name="/EntitiesModel/AnagraficaAzienda/Clientes" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0df40a23-b1ef-4acd-a37e-72fc8d67a99d">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Cliente/AnagraficaAzienda" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="0afe42a2-d00a-4472-a952-a3a2fd15969b">
           <NavigationalProperty Id="f53bc066-2389-4cf9-81a7-d0559a2455ce" name="Azienda" type="Azienda" label="Azienda : Azienda" nullable="true" kind="Persistent" fieldName="_azienda" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="b3edeb82-6b67-4294-b599-a8f78b4cb08c">
+          <NavigationalProperty Id="e89667fd-64c9-4fe5-a6a6-f84c65c470cf" name="AnagraficaAzienda" type="AnagraficaAzienda" label="AnagraficaAzienda : AnagraficaAzienda" nullable="true" kind="Persistent" fieldName="_anagraficaAzienda" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="801088af-9d14-42b2-83bc-3baeead44752" name="Customer" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
+      <Property Id="59ea2359-6dd4-447b-aa78-81b2cf2388cb" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="ca73b7fe-a904-486c-9d5a-545b05961267" name="ExportId" type="Int32" label="ExportId : Int32" fieldName="_exportId" />
+      <Property Id="bfca08fd-50b8-4957-84f5-a19b9ab8ebb8" name="IDCliente" label="IDCliente : String" fieldName="_iDCliente" />
+      <Property Id="a8af07f7-d362-4151-9087-3223eed25e3d" name="PartitaIVA" label="PartitaIVA : String" fieldName="_partitaIVA" />
+      <Property Id="6eaac115-54cf-4628-a8bb-dc7c67421ef9" name="RagioneSociale" label="RagioneSociale : String" fieldName="_ragioneSociale" />
+      <Property Id="f6a8ba27-a764-4c20-950c-2cb6c02d1e7d" name="CodiceFiscale" label="CodiceFiscale : String" fieldName="_codiceFiscale" />
+      <Property Id="7c559f0a-4c7c-4134-af98-a24137964382" name="Indirizzo" label="Indirizzo : String" fieldName="_indirizzo" />
+      <Property Id="12641eef-57b3-4f5a-af7a-f375f167d1e8" name="Comune" label="Comune : String" fieldName="_comune" />
+      <Property Id="cbbf4c35-7b13-4b19-924f-2c4aee524e9d" name="Provincia" label="Provincia : String" fieldName="_provincia" />
+      <Property Id="02263129-0795-4967-a361-742e8b069ab7" name="Cap" label="Cap : String" fieldName="_cap" />
+      <Property Id="962f8fac-a195-4e83-a74f-2e26113a186c" name="Email" label="Email : String" fieldName="_email" />
+      <Property Id="5476eb96-a115-43d0-92fe-4c5dc45e67e8" name="Telefono" label="Telefono : String" fieldName="_telefono" />
+      <Property Id="9c7ebe12-23c1-4dac-9107-aa46187af58f" name="Fax" label="Fax : String" fieldName="_fax" />
+      <AssociationTargets>
+        <Association Id="c7a481d0-a079-452d-a32c-cbbd3743ef6a" SourceMultiplicity="ZeroOne" name="CustomerHasExport">
+          <DomainClassMoniker name="/EntitiesModel/Export" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="a609e1c7-993e-422d-9ca2-91110c062917">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Export/Customers" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="32d197be-0821-4a24-8a70-117e0a4e6c97">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Customer/Export" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="2f59c267-fc39-4f9e-ad1a-610017838270">
+          <NavigationalProperty Id="a2d4958c-04b2-4bbf-83ca-045db64602f3" name="Export" type="Export" label="Export : Export" nullable="true" kind="Persistent" fieldName="_export" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -625,8 +1156,9 @@
         <entitySetProperty name="Accounts" namespace="DataLayer" type="Account" label="Accounts : IQueryable&lt;DataLayer.Account&gt;" />
         <entitySetProperty name="Imports" namespace="DataLayer" type="Import" label="Imports : IQueryable&lt;DataLayer.Import&gt;" />
         <entitySetProperty name="Exports" namespace="DataLayer" type="Export" label="Exports : IQueryable&lt;DataLayer.Export&gt;" />
-        <entitySetProperty name="Nominativos" namespace="DataLayer" type="Nominativo" label="Nominativos : IQueryable&lt;DataLayer.Nominativo&gt;" />
+        <entitySetProperty name="AnagraficaAziendas" namespace="DataLayer" type="AnagraficaAzienda" label="AnagraficaAziendas : IQueryable&lt;DataLayer.AnagraficaAzienda&gt;" />
         <entitySetProperty name="Clientes" namespace="DataLayer" type="Cliente" label="Clientes : IQueryable&lt;DataLayer.Cliente&gt;" />
+        <entitySetProperty name="Customers" namespace="DataLayer" type="Customer" label="Customers : IQueryable&lt;DataLayer.Customer&gt;" />
       </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>

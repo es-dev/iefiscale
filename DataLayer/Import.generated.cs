@@ -37,34 +37,8 @@ namespace DataLayer
 			}
 		}
 		
-		private string _tipoRiga;
-		public virtual string TipoRiga
-		{
-			get
-			{
-				return this._tipoRiga;
-			}
-			set
-			{
-				this._tipoRiga = value;
-			}
-		}
-		
-		private string _iDIVA;
-		public virtual string IDIVA
-		{
-			get
-			{
-				return this._iDIVA;
-			}
-			set
-			{
-				this._iDIVA = value;
-			}
-		}
-		
-		private DateTime _data;
-		public virtual DateTime Data
+		private DateTime? _data;
+		public virtual DateTime? Data
 		{
 			get
 			{
@@ -99,6 +73,19 @@ namespace DataLayer
 			set
 			{
 				this._tXTClienti = value;
+			}
+		}
+		
+		private string _stato;
+		public virtual string Stato
+		{
+			get
+			{
+				return this._stato;
+			}
+			set
+			{
+				this._stato = value;
 			}
 		}
 		

@@ -24,7 +24,7 @@ namespace DataLayer
 {
 	public partial class EntitiesModel : OpenAccessContext, IEntitiesModelUnitOfWork
 	{
-		private static string connectionStringName = @"";
+		private static string connectionStringName = @"IEFiscaleConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				
@@ -114,11 +114,11 @@ namespace DataLayer
 			}
 		}
 		
-		public IQueryable<Nominativo> Nominativos 
+		public IQueryable<AnagraficaAzienda> AnagraficaAziendas 
 		{
 			get
 			{
-				return this.GetAll<Nominativo>();
+				return this.GetAll<AnagraficaAzienda>();
 			}
 		}
 		
@@ -127,6 +127,14 @@ namespace DataLayer
 			get
 			{
 				return this.GetAll<Cliente>();
+			}
+		}
+		
+		public IQueryable<Customer> Customers 
+		{
+			get
+			{
+				return this.GetAll<Customer>();
 			}
 		}
 		
@@ -184,11 +192,15 @@ namespace DataLayer
 		{
 			get;
 		}
-		IQueryable<Nominativo> Nominativos
+		IQueryable<AnagraficaAzienda> AnagraficaAziendas
 		{
 			get;
 		}
 		IQueryable<Cliente> Clientes
+		{
+			get;
+		}
+		IQueryable<Customer> Customers
 		{
 			get;
 		}

@@ -22,7 +22,7 @@ using DataLayer;
 
 namespace DataLayer	
 {
-	public partial class StudioCommerciale
+	public partial class Customer
 	{
 		private int _id;
 		public virtual int Id
@@ -37,29 +37,29 @@ namespace DataLayer
 			}
 		}
 		
-		private string _denominazione;
-		public virtual string Denominazione
+		private int _exportId;
+		public virtual int ExportId
 		{
 			get
 			{
-				return this._denominazione;
+				return this._exportId;
 			}
 			set
 			{
-				this._denominazione = value;
+				this._exportId = value;
 			}
 		}
 		
-		private string _tipoSoftwareContabilita;
-		public virtual string TipoSoftwareContabilita
+		private string _iDCliente;
+		public virtual string IDCliente
 		{
 			get
 			{
-				return this._tipoSoftwareContabilita;
+				return this._iDCliente;
 			}
 			set
 			{
-				this._tipoSoftwareContabilita = value;
+				this._iDCliente = value;
 			}
 		}
 		
@@ -73,6 +73,32 @@ namespace DataLayer
 			set
 			{
 				this._partitaIVA = value;
+			}
+		}
+		
+		private string _ragioneSociale;
+		public virtual string RagioneSociale
+		{
+			get
+			{
+				return this._ragioneSociale;
+			}
+			set
+			{
+				this._ragioneSociale = value;
+			}
+		}
+		
+		private string _codiceFiscale;
+		public virtual string CodiceFiscale
+		{
+			get
+			{
+				return this._codiceFiscale;
+			}
+			set
+			{
+				this._codiceFiscale = value;
 			}
 		}
 		
@@ -115,19 +141,6 @@ namespace DataLayer
 			}
 		}
 		
-		private string _cap;
-		public virtual string Cap
-		{
-			get
-			{
-				return this._cap;
-			}
-			set
-			{
-				this._cap = value;
-			}
-		}
-		
 		private string _email;
 		public virtual string Email
 		{
@@ -167,30 +180,29 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Account> _accounts = new List<Account>();
-		public virtual IList<Account> Accounts
+		private string _cap;
+		public virtual string Cap
 		{
 			get
 			{
-				return this._accounts;
+				return this._cap;
+			}
+			set
+			{
+				this._cap = value;
 			}
 		}
 		
-		private IList<Azienda> _aziendas = new List<Azienda>();
-		public virtual IList<Azienda> Aziendas
+		private Export _export;
+		public virtual Export Export
 		{
 			get
 			{
-				return this._aziendas;
+				return this._export;
 			}
-		}
-		
-		private IList<AnagraficaAzienda> _anagraficaAziendas = new List<AnagraficaAzienda>();
-		public virtual IList<AnagraficaAzienda> AnagraficaAziendas
-		{
-			get
+			set
 			{
-				return this._anagraficaAziendas;
+				this._export = value;
 			}
 		}
 		

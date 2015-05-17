@@ -97,6 +97,14 @@ namespace WcfService.Assemblers
 			entity.Id = dto.Id;
 			entity.Denominazione = dto.Denominazione;
 			entity.TipoSoftwareContabilita = dto.TipoSoftwareContabilita;
+			entity.PartitaIVA = dto.PartitaIVA;
+			entity.Indirizzo = dto.Indirizzo;
+			entity.Comune = dto.Comune;
+			entity.Provincia = dto.Provincia;
+			entity.Cap = dto.Cap;
+			entity.Email = dto.Email;
+			entity.Telefono = dto.Telefono;
+			entity.Fax = dto.Fax;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -110,6 +118,14 @@ namespace WcfService.Assemblers
 			dto.Id = entity.Id;
 			dto.Denominazione = entity.Denominazione;
 			dto.TipoSoftwareContabilita = entity.TipoSoftwareContabilita;
+			dto.PartitaIVA = entity.PartitaIVA;
+			dto.Indirizzo = entity.Indirizzo;
+			dto.Comune = entity.Comune;
+			dto.Provincia = entity.Provincia;
+			dto.Cap = entity.Cap;
+			dto.Email = entity.Email;
+			dto.Telefono = entity.Telefono;
+			dto.Fax = entity.Fax;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -140,14 +156,14 @@ namespace WcfService.Assemblers
 				dto.Aziendas.Add(dtoItem);
 			}
 
-			NominativoAssembler nominativoAssembler = new NominativoAssembler();
+			AnagraficaAziendaAssembler anagraficaAziendaAssembler = new AnagraficaAziendaAssembler();
 
-			dto.Nominativos = new List<NominativoDto>();
-			foreach (Nominativo item in entity.Nominativos)
+			dto.AnagraficaAziendas = new List<AnagraficaAziendaDto>();
+			foreach (AnagraficaAzienda item in entity.AnagraficaAziendas)
 			{
-				var dtoItem = nominativoAssembler.Assemble(item);
+				var dtoItem = anagraficaAziendaAssembler.Assemble(item);
 				dtoItem.StudioCommerciale = dto;
-				dto.Nominativos.Add(dtoItem);
+				dto.AnagraficaAziendas.Add(dtoItem);
 			}
 
 	    }
@@ -190,18 +206,10 @@ namespace WcfService.Assemblers
 			entity.TipoContabilita = dto.TipoContabilita;
 			entity.TipoSoftwareFatturazione = dto.TipoSoftwareFatturazione;
 			entity.IDAzienda = dto.IDAzienda;
-			entity.IDConto = dto.IDConto;
-			entity.CoficeFiscale = dto.CoficeFiscale;
-			entity.PartitaIVA = dto.PartitaIVA;
-			entity.RagioneSociale = dto.RagioneSociale;
-			entity.Indirizzo = dto.Indirizzo;
-			entity.Cap = dto.Cap;
-			entity.Comune = dto.Comune;
-			entity.Provincia = dto.Provincia;
-			entity.Email = dto.Email;
-			entity.Telefono = dto.Telefono;
-			entity.Fax = dto.Fax;
 			entity.StudioCommercialeId = dto.StudioCommercialeId;
+			entity.AnagraficaAziendaId = dto.AnagraficaAziendaId;
+			entity.MdbFile = dto.MdbFile;
+			entity.UltimoAggiornamento = dto.UltimoAggiornamento;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -216,18 +224,10 @@ namespace WcfService.Assemblers
 			dto.TipoContabilita = entity.TipoContabilita;
 			dto.TipoSoftwareFatturazione = entity.TipoSoftwareFatturazione;
 			dto.IDAzienda = entity.IDAzienda;
-			dto.IDConto = entity.IDConto;
-			dto.CoficeFiscale = entity.CoficeFiscale;
-			dto.PartitaIVA = entity.PartitaIVA;
-			dto.RagioneSociale = entity.RagioneSociale;
-			dto.Indirizzo = entity.Indirizzo;
-			dto.Cap = entity.Cap;
-			dto.Comune = entity.Comune;
-			dto.Provincia = entity.Provincia;
-			dto.Email = entity.Email;
-			dto.Telefono = entity.Telefono;
-			dto.Fax = entity.Fax;
 			dto.StudioCommercialeId = entity.StudioCommercialeId;
+			dto.AnagraficaAziendaId = entity.AnagraficaAziendaId;
+			dto.MdbFile = entity.MdbFile;
+			dto.UltimoAggiornamento = entity.UltimoAggiornamento;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -236,6 +236,9 @@ namespace WcfService.Assemblers
 	    {
 			StudioCommercialeAssembler studioCommercialeAssembler = new StudioCommercialeAssembler();
 			dto.StudioCommerciale = studioCommercialeAssembler.Assemble(entity.StudioCommerciale);
+
+			AnagraficaAziendaAssembler anagraficaAziendaAssembler = new AnagraficaAziendaAssembler();
+			dto.AnagraficaAzienda = anagraficaAziendaAssembler.Assemble(entity.AnagraficaAzienda);
 
 	    }
 	
@@ -464,7 +467,6 @@ namespace WcfService.Assemblers
 			entity.Id = dto.Id;
 			entity.IDCliente = dto.IDCliente;
 			entity.ExportId = dto.ExportId;
-			entity.PartitaIVA = dto.PartitaIVA;
 			entity.Tipo = dto.Tipo;
 			entity.Data = dto.Data;
 			entity.IDMovimento = dto.IDMovimento;
@@ -472,10 +474,11 @@ namespace WcfService.Assemblers
 			entity.IDConto = dto.IDConto;
 			entity.IDRegistroIVA = dto.IDRegistroIVA;
 			entity.IDIVA = dto.IDIVA;
-			entity.Importo = dto.Importo;
-			entity.ImponibileIVA = dto.ImponibileIVA;
-			entity.ImportoIVA = dto.ImportoIVA;
-			entity.TipoRiga = dto.TipoRiga;
+			entity.Totale = dto.Totale;
+			entity.Imponibile = dto.Imponibile;
+			entity.IVA = dto.IVA;
+			entity.Numero = dto.Numero;
+			entity.DataRegistrazione = dto.DataRegistrazione;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -489,7 +492,6 @@ namespace WcfService.Assemblers
 			dto.Id = entity.Id;
 			dto.IDCliente = entity.IDCliente;
 			dto.ExportId = entity.ExportId;
-			dto.PartitaIVA = entity.PartitaIVA;
 			dto.Tipo = entity.Tipo;
 			dto.Data = entity.Data;
 			dto.IDMovimento = entity.IDMovimento;
@@ -497,10 +499,11 @@ namespace WcfService.Assemblers
 			dto.IDConto = entity.IDConto;
 			dto.IDRegistroIVA = entity.IDRegistroIVA;
 			dto.IDIVA = entity.IDIVA;
-			dto.Importo = entity.Importo;
-			dto.ImponibileIVA = entity.ImponibileIVA;
-			dto.ImportoIVA = entity.ImportoIVA;
-			dto.TipoRiga = entity.TipoRiga;
+			dto.Totale = entity.Totale;
+			dto.Imponibile = entity.Imponibile;
+			dto.IVA = entity.IVA;
+			dto.Numero = entity.Numero;
+			dto.DataRegistrazione = entity.DataRegistrazione;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -625,11 +628,10 @@ namespace WcfService.Assemblers
 	        }
 			
 			entity.Id = dto.Id;
-			entity.TipoRiga = dto.TipoRiga;
-			entity.IDIVA = dto.IDIVA;
 			entity.Data = dto.Data;
 			entity.TXTMovimenti = dto.TXTMovimenti;
 			entity.TXTClienti = dto.TXTClienti;
+			entity.Stato = dto.Stato;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -641,11 +643,10 @@ namespace WcfService.Assemblers
 			ObjectKey key = KeyUtility.Instance.Create(entity);
 			dto.DtoKey = KeyUtility.Instance.Convert(key);
 			dto.Id = entity.Id;
-			dto.TipoRiga = entity.TipoRiga;
-			dto.IDIVA = entity.IDIVA;
 			dto.Data = entity.Data;
 			dto.TXTMovimenti = entity.TXTMovimenti;
 			dto.TXTClienti = entity.TXTClienti;
+			dto.Stato = entity.Stato;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -700,6 +701,7 @@ namespace WcfService.Assemblers
 			entity.Data = dto.Data;
 			entity.Progressivo = dto.Progressivo;
 			entity.XmlFile = dto.XmlFile;
+			entity.Stato = dto.Stato;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -715,6 +717,7 @@ namespace WcfService.Assemblers
 			dto.Data = entity.Data;
 			dto.Progressivo = entity.Progressivo;
 			dto.XmlFile = entity.XmlFile;
+			dto.Stato = entity.Stato;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -741,6 +744,16 @@ namespace WcfService.Assemblers
 				dto.Documentos.Add(dtoItem);
 			}
 
+			CustomerAssembler customerAssembler = new CustomerAssembler();
+
+			dto.Customers = new List<CustomerDto>();
+			foreach (Customer item in entity.Customers)
+			{
+				var dtoItem = customerAssembler.Assemble(item);
+				dtoItem.Export = dto;
+				dto.Customers.Add(dtoItem);
+			}
+
 	    }
 	
 	}
@@ -751,36 +764,35 @@ namespace WcfService.Assemblers
 	    
 	}
 	
-	public partial interface INominativoAssembler : IAssembler<NominativoDto, Nominativo>
+	public partial interface IAnagraficaAziendaAssembler : IAssembler<AnagraficaAziendaDto, AnagraficaAzienda>
 	{ 
 	
 	}
 	
-	public partial class NominativoAssemblerBase : Assembler<NominativoDto, Nominativo>
+	public partial class AnagraficaAziendaAssemblerBase : Assembler<AnagraficaAziendaDto, AnagraficaAzienda>
 	{
 		/// <summary>
-	    /// Invoked after the NominativoDto instance is assembled.
+	    /// Invoked after the AnagraficaAziendaDto instance is assembled.
 	    /// </summary>
-	    /// <param name="dto"><see cref="NominativoDto"/> The Dto instance.</param>
-		partial void OnDTOAssembled(NominativoDto dto);
+	    /// <param name="dto"><see cref="AnagraficaAziendaDto"/> The Dto instance.</param>
+		partial void OnDTOAssembled(AnagraficaAziendaDto dto);
 	
 		/// <summary>
-	    /// Invoked after the Nominativo instance is assembled.
+	    /// Invoked after the AnagraficaAzienda instance is assembled.
 	    /// </summary>
-	    /// <param name="entity">The <see cref="Nominativo"/> instance.</param>
-		partial void OnEntityAssembled(Nominativo entity);
+	    /// <param name="entity">The <see cref="AnagraficaAzienda"/> instance.</param>
+		partial void OnEntityAssembled(AnagraficaAzienda entity);
 		
-	    public override Nominativo Assemble(Nominativo entity, NominativoDto dto)
+	    public override AnagraficaAzienda Assemble(AnagraficaAzienda entity, AnagraficaAziendaDto dto)
 	    {
 	        if (entity == null)
 	        {
-	            entity = new Nominativo();
+	            entity = new AnagraficaAzienda();
 	        }
 			
 			entity.Id = dto.Id;
 			entity.StudioCommercialeId = dto.StudioCommercialeId;
 			entity.RagioneSociale = dto.RagioneSociale;
-			entity.IDNominativo = dto.IDNominativo;
 			entity.CodiceFiscale = dto.CodiceFiscale;
 			entity.PartitaIVA = dto.PartitaIVA;
 			entity.Indirizzo = dto.Indirizzo;
@@ -789,20 +801,20 @@ namespace WcfService.Assemblers
 			entity.Email = dto.Email;
 			entity.Telefono = dto.Telefono;
 			entity.Fax = dto.Fax;
+			entity.Cap = dto.Cap;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
 	
-	    public override NominativoDto Assemble(Nominativo entity)
+	    public override AnagraficaAziendaDto Assemble(AnagraficaAzienda entity)
 	    {
-	        NominativoDto dto = new NominativoDto();
+	        AnagraficaAziendaDto dto = new AnagraficaAziendaDto();
 	        
 			ObjectKey key = KeyUtility.Instance.Create(entity);
 			dto.DtoKey = KeyUtility.Instance.Convert(key);
 			dto.Id = entity.Id;
 			dto.StudioCommercialeId = entity.StudioCommercialeId;
 			dto.RagioneSociale = entity.RagioneSociale;
-			dto.IDNominativo = entity.IDNominativo;
 			dto.CodiceFiscale = entity.CodiceFiscale;
 			dto.PartitaIVA = entity.PartitaIVA;
 			dto.Indirizzo = entity.Indirizzo;
@@ -811,25 +823,46 @@ namespace WcfService.Assemblers
 			dto.Email = entity.Email;
 			dto.Telefono = entity.Telefono;
 			dto.Fax = entity.Fax;
+			dto.Cap = entity.Cap;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
 	
-	    public override void AssembleReferences(Nominativo entity, NominativoDto dto)
+	    public override void AssembleReferences(AnagraficaAzienda entity, AnagraficaAziendaDto dto)
 	    {
 			StudioCommercialeAssembler studioCommercialeAssembler = new StudioCommercialeAssembler();
 			dto.StudioCommerciale = studioCommercialeAssembler.Assemble(entity.StudioCommerciale);
 
 	    }
 	
-	    public override void AssembleCollections(Nominativo entity, NominativoDto dto)
+	    public override void AssembleCollections(AnagraficaAzienda entity, AnagraficaAziendaDto dto)
 	    {
+			AziendaAssembler aziendaAssembler = new AziendaAssembler();
+
+			dto.Aziendas = new List<AziendaDto>();
+			foreach (Azienda item in entity.Aziendas)
+			{
+				var dtoItem = aziendaAssembler.Assemble(item);
+				dtoItem.AnagraficaAzienda = dto;
+				dto.Aziendas.Add(dtoItem);
+			}
+
+			ClienteAssembler clienteAssembler = new ClienteAssembler();
+
+			dto.Clientes = new List<ClienteDto>();
+			foreach (Cliente item in entity.Clientes)
+			{
+				var dtoItem = clienteAssembler.Assemble(item);
+				dtoItem.AnagraficaAzienda = dto;
+				dto.Clientes.Add(dtoItem);
+			}
+
 	    }
 	
 	}
 	
 	
-	public partial class NominativoAssembler : NominativoAssemblerBase, INominativoAssembler
+	public partial class AnagraficaAziendaAssembler : AnagraficaAziendaAssemblerBase, IAnagraficaAziendaAssembler
 	{
 	    
 	}
@@ -862,8 +895,9 @@ namespace WcfService.Assemblers
 			
 			entity.Id = dto.Id;
 			entity.AziendaId = dto.AziendaId;
+			entity.IDCliente = dto.IDCliente;
+			entity.AnagraficaAziendaId = dto.AnagraficaAziendaId;
 			entity.IDConto = dto.IDConto;
-			entity.IDNominativo = dto.IDNominativo;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -876,8 +910,9 @@ namespace WcfService.Assemblers
 			dto.DtoKey = KeyUtility.Instance.Convert(key);
 			dto.Id = entity.Id;
 			dto.AziendaId = entity.AziendaId;
+			dto.IDCliente = entity.IDCliente;
+			dto.AnagraficaAziendaId = entity.AnagraficaAziendaId;
 			dto.IDConto = entity.IDConto;
-			dto.IDNominativo = entity.IDNominativo;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -886,6 +921,9 @@ namespace WcfService.Assemblers
 	    {
 			AziendaAssembler aziendaAssembler = new AziendaAssembler();
 			dto.Azienda = aziendaAssembler.Assemble(entity.Azienda);
+
+			AnagraficaAziendaAssembler anagraficaAziendaAssembler = new AnagraficaAziendaAssembler();
+			dto.AnagraficaAzienda = anagraficaAziendaAssembler.Assemble(entity.AnagraficaAzienda);
 
 	    }
 	
@@ -897,6 +935,91 @@ namespace WcfService.Assemblers
 	
 	
 	public partial class ClienteAssembler : ClienteAssemblerBase, IClienteAssembler
+	{
+	    
+	}
+	
+	public partial interface ICustomerAssembler : IAssembler<CustomerDto, Customer>
+	{ 
+	
+	}
+	
+	public partial class CustomerAssemblerBase : Assembler<CustomerDto, Customer>
+	{
+		/// <summary>
+	    /// Invoked after the CustomerDto instance is assembled.
+	    /// </summary>
+	    /// <param name="dto"><see cref="CustomerDto"/> The Dto instance.</param>
+		partial void OnDTOAssembled(CustomerDto dto);
+	
+		/// <summary>
+	    /// Invoked after the Customer instance is assembled.
+	    /// </summary>
+	    /// <param name="entity">The <see cref="Customer"/> instance.</param>
+		partial void OnEntityAssembled(Customer entity);
+		
+	    public override Customer Assemble(Customer entity, CustomerDto dto)
+	    {
+	        if (entity == null)
+	        {
+	            entity = new Customer();
+	        }
+			
+			entity.Id = dto.Id;
+			entity.ExportId = dto.ExportId;
+			entity.IDCliente = dto.IDCliente;
+			entity.PartitaIVA = dto.PartitaIVA;
+			entity.RagioneSociale = dto.RagioneSociale;
+			entity.CodiceFiscale = dto.CodiceFiscale;
+			entity.Indirizzo = dto.Indirizzo;
+			entity.Comune = dto.Comune;
+			entity.Provincia = dto.Provincia;
+			entity.Email = dto.Email;
+			entity.Telefono = dto.Telefono;
+			entity.Fax = dto.Fax;
+			entity.Cap = dto.Cap;
+	        this.OnEntityAssembled(entity);
+	        return entity;
+	    }
+	
+	    public override CustomerDto Assemble(Customer entity)
+	    {
+	        CustomerDto dto = new CustomerDto();
+	        
+			ObjectKey key = KeyUtility.Instance.Create(entity);
+			dto.DtoKey = KeyUtility.Instance.Convert(key);
+			dto.Id = entity.Id;
+			dto.ExportId = entity.ExportId;
+			dto.IDCliente = entity.IDCliente;
+			dto.PartitaIVA = entity.PartitaIVA;
+			dto.RagioneSociale = entity.RagioneSociale;
+			dto.CodiceFiscale = entity.CodiceFiscale;
+			dto.Indirizzo = entity.Indirizzo;
+			dto.Comune = entity.Comune;
+			dto.Provincia = entity.Provincia;
+			dto.Email = entity.Email;
+			dto.Telefono = entity.Telefono;
+			dto.Fax = entity.Fax;
+			dto.Cap = entity.Cap;
+			this.OnDTOAssembled(dto); 
+	        return dto;
+	    }
+	
+	    public override void AssembleReferences(Customer entity, CustomerDto dto)
+	    {
+			ExportAssembler exportAssembler = new ExportAssembler();
+			dto.Export = exportAssembler.Assemble(entity.Export);
+
+	    }
+	
+	    public override void AssembleCollections(Customer entity, CustomerDto dto)
+	    {
+	    }
+	
+	}
+	
+	
+	public partial class CustomerAssembler : CustomerAssemblerBase, ICustomerAssembler
 	{
 	    
 	}
