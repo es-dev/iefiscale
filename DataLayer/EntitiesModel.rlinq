@@ -90,6 +90,11 @@
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:field name="_anagraficaAzienda" property="AnagraficaAzienda" behavior="readwrite" uniqueId="d2b77fbb-5578-4d41-804a-3cabea7ed46c" type="DataLayer.AnagraficaAzienda">
+          <orm:reference uniqueId="b9fa4b5c-0f8b-4437-8524-1c509209fe6e" association-name="AziendaHasAnagraficaAzienda">
+            <orm:sharedfield name="_anagraficaAziendaId" target-class="DataLayer.AnagraficaAzienda" target-field="_id" />
+          </orm:reference>
+        </orm:field>
         <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="71c7e97c-d9d4-41d8-9f42-3376976a077e" type="DataLayer.Account">
           <orm:collection element-class="DataLayer.Account" inverse-field="_azienda" order-by="" uniqueId="1d324130-84ca-4a48-a984-fa27b7b93e97" />
         </orm:field>
@@ -98,11 +103,6 @@
         </orm:field>
         <orm:field name="_clientes" property="Clientes" behavior="readwrite" uniqueId="8675ddef-37cf-4529-b467-dc218f99a18b" type="DataLayer.Cliente">
           <orm:collection element-class="DataLayer.Cliente" inverse-field="_azienda" order-by="" uniqueId="7a5f31a0-44cc-4ee0-81df-22e811c49b6f" />
-        </orm:field>
-        <orm:field name="_anagraficaAzienda" property="AnagraficaAzienda" behavior="readwrite" uniqueId="d2b77fbb-5578-4d41-804a-3cabea7ed46c" type="DataLayer.AnagraficaAzienda">
-          <orm:reference uniqueId="b9fa4b5c-0f8b-4437-8524-1c509209fe6e" association-name="AziendaHasAnagraficaAzienda">
-            <orm:sharedfield name="_anagraficaAziendaId" target-class="DataLayer.AnagraficaAzienda" target-field="_id" />
-          </orm:reference>
         </orm:field>
         <orm:index name="idx_Azenda_AnagraficaAziendaId">
           <orm:columnMapping>
@@ -354,11 +354,11 @@
         <orm:field name="_documentos" property="Documentos" behavior="readwrite" uniqueId="12bdff23-458d-4baf-868b-3ebc5cabe8cb" type="DataLayer.Documento">
           <orm:collection element-class="DataLayer.Documento" inverse-field="_export" order-by="" uniqueId="2449a04e-dd1c-4d21-9191-3873fcb89cd1" />
         </orm:field>
-        <orm:field name="_import" property="Import" behavior="readwrite" uniqueId="e845db9e-751f-4ee8-889b-6fa62b70c10c" type="DataLayer.Import">
-          <orm:inversereference inverse-field="_export" uniqueId="49cb064b-ef19-4d10-99e0-c919d7563a89" />
-        </orm:field>
         <orm:field name="_customers" property="Customers" behavior="readwrite" uniqueId="fe79bd68-6f69-45d8-b8b9-a6d16abaf2fb" type="DataLayer.Customer">
           <orm:collection element-class="DataLayer.Customer" inverse-field="_export" order-by="" uniqueId="c7a481d0-a079-452d-a32c-cbbd3743ef6a" />
+        </orm:field>
+        <orm:field name="_import" property="Import" behavior="readwrite" uniqueId="e845db9e-751f-4ee8-889b-6fa62b70c10c" type="DataLayer.Import">
+          <orm:inversereference inverse-field="_export" uniqueId="49cb064b-ef19-4d10-99e0-c919d7563a89" />
         </orm:field>
         <orm:index name="idx_Export_ComunicazioneId">
           <orm:columnMapping>
@@ -710,7 +710,8 @@
     </orm:relational-naming-settings>
   </orm:orm>
   <ModelSettings xmlns="">
-    <SaveConnectionStringInAppConfig>false</SaveConnectionStringInAppConfig>
+    <AppConfigConnectionPropertyName>IEFiscaleConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=localhost;Initial Catalog=IEFiscale;Integrated Security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>
@@ -729,6 +730,7 @@
       <MappingDefinitionType>Xml</MappingDefinitionType>
     </CodeGenerationSettings>
     <SchemaUpdateSettings>
+      <ExecuteScript>true</ExecuteScript>
       <DeploymentProject>DataLayer</DeploymentProject>
     </SchemaUpdateSettings>
     <BackendConfigurationSettings>
