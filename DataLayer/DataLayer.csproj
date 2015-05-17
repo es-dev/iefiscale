@@ -128,7 +128,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IEFiscaleConnection%282015-05-17 16-03-55%29.rlinq.sql" />
+    <Content Include="ESIEFiscaleConnection%282015-05-17 16-18-19%29.rlinq.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
