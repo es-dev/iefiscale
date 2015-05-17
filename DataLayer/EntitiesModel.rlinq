@@ -711,7 +711,7 @@
   </orm:orm>
   <ModelSettings xmlns="">
     <AppConfigConnectionPropertyName>IEFiscaleConnection</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>Data Source=localhost;Initial Catalog=IEFiscale;Integrated Security=True</AppConfigConnectionString>
+    <AppConfigConnectionString>data source=localhost;initial catalog=IEFiscale;integrated security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>

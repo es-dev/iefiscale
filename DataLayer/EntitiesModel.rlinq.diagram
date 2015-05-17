@@ -155,7 +155,7 @@
           <classShapeMoniker Id="3cbf9119-eb40-4925-bf72-e4f7c8b510ae" />
         </nodes>
       </associationConnector>
-      <associationConnector edgePoints="[(7.21875125 : 1.25); (7.21875125 : 3); (4.75 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <associationConnector edgePoints="[(7.21875125 : 1.25); (7.21875125 : 3); (6.45833083333333 : 3 : JumpStart); (6.29166416666667 : 3 : JumpEnd); (4.75 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
         <AssociationMoniker Id="749cf01c-1ad3-4635-aff0-a4c895f224c0" />
         <relativeChildShapes />
         <nodes>
