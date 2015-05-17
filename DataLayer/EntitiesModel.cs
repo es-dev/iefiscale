@@ -24,7 +24,7 @@ namespace DataLayer
 {
 	public partial class EntitiesModel : OpenAccessContext, IEntitiesModelUnitOfWork
 	{
-		private static string connectionStringName = @"IEFiscaleConnection";
+		private static string connectionStringName = @"ESIEFiscaleConnection";
 			
 		private static BackendConfiguration backend = GetBackendConfiguration();
 				

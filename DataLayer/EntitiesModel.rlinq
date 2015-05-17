@@ -710,8 +710,8 @@
     </orm:relational-naming-settings>
   </orm:orm>
   <ModelSettings xmlns="">
-    <AppConfigConnectionPropertyName>IEFiscaleConnection</AppConfigConnectionPropertyName>
-    <AppConfigConnectionString>data source=localhost;initial catalog=IEFiscale;integrated security=True</AppConfigConnectionString>
+    <AppConfigConnectionPropertyName>ESIEFiscaleConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=localhost;Initial Catalog=ESIEFiscale;Integrated Security=True</AppConfigConnectionString>
     <NamingSettings>
       <ClassRules>
         <CaseMode>PascalCase</CaseMode>

@@ -48,7 +48,7 @@ namespace Web
                 account.Username = username;
                 account.Password = password;
                 account.AziendaId = 1;
-                if (username == "admin" && password == "fiscale") //todo: da implementare profilazione utente
+                if (true)//username == "admin" && password == "fiscale") //todo: da implementare profilazione utente
                 {
                     SessionManager.Login(Context, account);
                     Context.Redirect("iefiscale-homepage.aspx");

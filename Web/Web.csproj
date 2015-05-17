@@ -277,6 +277,7 @@
     <Reference Include="System.Web.ApplicationServices">
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\Gizmox\Visual WebGUI\Sources 4.5.1\Gizmox.WebGUI.Assemblies\bin\4.5.1\ZedGraph.dll</HintPath>
