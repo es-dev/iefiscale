@@ -8,6 +8,7 @@ using Web.GUI.Dashboard;
 using Library.Template.Dashboard;
 using Web.GUI.StudioCommerciale;
 using Web.GUI.AnagraficaAzienda;
+using Web.GUI.Azienda;
 
 namespace Web.GUI.Dashboard
 {
@@ -26,11 +27,12 @@ namespace Web.GUI.Dashboard
                 var dashboards = new List<DashboardDto>();
                 var dashboardStudioCommerciale = new DashboardDto("Studio commerciale", "SC", "...", "Images.dashboard.agenda.png", "", typeof(StudioCommercialeView), false);
                 var dashboardAnagraficaAzienda = new DashboardDto("Anagrafica azienda", "AA", "...", "Images.dashboard.agenda.png", "", typeof(AnagraficaAziendaView), false);
+                var dashboardAzienda = new DashboardDto("azienda", "A", "...", "Images.dashboard.agenda.png", "", typeof(AziendaView), false);
 
 
                 dashboards.Add(dashboardStudioCommerciale);
                 dashboards.Add(dashboardAnagraficaAzienda);
-
+                dashboards.Add(dashboardAzienda);
 
                 var query = dashboards.AsQueryable();
                 return query;
