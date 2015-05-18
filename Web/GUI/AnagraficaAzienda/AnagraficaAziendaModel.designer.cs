@@ -30,7 +30,7 @@ namespace Web.GUI.AnagraficaAzienda
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.editRagioneSOciale = new Library.Template.Controls.TemplateEditText();
+            this.editRagioneSociale = new Library.Template.Controls.TemplateEditText();
             this.editIndirizzo = new Library.Template.Controls.TemplateEditText();
             this.editCAP = new Library.Template.Controls.TemplateEditCap();
             this.editFAX = new Library.Template.Controls.TemplateEditText();
@@ -58,10 +58,10 @@ namespace Web.GUI.AnagraficaAzienda
             this.container.Controls.Add(this.editFAX);
             this.container.Controls.Add(this.editCAP);
             this.container.Controls.Add(this.editIndirizzo);
-            this.container.Controls.Add(this.editRagioneSOciale);
+            this.container.Controls.Add(this.editRagioneSociale);
             this.container.Controls.SetChildIndex(this.infoSubtitleImage, 0);
             this.container.Controls.SetChildIndex(this.infoSubtitle, 0);
-            this.container.Controls.SetChildIndex(this.editRagioneSOciale, 0);
+            this.container.Controls.SetChildIndex(this.editRagioneSociale, 0);
             this.container.Controls.SetChildIndex(this.editIndirizzo, 0);
             this.container.Controls.SetChildIndex(this.editCAP, 0);
             this.container.Controls.SetChildIndex(this.editFAX, 0);
@@ -81,27 +81,27 @@ namespace Web.GUI.AnagraficaAzienda
             // 
             this.infoSubtitleImage.Location = new System.Drawing.Point(610, 3);
             // 
-            // editRagioneSOciale
+            // editRagioneSociale
             // 
-            this.editRagioneSOciale.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            this.editRagioneSociale.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editRagioneSOciale.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editRagioneSOciale.BackColor = System.Drawing.Color.Transparent;
-            this.editRagioneSOciale.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editRagioneSOciale.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editRagioneSOciale.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editRagioneSOciale.Changed = true;
-            this.editRagioneSOciale.Editing = false;
-            this.editRagioneSOciale.Label = "Ragione sociale";
-            this.editRagioneSOciale.LabelWidth = 175;
-            this.editRagioneSOciale.Location = new System.Drawing.Point(25, 113);
-            this.editRagioneSOciale.Name = "editRagioneSOciale";
-            this.editRagioneSOciale.ReadOnly = false;
-            this.editRagioneSOciale.Required = true;
-            this.editRagioneSOciale.Size = new System.Drawing.Size(813, 30);
-            this.editRagioneSOciale.TabIndex = 1;
-            this.editRagioneSOciale.Text = "EditControl";
-            this.editRagioneSOciale.Value = null;
+            this.editRagioneSociale.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editRagioneSociale.BackColor = System.Drawing.Color.Transparent;
+            this.editRagioneSociale.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editRagioneSociale.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editRagioneSociale.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editRagioneSociale.Changed = true;
+            this.editRagioneSociale.Editing = false;
+            this.editRagioneSociale.Label = "Ragione sociale";
+            this.editRagioneSociale.LabelWidth = 175;
+            this.editRagioneSociale.Location = new System.Drawing.Point(25, 113);
+            this.editRagioneSociale.Name = "editRagioneSociale";
+            this.editRagioneSociale.ReadOnly = false;
+            this.editRagioneSociale.Required = true;
+            this.editRagioneSociale.Size = new System.Drawing.Size(813, 30);
+            this.editRagioneSociale.TabIndex = 1;
+            this.editRagioneSociale.Text = "EditControl";
+            this.editRagioneSociale.Value = null;
             // 
             // editIndirizzo
             // 
@@ -333,7 +333,7 @@ namespace Web.GUI.AnagraficaAzienda
 
 		#endregion
 
-        private Library.Template.Controls.TemplateEditText editRagioneSOciale;
+        private Library.Template.Controls.TemplateEditText editRagioneSociale;
         private Library.Template.Controls.TemplateEditText editIndirizzo;
         private Library.Template.Controls.TemplateEditCap editCAP;
         private Library.Template.Controls.TemplateEditText editTelefono;

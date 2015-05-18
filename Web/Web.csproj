@@ -584,6 +584,25 @@
       <DependentUpon>AnagraficaAziendaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaViewModel.cs" />
+    <Compile Include="GUI\Azienda\AziendaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaItem.designer.cs">
+      <DependentUpon>AziendaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaModel.designer.cs">
+      <DependentUpon>AziendaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaView.designer.cs">
+      <DependentUpon>AziendaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaViewModel.cs" />
     <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -643,7 +662,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\Account\" />
-    <Folder Include="GUI\Azienda\" />
     <Folder Include="GUI\Cliente\" />
     <Folder Include="GUI\Comunicazione\" />
     <Folder Include="GUI\Contabilita\" />
@@ -682,6 +700,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.resx">
       <DependentUpon>AnagraficaAziendaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Azienda\AziendaItem.resx">
+      <DependentUpon>AziendaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Azienda\AziendaModel.resx">
+      <DependentUpon>AziendaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Azienda\AziendaView.resx">
+      <DependentUpon>AziendaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
       <DependentUpon>StudioCommercialeItem.cs</DependentUpon>

@@ -10,11 +10,11 @@ using System.Text;
 using WcfService.Dto;
 using Web.Code;
 
-namespace Web.GUI.AnagraficaAzienda
+namespace Web.GUI.Azienda
 {
-	public partial class AnagraficaAziendaModel : TemplateModel
+	public partial class AziendaModel : TemplateModel
 	{
-        public AnagraficaAziendaModel()
+        public AziendaModel()
 		{
 			InitializeComponent();
 		}
@@ -25,10 +25,10 @@ namespace Web.GUI.AnagraficaAzienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
-                    infoSubtitle.Text =  obj.RagioneSociale;
+                    var obj = (WcfService.Dto.AziendaDto)model;
+                    infoSubtitle.Text =  "";
                     infoSubtitleImage.Image = "Images.dashboard.azienda.png";
-                    infoTitle.Text = (obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
                 }
             }
             catch (Exception ex)
@@ -43,20 +43,29 @@ namespace Web.GUI.AnagraficaAzienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
-                    editRagioneSociale.Value = obj.RagioneSociale;
-                    editCAP.Value = obj.Cap;
-                    //editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
-                    editIndirizzo.Value = obj.Indirizzo;
-                    editCodiceFiscale.Value = obj.CodiceFiscale;
-                    editPartitaIVA.Value = obj.PartitaIVA;
-                    editTelefono.Value = obj.Telefono;
-                    editFAX.Value = obj.Fax;
-                    editEmail.Value = obj.Email;
+                    var obj = (WcfService.Dto.AziendaDto)model;
+                    editTipoContabilita.Value = obj.TipoContabilita;
+                    editTipoSoftwareFatturazione.Value = obj.TipoSoftwareFatturazione;
+                    editUltimoAggiornamento.Value = obj.UltimoAggiornamento;
+                    editMdbFile.Value = obj.MdbFile;
 
                     BindViewStudioCommerciale(obj.StudioCommerciale);
+                    BindViewAnagraficaAzienda(obj.AnagraficaAzienda);
 
                 }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        private void BindViewAnagraficaAzienda(AnagraficaAziendaDto anagraficaAziendaDto)
+        {
+            try
+            {
+                editAnagraficaAzienda.Model = anagraficaAziendaDto;
+                editAnagraficaAzienda.Value = (anagraficaAziendaDto != null ? anagraficaAziendaDto.RagioneSociale : null);
             }
             catch (Exception ex)
             {
@@ -83,22 +92,19 @@ namespace Web.GUI.AnagraficaAzienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
-                    obj.RagioneSociale = editRagioneSociale.Value;
-                    obj.Cap = editCAP.Value;
-                    obj.Comune = editComune.Value.Description;
-                    //obj.CodiceCatastale = editComune.Value.Code;
-                    obj.Provincia = editComune.Value.County;
-                    obj.CodiceFiscale = editCodiceFiscale.Value;
-                    obj.Indirizzo = editIndirizzo.Value;
-                    obj.PartitaIVA = editPartitaIVA.Value;
-                    obj.Telefono = editTelefono.Value;
-                    obj.Fax = editFAX.Value;
-                    obj.Email = editEmail.Value;
+                    var obj = (WcfService.Dto.AziendaDto)model;
+                    obj.TipoContabilita = editTipoContabilita.Value;
+                    obj.UltimoAggiornamento = editUltimoAggiornamento.Value;
+                    obj.MdbFile = editMdbFile.Value;
+                    obj.TipoSoftwareFatturazione = editTipoSoftwareFatturazione.Value;
 
                     var studioCommerciale = (WcfService.Dto.StudioCommercialeDto)editStudioCommerciale.Model;
                     if (studioCommerciale != null)
                         obj.StudioCommercialeId = studioCommerciale.Id;
+
+                    var anagraficaAzienda = (WcfService.Dto.AnagraficaAziendaDto)editAnagraficaAzienda.Model;
+                    if (anagraficaAzienda != null)
+                        obj.AnagraficaAziendaId = anagraficaAzienda.Id;
                 }
             }
             catch (Exception ex)
@@ -114,7 +120,6 @@ namespace Web.GUI.AnagraficaAzienda
                 var view = new StudioCommerciale.StudioCommercialeView();
                 view.Title = "SELEZIONA UNO STUDIO COMMERCIALE";
                 editStudioCommerciale.Show(view);
-
             }
             catch (Exception ex)
             {
@@ -136,6 +141,26 @@ namespace Web.GUI.AnagraficaAzienda
             }
         }
 
-   
+        private void editAnagraficaAzienda_ComboClick()
+        {
+            try
+            {
+                var view = new AnagraficaAzienda.AnagraficaAziendaView();
+                view.Title = "SELEZIONA UN'AZIENDA DALL'ANAGRAFICA";
+                editAnagraficaAzienda.Show(view);
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+
+        }
+
+        private void editAnagraficaAzienda_ComboConfirm(object model)
+        {
+            var anagraficaAzienda = (AnagraficaAziendaDto)model;
+            if (anagraficaAzienda != null)
+                editAnagraficaAzienda.Value = anagraficaAzienda.RagioneSociale;
+        }
 	}
 }
