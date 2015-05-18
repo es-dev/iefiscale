@@ -565,6 +565,44 @@
   <ItemGroup>
     <Compile Include="Code\ESApplication.cs" />
     <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.designer.cs">
+      <DependentUpon>AnagraficaAziendaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaModel.designer.cs">
+      <DependentUpon>AnagraficaAziendaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.designer.cs">
+      <DependentUpon>AnagraficaAziendaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaViewModel.cs" />
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.designer.cs">
+      <DependentUpon>StudioCommercialeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeModel.designer.cs">
+      <DependentUpon>StudioCommercialeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeView.designer.cs">
+      <DependentUpon>StudioCommercialeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeViewModel.cs" />
     <Compile Include="GUI\Dashboard\DashboardItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -604,6 +642,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GUI\Account\" />
+    <Folder Include="GUI\Azienda\" />
+    <Folder Include="GUI\Cliente\" />
+    <Folder Include="GUI\Comunicazione\" />
+    <Folder Include="GUI\Contabilita\" />
+    <Folder Include="GUI\Customer\" />
+    <Folder Include="GUI\Documento\" />
+    <Folder Include="GUI\Export\" />
+    <Folder Include="GUI\Import\" />
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\UserData\" />
@@ -627,6 +674,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.resx">
+      <DependentUpon>AnagraficaAziendaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaModel.resx">
+      <DependentUpon>AnagraficaAziendaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.resx">
+      <DependentUpon>AnagraficaAziendaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
+      <DependentUpon>StudioCommercialeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeModel.resx">
+      <DependentUpon>StudioCommercialeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeView.resx">
+      <DependentUpon>StudioCommercialeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dashboard\DashboardItem.resx">
       <DependentUpon>DashboardItem.cs</DependentUpon>
     </EmbeddedResource>
