@@ -641,6 +641,25 @@
       <DependentUpon>ClienteView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Cliente\ClienteViewModel.cs" />
+    <Compile Include="GUI\Contabilita\ContabilitaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaItem.designer.cs">
+      <DependentUpon>ContabilitaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaModel.designer.cs">
+      <DependentUpon>ContabilitaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaView.designer.cs">
+      <DependentUpon>ContabilitaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaViewModel.cs" />
     <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -700,7 +719,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\Comunicazione\" />
-    <Folder Include="GUI\Contabilita\" />
     <Folder Include="GUI\Customer\" />
     <Folder Include="GUI\Documento\" />
     <Folder Include="GUI\Export\" />
@@ -763,6 +781,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Cliente\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Contabilita\ContabilitaItem.resx">
+      <DependentUpon>ContabilitaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Contabilita\ContabilitaModel.resx">
+      <DependentUpon>ContabilitaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Contabilita\ContabilitaView.resx">
+      <DependentUpon>ContabilitaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
       <DependentUpon>StudioCommercialeItem.cs</DependentUpon>
