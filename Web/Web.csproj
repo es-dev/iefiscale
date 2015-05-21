@@ -641,6 +641,25 @@
       <DependentUpon>ClienteView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Cliente\ClienteViewModel.cs" />
+    <Compile Include="GUI\Comunicazione\ComunicazioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneItem.designer.cs">
+      <DependentUpon>ComunicazioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneModel.designer.cs">
+      <DependentUpon>ComunicazioneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneView.designer.cs">
+      <DependentUpon>ComunicazioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneViewModel.cs" />
     <Compile Include="GUI\Contabilita\ContabilitaItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -718,7 +737,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\Comunicazione\" />
     <Folder Include="GUI\Customer\" />
     <Folder Include="GUI\Documento\" />
     <Folder Include="GUI\Export\" />
@@ -781,6 +799,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Cliente\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comunicazione\ComunicazioneItem.resx">
+      <DependentUpon>ComunicazioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comunicazione\ComunicazioneModel.resx">
+      <DependentUpon>ComunicazioneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comunicazione\ComunicazioneView.resx">
+      <DependentUpon>ComunicazioneView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Contabilita\ContabilitaItem.resx">
       <DependentUpon>ContabilitaItem.cs</DependentUpon>
