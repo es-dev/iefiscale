@@ -565,6 +565,25 @@
   <ItemGroup>
     <Compile Include="Code\ESApplication.cs" />
     <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="GUI\Account\AccountItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\AccountItem.designer.cs">
+      <DependentUpon>AccountItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Account\AccountModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\AccountModel.designer.cs">
+      <DependentUpon>AccountModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Account\AccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\AccountView.designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Account\AccountViewModel.cs" />
     <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -603,6 +622,25 @@
       <DependentUpon>AziendaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Azienda\AziendaViewModel.cs" />
+    <Compile Include="GUI\Cliente\ClienteItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteItem.designer.cs">
+      <DependentUpon>ClienteItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteModel.designer.cs">
+      <DependentUpon>ClienteModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteView.designer.cs">
+      <DependentUpon>ClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteViewModel.cs" />
     <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -661,8 +699,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\Account\" />
-    <Folder Include="GUI\Cliente\" />
     <Folder Include="GUI\Comunicazione\" />
     <Folder Include="GUI\Contabilita\" />
     <Folder Include="GUI\Customer\" />
@@ -692,6 +728,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Account\AccountItem.resx">
+      <DependentUpon>AccountItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Account\AccountModel.resx">
+      <DependentUpon>AccountModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Account\AccountView.resx">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.resx">
       <DependentUpon>AnagraficaAziendaItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -709,6 +754,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Azienda\AziendaView.resx">
       <DependentUpon>AziendaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteItem.resx">
+      <DependentUpon>ClienteItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteModel.resx">
+      <DependentUpon>ClienteModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteView.resx">
+      <DependentUpon>ClienteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
       <DependentUpon>StudioCommercialeItem.cs</DependentUpon>

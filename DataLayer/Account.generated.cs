@@ -102,6 +102,58 @@ namespace DataLayer
 			}
 		}
 		
+		private string _ruolo;
+		public virtual string Ruolo
+		{
+			get
+			{
+				return this._ruolo;
+			}
+			set
+			{
+				this._ruolo = value;
+			}
+		}
+		
+		private string _note;
+		public virtual string Note
+		{
+			get
+			{
+				return this._note;
+			}
+			set
+			{
+				this._note = value;
+			}
+		}
+		
+		private DateTime? _creazione;
+		public virtual DateTime? Creazione
+		{
+			get
+			{
+				return this._creazione;
+			}
+			set
+			{
+				this._creazione = value;
+			}
+		}
+		
+		private bool? _abilitato;
+		public virtual bool? Abilitato
+		{
+			get
+			{
+				return this._abilitato;
+			}
+			set
+			{
+				this._abilitato = value;
+			}
+		}
+		
 		private StudioCommerciale _studioCommerciale;
 		public virtual StudioCommerciale StudioCommerciale
 		{

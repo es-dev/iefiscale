@@ -273,6 +273,18 @@
         <orm:field name="_nickname" property="Nickname" uniqueId="732e9d3e-610c-4a21-b04d-3898fd9310a8" type="System.String">
           <orm:column name="Nickname" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
+        <orm:field name="_ruolo" property="Ruolo" uniqueId="d89ffe61-0fd3-4b8d-9f11-6592e01a58e3" type="System.String">
+          <orm:column name="Ruolo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
+        </orm:field>
+        <orm:field name="_note" property="Note" uniqueId="21ac7723-67b9-4363-b372-c8e97d1d1b0f" type="System.String">
+          <orm:column name="Note" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
+        </orm:field>
+        <orm:field name="_creazione" property="Creazione" uniqueId="304a3166-83dd-4463-a633-54f8e07c6731" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Creazione" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="" />
+        </orm:field>
+        <orm:field name="_abilitato" property="Abilitato" uniqueId="1aecb3c0-05dd-491d-afac-b3f9da33e302" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Abilitato" sql-type="bit" nullable="true" length="0" scale="0" ado-type="" />
+        </orm:field>
         <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="2b50c650-c544-4fbd-8f84-9473d31f672b" type="DataLayer.StudioCommerciale">
           <orm:reference uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" association-name="AccountHasStudioCommerciale">
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
@@ -538,6 +550,10 @@
         <orm:column name="Nickname" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="Ruolo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
+        <orm:column name="Note" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
+        <orm:column name="Creazione" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="" />
+        <orm:column name="Abilitato" sql-type="bit" nullable="true" length="0" scale="0" ado-type="" />
         <orm:index name="idx_Account_AziendaId">
           <orm:columnMapping>
             <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -732,6 +748,7 @@
     <SchemaUpdateSettings>
       <ExecuteScript>true</ExecuteScript>
       <DeploymentProject>DataLayer</DeploymentProject>
+      <UpdateDatabaseOperation>Migrate</UpdateDatabaseOperation>
     </SchemaUpdateSettings>
     <BackendConfigurationSettings>
       <BackendConfiguration>
@@ -925,6 +942,10 @@
       <Property Id="300877d1-ca89-4ff5-b794-04f9e1b0f40c" name="Username" label="Username : String" fieldName="_username" />
       <Property Id="2728b58d-712b-4b12-96fa-c3d110102a8d" name="Password" label="Password : String" fieldName="_password" />
       <Property Id="732e9d3e-610c-4a21-b04d-3898fd9310a8" name="Nickname" label="Nickname : String" fieldName="_nickname" />
+      <Property Id="d89ffe61-0fd3-4b8d-9f11-6592e01a58e3" name="Ruolo" label="Ruolo : String" fieldName="_ruolo" />
+      <Property Id="21ac7723-67b9-4363-b372-c8e97d1d1b0f" name="Note" label="Note : String" fieldName="_note" />
+      <Property Id="304a3166-83dd-4463-a633-54f8e07c6731" name="Creazione" type="DateTime" label="Creazione : DateTime" nullable="true" fieldName="_creazione" />
+      <Property Id="1aecb3c0-05dd-491d-afac-b3f9da33e302" name="Abilitato" type="Boolean" label="Abilitato : Boolean" nullable="true" fieldName="_abilitato" />
       <AssociationTargets>
         <Association Id="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" SourceMultiplicity="ZeroOne" name="AccountHasStudioCommerciale">
           <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />

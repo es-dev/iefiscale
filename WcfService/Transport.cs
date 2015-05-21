@@ -344,7 +344,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public AccountDto(int _id, int _studioCommercialeId, int _aziendaId, string _username, string _password, string _nickname, StudioCommercialeDto _studioCommerciale, AziendaDto _azienda)
+		public AccountDto(int _id, int _studioCommercialeId, int _aziendaId, string _username, string _password, string _nickname, string _ruolo, string _note, DateTime? _creazione, bool? _abilitato, StudioCommercialeDto _studioCommerciale, AziendaDto _azienda)
 		{
 			this.Id = _id;
 			this.StudioCommercialeId = _studioCommercialeId;
@@ -352,6 +352,10 @@ namespace WcfService.Dto
 			this.Username = _username;
 			this.Password = _password;
 			this.Nickname = _nickname;
+			this.Ruolo = _ruolo;
+			this.Note = _note;
+			this.Creazione = _creazione;
+			this.Abilitato = _abilitato;
 			this.StudioCommerciale = _studioCommerciale;
 			this.Azienda = _azienda;
 		}
@@ -376,6 +380,18 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual string Nickname { get;set; }
+
+		[DataMember]
+		public virtual string Ruolo { get;set; }
+
+		[DataMember]
+		public virtual string Note { get;set; }
+
+		[DataMember]
+		public virtual DateTime? Creazione { get;set; }
+
+		[DataMember]
+		public virtual bool? Abilitato { get;set; }
 
 		[DataMember]
 		public virtual StudioCommercialeDto StudioCommerciale { get;set; }

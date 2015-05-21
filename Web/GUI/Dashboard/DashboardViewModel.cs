@@ -9,6 +9,7 @@ using Library.Template.Dashboard;
 using Web.GUI.StudioCommerciale;
 using Web.GUI.AnagraficaAzienda;
 using Web.GUI.Azienda;
+using Web.GUI.Account;
 
 namespace Web.GUI.Dashboard
 {
@@ -25,11 +26,12 @@ namespace Web.GUI.Dashboard
             try
             {
                 var dashboards = new List<DashboardDto>();
+                var dashboardAccount = new DashboardDto("Account", "AC", "...", "Images.dashboard.account.png", "", typeof(AccountView), false);
                 var dashboardStudioCommerciale = new DashboardDto("Studio commerciale", "SC", "...", "Images.dashboard.agenda.png", "", typeof(StudioCommercialeView), false);
                 var dashboardAnagraficaAzienda = new DashboardDto("Anagrafica azienda", "AA", "...", "Images.dashboard.agenda.png", "", typeof(AnagraficaAziendaView), false);
-                var dashboardAzienda = new DashboardDto("azienda", "A", "...", "Images.dashboard.agenda.png", "", typeof(AziendaView), false);
+                var dashboardAzienda = new DashboardDto("Azienda", "A", "...", "Images.dashboard.agenda.png", "", typeof(AziendaView), false);
 
-
+                dashboards.Add(dashboardAccount);
                 dashboards.Add(dashboardStudioCommerciale);
                 dashboards.Add(dashboardAnagraficaAzienda);
                 dashboards.Add(dashboardAzienda);
