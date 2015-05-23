@@ -679,6 +679,25 @@
       <DependentUpon>ContabilitaView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Contabilita\ContabilitaViewModel.cs" />
+    <Compile Include="GUI\Export\ExportItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Export\ExportItem.designer.cs">
+      <DependentUpon>ExportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Export\ExportModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Export\ExportModel.designer.cs">
+      <DependentUpon>ExportModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Export\ExportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Export\ExportView.designer.cs">
+      <DependentUpon>ExportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Export\ExportViewModel.cs" />
     <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -739,7 +758,6 @@
   <ItemGroup>
     <Folder Include="GUI\Customer\" />
     <Folder Include="GUI\Documento\" />
-    <Folder Include="GUI\Export\" />
     <Folder Include="GUI\Import\" />
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
@@ -817,6 +835,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Contabilita\ContabilitaView.resx">
       <DependentUpon>ContabilitaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Export\ExportItem.resx">
+      <DependentUpon>ExportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Export\ExportModel.resx">
+      <DependentUpon>ExportModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Export\ExportView.resx">
+      <DependentUpon>ExportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
       <DependentUpon>StudioCommercialeItem.cs</DependentUpon>

@@ -108,7 +108,7 @@ namespace Web.GUI.Comunicazione
             this.editScadenzaIVA.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editScadenzaIVA.Changed = true;
             this.editScadenzaIVA.Editing = false;
-            this.editScadenzaIVA.Label = "Scadneza IVA";
+            this.editScadenzaIVA.Label = "Scadenza IVA";
             this.editScadenzaIVA.LabelWidth = 175;
             this.editScadenzaIVA.Location = new System.Drawing.Point(25, 168);
             this.editScadenzaIVA.Name = "editScadenzaIVA";
