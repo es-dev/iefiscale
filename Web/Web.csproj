@@ -698,6 +698,25 @@
       <DependentUpon>ExportView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Export\ExportViewModel.cs" />
+    <Compile Include="GUI\Import\ImportItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Import\ImportItem.designer.cs">
+      <DependentUpon>ImportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import\ImportModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Import\ImportModel.designer.cs">
+      <DependentUpon>ImportModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import\ImportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Import\ImportView.designer.cs">
+      <DependentUpon>ImportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import\ImportViewModel.cs" />
     <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -758,7 +777,6 @@
   <ItemGroup>
     <Folder Include="GUI\Customer\" />
     <Folder Include="GUI\Documento\" />
-    <Folder Include="GUI\Import\" />
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\UserData\" />
@@ -844,6 +862,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Export\ExportView.resx">
       <DependentUpon>ExportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import\ImportItem.resx">
+      <DependentUpon>ImportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import\ImportModel.resx">
+      <DependentUpon>ImportModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import\ImportView.resx">
+      <DependentUpon>ImportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
       <DependentUpon>StudioCommercialeItem.cs</DependentUpon>
