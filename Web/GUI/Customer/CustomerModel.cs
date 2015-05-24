@@ -10,11 +10,11 @@ using System.Text;
 using WcfService.Dto;
 using Web.Code;
 
-namespace Web.GUI.Import
+namespace Web.GUI.Customer
 {
-    public partial class ImportModel : TemplateModel
+    public partial class CustomerModel : TemplateModel
     {
-        public ImportModel()
+        public CustomerModel()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace Web.GUI.Import
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ImportDto)model;
+                    var obj = (WcfService.Dto.CustomerDto)model;
                     infoSubtitle.Text = "";
                     infoSubtitleImage.Image = "Images.dashboard.cliente.png";
                     infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
@@ -43,11 +43,17 @@ namespace Web.GUI.Import
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ImportDto)model;
-                    editData.Value = obj.Data;
-                    editTXTMovimenti.Value = obj.TXTMovimenti;
-                    editTXTClienti.Value = obj.TXTClienti;
-                    editStato.Value = obj.Stato;
+                    var obj = (WcfService.Dto.CustomerDto)model;
+                    editRagioneSociale.Value = obj.RagioneSociale;
+                    editCAP.Value = obj.Cap;
+                    //editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
+                    editIndirizzo.Value = obj.Indirizzo;
+                    editCodiceFiscale.Value = obj.CodiceFiscale;
+                    editPartitaIVA.Value = obj.PartitaIVA;
+                    editTelefono.Value = obj.Telefono;
+                    editFAX.Value = obj.Fax;
+                    editEmail.Value = obj.Email;
+                    editIDCliente.Value = obj.IDCliente;
 
                     BindViewExport(obj.Export);
 
@@ -78,14 +84,23 @@ namespace Web.GUI.Import
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ImportDto)model;
-                    obj.Data = editData.Value;
-                    obj.TXTMovimenti = editTXTMovimenti.Value;
-                    obj.TXTClienti = editTXTClienti.Value;
-                    obj.Stato = editStato.Value;
+                    var obj = (WcfService.Dto.CustomerDto)model;
+                    obj.RagioneSociale = editRagioneSociale.Value;
+                    obj.Cap = editCAP.Value;
+                    obj.Comune = editComune.Value.Description;
+                    //obj.CodiceCatastale = editComune.Value.Code;
+                    obj.Provincia = editComune.Value.County;
+                    obj.CodiceFiscale = editCodiceFiscale.Value;
+                    obj.Indirizzo = editIndirizzo.Value;
+                    obj.PartitaIVA = editPartitaIVA.Value;
+                    obj.Telefono = editTelefono.Value;
+                    obj.Fax = editFAX.Value;
+                    obj.Email = editEmail.Value;
+                    obj.IDCliente = editIDCliente.Value;
+
                     var export = (WcfService.Dto.ExportDto)editExport.Model;
                     if (export != null)
-                        obj.Id = export.Id;    // todo: da verificare relazione 1:1
+                        obj.ExportId = export.Id;    // todo: da verificare relazione 1:1
                 }
             }
             catch (Exception ex)
