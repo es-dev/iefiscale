@@ -31,7 +31,7 @@ namespace Web.GUI.Contabilita
 		private void InitializeComponent()
 		{
             this.editTipo = new Library.Template.Controls.TemplateEditText();
-            this.editAnno = new Library.Template.Controls.TemplateEditCap();
+            this.editAnno = new Library.Template.Controls.TemplateEditText();
             this.editAzienda = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
@@ -134,7 +134,7 @@ namespace Web.GUI.Contabilita
 		#endregion
 
         private Library.Template.Controls.TemplateEditText editTipo;
-        private Library.Template.Controls.TemplateEditCap editAnno;
+        private Library.Template.Controls.TemplateEditText editAnno;
         private Library.Template.Controls.TemplateEditCombo editAzienda;
 
 

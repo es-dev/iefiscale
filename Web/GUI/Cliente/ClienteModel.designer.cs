@@ -31,7 +31,7 @@ namespace Web.GUI.Cliente
 		private void InitializeComponent()
 		{
             this.editIDConto = new Library.Template.Controls.TemplateEditText();
-            this.editIDCliente = new Library.Template.Controls.TemplateEditCap();
+            this.editIDCliente = new Library.Template.Controls.TemplateEditText();
             this.editAzienda = new Library.Template.Controls.TemplateEditCombo();
             this.editAnagraficaAzienda = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
@@ -161,7 +161,7 @@ namespace Web.GUI.Cliente
 		#endregion
 
         private Library.Template.Controls.TemplateEditText editIDConto;
-        private Library.Template.Controls.TemplateEditCap editIDCliente;
+        private Library.Template.Controls.TemplateEditText editIDCliente;
         private Library.Template.Controls.TemplateEditCombo editAzienda;
         private Library.Template.Controls.TemplateEditCombo editAnagraficaAzienda;
 

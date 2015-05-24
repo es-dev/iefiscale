@@ -39,7 +39,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editPartitaIVA = new Library.Template.Controls.TemplateEditPartitaIva();
             this.editComune = new Library.Template.Controls.TemplateEditCountry();
             this.editLocalita = new Library.Template.Controls.TemplateEditText();
-            this.editCodiceFiscale = new Library.Template.Controls.TemplateEditPartitaIva();
+            this.editCodiceFiscale = new Library.Template.Controls.TemplateEditCodiceFiscale();
             this.editStudioCommerciale = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
@@ -342,7 +342,7 @@ namespace Web.GUI.AnagraficaAzienda
         private Library.Template.Controls.TemplateEditEmail editEmail;
         private Library.Template.Controls.TemplateEditCountry editComune;
         private Library.Template.Controls.TemplateEditText editLocalita;
-        private Library.Template.Controls.TemplateEditPartitaIva editCodiceFiscale;
+        private Library.Template.Controls.TemplateEditCodiceFiscale editCodiceFiscale;
         private Library.Template.Controls.TemplateEditCombo editStudioCommerciale;
 
 

@@ -31,7 +31,7 @@ namespace Web.GUI.Customer
 		private void InitializeComponent()
 		{
             this.editExport = new Library.Template.Controls.TemplateEditCombo();
-            this.editCodiceFiscale = new Library.Template.Controls.TemplateEditPartitaIva();
+            this.editCodiceFiscale = new Library.Template.Controls.TemplateEditCodiceFiscale();
             this.editComune = new Library.Template.Controls.TemplateEditCountry();
             this.editPartitaIVA = new Library.Template.Controls.TemplateEditPartitaIva();
             this.editEmail = new Library.Template.Controls.TemplateEditEmail();
@@ -364,7 +364,7 @@ namespace Web.GUI.Customer
         private Library.Template.Controls.TemplateEditEmail editEmail;
         private Library.Template.Controls.TemplateEditPartitaIva editPartitaIVA;
         private Library.Template.Controls.TemplateEditCountry editComune;
-        private Library.Template.Controls.TemplateEditPartitaIva editCodiceFiscale;
+        private Library.Template.Controls.TemplateEditCodiceFiscale editCodiceFiscale;
         private Library.Template.Controls.TemplateEditText editLocalita;
 
 

@@ -698,6 +698,25 @@
       <DependentUpon>CustomerView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Customer\CustomerViewModel.cs" />
+    <Compile Include="GUI\Documento\DocumentoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoItem.designer.cs">
+      <DependentUpon>DocumentoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoModel.designer.cs">
+      <DependentUpon>DocumentoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoView.designer.cs">
+      <DependentUpon>DocumentoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoViewModel.cs" />
     <Compile Include="GUI\Export\ExportItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -794,7 +813,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\Documento\" />
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\UserData\" />
@@ -880,6 +898,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Documento\DocumentoItem.resx">
+      <DependentUpon>DocumentoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Documento\DocumentoModel.resx">
+      <DependentUpon>DocumentoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Documento\DocumentoView.resx">
+      <DependentUpon>DocumentoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Export\ExportItem.resx">
       <DependentUpon>ExportItem.cs</DependentUpon>

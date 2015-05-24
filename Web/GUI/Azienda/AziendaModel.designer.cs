@@ -31,7 +31,7 @@ namespace Web.GUI.Azienda
 		private void InitializeComponent()
 		{
             this.editTipoSoftwareFatturazione = new Library.Template.Controls.TemplateEditText();
-            this.editTipoContabilita = new Library.Template.Controls.TemplateEditCap();
+            this.editTipoContabilita = new Library.Template.Controls.TemplateEditText();
             this.editMdbFile = new Library.Template.Controls.TemplateEditText();
             this.editStudioCommerciale = new Library.Template.Controls.TemplateEditCombo();
             this.editAnagraficaAzienda = new Library.Template.Controls.TemplateEditCombo();
@@ -210,7 +210,7 @@ namespace Web.GUI.Azienda
 		#endregion
 
         private Library.Template.Controls.TemplateEditText editTipoSoftwareFatturazione;
-        private Library.Template.Controls.TemplateEditCap editTipoContabilita;
+        private Library.Template.Controls.TemplateEditText editTipoContabilita;
         private Library.Template.Controls.TemplateEditText editMdbFile;
         private Library.Template.Controls.TemplateEditCombo editStudioCommerciale;
         private Library.Template.Controls.TemplateEditCombo editAnagraficaAzienda;

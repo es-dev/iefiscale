@@ -39,7 +39,7 @@ namespace Web.GUI.StudioCommerciale
             this.editPartitaIVA = new Library.Template.Controls.TemplateEditPartitaIva();
             this.editComune = new Library.Template.Controls.TemplateEditCountry();
             this.editLocalita = new Library.Template.Controls.TemplateEditText();
-            this.editTipoSoftwareContabilita = new Library.Template.Controls.TemplateEditPartitaIva();
+            this.editTipoSoftwareContabilita = new Library.Template.Controls.TemplateEditText();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.panelCommands.SuspendLayout();
@@ -315,7 +315,7 @@ namespace Web.GUI.StudioCommerciale
         private Library.Template.Controls.TemplateEditEmail editEmail;
         private Library.Template.Controls.TemplateEditCountry editComune;
         private Library.Template.Controls.TemplateEditText editLocalita;
-        private Library.Template.Controls.TemplateEditPartitaIva editTipoSoftwareContabilita;
+        private Library.Template.Controls.TemplateEditText editTipoSoftwareContabilita;
 
 
     }
