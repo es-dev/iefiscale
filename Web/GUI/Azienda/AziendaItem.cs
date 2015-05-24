@@ -25,15 +25,15 @@ namespace Web.GUI.Azienda
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.AziendaDto)model;
-                    //var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    //var cap = UtilityValidation.GetStringND(obj.Cap);
-                    //var comune = UtilityValidation.GetStringND(obj.Comune);
-                    //var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    //var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
+                    var anagraficaAzienda = obj.AnagraficaAzienda;
+                    var ragioneSocialeAzienda = UtilityValidation.GetStringND(anagraficaAzienda.RagioneSociale);
+                    var studioCommerciale= obj.StudioCommerciale;
+                    var tipoSoftwareFatturazione = UtilityValidation.GetStringND(obj.TipoSoftwareFatturazione);
 
-                    //infoImage.Image = "Images.dashboard.azienda.png";
-                    //infoDenominazione.Text = denominazione;
-                    //infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoRagioneSociale.Text = ragioneSocialeAzienda;
+                    infoStudioCommerciale.Text = "Studio commerciale: " + studioCommerciale.Denominazione;
+                    infoTipoSoftwareFatturazione.Text = "Software di fatturazioen: " + tipoSoftwareFatturazione;
                 }
             }
             catch (Exception ex)

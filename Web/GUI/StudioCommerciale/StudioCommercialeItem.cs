@@ -30,10 +30,13 @@ namespace Web.GUI.StudioCommerciale
                     var comune = UtilityValidation.GetStringND(obj.Comune);
                     var provincia = UtilityValidation.GetStringND(obj.Provincia);
                     var denominazione = UtilityValidation.GetStringND(obj.Denominazione);
+                    var tipoSoftwareContabilita = UtilityValidation.GetStringND(obj.TipoSoftwareContabilita);
 
                     infoImage.Image = "Images.dashboard.azienda.png";
                     infoDenominazione.Text = denominazione;
                     infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoTipoSoftwareContabilita.Text = "Software di contabilità: " + tipoSoftwareContabilita;
+
                 }
             }
             catch (Exception ex)

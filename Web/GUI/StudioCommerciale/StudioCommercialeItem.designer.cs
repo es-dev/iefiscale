@@ -35,10 +35,18 @@ namespace Web.GUI.StudioCommerciale
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
             this.infoDenominazione = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
+            this.infoTipoSoftwareContabilita = new Gizmox.WebGUI.Forms.Label();
+            this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
-            this.jqContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // jqContainer
+            // 
+            this.jqContainer.Controls.Add(this.infoTipoSoftwareContabilita);
+            this.jqContainer.Controls.Add(this.panelLeft);
+            this.jqContainer.Controls.Add(this.infoDenominazione);
+            this.jqContainer.Controls.Add(this.infoIndirizzo);
             // 
             // infoIndirizzo
             // 
@@ -49,7 +57,7 @@ namespace Web.GUI.StudioCommerciale
             this.infoIndirizzo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.infoIndirizzo.Location = new System.Drawing.Point(91, 32);
             this.infoIndirizzo.Name = "infoIndirizzo";
-            this.infoIndirizzo.Size = new System.Drawing.Size(305, 55);
+            this.infoIndirizzo.Size = new System.Drawing.Size(302, 45);
             this.infoIndirizzo.TabIndex = 1;
             this.infoIndirizzo.Text = "Indirizzo";
             // 
@@ -99,16 +107,27 @@ namespace Web.GUI.StudioCommerciale
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
             // 
-            // AziendaItem
+            // infoTipoSoftwareContabilita
             // 
-            this.jqContainer.Controls.Add(this.panelLeft);
-            this.jqContainer.Controls.Add(this.infoDenominazione);
-            this.jqContainer.Controls.Add(this.infoIndirizzo);
+            this.infoTipoSoftwareContabilita.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoTipoSoftwareContabilita.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoTipoSoftwareContabilita.ForeColor = System.Drawing.Color.DarkRed;
+            this.infoTipoSoftwareContabilita.Location = new System.Drawing.Point(91, 79);
+            this.infoTipoSoftwareContabilita.Name = "infoTipoSoftwareContabilita";
+            this.infoTipoSoftwareContabilita.Size = new System.Drawing.Size(302, 19);
+            this.infoTipoSoftwareContabilita.TabIndex = 1;
+            this.infoTipoSoftwareContabilita.Text = "Tipo software contabilita";
+            this.infoTipoSoftwareContabilita.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // StudioCommercialeItem
+            // 
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Size = new System.Drawing.Size(400, 100);
+            this.jqContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).EndInit();
             this.panelLeft.ResumeLayout(false);
-            this.jqContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -120,5 +139,6 @@ namespace Web.GUI.StudioCommerciale
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
         private Gizmox.WebGUI.Forms.Label infoDenominazione;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
+        private Gizmox.WebGUI.Forms.Label infoTipoSoftwareContabilita;
 	}
 }

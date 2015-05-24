@@ -25,15 +25,13 @@ namespace Web.GUI.Cliente
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ClienteDto)model;
-                    //var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    //var cap = UtilityValidation.GetStringND(obj.Cap);
-                    //var comune = UtilityValidation.GetStringND(obj.Comune);
-                    //var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    //var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
+                    var anagraficaAzienda = obj.AnagraficaAzienda;
+                    var ragioneSocialeAzienda = UtilityValidation.GetStringND(anagraficaAzienda.RagioneSociale);
+                    var idCliente = UtilityValidation.GetStringND(obj.IDCliente);
 
-                    //infoImage.Image = "Images.dashboard.azienda.png";
-                    //infoDenominazione.Text = denominazione;
-                    //infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoImage.Image = "Images.dashboard.cliente.png";
+                    infoRagioneSociale.Text = ragioneSocialeAzienda;
+                    infoIdCliente.Text = "Id cliente:" + idCliente;
                 }
             }
             catch (Exception ex)
