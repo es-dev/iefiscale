@@ -30,28 +30,34 @@ namespace Web.GUI.Contabilita
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.infoIndirizzo = new Gizmox.WebGUI.Forms.Label();
+            this.infoTipoContabilita = new Gizmox.WebGUI.Forms.Label();
             this.infoCodice = new Gizmox.WebGUI.Forms.Label();
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
             this.infoDenominazione = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
+            this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
-            this.jqContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // infoIndirizzo
+            // jqContainer
             // 
-            this.infoIndirizzo.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            this.jqContainer.Controls.Add(this.panelLeft);
+            this.jqContainer.Controls.Add(this.infoDenominazione);
+            this.jqContainer.Controls.Add(this.infoTipoContabilita);
+            // 
+            // infoTipoContabilita
+            // 
+            this.infoTipoContabilita.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoIndirizzo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoIndirizzo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoIndirizzo.Location = new System.Drawing.Point(91, 32);
-            this.infoIndirizzo.Name = "infoIndirizzo";
-            this.infoIndirizzo.Size = new System.Drawing.Size(305, 55);
-            this.infoIndirizzo.TabIndex = 1;
-            this.infoIndirizzo.Text = "Indirizzo";
+            this.infoTipoContabilita.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoTipoContabilita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoTipoContabilita.Location = new System.Drawing.Point(91, 32);
+            this.infoTipoContabilita.Name = "infoTipoContabilita";
+            this.infoTipoContabilita.Size = new System.Drawing.Size(305, 55);
+            this.infoTipoContabilita.TabIndex = 1;
+            this.infoTipoContabilita.Text = "Tipo contabilità";
             // 
             // infoCodice
             // 
@@ -99,23 +105,20 @@ namespace Web.GUI.Contabilita
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
             // 
-            // AziendaItem
+            // ContabilitaItem
             // 
-            this.jqContainer.Controls.Add(this.panelLeft);
-            this.jqContainer.Controls.Add(this.infoDenominazione);
-            this.jqContainer.Controls.Add(this.infoIndirizzo);
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Size = new System.Drawing.Size(400, 100);
+            this.jqContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).EndInit();
             this.panelLeft.ResumeLayout(false);
-            this.jqContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-        private Gizmox.WebGUI.Forms.Label infoIndirizzo;
+        private Gizmox.WebGUI.Forms.Label infoTipoContabilita;
         private Gizmox.WebGUI.Forms.Label infoCodice;
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
         private Gizmox.WebGUI.Forms.Label infoDenominazione;

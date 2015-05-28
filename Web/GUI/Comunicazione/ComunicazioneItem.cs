@@ -25,15 +25,15 @@ namespace Web.GUI.Comunicazione
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ComunicazioneDto)model;
-                    //var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    //var cap = UtilityValidation.GetStringND(obj.Cap);
-                    //var comune = UtilityValidation.GetStringND(obj.Comune);
-                    //var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    //var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
+                    var contabilita = obj.Contabilita;
+                    var tipoContabilita = UtilityValidation.GetStringND(contabilita.Tipo);
+                    var numero = UtilityValidation.GetStringND(obj.Numero);
+                    var scadenzaIVA = UtilityValidation.GetDataND(obj.ScadenzaIVA);
 
-                    //infoImage.Image = "Images.dashboard.azienda.png";
-                    //infoDenominazione.Text = denominazione;
-                    //infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoNumero.Text = "Numero comunicazione: " +numero;
+                    infoScadenzaIVA.Text = "Scadenza IVA: " + scadenzaIVA;
+                    infoContabilita.Text = "Contabilità: " + tipoContabilita;
                 }
             }
             catch (Exception ex)

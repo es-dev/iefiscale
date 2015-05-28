@@ -65,6 +65,8 @@ namespace Web.GUI.Export
             // 
             // editProgressivo
             // 
+            this.editProgressivo.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editProgressivo.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editProgressivo.BackColor = System.Drawing.Color.Transparent;
             this.editProgressivo.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -85,6 +87,8 @@ namespace Web.GUI.Export
             // 
             // editComunicazione
             // 
+            this.editComunicazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editComunicazione.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editComunicazione.BackColor = System.Drawing.Color.Transparent;
             this.editComunicazione.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -107,6 +111,8 @@ namespace Web.GUI.Export
             // 
             // editData
             // 
+            this.editData.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editData.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editData.BackColor = System.Drawing.Color.Transparent;
             this.editData.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -126,6 +132,8 @@ namespace Web.GUI.Export
             // 
             // editXMLFile
             // 
+            this.editXMLFile.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editXMLFile.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editXMLFile.BackColor = System.Drawing.Color.Transparent;
             this.editXMLFile.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -146,6 +154,8 @@ namespace Web.GUI.Export
             // 
             // editStato
             // 
+            this.editStato.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.editStato.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
             this.editStato.BackColor = System.Drawing.Color.Transparent;
             this.editStato.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
@@ -158,7 +168,7 @@ namespace Web.GUI.Export
             this.editStato.Location = new System.Drawing.Point(25, 204);
             this.editStato.Name = "templateEditText2";
             this.editStato.ReadOnly = false;
-            this.editStato.Required = true;
+            this.editStato.Required = false;
             this.editStato.Size = new System.Drawing.Size(811, 30);
             this.editStato.TabIndex = 2;
             this.editStato.Text = "EditControl";

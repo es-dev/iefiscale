@@ -75,7 +75,7 @@ namespace Web.GUI.Contabilita
             this.editTipo.ReadOnly = false;
             this.editTipo.Required = true;
             this.editTipo.Size = new System.Drawing.Size(813, 30);
-            this.editTipo.TabIndex = 2;
+            this.editTipo.TabIndex = 1;
             this.editTipo.Text = "EditControl";
             this.editTipo.Value = null;
             // 
@@ -97,7 +97,7 @@ namespace Web.GUI.Contabilita
             this.editAnno.ReadOnly = false;
             this.editAnno.Required = true;
             this.editAnno.Size = new System.Drawing.Size(813, 30);
-            this.editAnno.TabIndex = 3;
+            this.editAnno.TabIndex = 2;
             this.editAnno.Text = "EditControl";
             this.editAnno.Value = null;
             // 
@@ -120,7 +120,7 @@ namespace Web.GUI.Contabilita
             this.editAzienda.ReadOnly = false;
             this.editAzienda.Required = true;
             this.editAzienda.Size = new System.Drawing.Size(811, 30);
-            this.editAzienda.TabIndex = 1000;
+            this.editAzienda.TabIndex = 0;
             this.editAzienda.Value = null;
             this.editAzienda.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editAzienda_ComboConfirm);
             this.editAzienda.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editAzienda_ComboClick);

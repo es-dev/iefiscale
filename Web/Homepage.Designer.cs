@@ -48,7 +48,6 @@ namespace Web
             // 
             // btnAccount
             // 
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // editStatoConnessione
             // 
@@ -201,11 +200,9 @@ namespace Web
             this.Load += new System.EventHandler(this.Homepage_Load);
             this.Controls.SetChildIndex(this.container, 0);
             this.Controls.SetChildIndex(this.panelInfo, 0);
-            this.Controls.SetChildIndex(this.btnAccount, 0);
             this.Controls.SetChildIndex(this.bntPortaleWebAziendale, 0);
             this.Controls.SetChildIndex(this.btnSupportoTecnico, 0);
             this.Controls.SetChildIndex(this.btnInformazioni, 0);
-            this.Controls.SetChildIndex(this.infoTitle, 0);
             this.Controls.SetChildIndex(this.toolStrip, 0);
             this.Controls.SetChildIndex(this.panelAccount, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
