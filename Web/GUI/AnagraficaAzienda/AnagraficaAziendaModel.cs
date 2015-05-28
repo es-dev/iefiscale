@@ -46,7 +46,7 @@ namespace Web.GUI.AnagraficaAzienda
                     var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
                     editRagioneSociale.Value = obj.RagioneSociale;
                     editCAP.Value = obj.Cap;
-                    //editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
+                    editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
                     editIndirizzo.Value = obj.Indirizzo;
                     editCodiceFiscale.Value = obj.CodiceFiscale;
                     editPartitaIVA.Value = obj.PartitaIVA;
@@ -87,7 +87,7 @@ namespace Web.GUI.AnagraficaAzienda
                     obj.RagioneSociale = editRagioneSociale.Value;
                     obj.Cap = editCAP.Value;
                     obj.Comune = editComune.Value.Description;
-                    //obj.CodiceCatastale = editComune.Value.Code;
+                    obj.CodiceCatastale = editComune.Value.Code;
                     obj.Provincia = editComune.Value.County;
                     obj.CodiceFiscale = editCodiceFiscale.Value;
                     obj.Indirizzo = editIndirizzo.Value;

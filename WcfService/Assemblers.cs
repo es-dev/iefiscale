@@ -105,6 +105,7 @@ namespace WcfService.Assemblers
 			entity.Email = dto.Email;
 			entity.Telefono = dto.Telefono;
 			entity.Fax = dto.Fax;
+			entity.CodiceCatastale = dto.CodiceCatastale;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -126,6 +127,7 @@ namespace WcfService.Assemblers
 			dto.Email = entity.Email;
 			dto.Telefono = entity.Telefono;
 			dto.Fax = entity.Fax;
+			dto.CodiceCatastale = entity.CodiceCatastale;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -810,6 +812,7 @@ namespace WcfService.Assemblers
 			entity.Telefono = dto.Telefono;
 			entity.Fax = dto.Fax;
 			entity.Cap = dto.Cap;
+			entity.CodiceCatastale = dto.CodiceCatastale;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -832,6 +835,7 @@ namespace WcfService.Assemblers
 			dto.Telefono = entity.Telefono;
 			dto.Fax = entity.Fax;
 			dto.Cap = entity.Cap;
+			dto.CodiceCatastale = entity.CodiceCatastale;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -986,6 +990,7 @@ namespace WcfService.Assemblers
 			entity.Telefono = dto.Telefono;
 			entity.Fax = dto.Fax;
 			entity.Cap = dto.Cap;
+			entity.CodiceCatastale = dto.CodiceCatastale;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -1009,6 +1014,7 @@ namespace WcfService.Assemblers
 			dto.Telefono = entity.Telefono;
 			dto.Fax = entity.Fax;
 			dto.Cap = entity.Cap;
+			dto.CodiceCatastale = entity.CodiceCatastale;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }

@@ -32,7 +32,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public StudioCommercialeDto(int _id, string _denominazione, string _tipoSoftwareContabilita, string _partitaIVA, string _indirizzo, string _comune, string _provincia, string _cap, string _email, string _telefono, string _fax, IList<AccountDto> _accounts, IList<AziendaDto> _aziendas, IList<AnagraficaAziendaDto> _anagraficaAziendas)
+		public StudioCommercialeDto(int _id, string _denominazione, string _tipoSoftwareContabilita, string _partitaIVA, string _indirizzo, string _comune, string _provincia, string _cap, string _email, string _telefono, string _fax, string _codiceCatastale, IList<AccountDto> _accounts, IList<AziendaDto> _aziendas, IList<AnagraficaAziendaDto> _anagraficaAziendas)
 		{
 			this.Id = _id;
 			this.Denominazione = _denominazione;
@@ -45,6 +45,7 @@ namespace WcfService.Dto
 			this.Email = _email;
 			this.Telefono = _telefono;
 			this.Fax = _fax;
+			this.CodiceCatastale = _codiceCatastale;
 			this.Accounts = _accounts;
 			this.Aziendas = _aziendas;
 			this.AnagraficaAziendas = _anagraficaAziendas;
@@ -85,6 +86,9 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual string Fax { get;set; }
+
+		[DataMember]
+		public virtual string CodiceCatastale { get;set; }
 
 		[DataMember]
 		public virtual IList<AccountDto> Accounts { get;set; }
@@ -512,7 +516,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public AnagraficaAziendaDto(int _id, int _studioCommercialeId, string _ragioneSociale, string _codiceFiscale, string _partitaIVA, string _indirizzo, string _comune, string _provincia, string _email, string _telefono, string _fax, string _cap, StudioCommercialeDto _studioCommerciale, IList<AziendaDto> _aziendas, IList<ClienteDto> _clientes)
+		public AnagraficaAziendaDto(int _id, int _studioCommercialeId, string _ragioneSociale, string _codiceFiscale, string _partitaIVA, string _indirizzo, string _comune, string _provincia, string _email, string _telefono, string _fax, string _cap, string _codiceCatastale, StudioCommercialeDto _studioCommerciale, IList<AziendaDto> _aziendas, IList<ClienteDto> _clientes)
 		{
 			this.Id = _id;
 			this.StudioCommercialeId = _studioCommercialeId;
@@ -526,6 +530,7 @@ namespace WcfService.Dto
 			this.Telefono = _telefono;
 			this.Fax = _fax;
 			this.Cap = _cap;
+			this.CodiceCatastale = _codiceCatastale;
 			this.StudioCommerciale = _studioCommerciale;
 			this.Aziendas = _aziendas;
 			this.Clientes = _clientes;
@@ -569,6 +574,9 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual string Cap { get;set; }
+
+		[DataMember]
+		public virtual string CodiceCatastale { get;set; }
 
 		[DataMember]
 		public virtual StudioCommercialeDto StudioCommerciale { get;set; }
@@ -635,7 +643,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public CustomerDto(int _id, int _exportId, string _iDCliente, string _partitaIVA, string _ragioneSociale, string _codiceFiscale, string _indirizzo, string _comune, string _provincia, string _email, string _telefono, string _fax, string _cap, ExportDto _export)
+		public CustomerDto(int _id, int _exportId, string _iDCliente, string _partitaIVA, string _ragioneSociale, string _codiceFiscale, string _indirizzo, string _comune, string _provincia, string _email, string _telefono, string _fax, string _cap, string _codiceCatastale, ExportDto _export)
 		{
 			this.Id = _id;
 			this.ExportId = _exportId;
@@ -650,6 +658,7 @@ namespace WcfService.Dto
 			this.Telefono = _telefono;
 			this.Fax = _fax;
 			this.Cap = _cap;
+			this.CodiceCatastale = _codiceCatastale;
 			this.Export = _export;
 		}
 		
@@ -694,6 +703,9 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual string Cap { get;set; }
+
+		[DataMember]
+		public virtual string CodiceCatastale { get;set; }
 
 		[DataMember]
 		public virtual ExportDto Export { get;set; }

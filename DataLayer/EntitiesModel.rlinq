@@ -43,6 +43,7 @@
         <orm:field name="_fax" property="Fax" uniqueId="a9c8c514-1579-4e43-b0d8-603a3162ba81" type="System.String">
           <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
+        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="0d5dd935-1a19-4ef7-a1c5-e0285af6d9cc" type="System.String" />
         <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="338333c6-de01-4a1f-8cb2-ad9be01abdfa" type="DataLayer.Account">
           <orm:collection element-class="DataLayer.Account" inverse-field="_studioCommerciale" order-by="" uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" />
         </orm:field>
@@ -422,6 +423,7 @@
         <orm:field name="_cap" property="Cap" uniqueId="f3094443-6a84-4d2e-9c54-c2aad9b0fd04" type="System.String">
           <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
+        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="9e1c05e5-94cd-482f-b9d6-2a6a184f359d" type="System.String" />
         <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="bc85eb54-a9de-4a3e-a918-ffb2dd399bda" type="DataLayer.StudioCommerciale">
           <orm:reference uniqueId="749cf01c-1ad3-4635-aff0-a4c895f224c0" association-name="AnagraficaAziendaHasStudioCommerciale">
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
@@ -530,6 +532,7 @@
         <orm:field name="_cap" property="Cap" uniqueId="02263129-0795-4967-a361-742e8b069ab7" type="System.String">
           <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
+        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="486d8b0b-a7ca-466e-a4ec-9bafc5566d26" type="System.String" />
         <orm:field name="_export" property="Export" behavior="readwrite" uniqueId="a2d4958c-04b2-4bbf-83ca-045db64602f3" type="DataLayer.Export">
           <orm:reference uniqueId="c7a481d0-a079-452d-a32c-cbbd3743ef6a" association-name="CustomerHasExport">
             <orm:sharedfield name="_exportId" target-class="DataLayer.Export" target-field="_id" />
@@ -773,6 +776,7 @@
       <Property Id="245bde7e-8b6d-4937-ad63-920d68585a68" name="Email" label="Email : String" fieldName="_email" />
       <Property Id="4b6fc0bc-9163-4e3f-bee3-fcfab2bd8f29" name="Telefono" label="Telefono : String" fieldName="_telefono" />
       <Property Id="a9c8c514-1579-4e43-b0d8-603a3162ba81" name="Fax" label="Fax : String" fieldName="_fax" />
+      <Property Id="0d5dd935-1a19-4ef7-a1c5-e0285af6d9cc" name="CodiceCatastale" label="CodiceCatastale : String" fieldName="_codiceCatastale" />
       <navigationalProperties>
         <classHasNavigationalProperties Id="7c985641-c9a1-4e59-aa57-2ca8a3e2c900">
           <NavigationalProperty Id="338333c6-de01-4a1f-8cb2-ad9be01abdfa" name="Accounts" type="IList&lt;Account&gt;" label="Accounts : IList&lt;Account&gt;" nullable="true" kind="Persistent" fieldName="_accounts" isDependent="false" isManaged="false" />
@@ -1060,6 +1064,7 @@
       <Property Id="9c82ce81-2980-4d0f-9c2b-c2ed2943cd3c" name="Email" label="Email : String" fieldName="_email" />
       <Property Id="c37c84d3-b6ef-4877-9f45-6de0f222009d" name="Telefono" label="Telefono : String" fieldName="_telefono" />
       <Property Id="6821fb51-0c50-46d7-97a5-8b6dd538908a" name="Fax" label="Fax : String" fieldName="_fax" />
+      <Property Id="9e1c05e5-94cd-482f-b9d6-2a6a184f359d" name="CodiceCatastale" label="CodiceCatastale : String" fieldName="_codiceCatastale" />
       <AssociationTargets>
         <Association Id="749cf01c-1ad3-4635-aff0-a4c895f224c0" SourceMultiplicity="ZeroOne" name="AnagraficaAziendaHasStudioCommerciale">
           <DomainClassMoniker name="/EntitiesModel/StudioCommerciale" />
@@ -1144,6 +1149,7 @@
       <Property Id="962f8fac-a195-4e83-a74f-2e26113a186c" name="Email" label="Email : String" fieldName="_email" />
       <Property Id="5476eb96-a115-43d0-92fe-4c5dc45e67e8" name="Telefono" label="Telefono : String" fieldName="_telefono" />
       <Property Id="9c7ebe12-23c1-4dac-9107-aa46187af58f" name="Fax" label="Fax : String" fieldName="_fax" />
+      <Property Id="486d8b0b-a7ca-466e-a4ec-9bafc5566d26" name="CodiceCatastale" label="CodiceCatastale : String" fieldName="_codiceCatastale" />
       <AssociationTargets>
         <Association Id="c7a481d0-a079-452d-a32c-cbbd3743ef6a" SourceMultiplicity="ZeroOne" name="CustomerHasExport">
           <DomainClassMoniker name="/EntitiesModel/Export" />

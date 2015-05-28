@@ -45,7 +45,7 @@ namespace Web.GUI.StudioCommerciale
                     var obj = (WcfService.Dto.StudioCommercialeDto)model;
                     editDenominazione.Value = obj.Denominazione;
                     editCAP.Value = obj.Cap;
-                    //editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
+                    editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
                     editIndirizzo.Value = obj.Indirizzo;
                     editTipoSoftwareContabilita.Value = obj.TipoSoftwareContabilita;
                     editPartitaIVA.Value = obj.PartitaIVA;
@@ -70,7 +70,7 @@ namespace Web.GUI.StudioCommerciale
                     obj.Denominazione = editDenominazione.Value;
                     obj.Cap = editCAP.Value;
                     obj.Comune = editComune.Value.Description;
-                    //obj.CodiceCatastale = editComune.Value.Code;
+                    obj.CodiceCatastale = editComune.Value.Code;
                     obj.Provincia = editComune.Value.County;
                     obj.TipoSoftwareContabilita = editTipoSoftwareContabilita.Value;
                     obj.Indirizzo = editIndirizzo.Value;
