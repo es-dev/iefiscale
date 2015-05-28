@@ -70,7 +70,7 @@ namespace Web.GUI.Contabilita
             this.editTipo.Editing = false;
             this.editTipo.Label = "Tipo";
             this.editTipo.LabelWidth = 175;
-            this.editTipo.Location = new System.Drawing.Point(25, 156);
+            this.editTipo.Location = new System.Drawing.Point(25, 110);
             this.editTipo.Name = "editTipo";
             this.editTipo.ReadOnly = false;
             this.editTipo.Required = true;
@@ -92,7 +92,7 @@ namespace Web.GUI.Contabilita
             this.editAnno.Editing = false;
             this.editAnno.Label = "Anno";
             this.editAnno.LabelWidth = 175;
-            this.editAnno.Location = new System.Drawing.Point(25, 199);
+            this.editAnno.Location = new System.Drawing.Point(25, 154);
             this.editAnno.Name = "editAnno";
             this.editAnno.ReadOnly = false;
             this.editAnno.Required = true;

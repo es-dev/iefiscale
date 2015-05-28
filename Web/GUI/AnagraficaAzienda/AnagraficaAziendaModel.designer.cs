@@ -38,7 +38,6 @@ namespace Web.GUI.AnagraficaAzienda
             this.editEmail = new Library.Template.Controls.TemplateEditEmail();
             this.editPartitaIVA = new Library.Template.Controls.TemplateEditPartitaIva();
             this.editComune = new Library.Template.Controls.TemplateEditCountry();
-            this.editLocalita = new Library.Template.Controls.TemplateEditText();
             this.editCodiceFiscale = new Library.Template.Controls.TemplateEditCodiceFiscale();
             this.editStudioCommerciale = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
@@ -50,7 +49,6 @@ namespace Web.GUI.AnagraficaAzienda
             // 
             this.container.Controls.Add(this.editStudioCommerciale);
             this.container.Controls.Add(this.editCodiceFiscale);
-            this.container.Controls.Add(this.editLocalita);
             this.container.Controls.Add(this.editComune);
             this.container.Controls.Add(this.editPartitaIVA);
             this.container.Controls.Add(this.editEmail);
@@ -69,7 +67,6 @@ namespace Web.GUI.AnagraficaAzienda
             this.container.Controls.SetChildIndex(this.editEmail, 0);
             this.container.Controls.SetChildIndex(this.editPartitaIVA, 0);
             this.container.Controls.SetChildIndex(this.editComune, 0);
-            this.container.Controls.SetChildIndex(this.editLocalita, 0);
             this.container.Controls.SetChildIndex(this.editCodiceFiscale, 0);
             this.container.Controls.SetChildIndex(this.editStudioCommerciale, 0);
             // 
@@ -160,7 +157,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editFAX.Editing = false;
             this.editFAX.Label = "FAX";
             this.editFAX.LabelWidth = 175;
-            this.editFAX.Location = new System.Drawing.Point(25, 371);
+            this.editFAX.Location = new System.Drawing.Point(25, 329);
             this.editFAX.Name = "editFAX";
             this.editFAX.ReadOnly = false;
             this.editFAX.Required = false;
@@ -182,7 +179,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editTelefono.Editing = false;
             this.editTelefono.Label = "Telefono";
             this.editTelefono.LabelWidth = 175;
-            this.editTelefono.Location = new System.Drawing.Point(25, 328);
+            this.editTelefono.Location = new System.Drawing.Point(25, 286);
             this.editTelefono.Name = "editTelefono";
             this.editTelefono.ReadOnly = false;
             this.editTelefono.Required = false;
@@ -204,7 +201,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editEmail.Editing = false;
             this.editEmail.Label = "Email";
             this.editEmail.LabelWidth = 175;
-            this.editEmail.Location = new System.Drawing.Point(25, 414);
+            this.editEmail.Location = new System.Drawing.Point(25, 372);
             this.editEmail.Name = "editEmail";
             this.editEmail.ReadOnly = false;
             this.editEmail.Required = false;
@@ -226,7 +223,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editPartitaIVA.Editing = false;
             this.editPartitaIVA.Label = "Partita IVA";
             this.editPartitaIVA.LabelWidth = 175;
-            this.editPartitaIVA.Location = new System.Drawing.Point(25, 457);
+            this.editPartitaIVA.Location = new System.Drawing.Point(25, 415);
             this.editPartitaIVA.Name = "editPartitaIVA";
             this.editPartitaIVA.ReadOnly = false;
             this.editPartitaIVA.Required = true;
@@ -257,28 +254,6 @@ namespace Web.GUI.AnagraficaAzienda
             this.editComune.Text = "EditControl";
             this.editComune.Value = null;
             // 
-            // editLocalita
-            // 
-            this.editLocalita.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editLocalita.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editLocalita.BackColor = System.Drawing.Color.Transparent;
-            this.editLocalita.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editLocalita.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editLocalita.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editLocalita.Changed = true;
-            this.editLocalita.Editing = false;
-            this.editLocalita.Label = "Località";
-            this.editLocalita.LabelWidth = 175;
-            this.editLocalita.Location = new System.Drawing.Point(25, 285);
-            this.editLocalita.Name = "editLocalita";
-            this.editLocalita.ReadOnly = false;
-            this.editLocalita.Required = false;
-            this.editLocalita.Size = new System.Drawing.Size(813, 30);
-            this.editLocalita.TabIndex = 5;
-            this.editLocalita.Text = "EditControl";
-            this.editLocalita.Value = null;
-            // 
             // editCodiceFiscale
             // 
             this.editCodiceFiscale.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
@@ -292,7 +267,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editCodiceFiscale.Editing = false;
             this.editCodiceFiscale.Label = "Codice fiscale";
             this.editCodiceFiscale.LabelWidth = 175;
-            this.editCodiceFiscale.Location = new System.Drawing.Point(25, 507);
+            this.editCodiceFiscale.Location = new System.Drawing.Point(25, 465);
             this.editCodiceFiscale.Name = "editCodiceFiscale";
             this.editCodiceFiscale.ReadOnly = false;
             this.editCodiceFiscale.Required = true;
@@ -341,7 +316,6 @@ namespace Web.GUI.AnagraficaAzienda
         private Library.Template.Controls.TemplateEditPartitaIva editPartitaIVA;
         private Library.Template.Controls.TemplateEditEmail editEmail;
         private Library.Template.Controls.TemplateEditCountry editComune;
-        private Library.Template.Controls.TemplateEditText editLocalita;
         private Library.Template.Controls.TemplateEditCodiceFiscale editCodiceFiscale;
         private Library.Template.Controls.TemplateEditCombo editStudioCommerciale;
 
