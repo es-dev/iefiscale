@@ -25,15 +25,17 @@ namespace Web.GUI.Export
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ExportDto)model;
-                    //var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    //var cap = UtilityValidation.GetStringND(obj.Cap);
-                    //var comune = UtilityValidation.GetStringND(obj.Comune);
-                    //var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    //var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
+                    var comunicazione = obj.Comunicazione;
+                    var numeroComunicazione = comunicazione.Numero;
+                    var data = UtilityValidation.GetStringND(obj.Data);
+                    var stato = UtilityValidation.GetStringND(obj.Stato);
+                    var progressivo = UtilityValidation.GetStringND(obj.Progressivo);
 
-                    //infoImage.Image = "Images.dashboard.azienda.png";
-                    //infoDenominazione.Text = denominazione;
-                    //infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoProgressivo.Text = "EXPORT N. " + progressivo;
+                    infoComunicazione.Text = "Comunicazione N. " + numeroComunicazione;
+                    infoData.Text ="Data: " + data;
+                    infoStato.Text ="Stato: "+ stato;
                 }
             }
             catch (Exception ex)
@@ -41,7 +43,5 @@ namespace Web.GUI.Export
                 UtilityError.Write(ex);
             }
         }
-
-       
 	}
 }

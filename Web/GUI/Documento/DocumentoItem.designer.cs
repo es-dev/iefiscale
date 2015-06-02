@@ -35,10 +35,18 @@ namespace Web.GUI.Documento
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
             this.infoDenominazione = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
+            this.infoExport = new Gizmox.WebGUI.Forms.Label();
+            this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
-            this.jqContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // jqContainer
+            // 
+            this.jqContainer.Controls.Add(this.infoExport);
+            this.jqContainer.Controls.Add(this.panelLeft);
+            this.jqContainer.Controls.Add(this.infoDenominazione);
+            this.jqContainer.Controls.Add(this.infoIndirizzo);
             // 
             // infoIndirizzo
             // 
@@ -99,16 +107,26 @@ namespace Web.GUI.Documento
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
             // 
-            // AziendaItem
+            // infoExport
             // 
-            this.jqContainer.Controls.Add(this.panelLeft);
-            this.jqContainer.Controls.Add(this.infoDenominazione);
-            this.jqContainer.Controls.Add(this.infoIndirizzo);
+            this.infoExport.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Bottom | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoExport.ForeColor = System.Drawing.Color.DarkRed;
+            this.infoExport.Location = new System.Drawing.Point(241, 74);
+            this.infoExport.Name = "infoExport";
+            this.infoExport.Size = new System.Drawing.Size(157, 22);
+            this.infoExport.TabIndex = 1;
+            this.infoExport.Text = "Export";
+            this.infoExport.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // DocumentoItem
+            // 
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Size = new System.Drawing.Size(400, 100);
+            this.jqContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).EndInit();
             this.panelLeft.ResumeLayout(false);
-            this.jqContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -120,5 +138,6 @@ namespace Web.GUI.Documento
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
         private Gizmox.WebGUI.Forms.Label infoDenominazione;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
+        private Gizmox.WebGUI.Forms.Label infoExport;
 	}
 }

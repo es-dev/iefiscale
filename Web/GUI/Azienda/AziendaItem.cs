@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using WcfService.Dto;
 using Web.Code;
 
 namespace Web.GUI.Azienda
@@ -24,14 +25,18 @@ namespace Web.GUI.Azienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AziendaDto)model;
+                    var obj = (AziendaDto)model;
+
                     var anagraficaAzienda = obj.AnagraficaAzienda;
-                    var ragioneSocialeAzienda = UtilityValidation.GetStringND(anagraficaAzienda.RagioneSociale);
-                    var studioCommerciale= obj.StudioCommerciale;
+                    if (anagraficaAzienda != null)
+                    {
+                        var ragioneSocialeAzienda = UtilityValidation.GetStringND(anagraficaAzienda.RagioneSociale);
+                        infoRagioneSociale.Text = UtilityValidation.GetStringND(ragioneSocialeAzienda);
+                    } 
+                    var studioCommerciale = obj.StudioCommerciale;
                     var tipoSoftwareFatturazione = UtilityValidation.GetStringND(obj.TipoSoftwareFatturazione);
 
                     infoImage.Image = "Images.dashboard.azienda.png";
-                    infoRagioneSociale.Text = ragioneSocialeAzienda;
                     infoStudioCommerciale.Text = "Studio commerciale: " + studioCommerciale.Denominazione;
                     infoTipoSoftwareFatturazione.Text = "Software di fatturazioen: " + tipoSoftwareFatturazione;
                 }

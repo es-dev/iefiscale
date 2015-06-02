@@ -33,8 +33,9 @@ namespace Web.GUI.Contabilita
             this.infoTipoContabilita = new Gizmox.WebGUI.Forms.Label();
             this.infoCodice = new Gizmox.WebGUI.Forms.Label();
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
-            this.infoDenominazione = new Gizmox.WebGUI.Forms.Label();
+            this.infoContabilitaAnno = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
+            this.infoAzienda = new Gizmox.WebGUI.Forms.Label();
             this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -42,8 +43,9 @@ namespace Web.GUI.Contabilita
             // 
             // jqContainer
             // 
+            this.jqContainer.Controls.Add(this.infoAzienda);
             this.jqContainer.Controls.Add(this.panelLeft);
-            this.jqContainer.Controls.Add(this.infoDenominazione);
+            this.jqContainer.Controls.Add(this.infoContabilitaAnno);
             this.jqContainer.Controls.Add(this.infoTipoContabilita);
             // 
             // infoTipoContabilita
@@ -55,7 +57,7 @@ namespace Web.GUI.Contabilita
             this.infoTipoContabilita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.infoTipoContabilita.Location = new System.Drawing.Point(91, 32);
             this.infoTipoContabilita.Name = "infoTipoContabilita";
-            this.infoTipoContabilita.Size = new System.Drawing.Size(305, 55);
+            this.infoTipoContabilita.Size = new System.Drawing.Size(302, 22);
             this.infoTipoContabilita.TabIndex = 1;
             this.infoTipoContabilita.Text = "Tipo contabilità";
             // 
@@ -81,17 +83,17 @@ namespace Web.GUI.Contabilita
             this.infoImage.TabIndex = 1;
             this.infoImage.TabStop = false;
             // 
-            // infoDenominazione
+            // infoContabilitaAnno
             // 
-            this.infoDenominazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            this.infoContabilitaAnno.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoDenominazione.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoDenominazione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
-            this.infoDenominazione.Location = new System.Drawing.Point(91, 2);
-            this.infoDenominazione.Name = "infoDenominazione";
-            this.infoDenominazione.Size = new System.Drawing.Size(263, 30);
-            this.infoDenominazione.TabIndex = 1;
-            this.infoDenominazione.Text = "DENOMINAZIONE";
+            this.infoContabilitaAnno.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoContabilitaAnno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
+            this.infoContabilitaAnno.Location = new System.Drawing.Point(91, 2);
+            this.infoContabilitaAnno.Name = "infoContabilitaAnno";
+            this.infoContabilitaAnno.Size = new System.Drawing.Size(263, 30);
+            this.infoContabilitaAnno.TabIndex = 1;
+            this.infoContabilitaAnno.Text = "CONTABILITA\' ANNO:";
             // 
             // panelLeft
             // 
@@ -104,6 +106,19 @@ namespace Web.GUI.Contabilita
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
+            // 
+            // infoAzienda
+            // 
+            this.infoAzienda.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Bottom | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoAzienda.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoAzienda.ForeColor = System.Drawing.Color.DarkRed;
+            this.infoAzienda.Location = new System.Drawing.Point(128, 80);
+            this.infoAzienda.Name = "infoAzienda";
+            this.infoAzienda.Size = new System.Drawing.Size(265, 16);
+            this.infoAzienda.TabIndex = 1;
+            this.infoAzienda.Text = "Azienda: ";
+            this.infoAzienda.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // ContabilitaItem
             // 
@@ -121,7 +136,8 @@ namespace Web.GUI.Contabilita
         private Gizmox.WebGUI.Forms.Label infoTipoContabilita;
         private Gizmox.WebGUI.Forms.Label infoCodice;
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
-        private Gizmox.WebGUI.Forms.Label infoDenominazione;
+        private Gizmox.WebGUI.Forms.Label infoContabilitaAnno;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
+        private Gizmox.WebGUI.Forms.Label infoAzienda;
 	}
 }

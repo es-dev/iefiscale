@@ -63,7 +63,11 @@ namespace Web.GUI.Cliente
             try
             {
                 editAnagraficaAzienda.Model = anagraficaAziendaDto;
-                editAnagraficaAzienda.Value = (anagraficaAziendaDto != null ? anagraficaAziendaDto.RagioneSociale : null);
+                if (anagraficaAziendaDto != null)
+                {
+                    var ragioneSociale = anagraficaAziendaDto.RagioneSociale;
+                    editAnagraficaAzienda.Value = ragioneSociale;
+                }
             }
             catch (Exception ex)
             {
@@ -76,7 +80,15 @@ namespace Web.GUI.Cliente
             try
             {
                 editAzienda.Model = aziendaDto;
-                editAzienda.Value = (aziendaDto != null ? aziendaDto.AnagraficaAzienda.RagioneSociale : null);  //todo: da sistemare
+                if(aziendaDto!=null)
+                {
+                    var anagraficaAzienda = aziendaDto.AnagraficaAzienda;
+                    if (anagraficaAzienda != null)
+                    {
+                        var ragioneSociale = anagraficaAzienda.RagioneSociale;
+                        editAnagraficaAzienda.Value = ragioneSociale;
+                    }
+                }
             }
             catch (Exception ex)
             {
