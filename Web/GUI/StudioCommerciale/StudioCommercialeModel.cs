@@ -85,7 +85,6 @@ namespace Web.GUI.StudioCommerciale
                 UtilityError.Write(ex);
             }
         }
-
-   
+  
 	}
 }

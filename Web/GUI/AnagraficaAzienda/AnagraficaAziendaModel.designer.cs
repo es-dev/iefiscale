@@ -270,7 +270,7 @@ namespace Web.GUI.AnagraficaAzienda
             this.editCodiceFiscale.Location = new System.Drawing.Point(25, 465);
             this.editCodiceFiscale.Name = "editCodiceFiscale";
             this.editCodiceFiscale.ReadOnly = false;
-            this.editCodiceFiscale.Required = true;
+            this.editCodiceFiscale.Required = false;
             this.editCodiceFiscale.Size = new System.Drawing.Size(813, 30);
             this.editCodiceFiscale.TabIndex = 9;
             this.editCodiceFiscale.Text = "TemplateEditPartitaIva";

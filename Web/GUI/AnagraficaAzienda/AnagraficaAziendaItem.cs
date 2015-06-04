@@ -25,15 +25,11 @@ namespace Web.GUI.AnagraficaAzienda
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
-                    var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    var cap = UtilityValidation.GetStringND(obj.Cap);
-                    var comune = UtilityValidation.GetStringND(obj.Comune);
-                    var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
 
                     infoImage.Image = "Images.dashboard.azienda.png";
-                    infoDenominazione.Text = denominazione;
-                    infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoRagioneSociale.Text = obj.RagioneSociale;
+                    infoIndirizzo.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(obj);
+                    infoPartitaIVA.Text = obj.PartitaIVA;
                 }
             }
             catch (Exception ex)
@@ -41,7 +37,5 @@ namespace Web.GUI.AnagraficaAzienda
                 UtilityError.Write(ex);
             }
         }
-
-       
 	}
 }

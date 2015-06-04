@@ -30,11 +30,12 @@ namespace Web.GUI.Cliente
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.infoIdCliente = new Gizmox.WebGUI.Forms.Label();
+            this.infoIndirizzoComune = new Gizmox.WebGUI.Forms.Label();
             this.infoCodice = new Gizmox.WebGUI.Forms.Label();
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
             this.infoRagioneSociale = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
+            this.infoPartitaIVA = new Gizmox.WebGUI.Forms.Label();
             this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -42,22 +43,23 @@ namespace Web.GUI.Cliente
             // 
             // jqContainer
             // 
+            this.jqContainer.Controls.Add(this.infoPartitaIVA);
             this.jqContainer.Controls.Add(this.panelLeft);
             this.jqContainer.Controls.Add(this.infoRagioneSociale);
-            this.jqContainer.Controls.Add(this.infoIdCliente);
+            this.jqContainer.Controls.Add(this.infoIndirizzoComune);
             // 
-            // infoIdCliente
+            // infoIndirizzoComune
             // 
-            this.infoIdCliente.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            this.infoIndirizzoComune.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoIdCliente.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoIdCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoIdCliente.Location = new System.Drawing.Point(91, 32);
-            this.infoIdCliente.Name = "infoIdCliente";
-            this.infoIdCliente.Size = new System.Drawing.Size(302, 40);
-            this.infoIdCliente.TabIndex = 1;
-            this.infoIdCliente.Text = "Id cliente";
+            this.infoIndirizzoComune.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoIndirizzoComune.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoIndirizzoComune.Location = new System.Drawing.Point(93, 32);
+            this.infoIndirizzoComune.Name = "infoIndirizzoComune";
+            this.infoIndirizzoComune.Size = new System.Drawing.Size(299, 37);
+            this.infoIndirizzoComune.TabIndex = 1;
+            this.infoIndirizzoComune.Text = "Indirizzo, CAP Comune (PR)";
             // 
             // infoCodice
             // 
@@ -105,6 +107,20 @@ namespace Web.GUI.Cliente
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
             // 
+            // infoPartitaIVA
+            // 
+            this.infoPartitaIVA.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoPartitaIVA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoPartitaIVA.ForeColor = System.Drawing.Color.DarkRed;
+            this.infoPartitaIVA.Location = new System.Drawing.Point(93, 73);
+            this.infoPartitaIVA.Name = "infoPartitaIVA";
+            this.infoPartitaIVA.Size = new System.Drawing.Size(299, 22);
+            this.infoPartitaIVA.TabIndex = 1;
+            this.infoPartitaIVA.Text = "P.IVA: 00000000000";
+            this.infoPartitaIVA.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // ClienteItem
             // 
             this.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -118,10 +134,11 @@ namespace Web.GUI.Cliente
 
 		#endregion
 
-        private Gizmox.WebGUI.Forms.Label infoIdCliente;
+        private Gizmox.WebGUI.Forms.Label infoIndirizzoComune;
         private Gizmox.WebGUI.Forms.Label infoCodice;
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
         private Gizmox.WebGUI.Forms.Label infoRagioneSociale;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
+        private Gizmox.WebGUI.Forms.Label infoPartitaIVA;
 	}
 }

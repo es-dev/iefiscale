@@ -201,7 +201,7 @@ namespace Web.GUI.StudioCommerciale
             this.editEmail.Location = new System.Drawing.Point(25, 335);
             this.editEmail.Name = "editEmail";
             this.editEmail.ReadOnly = false;
-            this.editEmail.Required = false;
+            this.editEmail.Required = true;
             this.editEmail.Size = new System.Drawing.Size(813, 30);
             this.editEmail.TabIndex = 8;
             this.editEmail.Text = "TemplateEditEmail";

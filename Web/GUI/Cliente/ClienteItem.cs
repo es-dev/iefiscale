@@ -26,12 +26,11 @@ namespace Web.GUI.Cliente
                 {
                     var obj = (WcfService.Dto.ClienteDto)model;
                     var anagraficaAzienda = obj.AnagraficaAzienda;
-                    var ragioneSocialeAzienda = UtilityValidation.GetStringND(anagraficaAzienda.RagioneSociale);
-                    var idCliente = UtilityValidation.GetStringND(obj.IDCliente);
-
+                   
                     infoImage.Image = "Images.dashboard.cliente.png";
-                    infoRagioneSociale.Text = ragioneSocialeAzienda;
-                    infoIdCliente.Text = "Id cliente:" + idCliente;
+                    infoRagioneSociale.Text = anagraficaAzienda.RagioneSociale; //il parent non è mai nullo
+                    infoIndirizzoComune.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(anagraficaAzienda);
+                    infoPartitaIVA.Text = anagraficaAzienda.PartitaIVA;
                 }
             }
             catch (Exception ex)
@@ -39,7 +38,5 @@ namespace Web.GUI.Cliente
                 UtilityError.Write(ex);
             }
         }
-
-       
 	}
 }

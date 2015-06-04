@@ -59,7 +59,7 @@ namespace Web.GUI.StudioCommerciale
             this.infoIndirizzo.Name = "infoIndirizzo";
             this.infoIndirizzo.Size = new System.Drawing.Size(302, 45);
             this.infoIndirizzo.TabIndex = 1;
-            this.infoIndirizzo.Text = "Indirizzo";
+            this.infoIndirizzo.Text = "Indirizzo, CAP Comune (PR)";
             // 
             // infoCodice
             // 

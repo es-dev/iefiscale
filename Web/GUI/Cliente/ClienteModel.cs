@@ -58,16 +58,20 @@ namespace Web.GUI.Cliente
             }
         }
 
-        private void BindViewAnagraficaAzienda(AnagraficaAziendaDto anagraficaAziendaDto)
+        private void BindViewAnagraficaAzienda(AnagraficaAziendaDto anagraficaAzienda)
         {
             try
             {
-                editAnagraficaAzienda.Model = anagraficaAziendaDto;
-                if (anagraficaAziendaDto != null)
-                {
-                    var ragioneSociale = anagraficaAziendaDto.RagioneSociale;
-                    editAnagraficaAzienda.Value = ragioneSociale;
-                }
+                editRagioneSociale.Model = anagraficaAzienda;
+                editRagioneSociale.Value = anagraficaAzienda.RagioneSociale;
+                editCAP.Value = anagraficaAzienda.Cap;
+                editCodiceFiscale.Value = anagraficaAzienda.CodiceFiscale;
+                editComune.Value = new Countries.City(anagraficaAzienda.Comune, anagraficaAzienda.CodiceCatastale, anagraficaAzienda.Provincia);
+                editEmail.Value = anagraficaAzienda.Email;
+                editFAX.Value = anagraficaAzienda.Fax;
+                editIndirizzo.Value = anagraficaAzienda.Indirizzo;
+                editPartitaIVA.Value = anagraficaAzienda.PartitaIVA;
+                editTelefono.Value = anagraficaAzienda.Telefono;
             }
             catch (Exception ex)
             {
@@ -75,20 +79,12 @@ namespace Web.GUI.Cliente
             }
         }
 
-        private void BindViewAzienda(WcfService.Dto.AziendaDto aziendaDto)
+        private void BindViewAzienda(AziendaDto azienda)
         {
             try
             {
-                editAzienda.Model = aziendaDto;
-                if(aziendaDto!=null)
-                {
-                    var anagraficaAzienda = aziendaDto.AnagraficaAzienda;
-                    if (anagraficaAzienda != null)
-                    {
-                        var ragioneSociale = anagraficaAzienda.RagioneSociale;
-                        editAnagraficaAzienda.Value = ragioneSociale;
-                    }
-                }
+                editAzienda.Model = azienda;
+                editAzienda.Value = BusinessLogic.Azienda.GetCodifica(azienda);
             }
             catch (Exception ex)
             {
@@ -110,7 +106,7 @@ namespace Web.GUI.Cliente
                     if (azienda != null)
                         obj.AziendaId = azienda.Id;
 
-                    var anagraficaAzienda = (WcfService.Dto.AnagraficaAziendaDto)editAnagraficaAzienda.Model;
+                    var anagraficaAzienda = (WcfService.Dto.AnagraficaAziendaDto)editRagioneSociale.Model;
                     if (anagraficaAzienda != null)
                         obj.AnagraficaAziendaId = anagraficaAzienda.Id;
                 }
@@ -140,8 +136,7 @@ namespace Web.GUI.Cliente
             try
             {
                 var azienda = (AziendaDto)model;
-                if (azienda != null)
-                    editAzienda.Value = azienda.AnagraficaAzienda.RagioneSociale;
+                BindViewAzienda(azienda);
             }
             catch (Exception ex)
             {
@@ -155,7 +150,7 @@ namespace Web.GUI.Cliente
             {
                 var view = new AnagraficaAzienda.AnagraficaAziendaView();
                 view.Title = "SELEZIONA UN'AZIENDA DALL'ANAGRAFICA";
-                editAnagraficaAzienda.Show(view);
+                editRagioneSociale.Show(view);
             }
             catch (Exception ex)
             {
@@ -167,8 +162,7 @@ namespace Web.GUI.Cliente
         private void editAnagraficaAzienda_ComboConfirm(object model)
         {
             var anagraficaAzienda = (AnagraficaAziendaDto)model;
-            if (anagraficaAzienda != null)
-                editAnagraficaAzienda.Value = anagraficaAzienda.RagioneSociale;
+            BindViewAnagraficaAzienda(anagraficaAzienda);
         }
 	}
 }

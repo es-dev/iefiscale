@@ -28,7 +28,7 @@ namespace Web.GUI.AnagraficaAzienda
                     var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
                     infoSubtitle.Text =  obj.RagioneSociale;
                     infoSubtitleImage.Image = "Images.dashboard.azienda.png";
-                    infoTitle.Text = (obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "AZIENDA " + BusinessLogic.AnagraficaAzienda.GetCodifica(obj) : "NUOVA AZIENDA"); 
                 }
             }
             catch (Exception ex)
@@ -64,12 +64,12 @@ namespace Web.GUI.AnagraficaAzienda
             }
         }
 
-        private void BindViewStudioCommerciale(WcfService.Dto.StudioCommercialeDto studioCommercialeDto)
+        private void BindViewStudioCommerciale(StudioCommercialeDto studioCommerciale)
         {
             try
             {
-                editStudioCommerciale.Model = studioCommercialeDto;
-                editStudioCommerciale.Value = (studioCommercialeDto != null ? studioCommercialeDto.Denominazione : null);
+                editStudioCommerciale.Model = studioCommerciale;
+                editStudioCommerciale.Value =  BusinessLogic.StudioCommerciale.GetCodifica(studioCommerciale);
             }
             catch (Exception ex)
             {
@@ -114,7 +114,6 @@ namespace Web.GUI.AnagraficaAzienda
                 var view = new StudioCommerciale.StudioCommercialeView();
                 view.Title = "SELEZIONA UNO STUDIO COMMERCIALE";
                 editStudioCommerciale.Show(view);
-
             }
             catch (Exception ex)
             {
@@ -127,15 +126,12 @@ namespace Web.GUI.AnagraficaAzienda
             try
             {
                 var studioCommerciale = (StudioCommercialeDto)model;
-                if (studioCommerciale != null)
-                    editStudioCommerciale.Value = studioCommerciale.Denominazione;
+                BindViewStudioCommerciale(studioCommerciale);
             }
             catch (Exception ex)
             {
                 UtilityError.Write(ex);
             }
         }
-
-   
 	}
 }

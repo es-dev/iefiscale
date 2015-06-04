@@ -25,18 +25,10 @@ namespace Web.GUI.StudioCommerciale
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.StudioCommercialeDto)model;
-                    var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    var cap = UtilityValidation.GetStringND(obj.Cap);
-                    var comune = UtilityValidation.GetStringND(obj.Comune);
-                    var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    var denominazione = UtilityValidation.GetStringND(obj.Denominazione);
-                    var tipoSoftwareContabilita = UtilityValidation.GetStringND(obj.TipoSoftwareContabilita);
-
                     infoImage.Image = "Images.dashboard.azienda.png";
-                    infoDenominazione.Text = denominazione;
-                    infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
-                    infoTipoSoftwareContabilita.Text = "Software di contabilità: " + tipoSoftwareContabilita;
-
+                    infoDenominazione.Text = obj.Denominazione;
+                    infoIndirizzo.Text = BusinessLogic.StudioCommerciale.GetIndirizzo(obj);
+                    infoTipoSoftwareContabilita.Text = "Software di contabilità: " + obj.TipoSoftwareContabilita;
                 }
             }
             catch (Exception ex)
@@ -44,7 +36,6 @@ namespace Web.GUI.StudioCommerciale
                 UtilityError.Write(ex);
             }
         }
-
-       
+      
 	}
 }
