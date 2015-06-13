@@ -15,7 +15,7 @@ namespace Web.Code
             {
                 view.Title = "ES | IMPORT EXPORT FISCALE";
                 view.Version = "rev. beta 1";
-                view.LogoSoftware = "Images.logoSoftware.png";
+                view.LogoSoftware = "Images.es.iefiscale.png";
                 view.LogoESD = "Images.logoESD.png";
                 view.BackgroundImage = "Images.background.png";
                 view.UrlHomePortal = "http://www.aifirst.it";
