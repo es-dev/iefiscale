@@ -167,6 +167,19 @@ namespace DataLayer
 			}
 		}
 		
+		private string _codiceCatastale;
+		public virtual string CodiceCatastale
+		{
+			get
+			{
+				return this._codiceCatastale;
+			}
+			set
+			{
+				this._codiceCatastale = value;
+			}
+		}
+		
 		private IList<Account> _accounts = new List<Account>();
 		public virtual IList<Account> Accounts
 		{

@@ -565,6 +565,215 @@
   <ItemGroup>
     <Compile Include="Code\ESApplication.cs" />
     <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="GUI\Account\AccountItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\AccountItem.designer.cs">
+      <DependentUpon>AccountItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Account\AccountModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\AccountModel.designer.cs">
+      <DependentUpon>AccountModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Account\AccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\AccountView.designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Account\AccountViewModel.cs" />
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.designer.cs">
+      <DependentUpon>AnagraficaAziendaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaModel.designer.cs">
+      <DependentUpon>AnagraficaAziendaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.designer.cs">
+      <DependentUpon>AnagraficaAziendaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaViewModel.cs" />
+    <Compile Include="GUI\Azienda\AziendaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaItem.designer.cs">
+      <DependentUpon>AziendaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaModel.designer.cs">
+      <DependentUpon>AziendaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaView.designer.cs">
+      <DependentUpon>AziendaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Azienda\AziendaViewModel.cs" />
+    <Compile Include="GUI\Cliente\ClienteItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteItem.designer.cs">
+      <DependentUpon>ClienteItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteModel.designer.cs">
+      <DependentUpon>ClienteModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteView.designer.cs">
+      <DependentUpon>ClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Cliente\ClienteViewModel.cs" />
+    <Compile Include="GUI\Comunicazione\ComunicazioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneItem.designer.cs">
+      <DependentUpon>ComunicazioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneModel.designer.cs">
+      <DependentUpon>ComunicazioneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneView.designer.cs">
+      <DependentUpon>ComunicazioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Comunicazione\ComunicazioneViewModel.cs" />
+    <Compile Include="GUI\Contabilita\ContabilitaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaItem.designer.cs">
+      <DependentUpon>ContabilitaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaModel.designer.cs">
+      <DependentUpon>ContabilitaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaView.designer.cs">
+      <DependentUpon>ContabilitaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contabilita\ContabilitaViewModel.cs" />
+    <Compile Include="GUI\Customer\CustomerItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer\CustomerItem.designer.cs">
+      <DependentUpon>CustomerItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Customer\CustomerModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer\CustomerModel.designer.cs">
+      <DependentUpon>CustomerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Customer\CustomerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer\CustomerView.designer.cs">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Customer\CustomerViewModel.cs" />
+    <Compile Include="GUI\Documento\DocumentoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoItem.designer.cs">
+      <DependentUpon>DocumentoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoModel.designer.cs">
+      <DependentUpon>DocumentoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoView.designer.cs">
+      <DependentUpon>DocumentoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Documento\DocumentoViewModel.cs" />
+    <Compile Include="GUI\Export\ExportItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Export\ExportItem.designer.cs">
+      <DependentUpon>ExportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Export\ExportModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Export\ExportModel.designer.cs">
+      <DependentUpon>ExportModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Export\ExportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Export\ExportView.designer.cs">
+      <DependentUpon>ExportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Export\ExportViewModel.cs" />
+    <Compile Include="GUI\Import\ImportItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Import\ImportItem.designer.cs">
+      <DependentUpon>ImportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import\ImportModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Import\ImportModel.designer.cs">
+      <DependentUpon>ImportModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import\ImportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Import\ImportView.designer.cs">
+      <DependentUpon>ImportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Import\ImportViewModel.cs" />
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeItem.designer.cs">
+      <DependentUpon>StudioCommercialeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeModel.designer.cs">
+      <DependentUpon>StudioCommercialeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeView.designer.cs">
+      <DependentUpon>StudioCommercialeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudioCommerciale\StudioCommercialeViewModel.cs" />
     <Compile Include="GUI\Dashboard\DashboardItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -627,6 +836,105 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Account\AccountItem.resx">
+      <DependentUpon>AccountItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Account\AccountModel.resx">
+      <DependentUpon>AccountModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Account\AccountView.resx">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.resx">
+      <DependentUpon>AnagraficaAziendaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaModel.resx">
+      <DependentUpon>AnagraficaAziendaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaView.resx">
+      <DependentUpon>AnagraficaAziendaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Azienda\AziendaItem.resx">
+      <DependentUpon>AziendaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Azienda\AziendaModel.resx">
+      <DependentUpon>AziendaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Azienda\AziendaView.resx">
+      <DependentUpon>AziendaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteItem.resx">
+      <DependentUpon>ClienteItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteModel.resx">
+      <DependentUpon>ClienteModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Cliente\ClienteView.resx">
+      <DependentUpon>ClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comunicazione\ComunicazioneItem.resx">
+      <DependentUpon>ComunicazioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comunicazione\ComunicazioneModel.resx">
+      <DependentUpon>ComunicazioneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Comunicazione\ComunicazioneView.resx">
+      <DependentUpon>ComunicazioneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Contabilita\ContabilitaItem.resx">
+      <DependentUpon>ContabilitaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Contabilita\ContabilitaModel.resx">
+      <DependentUpon>ContabilitaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Contabilita\ContabilitaView.resx">
+      <DependentUpon>ContabilitaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Customer\CustomerItem.resx">
+      <DependentUpon>CustomerItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Customer\CustomerModel.resx">
+      <DependentUpon>CustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Customer\CustomerView.resx">
+      <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Documento\DocumentoItem.resx">
+      <DependentUpon>DocumentoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Documento\DocumentoModel.resx">
+      <DependentUpon>DocumentoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Documento\DocumentoView.resx">
+      <DependentUpon>DocumentoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Export\ExportItem.resx">
+      <DependentUpon>ExportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Export\ExportModel.resx">
+      <DependentUpon>ExportModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Export\ExportView.resx">
+      <DependentUpon>ExportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import\ImportItem.resx">
+      <DependentUpon>ImportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import\ImportModel.resx">
+      <DependentUpon>ImportModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Import\ImportView.resx">
+      <DependentUpon>ImportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeItem.resx">
+      <DependentUpon>StudioCommercialeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeModel.resx">
+      <DependentUpon>StudioCommercialeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudioCommerciale\StudioCommercialeView.resx">
+      <DependentUpon>StudioCommercialeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dashboard\DashboardItem.resx">
       <DependentUpon>DashboardItem.cs</DependentUpon>
     </EmbeddedResource>

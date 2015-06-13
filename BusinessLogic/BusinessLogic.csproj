@@ -64,7 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnagraficaAzienda.cs" />
+    <Compile Include="Azienda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudioCommerciale.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ES.Library\ES.Library.csproj">
