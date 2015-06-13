@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Text;
 using Web.Code;
 using WcfService.Dto;
+using BusinessLogic;
 
 namespace Web.GUI.Account
 {
@@ -31,7 +32,7 @@ namespace Web.GUI.Account
         {
             try
             {
-                //editRuolo.DisplayValues = UtilityEnum.GetDisplayValues<Tipi.TipoAccount>(); 
+                editRuolo.DisplayValues = UtilityEnum.GetDisplayValues<Tipi.TipoAccount>(); 
             }
             catch (Exception ex)
             {
@@ -46,9 +47,9 @@ namespace Web.GUI.Account
                 if (model != null)
                 {
                     var obj = (AccountDto)model;
-                    infoSubtitle.Text = obj.Nickname + " - " + obj.Ruolo;
+                    infoSubtitle.Text = BusinessLogic.Account.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.account.png";
-                    infoTitle.Text = (obj.Id!=0? "ACCOUNT " + obj.Nickname: "NUOVO ACCOUNT");
+                    infoTitle.Text = (obj.Id != 0 ? "ACCOUNT " + BusinessLogic.Account.GetCodifica(obj) : "NUOVO ACCOUNT");
                 }
             }
             catch (Exception ex)
@@ -82,12 +83,12 @@ namespace Web.GUI.Account
             }
         }
 
-        private void BindViewStudioCommerciale(WcfService.Dto.StudioCommercialeDto studioCommercialeDto)
+        private void BindViewStudioCommerciale(WcfService.Dto.StudioCommercialeDto studioCommerciale)
         {
             try
             {
-                editStudioCommerciale.Model = studioCommercialeDto;
-                editStudioCommerciale.Value = (studioCommercialeDto != null ? studioCommercialeDto.Denominazione : null);
+                editStudioCommerciale.Model = studioCommerciale;
+                editStudioCommerciale.Value = BusinessLogic.StudioCommerciale.GetCodifica(studioCommerciale);
             }
             catch (Exception ex)
             {
@@ -100,7 +101,7 @@ namespace Web.GUI.Account
             try
             {
                 editAzienda.Model = azienda;
-                editAzienda.Value = (azienda != null ?  azienda.AnagraficaAzienda.RagioneSociale : null); //todo:da sistemare
+                editAzienda.Value = BusinessLogic.Azienda.GetCodifica(azienda);
             }
             catch (Exception ex)
             {
@@ -158,8 +159,7 @@ namespace Web.GUI.Account
             try
             {
                 var studioCommerciale = (StudioCommercialeDto)model;
-                if (studioCommerciale != null)
-                    editStudioCommerciale.Value = studioCommerciale.Denominazione;
+                BindViewStudioCommerciale(studioCommerciale);
             }
             catch (Exception ex)
             {
@@ -186,9 +186,8 @@ namespace Web.GUI.Account
         {
             try
             {
-                var azienda = (WcfService.Dto.AziendaDto)model;
-                if (azienda != null)
-                    editAzienda.Value = azienda.AnagraficaAzienda.RagioneSociale;
+                var azienda = (AziendaDto)model;
+                BindViewAzienda(azienda);
             }
             catch (Exception ex)
             {
@@ -196,22 +195,7 @@ namespace Web.GUI.Account
             }
         }
 
-        private void AccountModel_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                var obj = (AccountDto)Model;
-                if (obj != null && obj.Id == 0)
-                    SetNewValue();
-
-            }
-            catch (Exception ex)
-            {
-                UtilityError.Write(ex);
-            }
-        }
-
-        private void SetNewValue()
+        public override void SetNewValue(object model)
         {
             try
             {

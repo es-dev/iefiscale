@@ -25,10 +25,10 @@ namespace Web.GUI.AnagraficaAzienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
-                    infoSubtitle.Text =  obj.RagioneSociale;
-                    infoSubtitleImage.Image = "Images.dashboard.azienda.png";
-                    infoTitle.Text = (obj.Id != 0 ? "AZIENDA " + BusinessLogic.AnagraficaAzienda.GetCodifica(obj) : "NUOVA AZIENDA"); 
+                    var obj = (AnagraficaAziendaDto)model;
+                    infoSubtitle.Text = BusinessLogic.AnagraficaAzienda.GetCodifica(obj);
+                    infoSubtitleImage.Image = "Images.dashboard.anagraficaazienda.png";
+                    infoTitle.Text = (obj.Id != 0 ? "ANAGRAFICA AZIENDA " + BusinessLogic.AnagraficaAzienda.GetCodifica(obj) : "NUOVA ANAGRAFICA AZIENDA"); 
                 }
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace Web.GUI.AnagraficaAzienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
+                    var obj = (AnagraficaAziendaDto)model;
                     editRagioneSociale.Value = obj.RagioneSociale;
                     editCAP.Value = obj.Cap;
                     editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
@@ -83,7 +83,7 @@ namespace Web.GUI.AnagraficaAzienda
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
+                    var obj = (AnagraficaAziendaDto)model;
                     obj.RagioneSociale = editRagioneSociale.Value;
                     obj.Cap = editCAP.Value;
                     obj.Comune = editComune.Value.Description;

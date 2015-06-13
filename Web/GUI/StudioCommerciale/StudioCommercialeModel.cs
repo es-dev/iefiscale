@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using WcfService.Dto;
 using Web.Code;
 
 namespace Web.GUI.StudioCommerciale
@@ -24,10 +25,10 @@ namespace Web.GUI.StudioCommerciale
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.StudioCommercialeDto)model;
-                    infoSubtitle.Text =  obj.Denominazione;
-                    infoSubtitleImage.Image = "Images.dashboard.azienda.png";
-                    infoTitle.Text = (obj.Id != 0 ? "AZIENDA " + obj.Denominazione : "NUOVA AZIENDA");
+                    var obj = (StudioCommercialeDto)model;
+                    infoSubtitle.Text = BusinessLogic.StudioCommerciale.GetCodifica(obj);
+                    infoSubtitleImage.Image = "Images.dashboard.studiocommerciale.png";
+                    infoTitle.Text = (obj.Id != 0 ? "STUDIO COMMERCIALE " + BusinessLogic.StudioCommerciale.GetCodifica(obj) : "NUOVO STUDIO COMMERCIALE");
                 }
             }
             catch (Exception ex)
@@ -42,7 +43,7 @@ namespace Web.GUI.StudioCommerciale
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.StudioCommercialeDto)model;
+                    var obj = (StudioCommercialeDto)model;
                     editDenominazione.Value = obj.Denominazione;
                     editCAP.Value = obj.Cap;
                     editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
@@ -66,7 +67,7 @@ namespace Web.GUI.StudioCommerciale
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.StudioCommercialeDto)model;
+                    var obj = (StudioCommercialeDto)model;
                     obj.Denominazione = editDenominazione.Value;
                     obj.Cap = editCAP.Value;
                     obj.Comune = editComune.Value.Description;

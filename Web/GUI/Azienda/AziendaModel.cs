@@ -26,9 +26,9 @@ namespace Web.GUI.Azienda
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.AziendaDto)model;
-                    infoSubtitle.Text =  "";
+                    infoSubtitle.Text = BusinessLogic.Azienda.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.azienda.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "AZIENDA " + BusinessLogic.Azienda.GetCodifica(obj): "NUOVA AZIENDA");
                 }
             }
             catch (Exception ex)
@@ -48,6 +48,7 @@ namespace Web.GUI.Azienda
                     editTipoSoftwareFatturazione.Value = obj.TipoSoftwareFatturazione;
                     editUltimoAggiornamento.Value = obj.UltimoAggiornamento;
                     editMdbFile.Value = obj.MdbFile;
+                    editIDAzienda.Value = obj.IDAzienda;
 
                     BindViewStudioCommerciale(obj.StudioCommerciale);
                     BindViewAnagraficaAzienda(obj.AnagraficaAzienda);
@@ -60,12 +61,20 @@ namespace Web.GUI.Azienda
             }
         }
 
-        private void BindViewAnagraficaAzienda(AnagraficaAziendaDto anagraficaAziendaDto)
+        private void BindViewAnagraficaAzienda(AnagraficaAziendaDto anagraficaAzienda)
         {
             try
             {
-                editAnagraficaAzienda.Model = anagraficaAziendaDto;
-                editAnagraficaAzienda.Value = (anagraficaAziendaDto != null ? anagraficaAziendaDto.RagioneSociale : null);
+                editRagioneSociale.Model = anagraficaAzienda;
+                editRagioneSociale.Value = anagraficaAzienda.RagioneSociale;
+                editCAP.Value = anagraficaAzienda.Cap;
+                editComune.Value = new Countries.City(anagraficaAzienda.Comune, anagraficaAzienda.CodiceCatastale, anagraficaAzienda.Provincia);
+                editIndirizzo.Value = anagraficaAzienda.Indirizzo;
+                editCodiceFiscale.Value = anagraficaAzienda.CodiceFiscale;
+                editPartitaIVA.Value = anagraficaAzienda.PartitaIVA;
+                editTelefono.Value = anagraficaAzienda.Telefono;
+                editFAX.Value = anagraficaAzienda.Fax;
+                editEmail.Value = anagraficaAzienda.Email;
             }
             catch (Exception ex)
             {
@@ -73,12 +82,12 @@ namespace Web.GUI.Azienda
             }
         }
 
-        private void BindViewStudioCommerciale(WcfService.Dto.StudioCommercialeDto studioCommercialeDto)
+        private void BindViewStudioCommerciale(WcfService.Dto.StudioCommercialeDto studioCommerciale)
         {
             try
             {
-                editStudioCommerciale.Model = studioCommercialeDto;
-                editStudioCommerciale.Value = (studioCommercialeDto != null ? studioCommercialeDto.Denominazione : null);
+                editStudioCommerciale.Model = studioCommerciale;
+                editStudioCommerciale.Value = BusinessLogic.StudioCommerciale.GetCodifica(studioCommerciale);
             }
             catch (Exception ex)
             {
@@ -97,12 +106,13 @@ namespace Web.GUI.Azienda
                     obj.UltimoAggiornamento = editUltimoAggiornamento.Value;
                     obj.MdbFile = editMdbFile.Value;
                     obj.TipoSoftwareFatturazione = editTipoSoftwareFatturazione.Value;
+                    obj.IDAzienda = editIDAzienda.Value;
 
                     var studioCommerciale = (WcfService.Dto.StudioCommercialeDto)editStudioCommerciale.Model;
                     if (studioCommerciale != null)
                         obj.StudioCommercialeId = studioCommerciale.Id;
 
-                    var anagraficaAzienda = (WcfService.Dto.AnagraficaAziendaDto)editAnagraficaAzienda.Model;
+                    var anagraficaAzienda = (WcfService.Dto.AnagraficaAziendaDto)editRagioneSociale.Model;
                     if (anagraficaAzienda != null)
                         obj.AnagraficaAziendaId = anagraficaAzienda.Id;
                 }
@@ -132,8 +142,7 @@ namespace Web.GUI.Azienda
             try
             {
                 var studioCommerciale = (StudioCommercialeDto)model;
-                if (studioCommerciale != null)
-                    editStudioCommerciale.Value = studioCommerciale.Denominazione;
+                BindViewStudioCommerciale(studioCommerciale);
             }
             catch (Exception ex)
             {
@@ -147,7 +156,7 @@ namespace Web.GUI.Azienda
             {
                 var view = new AnagraficaAzienda.AnagraficaAziendaView();
                 view.Title = "SELEZIONA UN'AZIENDA DALL'ANAGRAFICA";
-                editAnagraficaAzienda.Show(view);
+                editRagioneSociale.Show(view);
             }
             catch (Exception ex)
             {
@@ -159,8 +168,7 @@ namespace Web.GUI.Azienda
         private void editAnagraficaAzienda_ComboConfirm(object model)
         {
             var anagraficaAzienda = (AnagraficaAziendaDto)model;
-            if (anagraficaAzienda != null)
-                editAnagraficaAzienda.Value = anagraficaAzienda.RagioneSociale;
+            BindViewAnagraficaAzienda(anagraficaAzienda);
         }
 	}
 }

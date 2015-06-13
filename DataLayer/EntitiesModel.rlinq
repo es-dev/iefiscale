@@ -43,7 +43,9 @@
         <orm:field name="_fax" property="Fax" uniqueId="a9c8c514-1579-4e43-b0d8-603a3162ba81" type="System.String">
           <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
-        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="0d5dd935-1a19-4ef7-a1c5-e0285af6d9cc" type="System.String" />
+        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="0d5dd935-1a19-4ef7-a1c5-e0285af6d9cc" type="System.String">
+          <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="" />
+        </orm:field>
         <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="338333c6-de01-4a1f-8cb2-ad9be01abdfa" type="DataLayer.Account">
           <orm:collection element-class="DataLayer.Account" inverse-field="_studioCommerciale" order-by="" uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" />
         </orm:field>
@@ -263,7 +265,7 @@
           <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         </orm:field>
         <orm:field name="_aziendaId" property="AziendaId" uniqueId="8a490d19-0b11-4647-9669-53f48f18d45f" type="System.Int32">
-          <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+          <orm:column name="AziendaId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         </orm:field>
         <orm:field name="_username" property="Username" uniqueId="300877d1-ca89-4ff5-b794-04f9e1b0f40c" type="System.String">
           <orm:column name="Username" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
@@ -298,7 +300,7 @@
         </orm:field>
         <orm:index name="idx_Account_AziendaId">
           <orm:columnMapping>
-            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+            <orm:column name="AziendaId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
           </orm:columnMapping>
         </orm:index>
         <orm:index name="idx_Accunt_StudioCommercialeId">
@@ -423,7 +425,9 @@
         <orm:field name="_cap" property="Cap" uniqueId="f3094443-6a84-4d2e-9c54-c2aad9b0fd04" type="System.String">
           <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
-        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="9e1c05e5-94cd-482f-b9d6-2a6a184f359d" type="System.String" />
+        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="9e1c05e5-94cd-482f-b9d6-2a6a184f359d" type="System.String">
+          <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
+        </orm:field>
         <orm:field name="_studioCommerciale" property="StudioCommerciale" behavior="readwrite" uniqueId="bc85eb54-a9de-4a3e-a918-ffb2dd399bda" type="DataLayer.StudioCommerciale">
           <orm:reference uniqueId="749cf01c-1ad3-4635-aff0-a4c895f224c0" association-name="AnagraficaAziendaHasStudioCommerciale">
             <orm:sharedfield name="_studioCommercialeId" target-class="DataLayer.StudioCommerciale" target-field="_id" />
@@ -552,14 +556,14 @@
         <orm:column name="Password" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Nickname" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-        <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+        <orm:column name="AziendaId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         <orm:column name="Ruolo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
         <orm:column name="Note" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
         <orm:column name="Creazione" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="" />
         <orm:column name="Abilitato" sql-type="bit" nullable="true" length="0" scale="0" ado-type="" />
         <orm:index name="idx_Account_AziendaId">
           <orm:columnMapping>
-            <orm:column name="AziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
+            <orm:column name="AziendaId" sql-type="int" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
           </orm:columnMapping>
         </orm:index>
         <orm:index name="idx_Accunt_StudioCommercialeId">
@@ -580,6 +584,7 @@
         <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="" />
       </orm:table>
       <orm:table name="AnagraficaAzienda">
         <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
@@ -594,6 +599,7 @@
         <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
         <orm:index name="idx_AngrfcAznd_StdCmmercialeId">
           <orm:columnMapping>
             <orm:column name="StudioCommercialeId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />

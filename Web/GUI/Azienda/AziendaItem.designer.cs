@@ -30,12 +30,13 @@ namespace Web.GUI.Azienda
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.infoTipoSoftwareFatturazione = new Gizmox.WebGUI.Forms.Label();
+            this.infoIndirizzo = new Gizmox.WebGUI.Forms.Label();
             this.infoCodice = new Gizmox.WebGUI.Forms.Label();
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
             this.infoRagioneSociale = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
-            this.infoStudioCommerciale = new Gizmox.WebGUI.Forms.Label();
+            this.infoTipoSoftwareFatturazione = new Gizmox.WebGUI.Forms.Label();
+            this.infoPartitaIVA = new Gizmox.WebGUI.Forms.Label();
             this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -43,23 +44,24 @@ namespace Web.GUI.Azienda
             // 
             // jqContainer
             // 
-            this.jqContainer.Controls.Add(this.infoStudioCommerciale);
+            this.jqContainer.Controls.Add(this.infoPartitaIVA);
+            this.jqContainer.Controls.Add(this.infoTipoSoftwareFatturazione);
             this.jqContainer.Controls.Add(this.panelLeft);
             this.jqContainer.Controls.Add(this.infoRagioneSociale);
-            this.jqContainer.Controls.Add(this.infoTipoSoftwareFatturazione);
+            this.jqContainer.Controls.Add(this.infoIndirizzo);
             // 
-            // infoTipoSoftwareFatturazione
+            // infoIndirizzo
             // 
-            this.infoTipoSoftwareFatturazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            this.infoIndirizzo.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoTipoSoftwareFatturazione.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoTipoSoftwareFatturazione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoTipoSoftwareFatturazione.Location = new System.Drawing.Point(91, 32);
-            this.infoTipoSoftwareFatturazione.Name = "infoTipoSoftwareFatturazione";
-            this.infoTipoSoftwareFatturazione.Size = new System.Drawing.Size(302, 29);
-            this.infoTipoSoftwareFatturazione.TabIndex = 1;
-            this.infoTipoSoftwareFatturazione.Text = "Tipo software fatturazione";
+            this.infoIndirizzo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoIndirizzo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoIndirizzo.Location = new System.Drawing.Point(93, 30);
+            this.infoIndirizzo.Name = "infoIndirizzo";
+            this.infoIndirizzo.Size = new System.Drawing.Size(296, 38);
+            this.infoIndirizzo.TabIndex = 1;
+            this.infoIndirizzo.Text = "Indirizzo, CAP Comune (PR)";
             // 
             // infoCodice
             // 
@@ -91,7 +93,7 @@ namespace Web.GUI.Azienda
             this.infoRagioneSociale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
             this.infoRagioneSociale.Location = new System.Drawing.Point(91, 2);
             this.infoRagioneSociale.Name = "infoRagioneSociale";
-            this.infoRagioneSociale.Size = new System.Drawing.Size(263, 30);
+            this.infoRagioneSociale.Size = new System.Drawing.Size(300, 30);
             this.infoRagioneSociale.TabIndex = 1;
             this.infoRagioneSociale.Text = "RAGIONE SOCIALE";
             // 
@@ -107,18 +109,26 @@ namespace Web.GUI.Azienda
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
             // 
-            // infoStudioCommerciale
+            // infoTipoSoftwareFatturazione
             // 
-            this.infoStudioCommerciale.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Bottom | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoStudioCommerciale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoStudioCommerciale.ForeColor = System.Drawing.Color.DarkRed;
-            this.infoStudioCommerciale.Location = new System.Drawing.Point(128, 80);
-            this.infoStudioCommerciale.Name = "infoStudioCommerciale";
-            this.infoStudioCommerciale.Size = new System.Drawing.Size(265, 16);
-            this.infoStudioCommerciale.TabIndex = 1;
-            this.infoStudioCommerciale.Text = "Studio Commerciale:";
-            this.infoStudioCommerciale.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.infoTipoSoftwareFatturazione.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoTipoSoftwareFatturazione.ForeColor = System.Drawing.Color.DarkRed;
+            this.infoTipoSoftwareFatturazione.Location = new System.Drawing.Point(208, 78);
+            this.infoTipoSoftwareFatturazione.Name = "infoTipoSoftwareFatturazione";
+            this.infoTipoSoftwareFatturazione.Size = new System.Drawing.Size(182, 16);
+            this.infoTipoSoftwareFatturazione.TabIndex = 1;
+            this.infoTipoSoftwareFatturazione.Text = "Tipo software fatturazione";
+            this.infoTipoSoftwareFatturazione.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoPartitaIVA
+            // 
+            this.infoPartitaIVA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoPartitaIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoPartitaIVA.Location = new System.Drawing.Point(93, 77);
+            this.infoPartitaIVA.Name = "infoPartitaIVA";
+            this.infoPartitaIVA.Size = new System.Drawing.Size(123, 17);
+            this.infoPartitaIVA.TabIndex = 1;
+            this.infoPartitaIVA.Text = "P.IVA: 00000000000";
             // 
             // AziendaItem
             // 
@@ -133,11 +143,12 @@ namespace Web.GUI.Azienda
 
 		#endregion
 
-        private Gizmox.WebGUI.Forms.Label infoTipoSoftwareFatturazione;
+        private Gizmox.WebGUI.Forms.Label infoIndirizzo;
         private Gizmox.WebGUI.Forms.Label infoCodice;
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
         private Gizmox.WebGUI.Forms.Label infoRagioneSociale;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
-        private Gizmox.WebGUI.Forms.Label infoStudioCommerciale;
+        private Gizmox.WebGUI.Forms.Label infoTipoSoftwareFatturazione;
+        private Gizmox.WebGUI.Forms.Label infoPartitaIVA;
 	}
 }

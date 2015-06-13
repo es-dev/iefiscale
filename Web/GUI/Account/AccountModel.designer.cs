@@ -136,7 +136,7 @@ namespace Web.GUI.Account
             this.editAzienda.Model = null;
             this.editAzienda.Name = "editAzienda";
             this.editAzienda.ReadOnly = false;
-            this.editAzienda.Required = true;
+            this.editAzienda.Required = false;
             this.editAzienda.Size = new System.Drawing.Size(809, 30);
             this.editAzienda.TabIndex = 0;
             this.editAzienda.Text = "EditControl";
@@ -276,10 +276,6 @@ namespace Web.GUI.Account
             this.editStudioCommerciale.Value = null;
             this.editStudioCommerciale.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editStudioCommerciale_ComboConfirm);
             this.editStudioCommerciale.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editStudioCommerciale_ComboClick);
-            // 
-            // AccountModel
-            // 
-            this.Load += new System.EventHandler(this.AccountModel_Load);
             this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).EndInit();
             this.panelCommands.ResumeLayout(false);

@@ -26,19 +26,13 @@ namespace Web.GUI.Azienda
                 if (model != null)
                 {
                     var obj = (AziendaDto)model;
-
                     var anagraficaAzienda = obj.AnagraficaAzienda;
                     if (anagraficaAzienda != null)
-                    {
-                        var ragioneSocialeAzienda = UtilityValidation.GetStringND(anagraficaAzienda.RagioneSociale);
-                        infoRagioneSociale.Text = UtilityValidation.GetStringND(ragioneSocialeAzienda);
-                    } 
-                    var studioCommerciale = obj.StudioCommerciale;
-                    var tipoSoftwareFatturazione = UtilityValidation.GetStringND(obj.TipoSoftwareFatturazione);
+                        infoRagioneSociale.Text = anagraficaAzienda.RagioneSociale;
 
                     infoImage.Image = "Images.dashboard.azienda.png";
-                    infoStudioCommerciale.Text = "Studio commerciale: " + studioCommerciale.Denominazione;
-                    infoTipoSoftwareFatturazione.Text = "Software di fatturazioen: " + tipoSoftwareFatturazione;
+                    infoTipoSoftwareFatturazione.Text = "Software di fatturazione: " + obj.TipoSoftwareFatturazione;
+                    infoIndirizzo.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(obj.AnagraficaAzienda);
                 }
             }
             catch (Exception ex)

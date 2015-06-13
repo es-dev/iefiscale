@@ -35,8 +35,8 @@ namespace Web.GUI.Account
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
             this.infoNickname = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
-            this.infoCreazione = new Gizmox.WebGUI.Forms.Label();
             this.infoAbilitato = new Gizmox.WebGUI.Forms.Label();
+            this.infoCreazione = new Gizmox.WebGUI.Forms.Label();
             this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -44,8 +44,8 @@ namespace Web.GUI.Account
             // 
             // jqContainer
             // 
-            this.jqContainer.Controls.Add(this.infoAbilitato);
             this.jqContainer.Controls.Add(this.infoCreazione);
+            this.jqContainer.Controls.Add(this.infoAbilitato);
             this.jqContainer.Controls.Add(this.infoRuolo);
             this.jqContainer.Controls.Add(this.infoNickname);
             this.jqContainer.Controls.Add(this.panelLeft);
@@ -109,31 +109,31 @@ namespace Web.GUI.Account
             this.panelLeft.Size = new System.Drawing.Size(83, 96);
             this.panelLeft.TabIndex = 0;
             // 
-            // infoCreazione
-            // 
-            this.infoCreazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Bottom | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoCreazione.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoCreazione.ForeColor = System.Drawing.Color.DarkRed;
-            this.infoCreazione.Location = new System.Drawing.Point(242, 77);
-            this.infoCreazione.Name = "infoCreazione";
-            this.infoCreazione.Size = new System.Drawing.Size(153, 16);
-            this.infoCreazione.TabIndex = 1;
-            this.infoCreazione.Text = "Creazione: dd/MM/yyyy";
-            this.infoCreazione.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // infoAbilitato
             // 
             this.infoAbilitato.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Bottom | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.infoAbilitato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoAbilitato.ForeColor = System.Drawing.Color.Blue;
+            this.infoAbilitato.ForeColor = System.Drawing.Color.DarkRed;
             this.infoAbilitato.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.infoAbilitato.Location = new System.Drawing.Point(93, 77);
+            this.infoAbilitato.Location = new System.Drawing.Point(238, 77);
             this.infoAbilitato.Name = "infoAbilitato";
             this.infoAbilitato.Size = new System.Drawing.Size(153, 16);
             this.infoAbilitato.TabIndex = 1;
             this.infoAbilitato.Text = "Abilitato";
+            this.infoAbilitato.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoCreazione
+            // 
+            this.infoCreazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Bottom | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoCreazione.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoCreazione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoCreazione.Location = new System.Drawing.Point(88, 77);
+            this.infoCreazione.Name = "infoCreazione";
+            this.infoCreazione.Size = new System.Drawing.Size(153, 16);
+            this.infoCreazione.TabIndex = 1;
+            this.infoCreazione.Text = "Creazione: dd/MM/yyyy";
             // 
             // AccountItem
             // 
