@@ -96,7 +96,7 @@ namespace Web
             } 
         }
 
-        private void Logout()
+        public override void Logout()
         {
             try
             {
