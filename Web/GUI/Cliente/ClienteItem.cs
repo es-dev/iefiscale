@@ -28,7 +28,7 @@ namespace Web.GUI.Cliente
                     var anagraficaAzienda = obj.AnagraficaAzienda;
                    
                     infoImage.Image = "Images.dashboard.cliente.png";
-                    infoRagioneSociale.Text = anagraficaAzienda.RagioneSociale; //il parent non è mai nullo
+                    infoRagioneSociale.Text = anagraficaAzienda.RagioneSociale; 
                     infoIndirizzoComune.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(anagraficaAzienda);
                     infoPartitaIVA.Text = anagraficaAzienda.PartitaIVA;
                 }

@@ -26,9 +26,9 @@ namespace Web.GUI.Cliente
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ClienteDto)model;
-                    infoSubtitle.Text =  "";
+                    infoSubtitle.Text = BusinessLogic.Cliente.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.cliente.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "CLIENTE " + BusinessLogic.Cliente.GetCodifica(obj) : "NUOVO CLIENTE");
                 }
             }
             catch (Exception ex)
@@ -149,7 +149,7 @@ namespace Web.GUI.Cliente
             try
             {
                 var view = new AnagraficaAzienda.AnagraficaAziendaView();
-                view.Title = "SELEZIONA UN'AZIENDA DALL'ANAGRAFICA";
+                view.Title = "SELEZIONA UN CLIENTE DALL'ANAGRAFICA";
                 editRagioneSociale.Show(view);
             }
             catch (Exception ex)

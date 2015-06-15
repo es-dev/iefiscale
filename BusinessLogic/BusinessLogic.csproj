@@ -67,6 +67,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="AnagraficaAzienda.cs" />
     <Compile Include="Azienda.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudioCommerciale.cs" />
     <Compile Include="Tipi.cs" />

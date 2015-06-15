@@ -34,7 +34,7 @@ namespace BusinessLogic
             {
                 if(anagraficaAzienda!=null)
                 {
-                    var codifica = anagraficaAzienda.Id.ToString("000") + " - " + anagraficaAzienda.RagioneSociale; //codice - denominazione
+                    var codifica = anagraficaAzienda.Id.ToString("000") + " - " + anagraficaAzienda.RagioneSociale; 
                     return codifica;
                 }
             }

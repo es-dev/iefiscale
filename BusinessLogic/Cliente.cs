@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WcfService.Dto;
 
 namespace BusinessLogic
 {
-    public class Azienda
+    public class Cliente
     {
-        public static string GetCodifica(WcfService.Dto.AziendaDto azienda)
+        public static string GetCodifica(ClienteDto cliente)
         {
             try
             {
-                if(azienda !=null)
+                if (cliente != null)
                 {
-                    var anagraficaAzienda = azienda.AnagraficaAzienda; 
-                    var codifica = azienda.IDAzienda + " - " + anagraficaAzienda.RagioneSociale;
+                    var anagraficaAzienda = cliente.AnagraficaAzienda; 
+                    var codifica = cliente.IDCliente + " - " + anagraficaAzienda.RagioneSociale;
                     return codifica;
                 }
             }
