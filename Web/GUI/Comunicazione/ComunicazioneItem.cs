@@ -25,15 +25,11 @@ namespace Web.GUI.Comunicazione
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ComunicazioneDto)model;
-                    var contabilita = obj.Contabilita;
-                    var tipoContabilita = UtilityValidation.GetStringND(contabilita.Tipo);
-                    var numero = UtilityValidation.GetStringND(obj.Numero);
-                    var scadenzaIVA = UtilityValidation.GetDataND(obj.ScadenzaIVA);
 
                     infoImage.Image = "Images.dashboard.azienda.png";
-                    infoNumero.Text = "Numero comunicazione: " +numero;
-                    infoScadenzaIVA.Text = "Scadenza IVA: " + scadenzaIVA;
-                    infoContabilita.Text = "Contabilità: " + tipoContabilita;
+                    infoNumero.Text = "COMUNICAZIONE N." + BusinessLogic.Comunicazione.GetCodifica(obj);
+                    infoScadenzaIVA.Text = "Scadenza IVA: " + obj.ScadenzaIVA;
+                    infoContabilita.Text = "Contabilità: " + BusinessLogic.Contabilita.GetCodifica(obj.Contabilita);
                 }
             }
             catch (Exception ex)

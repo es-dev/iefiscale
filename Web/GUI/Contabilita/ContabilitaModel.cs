@@ -26,9 +26,9 @@ namespace Web.GUI.Contabilita
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ContabilitaDto)model;
-                    infoSubtitle.Text =  "";
+                    infoSubtitle.Text = BusinessLogic.Azienda.GetCodifica(obj.Azienda);
                     infoSubtitleImage.Image = "Images.dashboard.cliente.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "CONTABILITA' ANNO " + obj.Anno : "NUOVA CONTABILITA'") + " | " + BusinessLogic.Azienda.GetCodifica(obj.Azienda);
                 }
             }
             catch (Exception ex)
@@ -57,12 +57,12 @@ namespace Web.GUI.Contabilita
             }
         }
 
-                private void BindViewAzienda(WcfService.Dto.AziendaDto aziendaDto)
+        private void BindViewAzienda(WcfService.Dto.AziendaDto azienda)
         {
             try
             {
-                editAzienda.Model = aziendaDto;
-                editAzienda.Value = (aziendaDto != null ? aziendaDto.AnagraficaAzienda.RagioneSociale : null);  //todo: da sistemare
+                editAzienda.Model = azienda;
+                editAzienda.Value = BusinessLogic.Azienda.GetCodifica(azienda);  
             }
             catch (Exception ex)
             {
@@ -111,8 +111,7 @@ namespace Web.GUI.Contabilita
             try
             {
                 var azienda = (AziendaDto)model;
-                if (azienda != null)
-                    editAzienda.Value = azienda.AnagraficaAzienda.RagioneSociale;
+                BindViewAzienda(azienda);
             }
             catch (Exception ex)
             {

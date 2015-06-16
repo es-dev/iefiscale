@@ -33,7 +33,7 @@ namespace Web.GUI.Export
             this.infoData = new Gizmox.WebGUI.Forms.Label();
             this.infoCodice = new Gizmox.WebGUI.Forms.Label();
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
-            this.infoProgressivo = new Gizmox.WebGUI.Forms.Label();
+            this.infoExport = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
             this.infoStato = new Gizmox.WebGUI.Forms.Label();
             this.infoComunicazione = new Gizmox.WebGUI.Forms.Label();
@@ -47,7 +47,7 @@ namespace Web.GUI.Export
             this.jqContainer.Controls.Add(this.infoComunicazione);
             this.jqContainer.Controls.Add(this.infoStato);
             this.jqContainer.Controls.Add(this.panelLeft);
-            this.jqContainer.Controls.Add(this.infoProgressivo);
+            this.jqContainer.Controls.Add(this.infoExport);
             this.jqContainer.Controls.Add(this.infoData);
             // 
             // infoData
@@ -85,17 +85,17 @@ namespace Web.GUI.Export
             this.infoImage.TabIndex = 1;
             this.infoImage.TabStop = false;
             // 
-            // infoProgressivo
+            // infoExport
             // 
-            this.infoProgressivo.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            this.infoExport.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoProgressivo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoProgressivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
-            this.infoProgressivo.Location = new System.Drawing.Point(91, 2);
-            this.infoProgressivo.Name = "infoProgressivo";
-            this.infoProgressivo.Size = new System.Drawing.Size(263, 30);
-            this.infoProgressivo.TabIndex = 1;
-            this.infoProgressivo.Text = "PROGRESSIVO";
+            this.infoExport.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
+            this.infoExport.Location = new System.Drawing.Point(91, 2);
+            this.infoExport.Name = "infoExport";
+            this.infoExport.Size = new System.Drawing.Size(263, 30);
+            this.infoExport.TabIndex = 1;
+            this.infoExport.Text = "EXPORT N.";
             // 
             // panelLeft
             // 
@@ -151,7 +151,7 @@ namespace Web.GUI.Export
         private Gizmox.WebGUI.Forms.Label infoData;
         private Gizmox.WebGUI.Forms.Label infoCodice;
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
-        private Gizmox.WebGUI.Forms.Label infoProgressivo;
+        private Gizmox.WebGUI.Forms.Label infoExport;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
         private Gizmox.WebGUI.Forms.Label infoStato;
         private Gizmox.WebGUI.Forms.Label infoComunicazione;

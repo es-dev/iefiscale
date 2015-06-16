@@ -93,7 +93,7 @@ namespace Web.GUI.Comunicazione
             this.infoNumero.Name = "infoNumero";
             this.infoNumero.Size = new System.Drawing.Size(263, 30);
             this.infoNumero.TabIndex = 1;
-            this.infoNumero.Text = "NUMERO COMUNICAZIONE";
+            this.infoNumero.Text = "COMUNICAZIONE N.";
             // 
             // panelLeft
             // 

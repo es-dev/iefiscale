@@ -25,17 +25,12 @@ namespace Web.GUI.Export
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ExportDto)model;
-                    var comunicazione = obj.Comunicazione;
-                    var numeroComunicazione = comunicazione.Numero;
-                    var data = UtilityValidation.GetStringND(obj.Data);
-                    var stato = UtilityValidation.GetStringND(obj.Stato);
-                    var progressivo = UtilityValidation.GetStringND(obj.Progressivo);
 
                     infoImage.Image = "Images.dashboard.azienda.png";
-                    infoProgressivo.Text = "EXPORT N. " + progressivo;
-                    infoComunicazione.Text = "Comunicazione N. " + numeroComunicazione;
-                    infoData.Text ="Data: " + data;
-                    infoStato.Text ="Stato: "+ stato;
+                    infoExport.Text = "EXPORT N. " + BusinessLogic.Export.GetCodifica(obj);
+                    infoComunicazione.Text = "Comunicazione N. " + BusinessLogic.Comunicazione.GetCodifica(obj.Comunicazione);
+                    infoData.Text = "Data: " + UtilityValidation.GetStringND(obj.Data); 
+                    infoStato.Text ="Stato: "+ obj.Stato;
                 }
             }
             catch (Exception ex)

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using WcfService.Dto;
 using Web.Code;
 
 namespace Web.GUI.Contabilita
@@ -24,16 +25,12 @@ namespace Web.GUI.Contabilita
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ContabilitaDto)model;
-                    var azienda = obj.Azienda;
-                    var aziendaRagioneSociale = UtilityValidation.GetStringND(azienda.AnagraficaAzienda.RagioneSociale);
-                    var tipoContabilita = UtilityValidation.GetStringND(obj.Tipo);
-                    var contabilitaAnno = UtilityValidation.GetStringND(obj.Anno);
+                    var obj = (ContabilitaDto)model;
 
                     infoImage.Image = "Images.dashboard.contabilita.png";
-                    infoContabilitaAnno.Text ="CONTABILITA' ANNO: " + contabilitaAnno;
-                    infoTipoContabilita.Text = "Tipo contabilità: "+ tipoContabilita;
-                    infoAzienda.Text = aziendaRagioneSociale;
+                    infoContabilitaAnno.Text = "CONTABILITA' ANNO: " + obj.Anno;
+                    infoTipoContabilita.Text = "Tipo contabilità: " + obj.Tipo;
+                    infoAzienda.Text = "Azienda: " + BusinessLogic.Azienda.GetCodifica(obj.Azienda);
                 }
             }
             catch (Exception ex)

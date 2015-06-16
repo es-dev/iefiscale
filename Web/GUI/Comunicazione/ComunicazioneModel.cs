@@ -12,12 +12,12 @@ using Web.Code;
 
 namespace Web.GUI.Comunicazione
 {
-	public partial class ComunicazioneModel : TemplateModel
-	{
+    public partial class ComunicazioneModel : TemplateModel
+    {
         public ComunicazioneModel()
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
         public override void BindViewTitle(object model)
         {
@@ -26,9 +26,9 @@ namespace Web.GUI.Comunicazione
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.ComunicazioneDto)model;
-                    infoSubtitle.Text =  "";
+                    infoSubtitle.Text = BusinessLogic.Comunicazione.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.cliente.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "COMUNICAZIONE N." + BusinessLogic.Comunicazione.GetCodifica(obj) : "NUOVA COMUNICAZIONE") + " | " + BusinessLogic.Contabilita.GetCodifica(obj.Contabilita);
                 }
             }
             catch (Exception ex)
@@ -37,7 +37,7 @@ namespace Web.GUI.Comunicazione
             }
         }
 
-        public override void BindView(object model)  
+        public override void BindView(object model)
         {
             try
             {
@@ -57,12 +57,12 @@ namespace Web.GUI.Comunicazione
             }
         }
 
-                private void BindViewContabilita(WcfService.Dto.ContabilitaDto contabilitaDto)
+        private void BindViewContabilita(WcfService.Dto.ContabilitaDto contabilita)
         {
             try
             {
-                editContabilita.Model = contabilitaDto;
-                editContabilita.Value = (contabilitaDto != null ? contabilitaDto.Tipo : null);  //todo: da sistemare
+                editContabilita.Model = contabilita;
+                editContabilita.Value = BusinessLogic.Contabilita.GetCodifica(contabilita);
             }
             catch (Exception ex)
             {
@@ -111,8 +111,7 @@ namespace Web.GUI.Comunicazione
             try
             {
                 var contabilita = (ContabilitaDto)model;
-                if (contabilita != null)
-                    editContabilita.Value = contabilita.Tipo;
+                BindViewContabilita(contabilita);
             }
             catch (Exception ex)
             {
@@ -120,5 +119,5 @@ namespace Web.GUI.Comunicazione
             }
         }
 
-       	}
+    }
 }
