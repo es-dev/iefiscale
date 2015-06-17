@@ -478,6 +478,9 @@
             <orm:sharedfield name="_anagraficaAziendaId" target-class="DataLayer.AnagraficaAzienda" target-field="_id" />
           </orm:reference>
         </orm:field>
+        <orm:field name="_customers" property="Customers" behavior="readwrite" uniqueId="0935f7f7-bd20-4c41-ae90-9cd4da461f60" type="DataLayer.Customer">
+          <orm:collection element-class="DataLayer.Customer" inverse-field="_cliente" order-by="" uniqueId="a4ea6f7b-5e60-4b3b-ab20-e27056a263a6" />
+        </orm:field>
         <orm:index name="idx_Clente_AnagraficaAziendaId">
           <orm:columnMapping>
             <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -503,43 +506,15 @@
         <orm:field name="_exportId" property="ExportId" uniqueId="ca73b7fe-a904-486c-9d5a-545b05961267" type="System.Int32">
           <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_iDCliente" property="IDCliente" uniqueId="bfca08fd-50b8-4957-84f5-a19b9ab8ebb8" type="System.String">
-          <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_partitaIVA" property="PartitaIVA" uniqueId="a8af07f7-d362-4151-9087-3223eed25e3d" type="System.String">
-          <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_ragioneSociale" property="RagioneSociale" uniqueId="6eaac115-54cf-4628-a8bb-dc7c67421ef9" type="System.String">
-          <orm:column name="RagioneSociale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_codiceFiscale" property="CodiceFiscale" uniqueId="f6a8ba27-a764-4c20-950c-2cb6c02d1e7d" type="System.String">
-          <orm:column name="CodiceFiscale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_indirizzo" property="Indirizzo" uniqueId="7c559f0a-4c7c-4134-af98-a24137964382" type="System.String">
-          <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_comune" property="Comune" uniqueId="12641eef-57b3-4f5a-af7a-f375f167d1e8" type="System.String">
-          <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_provincia" property="Provincia" uniqueId="cbbf4c35-7b13-4b19-924f-2c4aee524e9d" type="System.String">
-          <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_email" property="Email" uniqueId="962f8fac-a195-4e83-a74f-2e26113a186c" type="System.String">
-          <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_telefono" property="Telefono" uniqueId="5476eb96-a115-43d0-92fe-4c5dc45e67e8" type="System.String">
-          <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_fax" property="Fax" uniqueId="9c7ebe12-23c1-4dac-9107-aa46187af58f" type="System.String">
-          <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_cap" property="Cap" uniqueId="02263129-0795-4967-a361-742e8b069ab7" type="System.String">
-          <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        </orm:field>
-        <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="486d8b0b-a7ca-466e-a4ec-9bafc5566d26" type="System.String" />
+        <orm:field name="_clienteId" property="ClienteId" uniqueId="fe6efa64-7875-4d9e-9365-f5d29a06fbf8" type="System.Int32" />
         <orm:field name="_export" property="Export" behavior="readwrite" uniqueId="a2d4958c-04b2-4bbf-83ca-045db64602f3" type="DataLayer.Export">
           <orm:reference uniqueId="c7a481d0-a079-452d-a32c-cbbd3743ef6a" association-name="CustomerHasExport">
             <orm:sharedfield name="_exportId" target-class="DataLayer.Export" target-field="_id" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_cliente" property="Cliente" behavior="readwrite" uniqueId="7264d37e-3198-4994-82f5-8ecf8ca9c6c9" type="DataLayer.Cliente">
+          <orm:reference uniqueId="a4ea6f7b-5e60-4b3b-ab20-e27056a263a6" association-name="CustomerHasCliente">
+            <orm:sharedfield name="_clienteId" target-class="DataLayer.Cliente" target-field="_id" />
           </orm:reference>
         </orm:field>
         <orm:index name="idx_Customer_ExportId">
@@ -668,17 +643,6 @@
       <orm:table name="Customer">
         <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-        <orm:column name="IDCliente" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="PartitaIVA" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="RagioneSociale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="CodiceFiscale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Indirizzo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Comune" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Provincia" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="Cap" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:index name="idx_Customer_ExportId">
           <orm:columnMapping>
             <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -1139,23 +1103,15 @@
         <classHasNavigationalProperties Id="b3edeb82-6b67-4294-b599-a8f78b4cb08c">
           <NavigationalProperty Id="e89667fd-64c9-4fe5-a6a6-f84c65c470cf" name="AnagraficaAzienda" type="AnagraficaAzienda" label="AnagraficaAzienda : AnagraficaAzienda" nullable="true" kind="Persistent" fieldName="_anagraficaAzienda" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="df726a5d-e9eb-4ce0-9988-f7b7dd7ca124">
+          <NavigationalProperty Id="0935f7f7-bd20-4c41-ae90-9cd4da461f60" name="Customers" type="IList&lt;Customer&gt;" label="Customers : IList&lt;Customer&gt;" nullable="true" kind="Persistent" fieldName="_customers" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
     <DomainClass Id="801088af-9d14-42b2-83bc-3baeead44752" name="Customer" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="59ea2359-6dd4-447b-aa78-81b2cf2388cb" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
       <Property Id="ca73b7fe-a904-486c-9d5a-545b05961267" name="ExportId" type="Int32" label="ExportId : Int32" fieldName="_exportId" />
-      <Property Id="bfca08fd-50b8-4957-84f5-a19b9ab8ebb8" name="IDCliente" label="IDCliente : String" fieldName="_iDCliente" />
-      <Property Id="a8af07f7-d362-4151-9087-3223eed25e3d" name="PartitaIVA" label="PartitaIVA : String" fieldName="_partitaIVA" />
-      <Property Id="6eaac115-54cf-4628-a8bb-dc7c67421ef9" name="RagioneSociale" label="RagioneSociale : String" fieldName="_ragioneSociale" />
-      <Property Id="f6a8ba27-a764-4c20-950c-2cb6c02d1e7d" name="CodiceFiscale" label="CodiceFiscale : String" fieldName="_codiceFiscale" />
-      <Property Id="7c559f0a-4c7c-4134-af98-a24137964382" name="Indirizzo" label="Indirizzo : String" fieldName="_indirizzo" />
-      <Property Id="12641eef-57b3-4f5a-af7a-f375f167d1e8" name="Comune" label="Comune : String" fieldName="_comune" />
-      <Property Id="cbbf4c35-7b13-4b19-924f-2c4aee524e9d" name="Provincia" label="Provincia : String" fieldName="_provincia" />
-      <Property Id="02263129-0795-4967-a361-742e8b069ab7" name="Cap" label="Cap : String" fieldName="_cap" />
-      <Property Id="962f8fac-a195-4e83-a74f-2e26113a186c" name="Email" label="Email : String" fieldName="_email" />
-      <Property Id="5476eb96-a115-43d0-92fe-4c5dc45e67e8" name="Telefono" label="Telefono : String" fieldName="_telefono" />
-      <Property Id="9c7ebe12-23c1-4dac-9107-aa46187af58f" name="Fax" label="Fax : String" fieldName="_fax" />
-      <Property Id="486d8b0b-a7ca-466e-a4ec-9bafc5566d26" name="CodiceCatastale" label="CodiceCatastale : String" fieldName="_codiceCatastale" />
+      <Property Id="fe6efa64-7875-4d9e-9365-f5d29a06fbf8" name="ClienteId" type="Int32" label="ClienteId : Int32" fieldName="_clienteId" />
       <AssociationTargets>
         <Association Id="c7a481d0-a079-452d-a32c-cbbd3743ef6a" SourceMultiplicity="ZeroOne" name="CustomerHasExport">
           <DomainClassMoniker name="/EntitiesModel/Export" />
@@ -1170,10 +1126,26 @@
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
+        <Association Id="a4ea6f7b-5e60-4b3b-ab20-e27056a263a6" SourceMultiplicity="ZeroOne" name="CustomerHasCliente">
+          <DomainClassMoniker name="/EntitiesModel/Cliente" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="8c5c6cbd-ab44-42e0-8c73-2e71697acdd4">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Cliente/Customers" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="d585267f-418d-48bc-8535-b941e45c9913">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Customer/Cliente" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
       </AssociationTargets>
       <navigationalProperties>
         <classHasNavigationalProperties Id="2f59c267-fc39-4f9e-ad1a-610017838270">
           <NavigationalProperty Id="a2d4958c-04b2-4bbf-83ca-045db64602f3" name="Export" type="Export" label="Export : Export" nullable="true" kind="Persistent" fieldName="_export" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="bf83eb75-00f2-4ad6-9dab-b3169655c148">
+          <NavigationalProperty Id="7264d37e-3198-4994-82f5-8ecf8ca9c6c9" name="Cliente" type="Cliente" label="Cliente : Cliente" nullable="true" kind="Persistent" fieldName="_cliente" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>

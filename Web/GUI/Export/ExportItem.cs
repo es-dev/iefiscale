@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using WcfService.Dto;
 using Web.Code;
 
 namespace Web.GUI.Export
@@ -24,7 +25,7 @@ namespace Web.GUI.Export
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ExportDto)model;
+                    var obj = (ExportDto)model;
 
                     infoImage.Image = "Images.dashboard.azienda.png";
                     infoExport.Text = "EXPORT N. " + BusinessLogic.Export.GetCodifica(obj);

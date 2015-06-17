@@ -12,12 +12,12 @@ using Web.Code;
 
 namespace Web.GUI.Export
 {
-	public partial class ExportModel : TemplateModel
-	{
+    public partial class ExportModel : TemplateModel
+    {
         public ExportModel()
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
         public override void BindViewTitle(object model)
         {
@@ -25,10 +25,10 @@ namespace Web.GUI.Export
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ExportDto)model;
-                    infoSubtitle.Text =  "";
+                    var obj = (ExportDto)model;
+                    infoSubtitle.Text = BusinessLogic.Export.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.cliente.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "EXPORT N." + BusinessLogic.Export.GetCodifica(obj) : "NUOVO EXPORT") + " | " + BusinessLogic.Comunicazione.GetCodifica(obj.Comunicazione);
                 }
             }
             catch (Exception ex)
@@ -37,17 +37,18 @@ namespace Web.GUI.Export
             }
         }
 
-        public override void BindView(object model)  
+        public override void BindView(object model)
         {
             try
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ExportDto)model;
+                    var obj = (ExportDto)model;
                     editData.Value = obj.Data;
                     editProgressivo.Value = obj.Progressivo;
                     editXMLFile.Value = obj.XmlFile;
                     editStato.Value = obj.Stato;
+
                     BindViewComunicazione(obj.Comunicazione);
 
                 }
@@ -58,12 +59,12 @@ namespace Web.GUI.Export
             }
         }
 
-        private void BindViewComunicazione(WcfService.Dto.ComunicazioneDto comunicazioneDto)
+        private void BindViewComunicazione(ComunicazioneDto comunicazione)
         {
             try
             {
-                editComunicazione.Model = comunicazioneDto;
-                editComunicazione.Value = (comunicazioneDto != null ? comunicazioneDto.Numero : null);  //todo: da sistemare
+                editComunicazione.Model = comunicazione;
+                editComunicazione.Value = BusinessLogic.Comunicazione.GetCodifica(comunicazione);
             }
             catch (Exception ex)
             {
@@ -82,7 +83,8 @@ namespace Web.GUI.Export
                     obj.Progressivo = editProgressivo.Value;
                     obj.XmlFile = editXMLFile.Value;
                     obj.Stato = editStato.Value;
-                    var comunicazione = (WcfService.Dto.ComunicazioneDto)editComunicazione.Model;
+
+                    var comunicazione = (ComunicazioneDto)editComunicazione.Model;
                     if (comunicazione != null)
                         obj.ComunicazioneId = comunicazione.Id;
                 }
@@ -112,8 +114,7 @@ namespace Web.GUI.Export
             try
             {
                 var comunicazione = (ComunicazioneDto)model;
-                if (comunicazione != null)
-                    editComunicazione.Value = comunicazione.Numero;
+                BindViewComunicazione(comunicazione);
             }
             catch (Exception ex)
             {
@@ -121,5 +122,5 @@ namespace Web.GUI.Export
             }
         }
 
-       	}
+    }
 }

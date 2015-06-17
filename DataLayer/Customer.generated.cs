@@ -50,159 +50,16 @@ namespace DataLayer
 			}
 		}
 		
-		private string _iDCliente;
-		public virtual string IDCliente
+		private int _clienteId;
+		public virtual int ClienteId
 		{
 			get
 			{
-				return this._iDCliente;
+				return this._clienteId;
 			}
 			set
 			{
-				this._iDCliente = value;
-			}
-		}
-		
-		private string _partitaIVA;
-		public virtual string PartitaIVA
-		{
-			get
-			{
-				return this._partitaIVA;
-			}
-			set
-			{
-				this._partitaIVA = value;
-			}
-		}
-		
-		private string _ragioneSociale;
-		public virtual string RagioneSociale
-		{
-			get
-			{
-				return this._ragioneSociale;
-			}
-			set
-			{
-				this._ragioneSociale = value;
-			}
-		}
-		
-		private string _codiceFiscale;
-		public virtual string CodiceFiscale
-		{
-			get
-			{
-				return this._codiceFiscale;
-			}
-			set
-			{
-				this._codiceFiscale = value;
-			}
-		}
-		
-		private string _indirizzo;
-		public virtual string Indirizzo
-		{
-			get
-			{
-				return this._indirizzo;
-			}
-			set
-			{
-				this._indirizzo = value;
-			}
-		}
-		
-		private string _comune;
-		public virtual string Comune
-		{
-			get
-			{
-				return this._comune;
-			}
-			set
-			{
-				this._comune = value;
-			}
-		}
-		
-		private string _provincia;
-		public virtual string Provincia
-		{
-			get
-			{
-				return this._provincia;
-			}
-			set
-			{
-				this._provincia = value;
-			}
-		}
-		
-		private string _email;
-		public virtual string Email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				this._email = value;
-			}
-		}
-		
-		private string _telefono;
-		public virtual string Telefono
-		{
-			get
-			{
-				return this._telefono;
-			}
-			set
-			{
-				this._telefono = value;
-			}
-		}
-		
-		private string _fax;
-		public virtual string Fax
-		{
-			get
-			{
-				return this._fax;
-			}
-			set
-			{
-				this._fax = value;
-			}
-		}
-		
-		private string _cap;
-		public virtual string Cap
-		{
-			get
-			{
-				return this._cap;
-			}
-			set
-			{
-				this._cap = value;
-			}
-		}
-		
-		private string _codiceCatastale;
-		public virtual string CodiceCatastale
-		{
-			get
-			{
-				return this._codiceCatastale;
-			}
-			set
-			{
-				this._codiceCatastale = value;
+				this._clienteId = value;
 			}
 		}
 		
@@ -216,6 +73,19 @@ namespace DataLayer
 			set
 			{
 				this._export = value;
+			}
+		}
+		
+		private Cliente _cliente;
+		public virtual Cliente Cliente
+		{
+			get
+			{
+				return this._cliente;
+			}
+			set
+			{
+				this._cliente = value;
 			}
 		}
 		

@@ -115,6 +115,15 @@ namespace DataLayer
 			}
 		}
 		
+		private IList<Customer> _customers = new List<Customer>();
+		public virtual IList<Customer> Customers
+		{
+			get
+			{
+				return this._customers;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591
