@@ -25,10 +25,10 @@ namespace Web.GUI.Import
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ImportDto)model;
-                    infoSubtitle.Text = "";
-                    infoSubtitleImage.Image = "Images.dashboard.cliente.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    var obj = (ImportDto)model;
+                    infoSubtitle.Text = BusinessLogic.Import.GetCodifica(obj);
+                    infoSubtitleImage.Image = "Images.dashboard.import.png";
+                    infoTitle.Text = (obj.Id != 0 ? "IMPORT N." + BusinessLogic.Import.GetCodifica(obj) : "NUOVO IMPORT") + " | " + BusinessLogic.Export.GetCodifica(obj.Export);
                 }
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace Web.GUI.Import
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ImportDto)model;
+                    var obj = (ImportDto)model;
                     editData.Value = obj.Data;
                     editTXTMovimenti.Value = obj.TXTMovimenti;
                     editTXTClienti.Value = obj.TXTClienti;
@@ -59,12 +59,12 @@ namespace Web.GUI.Import
             }
         }
 
-        private void BindViewExport(WcfService.Dto.ExportDto exportDto)
+        private void BindViewExport(ExportDto export)
         {
             try
             {
-                editExport.Model = exportDto;
-                editExport.Value = (exportDto != null ? exportDto.Progressivo : null);  //todo: da sistemare
+                editExport.Model = export;
+                editExport.Value = BusinessLogic.Export.GetCodifica(export);
             }
             catch (Exception ex)
             {
@@ -78,14 +78,15 @@ namespace Web.GUI.Import
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.ImportDto)model;
+                    var obj = (ImportDto)model;
                     obj.Data = editData.Value;
                     obj.TXTMovimenti = editTXTMovimenti.Value;
                     obj.TXTClienti = editTXTClienti.Value;
                     obj.Stato = editStato.Value;
-                    var export = (WcfService.Dto.ExportDto)editExport.Model;
+
+                    var export = (ExportDto)editExport.Model;
                     if (export != null)
-                        obj.Id = export.Id;    // todo: da verificare relazione 1:1
+                        obj.Id = export.Id;    
                 }
             }
             catch (Exception ex)
@@ -113,8 +114,7 @@ namespace Web.GUI.Import
             try
             {
                 var export = (ExportDto)model;
-                if (export != null)
-                    editExport.Value = export.Progressivo;
+                BindViewExport(export);
             }
             catch (Exception ex)
             {

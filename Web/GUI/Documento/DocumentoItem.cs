@@ -25,15 +25,11 @@ namespace Web.GUI.Documento
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.DocumentoDto)model;
-                    //var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    //var cap = UtilityValidation.GetStringND(obj.Cap);
-                    //var comune = UtilityValidation.GetStringND(obj.Comune);
-                    //var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    //var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
-
-                    //infoImage.Image = "Images.dashboard.azienda.png";
-                    //infoDenominazione.Text = denominazione;
-                    //infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    infoImage.Image = "Images.dashboard.documento.png";
+                    infoDocumento.Text = BusinessLogic.Documento.GetCodifica(obj);
+                    infoCliente.Text = BusinessLogic.Cliente.GetCodifica(obj.Cliente);
+                    infoPartitaIva.Text = BusinessLogic.Cliente.GetPartitaIva(obj.Cliente);
+                    infoExport.Text = BusinessLogic.Export.GetCodifica(obj.Export);
                 }
             }
             catch (Exception ex)

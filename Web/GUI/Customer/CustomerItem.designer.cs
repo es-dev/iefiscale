@@ -36,6 +36,7 @@ namespace Web.GUI.Customer
             this.infoDenominazione = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
             this.infoExport = new Gizmox.WebGUI.Forms.Label();
+            this.infoPartitaIva = new Gizmox.WebGUI.Forms.Label();
             this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -43,6 +44,7 @@ namespace Web.GUI.Customer
             // 
             // jqContainer
             // 
+            this.jqContainer.Controls.Add(this.infoPartitaIva);
             this.jqContainer.Controls.Add(this.infoExport);
             this.jqContainer.Controls.Add(this.panelLeft);
             this.jqContainer.Controls.Add(this.infoDenominazione);
@@ -55,9 +57,9 @@ namespace Web.GUI.Customer
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.infoIndirizzo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoIndirizzo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoIndirizzo.Location = new System.Drawing.Point(91, 32);
+            this.infoIndirizzo.Location = new System.Drawing.Point(91, 30);
             this.infoIndirizzo.Name = "infoIndirizzo";
-            this.infoIndirizzo.Size = new System.Drawing.Size(305, 55);
+            this.infoIndirizzo.Size = new System.Drawing.Size(302, 38);
             this.infoIndirizzo.TabIndex = 1;
             this.infoIndirizzo.Text = "Indirizzo";
             // 
@@ -113,12 +115,25 @@ namespace Web.GUI.Customer
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.infoExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoExport.ForeColor = System.Drawing.Color.DarkRed;
-            this.infoExport.Location = new System.Drawing.Point(236, 75);
+            this.infoExport.Location = new System.Drawing.Point(210, 74);
             this.infoExport.Name = "infoExport";
-            this.infoExport.Size = new System.Drawing.Size(157, 22);
+            this.infoExport.Size = new System.Drawing.Size(179, 18);
             this.infoExport.TabIndex = 1;
             this.infoExport.Text = "Export";
             this.infoExport.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoPartitaIva
+            // 
+            this.infoPartitaIva.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoPartitaIva.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoPartitaIva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoPartitaIva.Location = new System.Drawing.Point(93, 74);
+            this.infoPartitaIva.Name = "infoPartitaIva";
+            this.infoPartitaIva.Size = new System.Drawing.Size(117, 20);
+            this.infoPartitaIva.TabIndex = 1;
+            this.infoPartitaIva.Text = "P.IVA 00000000000";
             // 
             // CustomerItem
             // 
@@ -139,5 +154,6 @@ namespace Web.GUI.Customer
         private Gizmox.WebGUI.Forms.Label infoDenominazione;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
         private Gizmox.WebGUI.Forms.Label infoExport;
+        private Gizmox.WebGUI.Forms.Label infoPartitaIva;
 	}
 }

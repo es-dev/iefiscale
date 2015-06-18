@@ -70,7 +70,10 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Comunicazione.cs" />
     <Compile Include="Contabilita.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Documento.cs" />
     <Compile Include="Export.cs" />
+    <Compile Include="Import.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudioCommerciale.cs" />
     <Compile Include="Tipi.cs" />

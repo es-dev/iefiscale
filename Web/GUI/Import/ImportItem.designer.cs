@@ -30,12 +30,13 @@ namespace Web.GUI.Import
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.infoIndirizzo = new Gizmox.WebGUI.Forms.Label();
+            this.infoData = new Gizmox.WebGUI.Forms.Label();
             this.infoCodice = new Gizmox.WebGUI.Forms.Label();
             this.infoImage = new Gizmox.WebGUI.Forms.PictureBox();
-            this.infoDenominazione = new Gizmox.WebGUI.Forms.Label();
+            this.infoImport = new Gizmox.WebGUI.Forms.Label();
             this.panelLeft = new Gizmox.WebGUI.Forms.Panel();
             this.infoExport = new Gizmox.WebGUI.Forms.Label();
+            this.infoStato = new Gizmox.WebGUI.Forms.Label();
             this.jqContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoImage)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -43,23 +44,24 @@ namespace Web.GUI.Import
             // 
             // jqContainer
             // 
+            this.jqContainer.Controls.Add(this.infoStato);
             this.jqContainer.Controls.Add(this.infoExport);
             this.jqContainer.Controls.Add(this.panelLeft);
-            this.jqContainer.Controls.Add(this.infoDenominazione);
-            this.jqContainer.Controls.Add(this.infoIndirizzo);
+            this.jqContainer.Controls.Add(this.infoImport);
+            this.jqContainer.Controls.Add(this.infoData);
             // 
-            // infoIndirizzo
+            // infoData
             // 
-            this.infoIndirizzo.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            this.infoData.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoIndirizzo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoIndirizzo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoIndirizzo.Location = new System.Drawing.Point(91, 32);
-            this.infoIndirizzo.Name = "infoIndirizzo";
-            this.infoIndirizzo.Size = new System.Drawing.Size(305, 55);
-            this.infoIndirizzo.TabIndex = 1;
-            this.infoIndirizzo.Text = "Indirizzo";
+            this.infoData.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoData.Location = new System.Drawing.Point(93, 31);
+            this.infoData.Name = "infoData";
+            this.infoData.Size = new System.Drawing.Size(297, 17);
+            this.infoData.TabIndex = 1;
+            this.infoData.Text = "Generato il dd/MM/yyyy";
             // 
             // infoCodice
             // 
@@ -83,17 +85,17 @@ namespace Web.GUI.Import
             this.infoImage.TabIndex = 1;
             this.infoImage.TabStop = false;
             // 
-            // infoDenominazione
+            // infoImport
             // 
-            this.infoDenominazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            this.infoImport.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.infoDenominazione.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoDenominazione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
-            this.infoDenominazione.Location = new System.Drawing.Point(91, 2);
-            this.infoDenominazione.Name = "infoDenominazione";
-            this.infoDenominazione.Size = new System.Drawing.Size(263, 30);
-            this.infoDenominazione.TabIndex = 1;
-            this.infoDenominazione.Text = "DENOMINAZIONE";
+            this.infoImport.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
+            this.infoImport.Location = new System.Drawing.Point(91, 2);
+            this.infoImport.Name = "infoImport";
+            this.infoImport.Size = new System.Drawing.Size(304, 30);
+            this.infoImport.TabIndex = 1;
+            this.infoImport.Text = "IMPORT N.";
             // 
             // panelLeft
             // 
@@ -113,12 +115,26 @@ namespace Web.GUI.Import
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.infoExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoExport.ForeColor = System.Drawing.Color.DarkRed;
-            this.infoExport.Location = new System.Drawing.Point(241, 76);
+            this.infoExport.Location = new System.Drawing.Point(215, 74);
             this.infoExport.Name = "infoExport";
-            this.infoExport.Size = new System.Drawing.Size(157, 22);
+            this.infoExport.Size = new System.Drawing.Size(180, 18);
             this.infoExport.TabIndex = 1;
             this.infoExport.Text = "Export";
             this.infoExport.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // infoStato
+            // 
+            this.infoStato.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)((((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Bottom) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.infoStato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoStato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.infoStato.Location = new System.Drawing.Point(93, 52);
+            this.infoStato.Name = "infoStato";
+            this.infoStato.Size = new System.Drawing.Size(302, 17);
+            this.infoStato.TabIndex = 1;
+            this.infoStato.Text = "Stato: Non definito";
+            this.infoStato.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // ImportItem
             // 
@@ -133,11 +149,12 @@ namespace Web.GUI.Import
 
 		#endregion
 
-        private Gizmox.WebGUI.Forms.Label infoIndirizzo;
+        private Gizmox.WebGUI.Forms.Label infoData;
         private Gizmox.WebGUI.Forms.Label infoCodice;
         private Gizmox.WebGUI.Forms.PictureBox infoImage;
-        private Gizmox.WebGUI.Forms.Label infoDenominazione;
+        private Gizmox.WebGUI.Forms.Label infoImport;
         private Gizmox.WebGUI.Forms.Panel panelLeft;
         private Gizmox.WebGUI.Forms.Label infoExport;
+        private Gizmox.WebGUI.Forms.Label infoStato;
 	}
 }

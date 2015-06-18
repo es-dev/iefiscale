@@ -37,19 +37,6 @@ namespace DataLayer
 			}
 		}
 		
-		private string _iDCliente;
-		public virtual string IDCliente
-		{
-			get
-			{
-				return this._iDCliente;
-			}
-			set
-			{
-				this._iDCliente = value;
-			}
-		}
-		
 		private int _exportId;
 		public virtual int ExportId
 		{
@@ -112,19 +99,6 @@ namespace DataLayer
 			set
 			{
 				this._iDCausale = value;
-			}
-		}
-		
-		private string _iDConto;
-		public virtual string IDConto
-		{
-			get
-			{
-				return this._iDConto;
-			}
-			set
-			{
-				this._iDConto = value;
 			}
 		}
 		
@@ -219,6 +193,19 @@ namespace DataLayer
 			}
 		}
 		
+		private int _clienteId;
+		public virtual int ClienteId
+		{
+			get
+			{
+				return this._clienteId;
+			}
+			set
+			{
+				this._clienteId = value;
+			}
+		}
+		
 		private Export _export;
 		public virtual Export Export
 		{
@@ -229,6 +216,19 @@ namespace DataLayer
 			set
 			{
 				this._export = value;
+			}
+		}
+		
+		private Cliente _cliente;
+		public virtual Cliente Cliente
+		{
+			get
+			{
+				return this._cliente;
+			}
+			set
+			{
+				this._cliente = value;
 			}
 		}
 		

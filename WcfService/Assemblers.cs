@@ -467,13 +467,11 @@ namespace WcfService.Assemblers
 	        }
 			
 			entity.Id = dto.Id;
-			entity.IDCliente = dto.IDCliente;
 			entity.ExportId = dto.ExportId;
 			entity.Tipo = dto.Tipo;
 			entity.Data = dto.Data;
 			entity.IDMovimento = dto.IDMovimento;
 			entity.IDCausale = dto.IDCausale;
-			entity.IDConto = dto.IDConto;
 			entity.IDRegistroIVA = dto.IDRegistroIVA;
 			entity.IDIVA = dto.IDIVA;
 			entity.Totale = dto.Totale;
@@ -481,6 +479,7 @@ namespace WcfService.Assemblers
 			entity.IVA = dto.IVA;
 			entity.Numero = dto.Numero;
 			entity.DataRegistrazione = dto.DataRegistrazione;
+			entity.ClienteId = dto.ClienteId;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -492,13 +491,11 @@ namespace WcfService.Assemblers
 			ObjectKey key = KeyUtility.Instance.Create(entity);
 			dto.DtoKey = KeyUtility.Instance.Convert(key);
 			dto.Id = entity.Id;
-			dto.IDCliente = entity.IDCliente;
 			dto.ExportId = entity.ExportId;
 			dto.Tipo = entity.Tipo;
 			dto.Data = entity.Data;
 			dto.IDMovimento = entity.IDMovimento;
 			dto.IDCausale = entity.IDCausale;
-			dto.IDConto = entity.IDConto;
 			dto.IDRegistroIVA = entity.IDRegistroIVA;
 			dto.IDIVA = entity.IDIVA;
 			dto.Totale = entity.Totale;
@@ -506,6 +503,7 @@ namespace WcfService.Assemblers
 			dto.IVA = entity.IVA;
 			dto.Numero = entity.Numero;
 			dto.DataRegistrazione = entity.DataRegistrazione;
+			dto.ClienteId = entity.ClienteId;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -514,6 +512,9 @@ namespace WcfService.Assemblers
 	    {
 			ExportAssembler exportAssembler = new ExportAssembler();
 			dto.Export = exportAssembler.Assemble(entity.Export);
+
+			ClienteAssembler clienteAssembler = new ClienteAssembler();
+			dto.Cliente = clienteAssembler.Assemble(entity.Cliente);
 
 	    }
 	
@@ -941,6 +942,26 @@ namespace WcfService.Assemblers
 	
 	    public override void AssembleCollections(Cliente entity, ClienteDto dto)
 	    {
+			CustomerAssembler customerAssembler = new CustomerAssembler();
+
+			dto.Customers = new List<CustomerDto>();
+			foreach (Customer item in entity.Customers)
+			{
+				var dtoItem = customerAssembler.Assemble(item);
+				dtoItem.Cliente = dto;
+				dto.Customers.Add(dtoItem);
+			}
+
+			DocumentoAssembler documentoAssembler = new DocumentoAssembler();
+
+			dto.Documentos = new List<DocumentoDto>();
+			foreach (Documento item in entity.Documentos)
+			{
+				var dtoItem = documentoAssembler.Assemble(item);
+				dtoItem.Cliente = dto;
+				dto.Documentos.Add(dtoItem);
+			}
+
 	    }
 	
 	}
@@ -979,18 +1000,7 @@ namespace WcfService.Assemblers
 			
 			entity.Id = dto.Id;
 			entity.ExportId = dto.ExportId;
-			entity.IDCliente = dto.IDCliente;
-			entity.PartitaIVA = dto.PartitaIVA;
-			entity.RagioneSociale = dto.RagioneSociale;
-			entity.CodiceFiscale = dto.CodiceFiscale;
-			entity.Indirizzo = dto.Indirizzo;
-			entity.Comune = dto.Comune;
-			entity.Provincia = dto.Provincia;
-			entity.Email = dto.Email;
-			entity.Telefono = dto.Telefono;
-			entity.Fax = dto.Fax;
-			entity.Cap = dto.Cap;
-			entity.CodiceCatastale = dto.CodiceCatastale;
+			entity.ClienteId = dto.ClienteId;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -1003,18 +1013,7 @@ namespace WcfService.Assemblers
 			dto.DtoKey = KeyUtility.Instance.Convert(key);
 			dto.Id = entity.Id;
 			dto.ExportId = entity.ExportId;
-			dto.IDCliente = entity.IDCliente;
-			dto.PartitaIVA = entity.PartitaIVA;
-			dto.RagioneSociale = entity.RagioneSociale;
-			dto.CodiceFiscale = entity.CodiceFiscale;
-			dto.Indirizzo = entity.Indirizzo;
-			dto.Comune = entity.Comune;
-			dto.Provincia = entity.Provincia;
-			dto.Email = entity.Email;
-			dto.Telefono = entity.Telefono;
-			dto.Fax = entity.Fax;
-			dto.Cap = entity.Cap;
-			dto.CodiceCatastale = entity.CodiceCatastale;
+			dto.ClienteId = entity.ClienteId;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
@@ -1023,6 +1022,9 @@ namespace WcfService.Assemblers
 	    {
 			ExportAssembler exportAssembler = new ExportAssembler();
 			dto.Export = exportAssembler.Assemble(entity.Export);
+
+			ClienteAssembler clienteAssembler = new ClienteAssembler();
+			dto.Cliente = clienteAssembler.Assemble(entity.Cliente);
 
 	    }
 	

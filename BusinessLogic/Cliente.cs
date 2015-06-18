@@ -27,5 +27,43 @@ namespace BusinessLogic
             }
             return null;
         }
+
+        public static string GetPartitaIva(ClienteDto cliente)
+        {
+            try
+            {
+                if(cliente!=null)
+                {
+                    var anagraficaAzienda = cliente.AnagraficaAzienda;
+                    if(anagraficaAzienda!=null)
+                    {
+                        var piva = anagraficaAzienda.PartitaIVA;
+                        return piva;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public static string GetIndirizzo(ClienteDto cliente)
+        {
+            try
+            {
+                if(cliente!=null)
+                {
+                    var indirizzo = BusinessLogic.AnagraficaAzienda.GetIndirizzo(cliente.AnagraficaAzienda);
+                    return indirizzo;
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
     }
 }

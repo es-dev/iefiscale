@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using WcfService.Dto;
 using Web.Code;
 
 namespace Web.GUI.Customer
@@ -24,16 +25,12 @@ namespace Web.GUI.Customer
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.CustomerDto)model;
-                    //var indirizzo = UtilityValidation.GetStringND(obj.Indirizzo);
-                    //var cap = UtilityValidation.GetStringND(obj.Cap);
-                    //var comune = UtilityValidation.GetStringND(obj.Comune);
-                    //var provincia = UtilityValidation.GetStringND(obj.Provincia);
-                    //var denominazione = UtilityValidation.GetStringND(obj.RagioneSociale);
-
-                    //infoImage.Image = "Images.dashboard.azienda.png";
-                    //infoDenominazione.Text = denominazione;
-                    //infoIndirizzo.Text = indirizzo + " - " + cap + " - " + comune + " (" + provincia + ")";
+                    var obj = (CustomerDto)model;
+                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoDenominazione.Text = BusinessLogic.Customer.GetCodifica(obj);
+                    infoPartitaIva.Text = BusinessLogic.Cliente.GetPartitaIva(obj.Cliente);
+                    infoIndirizzo.Text = BusinessLogic.Cliente.GetIndirizzo(obj.Cliente);
+                    infoExport.Text = BusinessLogic.Export.GetCodifica(obj.Export);
                 }
             }
             catch (Exception ex)

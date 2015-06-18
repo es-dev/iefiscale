@@ -39,12 +39,12 @@ namespace Web.GUI.Documento
             this.editIDCausale = new Library.Template.Controls.TemplateEditText();
             this.editIDMovimento = new Library.Template.Controls.TemplateEditText();
             this.editLocalita = new Library.Template.Controls.TemplateEditText();
-            this.editIDCliente = new Library.Template.Controls.TemplateEditText();
             this.editData = new Library.Template.Controls.TemplateEditDate();
             this.editImponibile = new Library.Template.Controls.TemplateEditDecimal();
             this.editIVA = new Library.Template.Controls.TemplateEditDecimal();
             this.editTotale = new Library.Template.Controls.TemplateEditDecimal();
             this.editDataRegistrazione = new Library.Template.Controls.TemplateEditDate();
+            this.editCliente = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.panelCommands.SuspendLayout();
@@ -52,12 +52,12 @@ namespace Web.GUI.Documento
             // 
             // container
             // 
+            this.container.Controls.Add(this.editCliente);
             this.container.Controls.Add(this.editDataRegistrazione);
             this.container.Controls.Add(this.editTotale);
             this.container.Controls.Add(this.editIVA);
             this.container.Controls.Add(this.editImponibile);
             this.container.Controls.Add(this.editData);
-            this.container.Controls.Add(this.editIDCliente);
             this.container.Controls.Add(this.editIDMovimento);
             this.container.Controls.Add(this.editIDCausale);
             this.container.Controls.Add(this.editIDRegistroIVA);
@@ -77,12 +77,12 @@ namespace Web.GUI.Documento
             this.container.Controls.SetChildIndex(this.editIDRegistroIVA, 0);
             this.container.Controls.SetChildIndex(this.editIDCausale, 0);
             this.container.Controls.SetChildIndex(this.editIDMovimento, 0);
-            this.container.Controls.SetChildIndex(this.editIDCliente, 0);
             this.container.Controls.SetChildIndex(this.editData, 0);
             this.container.Controls.SetChildIndex(this.editImponibile, 0);
             this.container.Controls.SetChildIndex(this.editIVA, 0);
             this.container.Controls.SetChildIndex(this.editTotale, 0);
             this.container.Controls.SetChildIndex(this.editDataRegistrazione, 0);
+            this.container.Controls.SetChildIndex(this.editCliente, 0);
             // 
             // infoSubtitle
             // 
@@ -144,7 +144,7 @@ namespace Web.GUI.Documento
             this.editNumero.Size = new System.Drawing.Size(811, 30);
             this.editNumero.TabIndex = 4;
             this.editNumero.Text = "TemplateEditPartitaIva";
-            this.editNumero.Value = "---";
+            this.editNumero.Value = null;
             // 
             // editIDConto
             // 
@@ -157,7 +157,7 @@ namespace Web.GUI.Documento
             this.editIDConto.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editIDConto.Changed = true;
             this.editIDConto.Editing = false;
-            this.editIDConto.Label = "Id conto";
+            this.editIDConto.Label = "ID Conto";
             this.editIDConto.LabelWidth = 175;
             this.editIDConto.Location = new System.Drawing.Point(25, 367);
             this.editIDConto.Name = "editIDConto";
@@ -188,7 +188,7 @@ namespace Web.GUI.Documento
             this.editTipo.Size = new System.Drawing.Size(811, 30);
             this.editTipo.TabIndex = 3;
             this.editTipo.Text = "TemplateEditPartitaIva";
-            this.editTipo.Value = "---";
+            this.editTipo.Value = null;
             // 
             // editIDIVA
             // 
@@ -201,7 +201,7 @@ namespace Web.GUI.Documento
             this.editIDIVA.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editIDIVA.Changed = true;
             this.editIDIVA.Editing = false;
-            this.editIDIVA.Label = "Id IVA";
+            this.editIDIVA.Label = "ID IVA";
             this.editIDIVA.LabelWidth = 175;
             this.editIDIVA.Location = new System.Drawing.Point(25, 453);
             this.editIDIVA.Name = "editIDIVA";
@@ -223,7 +223,7 @@ namespace Web.GUI.Documento
             this.editIDRegistroIVA.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editIDRegistroIVA.Changed = true;
             this.editIDRegistroIVA.Editing = false;
-            this.editIDRegistroIVA.Label = "Id registro IVA";
+            this.editIDRegistroIVA.Label = "ID Registro IVA";
             this.editIDRegistroIVA.LabelWidth = 175;
             this.editIDRegistroIVA.Location = new System.Drawing.Point(25, 410);
             this.editIDRegistroIVA.Name = "editIDRegistroIVA";
@@ -245,7 +245,7 @@ namespace Web.GUI.Documento
             this.editIDCausale.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editIDCausale.Changed = true;
             this.editIDCausale.Editing = false;
-            this.editIDCausale.Label = "Id causale";
+            this.editIDCausale.Label = "ID Causale";
             this.editIDCausale.LabelWidth = 175;
             this.editIDCausale.Location = new System.Drawing.Point(25, 324);
             this.editIDCausale.Name = "editIDCausale";
@@ -267,7 +267,7 @@ namespace Web.GUI.Documento
             this.editIDMovimento.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editIDMovimento.Changed = true;
             this.editIDMovimento.Editing = false;
-            this.editIDMovimento.Label = "ID movimento";
+            this.editIDMovimento.Label = "ID Movimento";
             this.editIDMovimento.LabelWidth = 175;
             this.editIDMovimento.Location = new System.Drawing.Point(25, 152);
             this.editIDMovimento.Name = "editIDMovimento";
@@ -299,28 +299,6 @@ namespace Web.GUI.Documento
             this.editLocalita.TabIndex = 5;
             this.editLocalita.Text = "EditControl";
             this.editLocalita.Value = null;
-            // 
-            // editIDCliente
-            // 
-            this.editIDCliente.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editIDCliente.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editIDCliente.BackColor = System.Drawing.Color.Transparent;
-            this.editIDCliente.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editIDCliente.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editIDCliente.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editIDCliente.Changed = true;
-            this.editIDCliente.Editing = false;
-            this.editIDCliente.Label = "Id cliente";
-            this.editIDCliente.LabelWidth = 175;
-            this.editIDCliente.Location = new System.Drawing.Point(25, 109);
-            this.editIDCliente.Name = "editIDCliente";
-            this.editIDCliente.ReadOnly = false;
-            this.editIDCliente.Required = true;
-            this.editIDCliente.Size = new System.Drawing.Size(811, 30);
-            this.editIDCliente.TabIndex = 1;
-            this.editIDCliente.Text = "EditControl";
-            this.editIDCliente.Value = null;
             // 
             // editData
             // 
@@ -427,6 +405,30 @@ namespace Web.GUI.Documento
             this.editDataRegistrazione.TabIndex = 13;
             this.editDataRegistrazione.Value = null;
             // 
+            // editCliente
+            // 
+            this.editCliente.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.editCliente.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editCliente.BackColor = System.Drawing.Color.Transparent;
+            this.editCliente.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editCliente.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editCliente.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editCliente.Changed = true;
+            this.editCliente.Editing = false;
+            this.editCliente.Label = "Cliente";
+            this.editCliente.LabelWidth = 175;
+            this.editCliente.Location = new System.Drawing.Point(25, 109);
+            this.editCliente.Model = null;
+            this.editCliente.Name = "editCliente";
+            this.editCliente.ReadOnly = false;
+            this.editCliente.Required = true;
+            this.editCliente.Size = new System.Drawing.Size(811, 30);
+            this.editCliente.TabIndex = 0;
+            this.editCliente.Value = null;
+            this.editCliente.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editCliente_ComboConfirm);
+            this.editCliente.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editCliente_ComboClick);
+            // 
             // DocumentoModel
             // 
             this.Size = new System.Drawing.Size(1024, 740);
@@ -440,7 +442,6 @@ namespace Web.GUI.Documento
 		#endregion
 
         private Library.Template.Controls.TemplateEditCombo editExport;
-        private Library.Template.Controls.TemplateEditText editIDCliente;
         private Library.Template.Controls.TemplateEditText editIDMovimento;
         private Library.Template.Controls.TemplateEditText editIDCausale;
         private Library.Template.Controls.TemplateEditText editIDRegistroIVA;
@@ -454,6 +455,7 @@ namespace Web.GUI.Documento
         private Library.Template.Controls.TemplateEditDecimal editTotale;
         private Library.Template.Controls.TemplateEditDecimal editIVA;
         private Library.Template.Controls.TemplateEditDecimal editImponibile;
+        private Library.Template.Controls.TemplateEditCombo editCliente;
 
 
     }

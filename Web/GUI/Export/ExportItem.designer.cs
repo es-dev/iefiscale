@@ -57,11 +57,11 @@ namespace Web.GUI.Export
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.infoData.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoData.Location = new System.Drawing.Point(91, 32);
+            this.infoData.Location = new System.Drawing.Point(93, 31);
             this.infoData.Name = "infoData";
             this.infoData.Size = new System.Drawing.Size(302, 22);
             this.infoData.TabIndex = 1;
-            this.infoData.Text = "Data";
+            this.infoData.Text = "Eseguito il dd/MM/yyyy";
             // 
             // infoCodice
             // 
@@ -93,7 +93,7 @@ namespace Web.GUI.Export
             this.infoExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
             this.infoExport.Location = new System.Drawing.Point(91, 2);
             this.infoExport.Name = "infoExport";
-            this.infoExport.Size = new System.Drawing.Size(263, 30);
+            this.infoExport.Size = new System.Drawing.Size(305, 30);
             this.infoExport.TabIndex = 1;
             this.infoExport.Text = "EXPORT N.";
             // 
@@ -116,11 +116,12 @@ namespace Web.GUI.Export
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
             this.infoStato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoStato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.infoStato.Location = new System.Drawing.Point(85, 73);
+            this.infoStato.Location = new System.Drawing.Point(93, 52);
             this.infoStato.Name = "infoStato";
-            this.infoStato.Size = new System.Drawing.Size(121, 22);
+            this.infoStato.Size = new System.Drawing.Size(296, 20);
             this.infoStato.TabIndex = 1;
-            this.infoStato.Text = "Stato";
+            this.infoStato.Text = "Stato: Non definito";
+            this.infoStato.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // infoComunicazione
             // 
@@ -130,7 +131,7 @@ namespace Web.GUI.Export
             this.infoComunicazione.ForeColor = System.Drawing.Color.DarkRed;
             this.infoComunicazione.Location = new System.Drawing.Point(242, 73);
             this.infoComunicazione.Name = "infoComunicazione";
-            this.infoComunicazione.Size = new System.Drawing.Size(157, 22);
+            this.infoComunicazione.Size = new System.Drawing.Size(154, 17);
             this.infoComunicazione.TabIndex = 1;
             this.infoComunicazione.Text = "Comunicazione";
             this.infoComunicazione.TextAlign = System.Drawing.ContentAlignment.TopRight;

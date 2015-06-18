@@ -25,10 +25,10 @@ namespace Web.GUI.Customer
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.CustomerDto)model;
-                    infoSubtitle.Text = "";
+                    var obj = (CustomerDto)model;
+                    infoSubtitle.Text = BusinessLogic.Customer.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.cliente.png";
-                    infoTitle.Text = ""; //(obj.Id != 0 ? "AZIENDA " + obj.RagioneSociale : "NUOVA AZIENDA");
+                    infoTitle.Text = (obj.Id != 0 ? "CUSTOMER " + BusinessLogic.Customer.GetCodifica(obj) : "NUOVO CUSTOMER") + " | " + BusinessLogic.Export.GetCodifica(obj.Export);
                 }
             }
             catch (Exception ex)
@@ -43,18 +43,8 @@ namespace Web.GUI.Customer
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.CustomerDto)model;
-                    editRagioneSociale.Value = obj.RagioneSociale;
-                    editCAP.Value = obj.Cap;
-                    editComune.Value = new Countries.City(obj.Comune, obj.CodiceCatastale, obj.Provincia);
-                    editIndirizzo.Value = obj.Indirizzo;
-                    editCodiceFiscale.Value = obj.CodiceFiscale;
-                    editPartitaIVA.Value = obj.PartitaIVA;
-                    editTelefono.Value = obj.Telefono;
-                    editFAX.Value = obj.Fax;
-                    editEmail.Value = obj.Email;
-                    editIDCliente.Value = obj.IDCliente;
-
+                    var obj = (CustomerDto)model;
+                    BindViewCliente(obj.Cliente);
                     BindViewExport(obj.Export);
 
                 }
@@ -65,12 +55,40 @@ namespace Web.GUI.Customer
             }
         }
 
-        private void BindViewExport(WcfService.Dto.ExportDto exportDto)
+        private void BindViewCliente(ClienteDto cliente)
         {
             try
             {
-                editExport.Model = exportDto;
-                editExport.Value = (exportDto != null ? exportDto.Progressivo : null);  //todo: da sistemare
+                if (cliente != null)
+                {
+                    var anagraficaAzienda = cliente.AnagraficaAzienda;
+                    if (anagraficaAzienda != null)
+                    {
+                        editCliente.Model = anagraficaAzienda;
+                        editCliente.Value = BusinessLogic.AnagraficaAzienda.GetCodifica(anagraficaAzienda);
+                        editCAP.Value = anagraficaAzienda.Cap;
+                        editComune.Value = new Countries.City(anagraficaAzienda.Comune, anagraficaAzienda.CodiceCatastale, anagraficaAzienda.Provincia);
+                        editIndirizzo.Value = anagraficaAzienda.Indirizzo;
+                        editCodiceFiscale.Value = anagraficaAzienda.CodiceFiscale;
+                        editPartitaIVA.Value = anagraficaAzienda.PartitaIVA;
+                        editTelefono.Value = anagraficaAzienda.Telefono;
+                        editFax.Value = anagraficaAzienda.Fax;
+                        editEmail.Value = anagraficaAzienda.Email;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        private void BindViewExport(ExportDto export)
+        {
+            try
+            {
+                editExport.Model = export;
+                editExport.Value = BusinessLogic.Export.GetCodifica(export);
             }
             catch (Exception ex)
             {
@@ -84,23 +102,15 @@ namespace Web.GUI.Customer
             {
                 if (model != null)
                 {
-                    var obj = (WcfService.Dto.CustomerDto)model;
-                    obj.RagioneSociale = editRagioneSociale.Value;
-                    obj.Cap = editCAP.Value;
-                    obj.Comune = editComune.Value.Description;
-                    obj.CodiceCatastale = editComune.Value.Code;
-                    obj.Provincia = editComune.Value.County;
-                    obj.CodiceFiscale = editCodiceFiscale.Value;
-                    obj.Indirizzo = editIndirizzo.Value;
-                    obj.PartitaIVA = editPartitaIVA.Value;
-                    obj.Telefono = editTelefono.Value;
-                    obj.Fax = editFAX.Value;
-                    obj.Email = editEmail.Value;
-                    obj.IDCliente = editIDCliente.Value;
+                    var obj = (CustomerDto)model;
 
-                    var export = (WcfService.Dto.ExportDto)editExport.Model;
+                    var export = (ExportDto)editExport.Model;
                     if (export != null)
-                        obj.ExportId = export.Id;    // todo: da verificare relazione 1:1
+                        obj.ExportId = export.Id;
+
+                    var cliente = (ClienteDto)editCliente.Model;
+                    if (cliente != null)
+                        obj.ClienteId = cliente.Id;
                 }
             }
             catch (Exception ex)
@@ -128,8 +138,34 @@ namespace Web.GUI.Customer
             try
             {
                 var export = (ExportDto)model;
-                if (export != null)
-                    editExport.Value = export.Progressivo;
+                BindViewExport(export);
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        private void editCliente_ComboClick()
+        {
+            try
+            {
+                var view = new Cliente.ClienteView();
+                view.Title = "SELEZIONA UN CLIENTE'";
+                editCliente.Show(view);
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        private void editCliente_ComboConfirm(object model)
+        {
+            try
+            {
+                var cliente = (ClienteDto)model;
+                BindViewCliente(cliente);
             }
             catch (Exception ex)
             {

@@ -53,7 +53,7 @@ namespace Web.GUI.Import
             return 0;
         }
 
-        public override bool Save(object model, bool creating)
+        public override bool Save(object model, bool creating) //todo: prevedere modello associativo e disassociativo per relazioni 1-1
         {
             try
             {
