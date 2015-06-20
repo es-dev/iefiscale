@@ -26,7 +26,7 @@ namespace Web.GUI.Comunicazione
                 {
                     var obj = (WcfService.Dto.ComunicazioneDto)model;
 
-                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoImage.Image = "Images.dashboard.comunicazione.png";
                     infoNumero.Text = "COMUNICAZIONE N." + BusinessLogic.Comunicazione.GetCodifica(obj);
                     infoScadenzaIVA.Text = "Scadenza IVA: " + obj.ScadenzaIVA;
                     infoContabilita.Text = "Contabilità: " + BusinessLogic.Contabilita.GetCodifica(obj.Contabilita);

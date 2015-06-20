@@ -27,7 +27,7 @@ namespace Web.GUI.Contabilita
                 {
                     var obj = (WcfService.Dto.ContabilitaDto)model;
                     infoSubtitle.Text = BusinessLogic.Azienda.GetCodifica(obj.Azienda);
-                    infoSubtitleImage.Image = "Images.dashboard.cliente.png";
+                    infoSubtitleImage.Image = "Images.dashboard.contabilita.png";
                     infoTitle.Text = (obj.Id != 0 ? "CONTABILITA' ANNO " + obj.Anno : "NUOVA CONTABILITA'") + " | " + BusinessLogic.Azienda.GetCodifica(obj.Azienda);
                 }
             }

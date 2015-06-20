@@ -27,7 +27,7 @@ namespace Web.GUI.Comunicazione
                 {
                     var obj = (WcfService.Dto.ComunicazioneDto)model;
                     infoSubtitle.Text = BusinessLogic.Comunicazione.GetCodifica(obj);
-                    infoSubtitleImage.Image = "Images.dashboard.cliente.png";
+                    infoSubtitleImage.Image = "Images.dashboard.comunicazione.png";
                     infoTitle.Text = (obj.Id != 0 ? "COMUNICAZIONE N." + BusinessLogic.Comunicazione.GetCodifica(obj) : "NUOVA COMUNICAZIONE") + " | " + BusinessLogic.Contabilita.GetCodifica(obj.Contabilita);
                 }
             }

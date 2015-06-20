@@ -25,7 +25,7 @@ namespace Web.GUI.StudioCommerciale
                 if (model != null)
                 {
                     var obj = (WcfService.Dto.StudioCommercialeDto)model;
-                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoImage.Image = "Images.dashboard.studiocommerciale.png";
                     infoDenominazione.Text = obj.Denominazione;
                     infoIndirizzo.Text = BusinessLogic.StudioCommerciale.GetIndirizzo(obj);
                     infoTipoSoftwareContabilita.Text = "Software di contabilità: " + obj.TipoSoftwareContabilita;

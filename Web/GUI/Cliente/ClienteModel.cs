@@ -63,7 +63,7 @@ namespace Web.GUI.Cliente
             try
             {
                 editRagioneSociale.Model = anagraficaAzienda;
-                editRagioneSociale.Value = anagraficaAzienda.RagioneSociale;
+                editRagioneSociale.Value = BusinessLogic.AnagraficaAzienda.GetCodifica(anagraficaAzienda);
                 editCAP.Value = anagraficaAzienda.Cap;
                 editCodiceFiscale.Value = anagraficaAzienda.CodiceFiscale;
                 editComune.Value = new Countries.City(anagraficaAzienda.Comune, anagraficaAzienda.CodiceCatastale, anagraficaAzienda.Provincia);

@@ -79,6 +79,10 @@ namespace Web.GUI.Import
                 if (model != null)
                 {
                     var obj = (ImportDto)model;
+                    
+                    var viewModel = (ImportViewModel)ViewModel;
+                    viewModel.OldImport = obj;
+
                     obj.Data = editData.Value;
                     obj.TXTMovimenti = editTXTMovimenti.Value;
                     obj.TXTClienti = editTXTClienti.Value;

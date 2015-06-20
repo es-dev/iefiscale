@@ -27,7 +27,7 @@ namespace Web.GUI.Export
                 {
                     var obj = (ExportDto)model;
                     infoSubtitle.Text = BusinessLogic.Export.GetCodifica(obj);
-                    infoSubtitleImage.Image = "Images.dashboard.cliente.png";
+                    infoSubtitleImage.Image = "Images.dashboard.export.png";
                     infoTitle.Text = (obj.Id != 0 ? "EXPORT N." + BusinessLogic.Export.GetCodifica(obj) : "NUOVO EXPORT") + " | " + BusinessLogic.Comunicazione.GetCodifica(obj.Comunicazione);
                 }
             }

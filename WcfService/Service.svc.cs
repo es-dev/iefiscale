@@ -1584,12 +1584,12 @@ namespace WcfService
 
                 if (search != null && search.Length > 0)
                     customers = (from q in customers
-                               where q.RagioneSociale.StartsWith(search) select q);
+                               where q.Cliente.AnagraficaAzienda.RagioneSociale.StartsWith(search) select q);
 
                 if (advancedSearch != null)
                     customers = customers.Where((Func<DataLayer.Customer, bool>)advancedSearch).AsQueryable();
 
-                customers = (from q in customers orderby q.RagioneSociale select q);
+                customers = (from q in customers orderby q.Cliente.AnagraficaAzienda.RagioneSociale select q);
                 if (orderBy != null)
                 {
                     if (orderBy.Direction == TypeOrder.Ascending)
@@ -1743,7 +1743,8 @@ namespace WcfService
 
                 if (search != null && search.Length > 0)
                     documenti = (from q in documenti
-                                 where q.IDCliente.StartsWith(search) ||q.IDMovimento.StartsWith(search)
+                                 where q.Numero.Contains(search) || q.Cliente.AnagraficaAzienda.RagioneSociale.Contains(search) ||
+                                 q.Tipo.Contains(search) || q.IDCausale.Contains(search) || q.IDIVA.Contains(search) || q.IDMovimento.Contains(search) || q.IDRegistroIVA.Contains(search)
                                  select q);
 
                 if (advancedSearch != null)

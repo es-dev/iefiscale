@@ -27,7 +27,7 @@ namespace Web.GUI.Customer
                 {
                     var obj = (CustomerDto)model;
                     infoSubtitle.Text = BusinessLogic.Customer.GetCodifica(obj);
-                    infoSubtitleImage.Image = "Images.dashboard.cliente.png";
+                    infoSubtitleImage.Image = "Images.dashboard.customer.png";
                     infoTitle.Text = (obj.Id != 0 ? "CUSTOMER " + BusinessLogic.Customer.GetCodifica(obj) : "NUOVO CUSTOMER") + " | " + BusinessLogic.Export.GetCodifica(obj.Export);
                 }
             }

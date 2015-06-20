@@ -26,7 +26,7 @@ namespace Web.GUI.AnagraficaAzienda
                 {
                     var obj = (WcfService.Dto.AnagraficaAziendaDto)model;
 
-                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoImage.Image = "Images.dashboard.anagraficaazienda.png";
                     infoRagioneSociale.Text = obj.RagioneSociale;
                     infoIndirizzo.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(obj);
                     infoPartitaIVA.Text = obj.PartitaIVA;

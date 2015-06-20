@@ -10,6 +10,18 @@ namespace Web.GUI.Import
 {
     public class ImportViewModel : Library.Template.MVVM.TemplateViewModel<ImportView, ImportItem, ImportModel, ImportDto>
     {
+        private ImportDto oldImport = null;
+        public ImportDto OldImport
+        {
+            get
+            {
+                return oldImport;
+            }
+            set
+            {
+                oldImport = value;
+            }
+        }
 
         public ImportViewModel()
             : base() 
@@ -53,6 +65,7 @@ namespace Web.GUI.Import
             return 0;
         }
 
+
         public override bool Save(object model, bool creating) //todo: prevedere modello associativo e disassociativo per relazioni 1-1
         {
             try
@@ -70,7 +83,12 @@ namespace Web.GUI.Import
                             Update(obj, newObj);
                     }
                     else //updating
+                    {
+                        //if(oldImport!=null && oldImport.Id!=obj.Id)
+                        //    wcf.DeleteImport(oldImport);
+                        
                         performed = wcf.UpdateImport(obj);
+                    }
                     return performed;
                 }
             }

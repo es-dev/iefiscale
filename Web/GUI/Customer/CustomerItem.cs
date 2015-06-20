@@ -26,7 +26,7 @@ namespace Web.GUI.Customer
                 if (model != null)
                 {
                     var obj = (CustomerDto)model;
-                    infoImage.Image = "Images.dashboard.azienda.png";
+                    infoImage.Image = "Images.dashboard.customer.png";
                     infoDenominazione.Text = BusinessLogic.Customer.GetCodifica(obj);
                     infoPartitaIva.Text = BusinessLogic.Cliente.GetPartitaIva(obj.Cliente);
                     infoIndirizzo.Text = BusinessLogic.Cliente.GetIndirizzo(obj.Cliente);

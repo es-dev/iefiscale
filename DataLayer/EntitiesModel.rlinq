@@ -44,7 +44,7 @@
           <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
         <orm:field name="_codiceCatastale" property="CodiceCatastale" uniqueId="0d5dd935-1a19-4ef7-a1c5-e0285af6d9cc" type="System.String">
-          <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="" />
+          <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
         </orm:field>
         <orm:field name="_accounts" property="Accounts" behavior="readwrite" uniqueId="338333c6-de01-4a1f-8cb2-ad9be01abdfa" type="DataLayer.Account">
           <orm:collection element-class="DataLayer.Account" inverse-field="_studioCommerciale" order-by="" uniqueId="be7a2399-d98f-4ed1-9ce3-b4ee92efa95c" />
@@ -566,7 +566,7 @@
         <orm:column name="Email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="Fax" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="" />
+        <orm:column name="CodiceCatastale" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="" />
       </orm:table>
       <orm:table name="AnagraficaAzienda">
         <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
@@ -726,7 +726,6 @@
       <MappingDefinitionType>Xml</MappingDefinitionType>
     </CodeGenerationSettings>
     <SchemaUpdateSettings>
-      <ExecuteScript>true</ExecuteScript>
       <DeploymentProject>DataLayer</DeploymentProject>
       <UpdateDatabaseOperation>Migrate</UpdateDatabaseOperation>
     </SchemaUpdateSettings>
