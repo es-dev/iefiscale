@@ -584,6 +584,14 @@
       <DependentUpon>AccountView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Account\AccountViewModel.cs" />
+    <Compile Include="GUI\Agenda\SchedulerItem.cs" />
+    <Compile Include="GUI\Agenda\SchedulerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Agenda\SchedulerView.designer.cs">
+      <DependentUpon>SchedulerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Agenda\SchedulerViewModel.cs" />
     <Compile Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -698,6 +706,71 @@
       <DependentUpon>CustomerView.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Customer\CustomerViewModel.cs" />
+    <Compile Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaItem.designer.cs">
+      <DependentUpon>DashboardAnagraficaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaView.designer.cs">
+      <DependentUpon>DashboardAnagraficaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaViewModel.cs" />
+    <Compile Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneItem.designer.cs">
+      <DependentUpon>DashboardConfigurazioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneView.designer.cs">
+      <DependentUpon>DashboardConfigurazioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneViewModel.cs" />
+    <Compile Include="GUI\Dashboard\Documento\DashboardDocumentoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Documento\DashboardDocumentoItem.designer.cs">
+      <DependentUpon>DashboardDocumentoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Documento\DashboardDocumentoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Documento\DashboardDocumentoView.designer.cs">
+      <DependentUpon>DashboardDocumentoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Documento\DashboardDocumentoViewModel.cs" />
+    <Compile Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneItem.designer.cs">
+      <DependentUpon>DashboardComunicazioneItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneView.designer.cs">
+      <DependentUpon>DashboardComunicazioneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneViewModel.cs" />
+    <Compile Include="GUI\Dashboard\ImportExport\DashboardImportExportItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\ImportExport\DashboardImportExportItem.designer.cs">
+      <DependentUpon>DashboardImportExportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\ImportExport\DashboardImportExportView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard\ImportExport\DashboardImportExportView.designer.cs">
+      <DependentUpon>DashboardImportExportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard\ImportExport\DashboardImportExportViewModel.cs" />
     <Compile Include="GUI\Documento\DocumentoItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -845,6 +918,9 @@
     <EmbeddedResource Include="GUI\Account\AccountView.resx">
       <DependentUpon>AccountView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Agenda\SchedulerView.resx">
+      <DependentUpon>SchedulerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AnagraficaAzienda\AnagraficaAziendaItem.resx">
       <DependentUpon>AnagraficaAziendaItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -898,6 +974,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaItem.resx">
+      <DependentUpon>DashboardAnagraficaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Anagrafica\DashboardAnagraficaView.resx">
+      <DependentUpon>DashboardAnagraficaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneItem.resx">
+      <DependentUpon>DashboardConfigurazioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Configurazione\DashboardConfigurazioneView.resx">
+      <DependentUpon>DashboardConfigurazioneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Documento\DashboardDocumentoItem.resx">
+      <DependentUpon>DashboardDocumentoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Documento\DashboardDocumentoView.resx">
+      <DependentUpon>DashboardDocumentoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneItem.resx">
+      <DependentUpon>DashboardComunicazioneItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\Comunicazione\DashboardComunicazioneView.resx">
+      <DependentUpon>DashboardComunicazioneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\ImportExport\DashboardImportExportItem.resx">
+      <DependentUpon>DashboardImportExportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard\ImportExport\DashboardImportExportView.resx">
+      <DependentUpon>DashboardImportExportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Documento\DocumentoItem.resx">
       <DependentUpon>DocumentoItem.cs</DependentUpon>
