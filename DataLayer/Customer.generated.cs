@@ -89,6 +89,15 @@ namespace DataLayer
 			}
 		}
 		
+		private IList<Documento> _documentos = new List<Documento>();
+		public virtual IList<Documento> Documentos
+		{
+			get
+			{
+				return this._documentos;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

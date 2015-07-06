@@ -37,19 +37,6 @@ namespace DataLayer
 			}
 		}
 		
-		private int _exportId;
-		public virtual int ExportId
-		{
-			get
-			{
-				return this._exportId;
-			}
-			set
-			{
-				this._exportId = value;
-			}
-		}
-		
 		private string _tipo;
 		public virtual string Tipo
 		{
@@ -193,42 +180,29 @@ namespace DataLayer
 			}
 		}
 		
-		private int _clienteId;
-		public virtual int ClienteId
+		private int _customerId;
+		public virtual int CustomerId
 		{
 			get
 			{
-				return this._clienteId;
+				return this._customerId;
 			}
 			set
 			{
-				this._clienteId = value;
+				this._customerId = value;
 			}
 		}
 		
-		private Export _export;
-		public virtual Export Export
+		private Customer _customer;
+		public virtual Customer Customer
 		{
 			get
 			{
-				return this._export;
+				return this._customer;
 			}
 			set
 			{
-				this._export = value;
-			}
-		}
-		
-		private Cliente _cliente;
-		public virtual Cliente Cliente
-		{
-			get
-			{
-				return this._cliente;
-			}
-			set
-			{
-				this._cliente = value;
+				this._customer = value;
 			}
 		}
 		

@@ -115,15 +115,6 @@ namespace DataLayer
 			}
 		}
 		
-		private IList<Documento> _documentos = new List<Documento>();
-		public virtual IList<Documento> Documentos
-		{
-			get
-			{
-				return this._documentos;
-			}
-		}
-		
 		private IList<Customer> _customers = new List<Customer>();
 		public virtual IList<Customer> Customers
 		{

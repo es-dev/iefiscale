@@ -29,6 +29,7 @@ namespace Web.GUI.StudioCommerciale
                     infoDenominazione.Text = obj.Denominazione;
                     infoIndirizzo.Text = BusinessLogic.StudioCommerciale.GetIndirizzo(obj);
                     infoTipoSoftwareContabilita.Text = "Software di contabilità: " + obj.TipoSoftwareContabilita;
+                    infoCodice.Text = "SC";
                 }
             }
             catch (Exception ex)

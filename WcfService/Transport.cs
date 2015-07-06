@@ -259,18 +259,16 @@ namespace WcfService.Dto
 	}
 	
 	[DataContract(IsReference = true)]
-	[KnownType(typeof(ExportDto))]
-	[KnownType(typeof(ClienteDto))]
+	[KnownType(typeof(CustomerDto))]
 	public partial class DocumentoDto : IDtoWithKey
 	{
 		public DocumentoDto()
 		{
 		}
 		
-		public DocumentoDto(int _id, int _exportId, string _tipo, DateTime? _data, string _iDMovimento, string _iDCausale, string _iDRegistroIVA, string _iDIVA, decimal? _totale, decimal? _imponibile, decimal? _iVA, string _numero, DateTime? _dataRegistrazione, int _clienteId, ExportDto _export, ClienteDto _cliente)
+		public DocumentoDto(int _id, string _tipo, DateTime? _data, string _iDMovimento, string _iDCausale, string _iDRegistroIVA, string _iDIVA, decimal? _totale, decimal? _imponibile, decimal? _iVA, string _numero, DateTime? _dataRegistrazione, int _customerId, CustomerDto _customer)
 		{
 			this.Id = _id;
-			this.ExportId = _exportId;
 			this.Tipo = _tipo;
 			this.Data = _data;
 			this.IDMovimento = _iDMovimento;
@@ -282,9 +280,8 @@ namespace WcfService.Dto
 			this.IVA = _iVA;
 			this.Numero = _numero;
 			this.DataRegistrazione = _dataRegistrazione;
-			this.ClienteId = _clienteId;
-			this.Export = _export;
-			this.Cliente = _cliente;
+			this.CustomerId = _customerId;
+			this.Customer = _customer;
 		}
 		
 		[DataMember]
@@ -292,9 +289,6 @@ namespace WcfService.Dto
 		
 		[DataMember]
 		public virtual int Id { get;set; }
-
-		[DataMember]
-		public virtual int ExportId { get;set; }
 
 		[DataMember]
 		public virtual string Tipo { get;set; }
@@ -330,13 +324,10 @@ namespace WcfService.Dto
 		public virtual DateTime? DataRegistrazione { get;set; }
 
 		[DataMember]
-		public virtual int ClienteId { get;set; }
+		public virtual int CustomerId { get;set; }
 
 		[DataMember]
-		public virtual ExportDto Export { get;set; }
-
-		[DataMember]
-		public virtual ClienteDto Cliente { get;set; }
+		public virtual CustomerDto Customer { get;set; }
 
 	}
 	
@@ -449,7 +440,6 @@ namespace WcfService.Dto
 	
 	[DataContract(IsReference = true)]
 	[KnownType(typeof(ComunicazioneDto))]
-	[KnownType(typeof(DocumentoDto))]
 	[KnownType(typeof(CustomerDto))]
 	[KnownType(typeof(ImportDto))]
 	public partial class ExportDto : IDtoWithKey
@@ -458,7 +448,7 @@ namespace WcfService.Dto
 		{
 		}
 		
-		public ExportDto(int _id, int _comunicazioneId, DateTime? _data, string _progressivo, string _xmlFile, string _stato, ComunicazioneDto _comunicazione, IList<DocumentoDto> _documentos, IList<CustomerDto> _customers, ImportDto _import)
+		public ExportDto(int _id, int _comunicazioneId, DateTime? _data, string _progressivo, string _xmlFile, string _stato, ComunicazioneDto _comunicazione, IList<CustomerDto> _customers, ImportDto _import)
 		{
 			this.Id = _id;
 			this.ComunicazioneId = _comunicazioneId;
@@ -467,7 +457,6 @@ namespace WcfService.Dto
 			this.XmlFile = _xmlFile;
 			this.Stato = _stato;
 			this.Comunicazione = _comunicazione;
-			this.Documentos = _documentos;
 			this.Customers = _customers;
 			this.Import = _import;
 		}
@@ -495,9 +484,6 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual ComunicazioneDto Comunicazione { get;set; }
-
-		[DataMember]
-		public virtual IList<DocumentoDto> Documentos { get;set; }
 
 		[DataMember]
 		public virtual IList<CustomerDto> Customers { get;set; }
@@ -594,14 +580,13 @@ namespace WcfService.Dto
 	[KnownType(typeof(AziendaDto))]
 	[KnownType(typeof(AnagraficaAziendaDto))]
 	[KnownType(typeof(CustomerDto))]
-	[KnownType(typeof(DocumentoDto))]
 	public partial class ClienteDto : IDtoWithKey
 	{
 		public ClienteDto()
 		{
 		}
 		
-		public ClienteDto(int _id, int _aziendaId, string _iDCliente, int _anagraficaAziendaId, string _iDConto, AziendaDto _azienda, AnagraficaAziendaDto _anagraficaAzienda, IList<CustomerDto> _customers, IList<DocumentoDto> _documentos)
+		public ClienteDto(int _id, int _aziendaId, string _iDCliente, int _anagraficaAziendaId, string _iDConto, AziendaDto _azienda, AnagraficaAziendaDto _anagraficaAzienda, IList<CustomerDto> _customers)
 		{
 			this.Id = _id;
 			this.AziendaId = _aziendaId;
@@ -611,7 +596,6 @@ namespace WcfService.Dto
 			this.Azienda = _azienda;
 			this.AnagraficaAzienda = _anagraficaAzienda;
 			this.Customers = _customers;
-			this.Documentos = _documentos;
 		}
 		
 		[DataMember]
@@ -641,27 +625,26 @@ namespace WcfService.Dto
 		[DataMember]
 		public virtual IList<CustomerDto> Customers { get;set; }
 
-		[DataMember]
-		public virtual IList<DocumentoDto> Documentos { get;set; }
-
 	}
 	
 	[DataContract(IsReference = true)]
 	[KnownType(typeof(ExportDto))]
 	[KnownType(typeof(ClienteDto))]
+	[KnownType(typeof(DocumentoDto))]
 	public partial class CustomerDto : IDtoWithKey
 	{
 		public CustomerDto()
 		{
 		}
 		
-		public CustomerDto(int _id, int _exportId, int _clienteId, ExportDto _export, ClienteDto _cliente)
+		public CustomerDto(int _id, int _exportId, int _clienteId, ExportDto _export, ClienteDto _cliente, IList<DocumentoDto> _documentos)
 		{
 			this.Id = _id;
 			this.ExportId = _exportId;
 			this.ClienteId = _clienteId;
 			this.Export = _export;
 			this.Cliente = _cliente;
+			this.Documentos = _documentos;
 		}
 		
 		[DataMember]
@@ -681,6 +664,9 @@ namespace WcfService.Dto
 
 		[DataMember]
 		public virtual ClienteDto Cliente { get;set; }
+
+		[DataMember]
+		public virtual IList<DocumentoDto> Documentos { get;set; }
 
 	}
 	

@@ -28,7 +28,8 @@ namespace Web.GUI.Documento
                     var obj = (DocumentoDto)model;
                     infoSubtitle.Text = BusinessLogic.Documento.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.documento.png";
-                    infoTitle.Text = (obj.Id != 0 ? "DOCUMENTO N." + BusinessLogic.Documento.GetCodifica(obj) : "NUOVO DOCUMENTO") + " | " + BusinessLogic.Export.GetCodifica(obj.Export);
+                    infoTitle.Text = (obj.Id != 0 ? "DOCUMENTO N." + BusinessLogic.Documento.GetCodifica(obj) : "NUOVO DOCUMENTO") + " | " + BusinessLogic.Customer.GetCodifica(obj.Customer) + 
+                        " | " + BusinessLogic.Export.GetCodifica(obj.Customer.Export);
                 }
             }
             catch (Exception ex)
@@ -56,9 +57,8 @@ namespace Web.GUI.Documento
                     editIVA.Value = obj.IVA;
                     editTotale.Value = obj.Totale;
 
-                    BindViewCliente(obj.Cliente);
-                    BindViewExport(obj.Export);
-
+                    BindViewCustomer(obj.Customer);
+                   
                 }
             }
             catch (Exception ex)
@@ -67,25 +67,12 @@ namespace Web.GUI.Documento
             }
         }
 
-        private void BindViewCliente(ClienteDto cliente)
+        private void BindViewCustomer(CustomerDto customer)
         {
             try
             {
-                editCliente.Model = cliente;
-                editCliente.Value = BusinessLogic.Cliente.GetCodifica(cliente);
-            }
-            catch (Exception ex)
-            {
-                UtilityError.Write(ex);
-            }
-        }
-
-        private void BindViewExport(ExportDto export)
-        {
-            try
-            {
-                editExport.Model = export;
-                editExport.Value = BusinessLogic.Export.GetCodifica(export);
+                editCustomer.Model = customer;
+                editCustomer.Value = BusinessLogic.Customer.GetCodifica(customer);
             }
             catch (Exception ex)
             {
@@ -112,13 +99,9 @@ namespace Web.GUI.Documento
                     obj.IVA = editIVA.Value;
                     obj.Totale = editTotale.Value;
 
-                    var export = (ExportDto)editExport.Model;
-                    if (export != null)
-                        obj.ExportId = export.Id;
-
-                    var cliente = (ClienteDto)editCliente.Model;
-                    if (cliente != null)
-                        obj.ClienteId = cliente.Id;
+                    var customer = (CustomerDto)editCustomer.Model;
+                    if (customer != null)
+                        obj.CustomerId = customer.Id;
                 }
             }
             catch (Exception ex)
@@ -127,13 +110,13 @@ namespace Web.GUI.Documento
             }
         }
 
-        private void editExport_ComboClick()
+        private void editCustomer_ComboClick()
         {
             try
             {
-                var view = new Export.ExportView();
-                view.Title = "SELEZIONA UN EXPORT'";
-                editExport.Show(view);
+                var view = new Customer.CustomerView();
+                view.Title = "SELEZIONA UN CUSTOMER'";
+                editCustomer.Show(view);
             }
             catch (Exception ex)
             {
@@ -141,39 +124,12 @@ namespace Web.GUI.Documento
             }
         }
 
-        private void editExport_ComboConfirm(object model)
+        private void editCustomer_ComboConfirm(object model)
         {
             try
             {
-                var export = (ExportDto)model;
-                BindViewExport(export);
-            }
-            catch (Exception ex)
-            {
-                UtilityError.Write(ex);
-            }
-        }
-
-        private void editCliente_ComboClick()
-        {
-            try
-            {
-                var view = new Cliente.ClienteView();
-                view.Title = "SELEZIONA UN CLIENTE'";
-                editCliente.Show(view);
-            }
-            catch (Exception ex)
-            {
-                UtilityError.Write(ex);
-            }
-        }
-
-        private void editCliente_ComboConfirm(object model)
-        {
-            try
-            {
-                var cliente = (ClienteDto)model;
-                BindViewCliente(cliente);
+                var customer = (CustomerDto)model;
+                BindViewCustomer(customer);
             }
             catch (Exception ex)
             {

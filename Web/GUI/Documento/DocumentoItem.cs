@@ -27,9 +27,13 @@ namespace Web.GUI.Documento
                     var obj = (WcfService.Dto.DocumentoDto)model;
                     infoImage.Image = "Images.dashboard.documento.png";
                     infoDocumento.Text = BusinessLogic.Documento.GetCodifica(obj);
-                    infoCliente.Text = BusinessLogic.Cliente.GetCodifica(obj.Cliente);
-                    infoPartitaIva.Text = BusinessLogic.Cliente.GetPartitaIva(obj.Cliente);
-                    infoExport.Text = BusinessLogic.Export.GetCodifica(obj.Export);
+                    var customer = obj.Customer;
+                    if (customer != null)
+                    {
+                        infoCliente.Text = BusinessLogic.Cliente.GetCodifica(customer.Cliente);
+                        infoPartitaIva.Text = BusinessLogic.Cliente.GetPartitaIva(customer.Cliente);
+                        infoExport.Text = BusinessLogic.Export.GetCodifica(customer.Export);
+                    }
                 }
             }
             catch (Exception ex)

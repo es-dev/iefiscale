@@ -197,9 +197,6 @@
         <orm:field name="_id" property="Id" uniqueId="7ec2837e-83dd-4592-8dfe-736a264ce181" type="System.Int32">
           <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
         </orm:field>
-        <orm:field name="_exportId" property="ExportId" uniqueId="90e7574a-7ae8-4845-b03d-01592d36bbf8" type="System.Int32">
-          <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-        </orm:field>
         <orm:field name="_tipo" property="Tipo" uniqueId="7ce2dd18-ee4d-4c95-b7ad-7a4aa93271d2" type="System.String">
           <orm:column name="Tipo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         </orm:field>
@@ -233,24 +230,14 @@
         <orm:field name="_dataRegistrazione" property="DataRegistrazione" uniqueId="217f49d0-0c03-4a0e-bc08-fa684a64c559" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="DataRegistrazione" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
         </orm:field>
-        <orm:field name="_clienteId" property="ClienteId" uniqueId="79683248-ad89-40d3-93f4-dda16f51de2a" type="System.Int32">
-          <orm:column name="ClienteId" sql-type="int" nullable="false" length="0" scale="0" ado-type="" />
+        <orm:field name="_customerId" property="CustomerId" uniqueId="79683248-ad89-40d3-93f4-dda16f51de2a" type="System.Int32">
+          <orm:column name="CustomerId" sql-type="int" nullable="false" length="0" scale="0" ado-type="" />
         </orm:field>
-        <orm:field name="_export" property="Export" behavior="readwrite" uniqueId="06e665a8-815b-419a-aa79-a66a447890de" type="DataLayer.Export">
-          <orm:reference uniqueId="2449a04e-dd1c-4d21-9191-3873fcb89cd1" association-name="DocumentoHasExport">
-            <orm:sharedfield name="_exportId" target-class="DataLayer.Export" target-field="_id" />
+        <orm:field name="_customer" property="Customer" behavior="readwrite" uniqueId="f32f5c03-f9a6-449c-87e3-e32cc6220954" type="DataLayer.Customer">
+          <orm:reference uniqueId="be04e4aa-b449-4431-93ed-06be1c2c7159" association-name="DocumentoHasCustomer">
+            <orm:sharedfield name="_customerId" target-class="DataLayer.Customer" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:field name="_cliente" property="Cliente" behavior="readwrite" uniqueId="96c5185d-f565-470a-8669-34a29461613c" type="DataLayer.Cliente">
-          <orm:reference uniqueId="14948920-7380-48c7-807c-4c17bc110fd0" association-name="DocumentoHasCliente">
-            <orm:sharedfield name="_clienteId" target-class="DataLayer.Cliente" target-field="_id" />
-          </orm:reference>
-        </orm:field>
-        <orm:index name="idx_Documento_ExportId">
-          <orm:columnMapping>
-            <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
       </orm:class>
       <orm:class name="Account" uniqueId="c186a1da-f13d-4505-9f5c-9d32f867a9f2">
         <orm:table name="Account" />
@@ -368,9 +355,6 @@
             <orm:sharedfield name="_comunicazioneId" target-class="DataLayer.Comunicazione" target-field="_id" />
           </orm:reference>
         </orm:field>
-        <orm:field name="_documentos" property="Documentos" behavior="readwrite" uniqueId="12bdff23-458d-4baf-868b-3ebc5cabe8cb" type="DataLayer.Documento">
-          <orm:collection element-class="DataLayer.Documento" inverse-field="_export" order-by="" uniqueId="2449a04e-dd1c-4d21-9191-3873fcb89cd1" />
-        </orm:field>
         <orm:field name="_customers" property="Customers" behavior="readwrite" uniqueId="fe79bd68-6f69-45d8-b8b9-a6d16abaf2fb" type="DataLayer.Customer">
           <orm:collection element-class="DataLayer.Customer" inverse-field="_export" order-by="" uniqueId="c7a481d0-a079-452d-a32c-cbbd3743ef6a" />
         </orm:field>
@@ -483,9 +467,6 @@
         <orm:field name="_customers" property="Customers" behavior="readwrite" uniqueId="0935f7f7-bd20-4c41-ae90-9cd4da461f60" type="DataLayer.Customer">
           <orm:collection element-class="DataLayer.Customer" inverse-field="_cliente" order-by="" uniqueId="a4ea6f7b-5e60-4b3b-ab20-e27056a263a6" />
         </orm:field>
-        <orm:field name="_documentos" property="Documentos" behavior="readwrite" uniqueId="ae4a16bb-c371-43d0-988f-351665de039c" type="DataLayer.Documento">
-          <orm:collection element-class="DataLayer.Documento" inverse-field="_cliente" order-by="" uniqueId="14948920-7380-48c7-807c-4c17bc110fd0" />
-        </orm:field>
         <orm:index name="idx_Clente_AnagraficaAziendaId">
           <orm:columnMapping>
             <orm:column name="AnagraficaAziendaId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -523,6 +504,9 @@
           <orm:reference uniqueId="a4ea6f7b-5e60-4b3b-ab20-e27056a263a6" association-name="CustomerHasCliente">
             <orm:sharedfield name="_clienteId" target-class="DataLayer.Cliente" target-field="_id" />
           </orm:reference>
+        </orm:field>
+        <orm:field name="_documentos" property="Documentos" behavior="readwrite" uniqueId="b0f4153f-7582-4028-94a1-7a6d45da9349" type="DataLayer.Documento">
+          <orm:collection element-class="DataLayer.Documento" inverse-field="_customer" order-by="" uniqueId="be04e4aa-b449-4431-93ed-06be1c2c7159" />
         </orm:field>
         <orm:index name="idx_Customer_ExportId">
           <orm:columnMapping>
@@ -681,15 +665,9 @@
         <orm:column name="Totale" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
         <orm:column name="Imponibile" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
         <orm:column name="IVA" sql-type="numeric" nullable="true" length="20" scale="10" converter="OpenAccessRuntime.Data.DecimalConverter" ado-type="Numeric" />
-        <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
         <orm:column name="Numero" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringVariableLength" />
         <orm:column name="DataRegistrazione" sql-type="datetime" nullable="true" length="0" scale="0" converter="OpenAccessRuntime.Data.MssqlMinDateConverter" ado-type="DateTime" />
-        <orm:column name="ClienteId" sql-type="int" nullable="false" length="0" scale="0" ado-type="" />
-        <orm:index name="idx_Documento_ExportId">
-          <orm:columnMapping>
-            <orm:column name="ExportId" sql-type="int" nullable="false" length="0" scale="0" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
-          </orm:columnMapping>
-        </orm:index>
+        <orm:column name="CustomerId" sql-type="int" nullable="false" length="0" scale="0" ado-type="" />
       </orm:table>
       <orm:table name="Import">
         <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" ado-type="Int32" />
@@ -880,8 +858,7 @@
     </DomainClass>
     <DomainClass Id="90ac9863-a1e7-4c65-bb20-42ca4118d29d" name="Documento" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
       <Property Id="7ec2837e-83dd-4592-8dfe-736a264ce181" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
-      <Property Id="90e7574a-7ae8-4845-b03d-01592d36bbf8" name="ExportId" type="Int32" label="ExportId : Int32" fieldName="_exportId" />
-      <Property Id="79683248-ad89-40d3-93f4-dda16f51de2a" name="ClienteId" type="Int32" label="ClienteId : Int32" fieldName="_clienteId" />
+      <Property Id="79683248-ad89-40d3-93f4-dda16f51de2a" name="CustomerId" type="Int32" label="CustomerId : Int32" fieldName="_customerId" />
       <Property Id="82a6e1f1-f119-4172-9c72-50943ed62a69" name="IDMovimento" label="IDMovimento : String" fieldName="_iDMovimento" />
       <Property Id="7ce2dd18-ee4d-4c95-b7ad-7a4aa93271d2" name="Tipo" label="Tipo : String" fieldName="_tipo" />
       <Property Id="021e139b-8238-4bfe-b8db-2a235267dfc0" name="Numero" label="Numero : String" fieldName="_numero" />
@@ -894,39 +871,23 @@
       <Property Id="b2a8fff2-8105-49ac-895f-d9db5b2a68a2" name="IVA" type="Decimal" label="IVA : Decimal" nullable="true" fieldName="_iVA" />
       <Property Id="217f49d0-0c03-4a0e-bc08-fa684a64c559" name="DataRegistrazione" type="DateTime" label="DataRegistrazione : DateTime" nullable="true" fieldName="_dataRegistrazione" />
       <AssociationTargets>
-        <Association Id="2449a04e-dd1c-4d21-9191-3873fcb89cd1" SourceMultiplicity="ZeroOne" name="DocumentoHasExport">
-          <DomainClassMoniker name="/EntitiesModel/Export" />
+        <Association Id="be04e4aa-b449-4431-93ed-06be1c2c7159" SourceMultiplicity="ZeroOne" name="DocumentoHasCustomer">
+          <DomainClassMoniker name="/EntitiesModel/Customer" />
           <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="97b62c6b-b2c7-4286-a5fd-67ced7bb47ee">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Export/Documentos" />
+            <associationDefinesTargetProperty Id="70c57f28-f6c6-47b9-a7c0-7540f3e2c2fa">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Customer/Documentos" />
             </associationDefinesTargetProperty>
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="5ada40b7-c46e-472a-92e7-767d9d8e45f3">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Documento/Export" />
-            </associationDefinesSourceProperty>
-          </sourceNavigationalProperty>
-        </Association>
-        <Association Id="14948920-7380-48c7-807c-4c17bc110fd0" SourceMultiplicity="ZeroOne" name="DocumentoHasCliente">
-          <DomainClassMoniker name="/EntitiesModel/Cliente" />
-          <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="56c03afd-b55c-4c55-b4a0-5fdcd9de5924">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Cliente/Documentos" />
-            </associationDefinesTargetProperty>
-          </targetNavigationalProperty>
-          <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="ab4033e1-3c98-4507-976e-e8254534b4de">
-              <NavigationalPropertyMoniker name="/EntitiesModel/Documento/Cliente" />
+            <associationDefinesSourceProperty Id="71fb9945-2b20-465a-920f-9ab7c825916c">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Documento/Customer" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="6b3587e4-18c1-4934-a6bf-bfe8926c383c">
-          <NavigationalProperty Id="06e665a8-815b-419a-aa79-a66a447890de" name="Export" type="Export" label="Export : Export" nullable="true" kind="Persistent" fieldName="_export" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="730dc3bd-0ef7-4fdf-ae77-0c2920ed4a74">
-          <NavigationalProperty Id="96c5185d-f565-470a-8669-34a29461613c" name="Cliente" type="Cliente" label="Cliente : Cliente" nullable="true" kind="Persistent" fieldName="_cliente" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="c05f3471-6b21-4bd6-b871-763c937f0543">
+          <NavigationalProperty Id="f32f5c03-f9a6-449c-87e3-e32cc6220954" name="Customer" type="Customer" label="Customer : Customer" nullable="true" kind="Persistent" fieldName="_customer" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -1034,9 +995,6 @@
         <classHasNavigationalProperties Id="38a3610d-0f78-46f5-997f-27532e947e88">
           <NavigationalProperty Id="e845db9e-751f-4ee8-889b-6fa62b70c10c" name="Import" type="Import" label="Import : Import" nullable="true" kind="Persistent" fieldName="_import" isDependent="false" isManaged="true" />
         </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="afda2390-227c-4437-ac60-ad6f0c33ce2e">
-          <NavigationalProperty Id="12bdff23-458d-4baf-868b-3ebc5cabe8cb" name="Documentos" type="IList&lt;Documento&gt;" label="Documentos : IList&lt;Documento&gt;" nullable="true" kind="Persistent" fieldName="_documentos" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="4da42743-b84d-4322-904e-d9b60db7f68b">
           <NavigationalProperty Id="fe79bd68-6f69-45d8-b8b9-a6d16abaf2fb" name="Customers" type="IList&lt;Customer&gt;" label="Customers : IList&lt;Customer&gt;" nullable="true" kind="Persistent" fieldName="_customers" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
@@ -1127,9 +1085,6 @@
         <classHasNavigationalProperties Id="df726a5d-e9eb-4ce0-9988-f7b7dd7ca124">
           <NavigationalProperty Id="0935f7f7-bd20-4c41-ae90-9cd4da461f60" name="Customers" type="IList&lt;Customer&gt;" label="Customers : IList&lt;Customer&gt;" nullable="true" kind="Persistent" fieldName="_customers" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
-        <classHasNavigationalProperties Id="2246e5cb-5d40-42e0-8d6b-3f2aac48c2e8">
-          <NavigationalProperty Id="ae4a16bb-c371-43d0-988f-351665de039c" name="Documentos" type="IList&lt;Documento&gt;" label="Documentos : IList&lt;Documento&gt;" nullable="true" kind="Persistent" fieldName="_documentos" isDependent="false" isManaged="false" />
-        </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
     <DomainClass Id="801088af-9d14-42b2-83bc-3baeead44752" name="Customer" namespace="DataLayer" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="Id">
@@ -1170,6 +1125,9 @@
         </classHasNavigationalProperties>
         <classHasNavigationalProperties Id="bf83eb75-00f2-4ad6-9dab-b3169655c148">
           <NavigationalProperty Id="7264d37e-3198-4994-82f5-8ecf8ca9c6c9" name="Cliente" type="Cliente" label="Cliente : Cliente" nullable="true" kind="Persistent" fieldName="_cliente" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="3b93d243-bebc-4c2a-a533-84aca8fa96cd">
+          <NavigationalProperty Id="b0f4153f-7582-4028-94a1-7a6d45da9349" name="Documentos" type="IList&lt;Documento&gt;" label="Documentos : IList&lt;Documento&gt;" nullable="true" kind="Persistent" fieldName="_documentos" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>

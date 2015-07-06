@@ -467,7 +467,6 @@ namespace WcfService.Assemblers
 	        }
 			
 			entity.Id = dto.Id;
-			entity.ExportId = dto.ExportId;
 			entity.Tipo = dto.Tipo;
 			entity.Data = dto.Data;
 			entity.IDMovimento = dto.IDMovimento;
@@ -479,7 +478,7 @@ namespace WcfService.Assemblers
 			entity.IVA = dto.IVA;
 			entity.Numero = dto.Numero;
 			entity.DataRegistrazione = dto.DataRegistrazione;
-			entity.ClienteId = dto.ClienteId;
+			entity.CustomerId = dto.CustomerId;
 	        this.OnEntityAssembled(entity);
 	        return entity;
 	    }
@@ -491,7 +490,6 @@ namespace WcfService.Assemblers
 			ObjectKey key = KeyUtility.Instance.Create(entity);
 			dto.DtoKey = KeyUtility.Instance.Convert(key);
 			dto.Id = entity.Id;
-			dto.ExportId = entity.ExportId;
 			dto.Tipo = entity.Tipo;
 			dto.Data = entity.Data;
 			dto.IDMovimento = entity.IDMovimento;
@@ -503,18 +501,15 @@ namespace WcfService.Assemblers
 			dto.IVA = entity.IVA;
 			dto.Numero = entity.Numero;
 			dto.DataRegistrazione = entity.DataRegistrazione;
-			dto.ClienteId = entity.ClienteId;
+			dto.CustomerId = entity.CustomerId;
 			this.OnDTOAssembled(dto); 
 	        return dto;
 	    }
 	
 	    public override void AssembleReferences(Documento entity, DocumentoDto dto)
 	    {
-			ExportAssembler exportAssembler = new ExportAssembler();
-			dto.Export = exportAssembler.Assemble(entity.Export);
-
-			ClienteAssembler clienteAssembler = new ClienteAssembler();
-			dto.Cliente = clienteAssembler.Assemble(entity.Cliente);
+			CustomerAssembler customerAssembler = new CustomerAssembler();
+			dto.Customer = customerAssembler.Assemble(entity.Customer);
 
 	    }
 	
@@ -745,16 +740,6 @@ namespace WcfService.Assemblers
 	
 	    public override void AssembleCollections(Export entity, ExportDto dto)
 	    {
-			DocumentoAssembler documentoAssembler = new DocumentoAssembler();
-
-			dto.Documentos = new List<DocumentoDto>();
-			foreach (Documento item in entity.Documentos)
-			{
-				var dtoItem = documentoAssembler.Assemble(item);
-				dtoItem.Export = dto;
-				dto.Documentos.Add(dtoItem);
-			}
-
 			CustomerAssembler customerAssembler = new CustomerAssembler();
 
 			dto.Customers = new List<CustomerDto>();
@@ -952,16 +937,6 @@ namespace WcfService.Assemblers
 				dto.Customers.Add(dtoItem);
 			}
 
-			DocumentoAssembler documentoAssembler = new DocumentoAssembler();
-
-			dto.Documentos = new List<DocumentoDto>();
-			foreach (Documento item in entity.Documentos)
-			{
-				var dtoItem = documentoAssembler.Assemble(item);
-				dtoItem.Cliente = dto;
-				dto.Documentos.Add(dtoItem);
-			}
-
 	    }
 	
 	}
@@ -1030,6 +1005,16 @@ namespace WcfService.Assemblers
 	
 	    public override void AssembleCollections(Customer entity, CustomerDto dto)
 	    {
+			DocumentoAssembler documentoAssembler = new DocumentoAssembler();
+
+			dto.Documentos = new List<DocumentoDto>();
+			foreach (Documento item in entity.Documentos)
+			{
+				var dtoItem = documentoAssembler.Assemble(item);
+				dtoItem.Customer = dto;
+				dto.Documentos.Add(dtoItem);
+			}
+
 	    }
 	
 	}

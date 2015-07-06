@@ -30,7 +30,6 @@ namespace Web.GUI.Documento
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.editExport = new Library.Template.Controls.TemplateEditCombo();
             this.editNumero = new Library.Template.Controls.TemplateEditText();
             this.editIDConto = new Library.Template.Controls.TemplateEditText();
             this.editTipo = new Library.Template.Controls.TemplateEditText();
@@ -44,7 +43,7 @@ namespace Web.GUI.Documento
             this.editIVA = new Library.Template.Controls.TemplateEditDecimal();
             this.editTotale = new Library.Template.Controls.TemplateEditDecimal();
             this.editDataRegistrazione = new Library.Template.Controls.TemplateEditDate();
-            this.editCliente = new Library.Template.Controls.TemplateEditCombo();
+            this.editCustomer = new Library.Template.Controls.TemplateEditCombo();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.panelCommands.SuspendLayout();
@@ -52,7 +51,7 @@ namespace Web.GUI.Documento
             // 
             // container
             // 
-            this.container.Controls.Add(this.editCliente);
+            this.container.Controls.Add(this.editCustomer);
             this.container.Controls.Add(this.editDataRegistrazione);
             this.container.Controls.Add(this.editTotale);
             this.container.Controls.Add(this.editIVA);
@@ -65,11 +64,9 @@ namespace Web.GUI.Documento
             this.container.Controls.Add(this.editTipo);
             this.container.Controls.Add(this.editIDConto);
             this.container.Controls.Add(this.editNumero);
-            this.container.Controls.Add(this.editExport);
             this.container.Size = new System.Drawing.Size(923, 693);
             this.container.Controls.SetChildIndex(this.infoSubtitleImage, 0);
             this.container.Controls.SetChildIndex(this.infoSubtitle, 0);
-            this.container.Controls.SetChildIndex(this.editExport, 0);
             this.container.Controls.SetChildIndex(this.editNumero, 0);
             this.container.Controls.SetChildIndex(this.editIDConto, 0);
             this.container.Controls.SetChildIndex(this.editTipo, 0);
@@ -82,7 +79,7 @@ namespace Web.GUI.Documento
             this.container.Controls.SetChildIndex(this.editIVA, 0);
             this.container.Controls.SetChildIndex(this.editTotale, 0);
             this.container.Controls.SetChildIndex(this.editDataRegistrazione, 0);
-            this.container.Controls.SetChildIndex(this.editCliente, 0);
+            this.container.Controls.SetChildIndex(this.editCustomer, 0);
             // 
             // infoSubtitle
             // 
@@ -100,30 +97,6 @@ namespace Web.GUI.Documento
             // 
             this.btnDelete.Location = new System.Drawing.Point(0, 668);
             // 
-            // editExport
-            // 
-            this.editExport.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editExport.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editExport.BackColor = System.Drawing.Color.Transparent;
-            this.editExport.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editExport.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editExport.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editExport.Changed = true;
-            this.editExport.Editing = false;
-            this.editExport.Label = "Export";
-            this.editExport.LabelWidth = 175;
-            this.editExport.Location = new System.Drawing.Point(25, 66);
-            this.editExport.Model = null;
-            this.editExport.Name = "editExport";
-            this.editExport.ReadOnly = false;
-            this.editExport.Required = true;
-            this.editExport.Size = new System.Drawing.Size(811, 30);
-            this.editExport.TabIndex = 0;
-            this.editExport.Value = null;
-            this.editExport.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editExport_ComboConfirm);
-            this.editExport.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editExport_ComboClick);
-            // 
             // editNumero
             // 
             this.editNumero.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
@@ -137,7 +110,7 @@ namespace Web.GUI.Documento
             this.editNumero.Editing = false;
             this.editNumero.Label = "Numero";
             this.editNumero.LabelWidth = 175;
-            this.editNumero.Location = new System.Drawing.Point(25, 238);
+            this.editNumero.Location = new System.Drawing.Point(27, 195);
             this.editNumero.Name = "editNumero";
             this.editNumero.ReadOnly = false;
             this.editNumero.Required = true;
@@ -159,7 +132,7 @@ namespace Web.GUI.Documento
             this.editIDConto.Editing = false;
             this.editIDConto.Label = "ID Conto";
             this.editIDConto.LabelWidth = 175;
-            this.editIDConto.Location = new System.Drawing.Point(25, 367);
+            this.editIDConto.Location = new System.Drawing.Point(27, 324);
             this.editIDConto.Name = "editIDConto";
             this.editIDConto.ReadOnly = false;
             this.editIDConto.Required = true;
@@ -181,7 +154,7 @@ namespace Web.GUI.Documento
             this.editTipo.Editing = false;
             this.editTipo.Label = "Tipo";
             this.editTipo.LabelWidth = 175;
-            this.editTipo.Location = new System.Drawing.Point(25, 195);
+            this.editTipo.Location = new System.Drawing.Point(27, 152);
             this.editTipo.Name = "editTipo";
             this.editTipo.ReadOnly = false;
             this.editTipo.Required = true;
@@ -203,7 +176,7 @@ namespace Web.GUI.Documento
             this.editIDIVA.Editing = false;
             this.editIDIVA.Label = "ID IVA";
             this.editIDIVA.LabelWidth = 175;
-            this.editIDIVA.Location = new System.Drawing.Point(25, 453);
+            this.editIDIVA.Location = new System.Drawing.Point(27, 410);
             this.editIDIVA.Name = "editIDIVA";
             this.editIDIVA.ReadOnly = false;
             this.editIDIVA.Required = false;
@@ -225,7 +198,7 @@ namespace Web.GUI.Documento
             this.editIDRegistroIVA.Editing = false;
             this.editIDRegistroIVA.Label = "ID Registro IVA";
             this.editIDRegistroIVA.LabelWidth = 175;
-            this.editIDRegistroIVA.Location = new System.Drawing.Point(25, 410);
+            this.editIDRegistroIVA.Location = new System.Drawing.Point(27, 367);
             this.editIDRegistroIVA.Name = "editIDRegistroIVA";
             this.editIDRegistroIVA.ReadOnly = false;
             this.editIDRegistroIVA.Required = true;
@@ -247,7 +220,7 @@ namespace Web.GUI.Documento
             this.editIDCausale.Editing = false;
             this.editIDCausale.Label = "ID Causale";
             this.editIDCausale.LabelWidth = 175;
-            this.editIDCausale.Location = new System.Drawing.Point(25, 324);
+            this.editIDCausale.Location = new System.Drawing.Point(27, 281);
             this.editIDCausale.Name = "editIDCausale";
             this.editIDCausale.ReadOnly = false;
             this.editIDCausale.Required = true;
@@ -269,7 +242,7 @@ namespace Web.GUI.Documento
             this.editIDMovimento.Editing = false;
             this.editIDMovimento.Label = "ID Movimento";
             this.editIDMovimento.LabelWidth = 175;
-            this.editIDMovimento.Location = new System.Drawing.Point(25, 152);
+            this.editIDMovimento.Location = new System.Drawing.Point(27, 109);
             this.editIDMovimento.Name = "editIDMovimento";
             this.editIDMovimento.ReadOnly = false;
             this.editIDMovimento.Required = true;
@@ -313,7 +286,7 @@ namespace Web.GUI.Documento
             this.editData.Editing = false;
             this.editData.Label = "Data";
             this.editData.LabelWidth = 175;
-            this.editData.Location = new System.Drawing.Point(25, 281);
+            this.editData.Location = new System.Drawing.Point(27, 238);
             this.editData.Name = "editData";
             this.editData.ReadOnly = false;
             this.editData.Required = false;
@@ -334,7 +307,7 @@ namespace Web.GUI.Documento
             this.editImponibile.Editing = false;
             this.editImponibile.Label = "Imponibile";
             this.editImponibile.LabelWidth = 175;
-            this.editImponibile.Location = new System.Drawing.Point(25, 496);
+            this.editImponibile.Location = new System.Drawing.Point(27, 453);
             this.editImponibile.Name = "templateEditNumeric1";
             this.editImponibile.ReadOnly = false;
             this.editImponibile.Required = false;
@@ -355,7 +328,7 @@ namespace Web.GUI.Documento
             this.editIVA.Editing = false;
             this.editIVA.Label = "IVA";
             this.editIVA.LabelWidth = 175;
-            this.editIVA.Location = new System.Drawing.Point(25, 539);
+            this.editIVA.Location = new System.Drawing.Point(27, 496);
             this.editIVA.Name = "templateEditNumeric2";
             this.editIVA.ReadOnly = false;
             this.editIVA.Required = false;
@@ -376,7 +349,7 @@ namespace Web.GUI.Documento
             this.editTotale.Editing = false;
             this.editTotale.Label = "Totale";
             this.editTotale.LabelWidth = 175;
-            this.editTotale.Location = new System.Drawing.Point(25, 582);
+            this.editTotale.Location = new System.Drawing.Point(27, 539);
             this.editTotale.Name = "templateEditNumeric3";
             this.editTotale.ReadOnly = false;
             this.editTotale.Required = false;
@@ -397,7 +370,7 @@ namespace Web.GUI.Documento
             this.editDataRegistrazione.Editing = false;
             this.editDataRegistrazione.Label = "Data registrazione";
             this.editDataRegistrazione.LabelWidth = 175;
-            this.editDataRegistrazione.Location = new System.Drawing.Point(25, 625);
+            this.editDataRegistrazione.Location = new System.Drawing.Point(27, 582);
             this.editDataRegistrazione.Name = "templateEditDate1";
             this.editDataRegistrazione.ReadOnly = false;
             this.editDataRegistrazione.Required = false;
@@ -405,29 +378,29 @@ namespace Web.GUI.Documento
             this.editDataRegistrazione.TabIndex = 13;
             this.editDataRegistrazione.Value = null;
             // 
-            // editCliente
+            // editCustomer
             // 
-            this.editCliente.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            this.editCustomer.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
             | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editCliente.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editCliente.BackColor = System.Drawing.Color.Transparent;
-            this.editCliente.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editCliente.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editCliente.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editCliente.Changed = true;
-            this.editCliente.Editing = false;
-            this.editCliente.Label = "Cliente";
-            this.editCliente.LabelWidth = 175;
-            this.editCliente.Location = new System.Drawing.Point(25, 109);
-            this.editCliente.Model = null;
-            this.editCliente.Name = "editCliente";
-            this.editCliente.ReadOnly = false;
-            this.editCliente.Required = true;
-            this.editCliente.Size = new System.Drawing.Size(811, 30);
-            this.editCliente.TabIndex = 0;
-            this.editCliente.Value = null;
-            this.editCliente.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editCliente_ComboConfirm);
-            this.editCliente.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editCliente_ComboClick);
+            this.editCustomer.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.editCustomer.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editCustomer.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editCustomer.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editCustomer.Changed = true;
+            this.editCustomer.Editing = false;
+            this.editCustomer.Label = "Customer";
+            this.editCustomer.LabelWidth = 175;
+            this.editCustomer.Location = new System.Drawing.Point(27, 66);
+            this.editCustomer.Model = null;
+            this.editCustomer.Name = "editCustomer";
+            this.editCustomer.ReadOnly = false;
+            this.editCustomer.Required = true;
+            this.editCustomer.Size = new System.Drawing.Size(811, 30);
+            this.editCustomer.TabIndex = 0;
+            this.editCustomer.Value = null;
+            this.editCustomer.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editCustomer_ComboConfirm);
+            this.editCustomer.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editCustomer_ComboClick);
             // 
             // DocumentoModel
             // 
@@ -441,7 +414,6 @@ namespace Web.GUI.Documento
 
 		#endregion
 
-        private Library.Template.Controls.TemplateEditCombo editExport;
         private Library.Template.Controls.TemplateEditText editIDMovimento;
         private Library.Template.Controls.TemplateEditText editIDCausale;
         private Library.Template.Controls.TemplateEditText editIDRegistroIVA;
@@ -455,7 +427,7 @@ namespace Web.GUI.Documento
         private Library.Template.Controls.TemplateEditDecimal editTotale;
         private Library.Template.Controls.TemplateEditDecimal editIVA;
         private Library.Template.Controls.TemplateEditDecimal editImponibile;
-        private Library.Template.Controls.TemplateEditCombo editCliente;
+        private Library.Template.Controls.TemplateEditCombo editCustomer;
 
 
     }

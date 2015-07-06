@@ -115,6 +115,22 @@ namespace Web.GUI.AnagraficaAzienda
             return null;
         }
 
+        public AnagraficaAziendaDto Read(string partitaIva)
+        {
+            try
+            {
+                var wcf = new WcfService.Service();
+                var obj = wcf.ReadAnagraficaAzienda(partitaIva);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+
+        }
+
         internal IEnumerable<AnagraficaAziendaDto> ReadAnagraficheAziende()
         {
             try

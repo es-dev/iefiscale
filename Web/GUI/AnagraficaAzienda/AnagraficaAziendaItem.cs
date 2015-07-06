@@ -29,7 +29,8 @@ namespace Web.GUI.AnagraficaAzienda
                     infoImage.Image = "Images.dashboard.anagraficaazienda.png";
                     infoRagioneSociale.Text = obj.RagioneSociale;
                     infoIndirizzo.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(obj);
-                    infoPartitaIVA.Text = obj.PartitaIVA;
+                    infoPartitaIVA.Text = BusinessLogic.AnagraficaAzienda.GetPartitaIva(obj);
+                    infoCodice.Text = "AZ";
                 }
             }
             catch (Exception ex)

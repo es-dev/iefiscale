@@ -91,6 +91,11 @@
     <Compile Include="Customer.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
+    <Compile Include="DataSetIpsoa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetIpsoa.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Documento.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
@@ -105,7 +110,13 @@
     <Compile Include="Import.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
+    <Compile Include="IpsoaDataAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="StudioCommerciale.generated.cs">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </Compile>
@@ -117,11 +128,28 @@
     </OpenAccessDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetIpsoa.xsc">
+      <DependentUpon>DataSetIpsoa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetIpsoa.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetIpsoa.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetIpsoa.xss">
+      <DependentUpon>DataSetIpsoa.xsd</DependentUpon>
+    </None>
     <None Include="EntitiesModel.rlinq.diagram">
       <DependentUpon>EntitiesModel.rlinq</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ES.Library\ES.Library.csproj">
@@ -131,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ESIEFiscaleConnection%282015-06-20 21-48-28%29.rlinq.sql" />
+    <Content Include="ESIEFiscaleConnection%282015-07-05 14-31-24%29.rlinq.sql" />
+    <Content Include="Schema\Ipsoa.mdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

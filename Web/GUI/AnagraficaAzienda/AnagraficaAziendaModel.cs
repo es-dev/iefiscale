@@ -28,7 +28,7 @@ namespace Web.GUI.AnagraficaAzienda
                     var obj = (AnagraficaAziendaDto)model;
                     infoSubtitle.Text = BusinessLogic.AnagraficaAzienda.GetCodifica(obj);
                     infoSubtitleImage.Image = "Images.dashboard.anagraficaazienda.png";
-                    infoTitle.Text = (obj.Id != 0 ? "ANAGRAFICA AZIENDA " + BusinessLogic.AnagraficaAzienda.GetCodifica(obj) : "NUOVA ANAGRAFICA AZIENDA"); 
+                    infoTitle.Text = (obj.Id != 0 ? "ANAGRAFICA AZIENDA - " + BusinessLogic.AnagraficaAzienda.GetCodifica(obj) : "NUOVA ANAGRAFICA AZIENDA"); 
                 }
             }
             catch (Exception ex)

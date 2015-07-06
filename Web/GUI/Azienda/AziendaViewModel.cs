@@ -129,5 +129,48 @@ namespace Web.GUI.Azienda
             }
             return null;
         }
+
+        internal DataLayer.DataSetIpsoa.NominativiDataTable ReadNominativi(string pathFileName)
+        {
+            try
+            {
+                var wcf = new WcfService.Service();
+                var objs = wcf.ReadNominativi(pathFileName);
+                return objs;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        internal DataLayer.DataSetIpsoa.NClientiDataTable ReadClienti(string pathFileName)
+        {
+            try
+            {
+                var wcf = new WcfService.Service();
+                var objs = wcf.ReadClienti(pathFileName);
+                return objs;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        internal void ImportAnagraficaAzienda(AnagraficaAziendaDto anagraficaAzienda)
+        {
+            try
+            {
+                var wcf = new WcfService.Service();
+                wcf.ImportAnagraficaAzienda(anagraficaAzienda);
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
     }
 }

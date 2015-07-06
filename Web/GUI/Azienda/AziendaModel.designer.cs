@@ -30,9 +30,6 @@ namespace Web.GUI.Azienda
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.editTipoSoftwareFatturazione = new Library.Template.Controls.TemplateEditText();
-            this.editTipoContabilita = new Library.Template.Controls.TemplateEditText();
-            this.editMdbFile = new Library.Template.Controls.TemplateEditText();
             this.editStudioCommerciale = new Library.Template.Controls.TemplateEditCombo();
             this.editRagioneSociale = new Library.Template.Controls.TemplateEditCombo();
             this.editCodiceFiscale = new Library.Template.Controls.TemplateEditCodiceFiscale();
@@ -45,6 +42,10 @@ namespace Web.GUI.Azienda
             this.editIndirizzo = new Library.Template.Controls.TemplateEditText();
             this.editUltimoAggiornamento = new Library.Template.Controls.TemplateEditDateTime();
             this.editIDAzienda = new Library.Template.Controls.TemplateEditText();
+            this.editMdbFile = new Library.Template.Controls.TemplateEditUpload();
+            this.editTipoSoftwareFatturazione = new Library.Template.Controls.TemplateEditDropDown();
+            this.editTipoContabilita = new Library.Template.Controls.TemplateEditDropDown();
+            this.btnImportConfigurazione = new Library.Controls.ButtonSeparatorV();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.panelCommands.SuspendLayout();
@@ -52,6 +53,9 @@ namespace Web.GUI.Azienda
             // 
             // container
             // 
+            this.container.Controls.Add(this.editTipoContabilita);
+            this.container.Controls.Add(this.editTipoSoftwareFatturazione);
+            this.container.Controls.Add(this.editMdbFile);
             this.container.Controls.Add(this.editIDAzienda);
             this.container.Controls.Add(this.editUltimoAggiornamento);
             this.container.Controls.Add(this.editIndirizzo);
@@ -64,15 +68,9 @@ namespace Web.GUI.Azienda
             this.container.Controls.Add(this.editCodiceFiscale);
             this.container.Controls.Add(this.editRagioneSociale);
             this.container.Controls.Add(this.editStudioCommerciale);
-            this.container.Controls.Add(this.editMdbFile);
-            this.container.Controls.Add(this.editTipoContabilita);
-            this.container.Controls.Add(this.editTipoSoftwareFatturazione);
             this.container.Size = new System.Drawing.Size(923, 700);
             this.container.Controls.SetChildIndex(this.infoSubtitleImage, 0);
             this.container.Controls.SetChildIndex(this.infoSubtitle, 0);
-            this.container.Controls.SetChildIndex(this.editTipoSoftwareFatturazione, 0);
-            this.container.Controls.SetChildIndex(this.editTipoContabilita, 0);
-            this.container.Controls.SetChildIndex(this.editMdbFile, 0);
             this.container.Controls.SetChildIndex(this.editStudioCommerciale, 0);
             this.container.Controls.SetChildIndex(this.editRagioneSociale, 0);
             this.container.Controls.SetChildIndex(this.editCodiceFiscale, 0);
@@ -85,6 +83,9 @@ namespace Web.GUI.Azienda
             this.container.Controls.SetChildIndex(this.editIndirizzo, 0);
             this.container.Controls.SetChildIndex(this.editUltimoAggiornamento, 0);
             this.container.Controls.SetChildIndex(this.editIDAzienda, 0);
+            this.container.Controls.SetChildIndex(this.editMdbFile, 0);
+            this.container.Controls.SetChildIndex(this.editTipoSoftwareFatturazione, 0);
+            this.container.Controls.SetChildIndex(this.editTipoContabilita, 0);
             // 
             // infoSubtitle
             // 
@@ -96,77 +97,18 @@ namespace Web.GUI.Azienda
             // 
             // panelCommands
             // 
+            this.panelCommands.Controls.Add(this.btnImportConfigurazione);
             this.panelCommands.Size = new System.Drawing.Size(101, 747);
+            this.panelCommands.Controls.SetChildIndex(this.btnClose, 0);
+            this.panelCommands.Controls.SetChildIndex(this.btnSave, 0);
+            this.panelCommands.Controls.SetChildIndex(this.btnUpdateCancel, 0);
+            this.panelCommands.Controls.SetChildIndex(this.btnDelete, 0);
+            this.panelCommands.Controls.SetChildIndex(this.btnHome, 0);
+            this.panelCommands.Controls.SetChildIndex(this.btnImportConfigurazione, 0);
             // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(0, 675);
-            // 
-            // editTipoSoftwareFatturazione
-            // 
-            this.editTipoSoftwareFatturazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editTipoSoftwareFatturazione.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editTipoSoftwareFatturazione.BackColor = System.Drawing.Color.Transparent;
-            this.editTipoSoftwareFatturazione.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editTipoSoftwareFatturazione.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editTipoSoftwareFatturazione.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editTipoSoftwareFatturazione.Changed = true;
-            this.editTipoSoftwareFatturazione.Editing = false;
-            this.editTipoSoftwareFatturazione.Label = "Software fatturazione";
-            this.editTipoSoftwareFatturazione.LabelWidth = 175;
-            this.editTipoSoftwareFatturazione.Location = new System.Drawing.Point(25, 486);
-            this.editTipoSoftwareFatturazione.Name = "editTipoSoftwareFatturazione";
-            this.editTipoSoftwareFatturazione.ReadOnly = false;
-            this.editTipoSoftwareFatturazione.Required = true;
-            this.editTipoSoftwareFatturazione.Size = new System.Drawing.Size(805, 30);
-            this.editTipoSoftwareFatturazione.TabIndex = 2;
-            this.editTipoSoftwareFatturazione.Text = "EditControl";
-            this.editTipoSoftwareFatturazione.Value = null;
-            // 
-            // editTipoContabilita
-            // 
-            this.editTipoContabilita.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editTipoContabilita.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editTipoContabilita.BackColor = System.Drawing.Color.Transparent;
-            this.editTipoContabilita.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editTipoContabilita.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editTipoContabilita.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editTipoContabilita.Changed = true;
-            this.editTipoContabilita.Editing = false;
-            this.editTipoContabilita.Label = "Tipo contabilità";
-            this.editTipoContabilita.LabelWidth = 175;
-            this.editTipoContabilita.Location = new System.Drawing.Point(25, 528);
-            this.editTipoContabilita.Name = "editTipoContabilita";
-            this.editTipoContabilita.ReadOnly = false;
-            this.editTipoContabilita.Required = true;
-            this.editTipoContabilita.Size = new System.Drawing.Size(805, 30);
-            this.editTipoContabilita.TabIndex = 3;
-            this.editTipoContabilita.Text = "EditControl";
-            this.editTipoContabilita.Value = null;
-            // 
-            // editMdbFile
-            // 
-            this.editMdbFile.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
-            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
-            this.editMdbFile.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
-            this.editMdbFile.BackColor = System.Drawing.Color.Transparent;
-            this.editMdbFile.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
-            this.editMdbFile.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
-            this.editMdbFile.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
-            this.editMdbFile.Changed = true;
-            this.editMdbFile.Editing = false;
-            this.editMdbFile.Label = "Mdb file";
-            this.editMdbFile.LabelWidth = 175;
-            this.editMdbFile.Location = new System.Drawing.Point(25, 654);
-            this.editMdbFile.Name = "editMdbFile";
-            this.editMdbFile.ReadOnly = false;
-            this.editMdbFile.Required = true;
-            this.editMdbFile.Size = new System.Drawing.Size(805, 30);
-            this.editMdbFile.TabIndex = 5;
-            this.editMdbFile.Text = "EditControl";
-            this.editMdbFile.Value = null;
             // 
             // editStudioCommerciale
             // 
@@ -181,13 +123,13 @@ namespace Web.GUI.Azienda
             this.editStudioCommerciale.Editing = false;
             this.editStudioCommerciale.Label = "Studio commerciale";
             this.editStudioCommerciale.LabelWidth = 175;
-            this.editStudioCommerciale.Location = new System.Drawing.Point(25, 66);
+            this.editStudioCommerciale.Location = new System.Drawing.Point(34, 66);
             this.editStudioCommerciale.Model = null;
             this.editStudioCommerciale.Name = "editStudioCommerciale";
             this.editStudioCommerciale.ReadOnly = false;
             this.editStudioCommerciale.Required = true;
-            this.editStudioCommerciale.Size = new System.Drawing.Size(805, 30);
-            this.editStudioCommerciale.TabIndex = 1000;
+            this.editStudioCommerciale.Size = new System.Drawing.Size(818, 30);
+            this.editStudioCommerciale.TabIndex = 0;
             this.editStudioCommerciale.Value = null;
             this.editStudioCommerciale.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editStudioCommerciale_ComboConfirm);
             this.editStudioCommerciale.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editStudioCommerciale_ComboClick);
@@ -205,13 +147,13 @@ namespace Web.GUI.Azienda
             this.editRagioneSociale.Editing = false;
             this.editRagioneSociale.Label = "Ragione sociale";
             this.editRagioneSociale.LabelWidth = 175;
-            this.editRagioneSociale.Location = new System.Drawing.Point(25, 108);
+            this.editRagioneSociale.Location = new System.Drawing.Point(34, 107);
             this.editRagioneSociale.Model = null;
             this.editRagioneSociale.Name = "editRagioneSociale";
             this.editRagioneSociale.ReadOnly = false;
             this.editRagioneSociale.Required = true;
-            this.editRagioneSociale.Size = new System.Drawing.Size(805, 30);
-            this.editRagioneSociale.TabIndex = 1000;
+            this.editRagioneSociale.Size = new System.Drawing.Size(818, 30);
+            this.editRagioneSociale.TabIndex = 1;
             this.editRagioneSociale.Value = null;
             this.editRagioneSociale.ComboConfirm += new Library.Template.Controls.TemplateEditCombo.ComboConfirmHanlder(this.editAnagraficaAzienda_ComboConfirm);
             this.editRagioneSociale.ComboClick += new Library.Template.Controls.TemplateEditCombo.ComboClickHandler(this.editAnagraficaAzienda_ComboClick);
@@ -229,12 +171,12 @@ namespace Web.GUI.Azienda
             this.editCodiceFiscale.Editing = false;
             this.editCodiceFiscale.Label = "Codice fiscale";
             this.editCodiceFiscale.LabelWidth = 175;
-            this.editCodiceFiscale.Location = new System.Drawing.Point(25, 444);
+            this.editCodiceFiscale.Location = new System.Drawing.Point(34, 435);
             this.editCodiceFiscale.Name = "editCodiceFiscale";
             this.editCodiceFiscale.ReadOnly = true;
             this.editCodiceFiscale.Required = false;
-            this.editCodiceFiscale.Size = new System.Drawing.Size(805, 30);
-            this.editCodiceFiscale.TabIndex = 9;
+            this.editCodiceFiscale.Size = new System.Drawing.Size(818, 30);
+            this.editCodiceFiscale.TabIndex = 13;
             this.editCodiceFiscale.Text = "TemplateEditPartitaIva";
             this.editCodiceFiscale.Value = "---";
             // 
@@ -251,12 +193,12 @@ namespace Web.GUI.Azienda
             this.editComune.Editing = false;
             this.editComune.Label = "Comune";
             this.editComune.LabelWidth = 175;
-            this.editComune.Location = new System.Drawing.Point(25, 234);
+            this.editComune.Location = new System.Drawing.Point(34, 230);
             this.editComune.Name = "editComune";
             this.editComune.ReadOnly = true;
             this.editComune.Required = true;
-            this.editComune.Size = new System.Drawing.Size(805, 30);
-            this.editComune.TabIndex = 4;
+            this.editComune.Size = new System.Drawing.Size(818, 30);
+            this.editComune.TabIndex = 8;
             this.editComune.Text = "EditControl";
             this.editComune.Value = null;
             // 
@@ -273,12 +215,12 @@ namespace Web.GUI.Azienda
             this.editPartitaIVA.Editing = false;
             this.editPartitaIVA.Label = "Partita IVA";
             this.editPartitaIVA.LabelWidth = 175;
-            this.editPartitaIVA.Location = new System.Drawing.Point(25, 402);
+            this.editPartitaIVA.Location = new System.Drawing.Point(34, 394);
             this.editPartitaIVA.Name = "editPartitaIVA";
             this.editPartitaIVA.ReadOnly = true;
             this.editPartitaIVA.Required = true;
-            this.editPartitaIVA.Size = new System.Drawing.Size(805, 30);
-            this.editPartitaIVA.TabIndex = 9;
+            this.editPartitaIVA.Size = new System.Drawing.Size(818, 30);
+            this.editPartitaIVA.TabIndex = 12;
             this.editPartitaIVA.Text = "TemplateEditPartitaIva";
             this.editPartitaIVA.Value = "---";
             // 
@@ -295,12 +237,12 @@ namespace Web.GUI.Azienda
             this.editEmail.Editing = false;
             this.editEmail.Label = "Email";
             this.editEmail.LabelWidth = 175;
-            this.editEmail.Location = new System.Drawing.Point(25, 360);
+            this.editEmail.Location = new System.Drawing.Point(34, 353);
             this.editEmail.Name = "editEmail";
             this.editEmail.ReadOnly = true;
             this.editEmail.Required = false;
-            this.editEmail.Size = new System.Drawing.Size(805, 30);
-            this.editEmail.TabIndex = 8;
+            this.editEmail.Size = new System.Drawing.Size(818, 30);
+            this.editEmail.TabIndex = 11;
             this.editEmail.Text = "TemplateEditEmail";
             this.editEmail.Value = null;
             // 
@@ -317,12 +259,12 @@ namespace Web.GUI.Azienda
             this.editTelefono.Editing = false;
             this.editTelefono.Label = "Telefono";
             this.editTelefono.LabelWidth = 175;
-            this.editTelefono.Location = new System.Drawing.Point(25, 276);
+            this.editTelefono.Location = new System.Drawing.Point(34, 271);
             this.editTelefono.Name = "editTelefono";
             this.editTelefono.ReadOnly = true;
             this.editTelefono.Required = false;
-            this.editTelefono.Size = new System.Drawing.Size(805, 30);
-            this.editTelefono.TabIndex = 6;
+            this.editTelefono.Size = new System.Drawing.Size(818, 30);
+            this.editTelefono.TabIndex = 9;
             this.editTelefono.Text = "EditControl";
             this.editTelefono.Value = null;
             // 
@@ -339,12 +281,12 @@ namespace Web.GUI.Azienda
             this.editFAX.Editing = false;
             this.editFAX.Label = "FAX";
             this.editFAX.LabelWidth = 175;
-            this.editFAX.Location = new System.Drawing.Point(25, 318);
+            this.editFAX.Location = new System.Drawing.Point(34, 312);
             this.editFAX.Name = "editFAX";
             this.editFAX.ReadOnly = true;
             this.editFAX.Required = false;
-            this.editFAX.Size = new System.Drawing.Size(805, 30);
-            this.editFAX.TabIndex = 7;
+            this.editFAX.Size = new System.Drawing.Size(818, 30);
+            this.editFAX.TabIndex = 10;
             this.editFAX.Text = "EditControl";
             this.editFAX.Value = null;
             // 
@@ -361,12 +303,12 @@ namespace Web.GUI.Azienda
             this.editCAP.Editing = false;
             this.editCAP.Label = "CAP";
             this.editCAP.LabelWidth = 175;
-            this.editCAP.Location = new System.Drawing.Point(25, 192);
+            this.editCAP.Location = new System.Drawing.Point(34, 189);
             this.editCAP.Name = "editCAP";
             this.editCAP.ReadOnly = true;
             this.editCAP.Required = true;
-            this.editCAP.Size = new System.Drawing.Size(805, 30);
-            this.editCAP.TabIndex = 3;
+            this.editCAP.Size = new System.Drawing.Size(818, 30);
+            this.editCAP.TabIndex = 7;
             this.editCAP.Text = "EditControl";
             this.editCAP.Value = null;
             // 
@@ -383,12 +325,12 @@ namespace Web.GUI.Azienda
             this.editIndirizzo.Editing = false;
             this.editIndirizzo.Label = "Indirizzo";
             this.editIndirizzo.LabelWidth = 175;
-            this.editIndirizzo.Location = new System.Drawing.Point(25, 150);
+            this.editIndirizzo.Location = new System.Drawing.Point(34, 148);
             this.editIndirizzo.Name = "editIndirizzo";
             this.editIndirizzo.ReadOnly = true;
             this.editIndirizzo.Required = true;
-            this.editIndirizzo.Size = new System.Drawing.Size(805, 30);
-            this.editIndirizzo.TabIndex = 2;
+            this.editIndirizzo.Size = new System.Drawing.Size(818, 30);
+            this.editIndirizzo.TabIndex = 6;
             this.editIndirizzo.Text = "EditControl";
             this.editIndirizzo.Value = null;
             // 
@@ -405,12 +347,12 @@ namespace Web.GUI.Azienda
             this.editUltimoAggiornamento.Editing = false;
             this.editUltimoAggiornamento.Label = "Ultimo aggiornamento";
             this.editUltimoAggiornamento.LabelWidth = 175;
-            this.editUltimoAggiornamento.Location = new System.Drawing.Point(25, 612);
+            this.editUltimoAggiornamento.Location = new System.Drawing.Point(34, 640);
             this.editUltimoAggiornamento.Name = "editUltimoAggiornamento";
             this.editUltimoAggiornamento.ReadOnly = true;
             this.editUltimoAggiornamento.Required = false;
-            this.editUltimoAggiornamento.Size = new System.Drawing.Size(805, 30);
-            this.editUltimoAggiornamento.TabIndex = 1002;
+            this.editUltimoAggiornamento.Size = new System.Drawing.Size(818, 30);
+            this.editUltimoAggiornamento.TabIndex = 14;
             this.editUltimoAggiornamento.Value = null;
             // 
             // editIDAzienda
@@ -426,14 +368,98 @@ namespace Web.GUI.Azienda
             this.editIDAzienda.Editing = false;
             this.editIDAzienda.Label = "ID Azienda";
             this.editIDAzienda.LabelWidth = 175;
-            this.editIDAzienda.Location = new System.Drawing.Point(25, 570);
+            this.editIDAzienda.Location = new System.Drawing.Point(34, 558);
             this.editIDAzienda.Name = "editIDAzienda";
             this.editIDAzienda.ReadOnly = false;
             this.editIDAzienda.Required = true;
-            this.editIDAzienda.Size = new System.Drawing.Size(807, 30);
-            this.editIDAzienda.TabIndex = 3;
+            this.editIDAzienda.Size = new System.Drawing.Size(818, 30);
+            this.editIDAzienda.TabIndex = 4;
             this.editIDAzienda.Text = "EditControl";
             this.editIDAzienda.Value = null;
+            // 
+            // editMdbFile
+            // 
+            this.editMdbFile.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.editMdbFile.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editMdbFile.BackColor = System.Drawing.Color.Transparent;
+            this.editMdbFile.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editMdbFile.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editMdbFile.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editMdbFile.Changed = true;
+            this.editMdbFile.Editing = false;
+            this.editMdbFile.Filter = "Mdb file |*.mdb";
+            this.editMdbFile.Label = "File configurazione";
+            this.editMdbFile.LabelWidth = 175;
+            this.editMdbFile.Location = new System.Drawing.Point(34, 599);
+            this.editMdbFile.Name = "editMdbFile";
+            this.editMdbFile.ReadOnly = false;
+            this.editMdbFile.Repository = "Resources\\MDB";
+            this.editMdbFile.Required = false;
+            this.editMdbFile.Size = new System.Drawing.Size(818, 30);
+            this.editMdbFile.TabIndex = 5;
+            this.editMdbFile.Title = "File di configurazione azienda";
+            this.editMdbFile.Value = null;
+            // 
+            // editTipoSoftwareFatturazione
+            // 
+            this.editTipoSoftwareFatturazione.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.editTipoSoftwareFatturazione.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editTipoSoftwareFatturazione.BackColor = System.Drawing.Color.Transparent;
+            this.editTipoSoftwareFatturazione.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editTipoSoftwareFatturazione.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editTipoSoftwareFatturazione.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editTipoSoftwareFatturazione.Changed = true;
+            this.editTipoSoftwareFatturazione.DisplayValues = null;
+            this.editTipoSoftwareFatturazione.Editing = false;
+            this.editTipoSoftwareFatturazione.Items = null;
+            this.editTipoSoftwareFatturazione.Label = "Software fatturazione";
+            this.editTipoSoftwareFatturazione.LabelWidth = 175;
+            this.editTipoSoftwareFatturazione.Location = new System.Drawing.Point(34, 476);
+            this.editTipoSoftwareFatturazione.Name = "editTipoSoftwareFatturazione";
+            this.editTipoSoftwareFatturazione.ReadOnly = false;
+            this.editTipoSoftwareFatturazione.Required = true;
+            this.editTipoSoftwareFatturazione.Size = new System.Drawing.Size(818, 30);
+            this.editTipoSoftwareFatturazione.TabIndex = 2;
+            this.editTipoSoftwareFatturazione.Value = null;
+            // 
+            // editTipoContabilita
+            // 
+            this.editTipoContabilita.Anchor = ((Gizmox.WebGUI.Forms.AnchorStyles)(((Gizmox.WebGUI.Forms.AnchorStyles.Top | Gizmox.WebGUI.Forms.AnchorStyles.Left) 
+            | Gizmox.WebGUI.Forms.AnchorStyles.Right)));
+            this.editTipoContabilita.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.editTipoContabilita.BackColor = System.Drawing.Color.Transparent;
+            this.editTipoContabilita.BorderColor = new Gizmox.WebGUI.Forms.BorderColor(System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224))))));
+            this.editTipoContabilita.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
+            this.editTipoContabilita.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
+            this.editTipoContabilita.Changed = true;
+            this.editTipoContabilita.DisplayValues = null;
+            this.editTipoContabilita.Editing = false;
+            this.editTipoContabilita.Items = null;
+            this.editTipoContabilita.Label = "Tipo contabilità";
+            this.editTipoContabilita.LabelWidth = 175;
+            this.editTipoContabilita.Location = new System.Drawing.Point(34, 517);
+            this.editTipoContabilita.Name = "editTipoContabilita";
+            this.editTipoContabilita.ReadOnly = false;
+            this.editTipoContabilita.Required = true;
+            this.editTipoContabilita.Size = new System.Drawing.Size(818, 30);
+            this.editTipoContabilita.TabIndex = 3;
+            this.editTipoContabilita.Value = null;
+            // 
+            // btnImportConfigurazione
+            // 
+            this.btnImportConfigurazione.AutoValidate = Gizmox.WebGUI.Forms.AutoValidate.EnablePreventFocusChange;
+            this.btnImportConfigurazione.BackColor = System.Drawing.Color.Transparent;
+            this.btnImportConfigurazione.ForeColorButton = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
+            this.btnImportConfigurazione.ImageButton = "";
+            this.btnImportConfigurazione.ImageSeparator = "Images.separator_ht_small.png";
+            this.btnImportConfigurazione.Location = new System.Drawing.Point(0, 288);
+            this.btnImportConfigurazione.Name = "btnImportConfigurazione";
+            this.btnImportConfigurazione.Size = new System.Drawing.Size(100, 72);
+            this.btnImportConfigurazione.TabIndex = 2;
+            this.btnImportConfigurazione.TextButton = "Import dati azienda";
+            this.btnImportConfigurazione.Click += new Library.Controls.ButtonSeparatorV.ButtonSeparatorClick(this.btnImportConfigurazione_Click);
             // 
             // AziendaModel
             // 
@@ -447,9 +473,6 @@ namespace Web.GUI.Azienda
 
 		#endregion
 
-        private Library.Template.Controls.TemplateEditText editTipoSoftwareFatturazione;
-        private Library.Template.Controls.TemplateEditText editTipoContabilita;
-        private Library.Template.Controls.TemplateEditText editMdbFile;
         private Library.Template.Controls.TemplateEditCombo editStudioCommerciale;
         private Library.Template.Controls.TemplateEditCombo editRagioneSociale;
         private Library.Template.Controls.TemplateEditText editIndirizzo;
@@ -462,6 +485,10 @@ namespace Web.GUI.Azienda
         private Library.Template.Controls.TemplateEditCodiceFiscale editCodiceFiscale;
         private Library.Template.Controls.TemplateEditDateTime editUltimoAggiornamento;
         private Library.Template.Controls.TemplateEditText editIDAzienda;
+        private Library.Template.Controls.TemplateEditUpload editMdbFile;
+        private Library.Template.Controls.TemplateEditDropDown editTipoSoftwareFatturazione;
+        private Library.Template.Controls.TemplateEditDropDown editTipoContabilita;
+        private Library.Controls.ButtonSeparatorV btnImportConfigurazione;
 
 
     }

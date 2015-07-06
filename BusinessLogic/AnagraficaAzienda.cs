@@ -34,8 +34,25 @@ namespace BusinessLogic
             {
                 if(anagraficaAzienda!=null)
                 {
-                    var codifica = anagraficaAzienda.Id.ToString("000") + " - " + anagraficaAzienda.RagioneSociale; 
+                    var codifica = anagraficaAzienda.RagioneSociale; 
                     return codifica;
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public static string GetPartitaIva(AnagraficaAziendaDto anagraficaAzienda)
+        {
+            try
+            {
+                if (anagraficaAzienda != null)
+                {
+                    var piva = "P.IVA " + anagraficaAzienda.PartitaIVA;
+                    return piva;
                 }
             }
             catch (Exception ex)

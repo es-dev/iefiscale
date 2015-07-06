@@ -458,6 +458,22 @@ namespace WcfService
             return null;
         }
 
+        public Dto.AnagraficaAziendaDto ReadAnagraficaAzienda(string partitaIva)
+        {
+            try
+            {
+                var ef = new DataLayer.EntitiesModel();
+                var anagraficaAzienda = (from q in ef.AnagraficaAziendas where q.PartitaIVA == partitaIva select q).FirstOrDefault();
+                var anagraficaAziendaDto = UtilityPOCO.Assemble<Dto.AnagraficaAziendaDto>(anagraficaAzienda);
+                return anagraficaAziendaDto;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.AnagraficaAzienda> QueryAnagraficheAziende(string search = null, object advancedSearch = null, OrderBy orderBy = null)
         {
             try
@@ -1743,7 +1759,7 @@ namespace WcfService
 
                 if (search != null && search.Length > 0)
                     documenti = (from q in documenti
-                                 where q.Numero.Contains(search) || q.Cliente.AnagraficaAzienda.RagioneSociale.Contains(search) ||
+                                 where q.Numero.Contains(search) || q.Customer.Cliente.AnagraficaAzienda.RagioneSociale.Contains(search) ||
                                  q.Tipo.Contains(search) || q.IDCausale.Contains(search) || q.IDIVA.Contains(search) || q.IDMovimento.Contains(search) || q.IDRegistroIVA.Contains(search)
                                  select q);
 
@@ -1769,5 +1785,68 @@ namespace WcfService
         #endregion
         #endregion
 
+        #region Ipsoa
+        #region Custom
+
+        public DataLayer.DataSetIpsoa.NominativiDataTable ReadNominativi(string pathFileName)
+        {
+            try
+            {
+                var adapter = DataLayer.IpsoaDataAdapter.GetDataAdapterNominativi(pathFileName);
+                var nominativi = adapter.GetData();
+                return nominativi;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public DataLayer.DataSetIpsoa.NClientiDataTable ReadClienti(string pathFileName)
+        {
+            try
+            {
+                var adapter = DataLayer.IpsoaDataAdapter.GetDataAdapterClienti(pathFileName);
+                var clienti = adapter.GetData();
+                return clienti;
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
+        public void ImportAnagraficaAzienda(Dto.AnagraficaAziendaDto anagraficaAzienda)
+        {
+            try
+            {
+                if (anagraficaAzienda != null)
+                {
+                    var performed = false;
+                    if (anagraficaAzienda.Id > 0)
+                        performed = UpdateAnagraficaAzienda(anagraficaAzienda);
+                    else
+                    {
+                        var newAnagraficaAzienda = CreateAnagraficaAzienda(anagraficaAzienda);
+                        performed = (newAnagraficaAzienda != null);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
+
+        #endregion
+        #endregion
+
+
+
+
+        
     }
 }

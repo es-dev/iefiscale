@@ -33,6 +33,7 @@ namespace Web.GUI.Azienda
                     infoImage.Image = "Images.dashboard.azienda.png";
                     infoTipoSoftwareFatturazione.Text = "Software di fatturazione: " + obj.TipoSoftwareFatturazione;
                     infoIndirizzo.Text = BusinessLogic.AnagraficaAzienda.GetIndirizzo(obj.AnagraficaAzienda);
+                    infoPartitaIVA.Text = BusinessLogic.AnagraficaAzienda.GetPartitaIva(obj.AnagraficaAzienda);
                 }
             }
             catch (Exception ex)

@@ -38,7 +38,7 @@ namespace Web.GUI.StudioCommerciale
             this.editEmail = new Library.Template.Controls.TemplateEditEmail();
             this.editPartitaIVA = new Library.Template.Controls.TemplateEditPartitaIva();
             this.editComune = new Library.Template.Controls.TemplateEditCountry();
-            this.editTipoSoftwareContabilita = new Library.Template.Controls.TemplateEditText();
+            this.editTipoSoftwareContabilita = new Library.Template.Controls.TemplateEditDropDown();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).BeginInit();
             this.panelCommands.SuspendLayout();
@@ -92,8 +92,8 @@ namespace Web.GUI.StudioCommerciale
             this.editDenominazione.Name = "editDenominazione";
             this.editDenominazione.ReadOnly = false;
             this.editDenominazione.Required = true;
-            this.editDenominazione.Size = new System.Drawing.Size(813, 30);
-            this.editDenominazione.TabIndex = 1;
+            this.editDenominazione.Size = new System.Drawing.Size(811, 30);
+            this.editDenominazione.TabIndex = 0;
             this.editDenominazione.Text = "EditControl";
             this.editDenominazione.Value = null;
             // 
@@ -110,12 +110,12 @@ namespace Web.GUI.StudioCommerciale
             this.editIndirizzo.Editing = false;
             this.editIndirizzo.Label = "Indirizzo";
             this.editIndirizzo.LabelWidth = 175;
-            this.editIndirizzo.Location = new System.Drawing.Point(25, 109);
+            this.editIndirizzo.Location = new System.Drawing.Point(25, 112);
             this.editIndirizzo.Name = "editIndirizzo";
             this.editIndirizzo.ReadOnly = false;
             this.editIndirizzo.Required = true;
-            this.editIndirizzo.Size = new System.Drawing.Size(813, 30);
-            this.editIndirizzo.TabIndex = 2;
+            this.editIndirizzo.Size = new System.Drawing.Size(811, 30);
+            this.editIndirizzo.TabIndex = 1;
             this.editIndirizzo.Text = "EditControl";
             this.editIndirizzo.Value = null;
             // 
@@ -132,12 +132,12 @@ namespace Web.GUI.StudioCommerciale
             this.editCAP.Editing = false;
             this.editCAP.Label = "CAP";
             this.editCAP.LabelWidth = 175;
-            this.editCAP.Location = new System.Drawing.Point(25, 152);
+            this.editCAP.Location = new System.Drawing.Point(25, 158);
             this.editCAP.Name = "editCAP";
             this.editCAP.ReadOnly = false;
             this.editCAP.Required = true;
-            this.editCAP.Size = new System.Drawing.Size(813, 30);
-            this.editCAP.TabIndex = 3;
+            this.editCAP.Size = new System.Drawing.Size(811, 30);
+            this.editCAP.TabIndex = 2;
             this.editCAP.Text = "EditControl";
             this.editCAP.Value = null;
             // 
@@ -154,12 +154,12 @@ namespace Web.GUI.StudioCommerciale
             this.editFAX.Editing = false;
             this.editFAX.Label = "FAX";
             this.editFAX.LabelWidth = 175;
-            this.editFAX.Location = new System.Drawing.Point(25, 292);
+            this.editFAX.Location = new System.Drawing.Point(25, 296);
             this.editFAX.Name = "editFAX";
             this.editFAX.ReadOnly = false;
             this.editFAX.Required = false;
-            this.editFAX.Size = new System.Drawing.Size(813, 30);
-            this.editFAX.TabIndex = 7;
+            this.editFAX.Size = new System.Drawing.Size(811, 30);
+            this.editFAX.TabIndex = 5;
             this.editFAX.Text = "EditControl";
             this.editFAX.Value = null;
             // 
@@ -176,12 +176,12 @@ namespace Web.GUI.StudioCommerciale
             this.editTelefono.Editing = false;
             this.editTelefono.Label = "Telefono";
             this.editTelefono.LabelWidth = 175;
-            this.editTelefono.Location = new System.Drawing.Point(25, 249);
+            this.editTelefono.Location = new System.Drawing.Point(25, 250);
             this.editTelefono.Name = "editTelefono";
             this.editTelefono.ReadOnly = false;
             this.editTelefono.Required = false;
-            this.editTelefono.Size = new System.Drawing.Size(813, 30);
-            this.editTelefono.TabIndex = 6;
+            this.editTelefono.Size = new System.Drawing.Size(811, 30);
+            this.editTelefono.TabIndex = 4;
             this.editTelefono.Text = "EditControl";
             this.editTelefono.Value = null;
             // 
@@ -198,12 +198,12 @@ namespace Web.GUI.StudioCommerciale
             this.editEmail.Editing = false;
             this.editEmail.Label = "Email";
             this.editEmail.LabelWidth = 175;
-            this.editEmail.Location = new System.Drawing.Point(25, 335);
+            this.editEmail.Location = new System.Drawing.Point(25, 342);
             this.editEmail.Name = "editEmail";
             this.editEmail.ReadOnly = false;
             this.editEmail.Required = true;
-            this.editEmail.Size = new System.Drawing.Size(813, 30);
-            this.editEmail.TabIndex = 8;
+            this.editEmail.Size = new System.Drawing.Size(811, 30);
+            this.editEmail.TabIndex = 6;
             this.editEmail.Text = "TemplateEditEmail";
             this.editEmail.Value = null;
             // 
@@ -220,12 +220,12 @@ namespace Web.GUI.StudioCommerciale
             this.editPartitaIVA.Editing = false;
             this.editPartitaIVA.Label = "Partita IVA";
             this.editPartitaIVA.LabelWidth = 175;
-            this.editPartitaIVA.Location = new System.Drawing.Point(25, 378);
+            this.editPartitaIVA.Location = new System.Drawing.Point(25, 388);
             this.editPartitaIVA.Name = "editPartitaIVA";
             this.editPartitaIVA.ReadOnly = false;
             this.editPartitaIVA.Required = true;
-            this.editPartitaIVA.Size = new System.Drawing.Size(813, 30);
-            this.editPartitaIVA.TabIndex = 9;
+            this.editPartitaIVA.Size = new System.Drawing.Size(811, 30);
+            this.editPartitaIVA.TabIndex = 7;
             this.editPartitaIVA.Text = "TemplateEditPartitaIva";
             this.editPartitaIVA.Value = "---";
             // 
@@ -242,12 +242,12 @@ namespace Web.GUI.StudioCommerciale
             this.editComune.Editing = false;
             this.editComune.Label = "Comune";
             this.editComune.LabelWidth = 175;
-            this.editComune.Location = new System.Drawing.Point(25, 195);
+            this.editComune.Location = new System.Drawing.Point(25, 204);
             this.editComune.Name = "editComune";
             this.editComune.ReadOnly = false;
             this.editComune.Required = true;
-            this.editComune.Size = new System.Drawing.Size(813, 30);
-            this.editComune.TabIndex = 4;
+            this.editComune.Size = new System.Drawing.Size(811, 30);
+            this.editComune.TabIndex = 3;
             this.editComune.Text = "EditControl";
             this.editComune.Value = null;
             // 
@@ -261,16 +261,17 @@ namespace Web.GUI.StudioCommerciale
             this.editTipoSoftwareContabilita.BorderStyle = Gizmox.WebGUI.Forms.BorderStyle.FixedSingle;
             this.editTipoSoftwareContabilita.BorderWidth = new Gizmox.WebGUI.Forms.BorderWidth(0, 0, 0, 1);
             this.editTipoSoftwareContabilita.Changed = true;
+            this.editTipoSoftwareContabilita.DisplayValues = null;
             this.editTipoSoftwareContabilita.Editing = false;
+            this.editTipoSoftwareContabilita.Items = null;
             this.editTipoSoftwareContabilita.Label = "Software contabilità";
             this.editTipoSoftwareContabilita.LabelWidth = 175;
-            this.editTipoSoftwareContabilita.Location = new System.Drawing.Point(25, 428);
+            this.editTipoSoftwareContabilita.Location = new System.Drawing.Point(25, 434);
             this.editTipoSoftwareContabilita.Name = "editTipoSoftwareContabilita";
             this.editTipoSoftwareContabilita.ReadOnly = false;
-            this.editTipoSoftwareContabilita.Required = true;
-            this.editTipoSoftwareContabilita.Size = new System.Drawing.Size(813, 30);
-            this.editTipoSoftwareContabilita.TabIndex = 9;
-            this.editTipoSoftwareContabilita.Text = "TemplateEditPartitaIva";
+            this.editTipoSoftwareContabilita.Required = false;
+            this.editTipoSoftwareContabilita.Size = new System.Drawing.Size(811, 30);
+            this.editTipoSoftwareContabilita.TabIndex = 8;
             this.editTipoSoftwareContabilita.Value = null;
             this.container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoSubtitleImage)).EndInit();
@@ -289,7 +290,7 @@ namespace Web.GUI.StudioCommerciale
         private Library.Template.Controls.TemplateEditPartitaIva editPartitaIVA;
         private Library.Template.Controls.TemplateEditEmail editEmail;
         private Library.Template.Controls.TemplateEditCountry editComune;
-        private Library.Template.Controls.TemplateEditText editTipoSoftwareContabilita;
+        private Library.Template.Controls.TemplateEditDropDown editTipoSoftwareContabilita;
 
 
     }

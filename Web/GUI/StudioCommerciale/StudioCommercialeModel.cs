@@ -1,3 +1,4 @@
+using BusinessLogic;
 using Library.Code;
 using Library.Controls;
 using Library.Template.MVVM;
@@ -17,7 +18,27 @@ namespace Web.GUI.StudioCommerciale
         public StudioCommercialeModel()
 		{
 			InitializeComponent();
+            try
+            {
+                InitCombo();
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
 		}
+
+        private void InitCombo()
+        {
+            try
+            {
+                editTipoSoftwareContabilita.DisplayValues = Library.Code.UtilityEnum.GetDisplayValues<Tipi.SoftwareContabilita>();
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+        }
 
         public override void BindViewTitle(object model)
         {
@@ -26,9 +47,9 @@ namespace Web.GUI.StudioCommerciale
                 if (model != null)
                 {
                     var obj = (StudioCommercialeDto)model;
-                    infoSubtitle.Text = BusinessLogic.StudioCommerciale.GetCodifica(obj);
+                    infoSubtitle.Text = BusinessLogic.StudioCommerciale.GetCodifica(obj) + " - p.iva " + obj.PartitaIVA;
                     infoSubtitleImage.Image = "Images.dashboard.studiocommerciale.png";
-                    infoTitle.Text = (obj.Id != 0 ? "STUDIO COMMERCIALE " + BusinessLogic.StudioCommerciale.GetCodifica(obj) : "NUOVO STUDIO COMMERCIALE");
+                    infoTitle.Text = (obj.Id != 0 ? "STUDIO COMMERCIALE - " + BusinessLogic.StudioCommerciale.GetCodifica(obj) : "NUOVO STUDIO COMMERCIALE");
                 }
             }
             catch (Exception ex)
@@ -86,6 +107,7 @@ namespace Web.GUI.StudioCommerciale
                 UtilityError.Write(ex);
             }
         }
-  
+
+      
 	}
 }

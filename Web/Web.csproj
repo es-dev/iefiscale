@@ -866,7 +866,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Issues · es-dev-iefiscale.website" />
-    <None Include="Web.config" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -877,6 +879,7 @@
   <ItemGroup>
     <Folder Include="Resources\Generated\" />
     <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\MDB\" />
     <Folder Include="Resources\UserData\" />
   </ItemGroup>
   <ItemGroup>
