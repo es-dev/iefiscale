@@ -139,6 +139,28 @@ namespace WcfService
             return null;
         }
 
+        public Dto.AccountDto AuthenticateAccount(Dto.AccountDto account)
+        {
+            try
+            {
+                if (account != null && account.Username != null)
+                {
+                    var ef = new DataLayer.EntitiesModel();
+                    var accountAuthenticated = (from q in ef.Accounts
+                                                where q.Username != null && q.Username.ToUpper() == account.Username.ToUpper() &&
+                                                    q.Password == account.Password
+                                                select q).FirstOrDefault();
+                    var accountAuthenticatedDto = UtilityPOCO.Assemble<Dto.AccountDto>(accountAuthenticated);
+                    return accountAuthenticatedDto;
+                }
+            }
+            catch (Exception ex)
+            {
+                UtilityError.Write(ex);
+            }
+            return null;
+        }
+
         private IQueryable<DataLayer.Account> QueryAccounts(string search = null, object advancedSearch = null, OrderBy orderBy = null)
         {
             try
